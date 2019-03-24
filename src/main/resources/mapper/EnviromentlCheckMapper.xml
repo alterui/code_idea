@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lr.bridge.dao.EnviromentlCheckMapper">
+  <resultMap id="BaseResultMap" type="com.lr.bridge.pojo.EnviromentlCheck">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="environmentalInspectId" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="constructionSite" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="causeOfTheAccident" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="natureOfTheAccident" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="treatment" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="preliminaryTreatmentComments" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, environmentalInspectId, constructionSite, causeOfTheAccident, natureOfTheAccident, 
+    treatment, preliminaryTreatmentComments
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from enviromentalcheck
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from enviromentalcheck
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lr.bridge.pojo.EnviromentlCheck">
+    insert into enviromentalcheck (id, environmentalInspectId, constructionSite, 
+      causeOfTheAccident, natureOfTheAccident, 
+      treatment, preliminaryTreatmentComments
+      )
+    values (#{id,jdbcType=INTEGER}, #{environmentalInspectId,jdbcType=VARCHAR}, #{constructionSite,jdbcType=VARCHAR}, 
+      #{causeOfTheAccident,jdbcType=VARCHAR}, #{natureOfTheAccident,jdbcType=VARCHAR}, 
+      #{treatment,jdbcType=VARCHAR}, #{preliminaryTreatmentComments,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lr.bridge.pojo.EnviromentlCheck">
+    insert into enviromentalcheck
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="environmentalInspectId != null">
+        environmentalInspectId,
+      </if>
+      <if test="constructionSite != null">
+        constructionSite,
+      </if>
+      <if test="causeOfTheAccident != null">
+        causeOfTheAccident,
+      </if>
+      <if test="natureOfTheAccident != null">
+        natureOfTheAccident,
+      </if>
+      <if test="treatment != null">
+        treatment,
+      </if>
+      <if test="preliminaryTreatmentComments != null">
+        preliminaryTreatmentComments,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="environmentalInspectId != null">
+        #{environmentalInspectId,jdbcType=VARCHAR},
+      </if>
+      <if test="constructionSite != null">
+        #{constructionSite,jdbcType=VARCHAR},
+      </if>
+      <if test="causeOfTheAccident != null">
+        #{causeOfTheAccident,jdbcType=VARCHAR},
+      </if>
+      <if test="natureOfTheAccident != null">
+        #{natureOfTheAccident,jdbcType=VARCHAR},
+      </if>
+      <if test="treatment != null">
+        #{treatment,jdbcType=VARCHAR},
+      </if>
+      <if test="preliminaryTreatmentComments != null">
+        #{preliminaryTreatmentComments,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lr.bridge.pojo.EnviromentlCheck">
+    update enviromentalcheck
+    <set>
+      <if test="environmentalInspectId != null">
+        environmentalInspectId = #{environmentalInspectId,jdbcType=VARCHAR},
+      </if>
+      <if test="constructionSite != null">
+        constructionSite = #{constructionSite,jdbcType=VARCHAR},
+      </if>
+      <if test="causeOfTheAccident != null">
+        causeOfTheAccident = #{causeOfTheAccident,jdbcType=VARCHAR},
+      </if>
+      <if test="natureOfTheAccident != null">
+        natureOfTheAccident = #{natureOfTheAccident,jdbcType=VARCHAR},
+      </if>
+      <if test="treatment != null">
+        treatment = #{treatment,jdbcType=VARCHAR},
+      </if>
+      <if test="preliminaryTreatmentComments != null">
+        preliminaryTreatmentComments = #{preliminaryTreatmentComments,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lr.bridge.pojo.EnviromentlCheck">
+    update enviromentalcheck
+    set environmentalInspectId = #{environmentalInspectId,jdbcType=VARCHAR},
+      constructionSite = #{constructionSite,jdbcType=VARCHAR},
+      causeOfTheAccident = #{causeOfTheAccident,jdbcType=VARCHAR},
+      natureOfTheAccident = #{natureOfTheAccident,jdbcType=VARCHAR},
+      treatment = #{treatment,jdbcType=VARCHAR},
+      preliminaryTreatmentComments = #{preliminaryTreatmentComments,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

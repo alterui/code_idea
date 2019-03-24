@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lr.bridge.dao.PierQualityMapper">
+  <resultMap id="BaseResultMap" type="com.lr.bridge.pojo.PierQuality">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="struId" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="length" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="width" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="topElev" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="axisOffs" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="vert" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="surfVert" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="planeness" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="inteFaultTable" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pierqualityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, struId, length, width, topElev, axisOffs, vert, surfVert, planeness, inteFaultTable, 
+    pierqualityCheckTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from pierquality
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from pierquality
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lr.bridge.pojo.PierQuality">
+    insert into pierquality (id, struId, length, 
+      width, topElev, axisOffs, 
+      vert, surfVert, planeness, 
+      inteFaultTable, pierqualityCheckTime)
+    values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{length,jdbcType=VARCHAR}, 
+      #{width,jdbcType=VARCHAR}, #{topElev,jdbcType=VARCHAR}, #{axisOffs,jdbcType=VARCHAR}, 
+      #{vert,jdbcType=VARCHAR}, #{surfVert,jdbcType=VARCHAR}, #{planeness,jdbcType=VARCHAR}, 
+      #{inteFaultTable,jdbcType=VARCHAR}, #{pierqualityCheckTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lr.bridge.pojo.PierQuality">
+    insert into pierquality
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="struId != null">
+        struId,
+      </if>
+      <if test="length != null">
+        length,
+      </if>
+      <if test="width != null">
+        width,
+      </if>
+      <if test="topElev != null">
+        topElev,
+      </if>
+      <if test="axisOffs != null">
+        axisOffs,
+      </if>
+      <if test="vert != null">
+        vert,
+      </if>
+      <if test="surfVert != null">
+        surfVert,
+      </if>
+      <if test="planeness != null">
+        planeness,
+      </if>
+      <if test="inteFaultTable != null">
+        inteFaultTable,
+      </if>
+      <if test="pierqualityCheckTime != null">
+        pierqualityCheckTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="struId != null">
+        #{struId,jdbcType=VARCHAR},
+      </if>
+      <if test="length != null">
+        #{length,jdbcType=VARCHAR},
+      </if>
+      <if test="width != null">
+        #{width,jdbcType=VARCHAR},
+      </if>
+      <if test="topElev != null">
+        #{topElev,jdbcType=VARCHAR},
+      </if>
+      <if test="axisOffs != null">
+        #{axisOffs,jdbcType=VARCHAR},
+      </if>
+      <if test="vert != null">
+        #{vert,jdbcType=VARCHAR},
+      </if>
+      <if test="surfVert != null">
+        #{surfVert,jdbcType=VARCHAR},
+      </if>
+      <if test="planeness != null">
+        #{planeness,jdbcType=VARCHAR},
+      </if>
+      <if test="inteFaultTable != null">
+        #{inteFaultTable,jdbcType=VARCHAR},
+      </if>
+      <if test="pierqualityCheckTime != null">
+        #{pierqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lr.bridge.pojo.PierQuality">
+    update pierquality
+    <set>
+      <if test="struId != null">
+        struId = #{struId,jdbcType=VARCHAR},
+      </if>
+      <if test="length != null">
+        length = #{length,jdbcType=VARCHAR},
+      </if>
+      <if test="width != null">
+        width = #{width,jdbcType=VARCHAR},
+      </if>
+      <if test="topElev != null">
+        topElev = #{topElev,jdbcType=VARCHAR},
+      </if>
+      <if test="axisOffs != null">
+        axisOffs = #{axisOffs,jdbcType=VARCHAR},
+      </if>
+      <if test="vert != null">
+        vert = #{vert,jdbcType=VARCHAR},
+      </if>
+      <if test="surfVert != null">
+        surfVert = #{surfVert,jdbcType=VARCHAR},
+      </if>
+      <if test="planeness != null">
+        planeness = #{planeness,jdbcType=VARCHAR},
+      </if>
+      <if test="inteFaultTable != null">
+        inteFaultTable = #{inteFaultTable,jdbcType=VARCHAR},
+      </if>
+      <if test="pierqualityCheckTime != null">
+        pierqualityCheckTime = #{pierqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lr.bridge.pojo.PierQuality">
+    update pierquality
+    set struId = #{struId,jdbcType=VARCHAR},
+      length = #{length,jdbcType=VARCHAR},
+      width = #{width,jdbcType=VARCHAR},
+      topElev = #{topElev,jdbcType=VARCHAR},
+      axisOffs = #{axisOffs,jdbcType=VARCHAR},
+      vert = #{vert,jdbcType=VARCHAR},
+      surfVert = #{surfVert,jdbcType=VARCHAR},
+      planeness = #{planeness,jdbcType=VARCHAR},
+      inteFaultTable = #{inteFaultTable,jdbcType=VARCHAR},
+      pierqualityCheckTime = #{pierqualityCheckTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

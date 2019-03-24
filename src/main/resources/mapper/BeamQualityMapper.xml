@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lr.bridge.dao.BeamQualityMapper">
+  <resultMap id="BaseResultMap" type="com.lr.bridge.pojo.BeamQuality">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="struId" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="axialDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sectionDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="topElevDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="segmHeightDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="heightDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="crossSlopeDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="embePartsDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="smooDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cableTubeAxisDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="prestTendDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cableTensi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="bridgeSite" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="beamqualityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, struId, axialDevi, sectionDevi, topElevDevi, segmHeightDevi, heightDevi, crossSlopeDevi, 
+    embePartsDevi, smooDevi, cableTubeAxisDevi, prestTendDevi, cableTensi, bridgeSite, 
+    beamqualityCheckTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from beamquality
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from beamquality
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lr.bridge.pojo.BeamQuality">
+    insert into beamquality (id, struId, axialDevi, 
+      sectionDevi, topElevDevi, segmHeightDevi, 
+      heightDevi, crossSlopeDevi, embePartsDevi, 
+      smooDevi, cableTubeAxisDevi, prestTendDevi, 
+      cableTensi, bridgeSite, beamqualityCheckTime
+      )
+    values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{axialDevi,jdbcType=VARCHAR}, 
+      #{sectionDevi,jdbcType=VARCHAR}, #{topElevDevi,jdbcType=VARCHAR}, #{segmHeightDevi,jdbcType=VARCHAR}, 
+      #{heightDevi,jdbcType=VARCHAR}, #{crossSlopeDevi,jdbcType=VARCHAR}, #{embePartsDevi,jdbcType=VARCHAR}, 
+      #{smooDevi,jdbcType=VARCHAR}, #{cableTubeAxisDevi,jdbcType=VARCHAR}, #{prestTendDevi,jdbcType=VARCHAR}, 
+      #{cableTensi,jdbcType=VARCHAR}, #{bridgeSite,jdbcType=VARCHAR}, #{beamqualityCheckTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lr.bridge.pojo.BeamQuality">
+    insert into beamquality
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="struId != null">
+        struId,
+      </if>
+      <if test="axialDevi != null">
+        axialDevi,
+      </if>
+      <if test="sectionDevi != null">
+        sectionDevi,
+      </if>
+      <if test="topElevDevi != null">
+        topElevDevi,
+      </if>
+      <if test="segmHeightDevi != null">
+        segmHeightDevi,
+      </if>
+      <if test="heightDevi != null">
+        heightDevi,
+      </if>
+      <if test="crossSlopeDevi != null">
+        crossSlopeDevi,
+      </if>
+      <if test="embePartsDevi != null">
+        embePartsDevi,
+      </if>
+      <if test="smooDevi != null">
+        smooDevi,
+      </if>
+      <if test="cableTubeAxisDevi != null">
+        cableTubeAxisDevi,
+      </if>
+      <if test="prestTendDevi != null">
+        prestTendDevi,
+      </if>
+      <if test="cableTensi != null">
+        cableTensi,
+      </if>
+      <if test="bridgeSite != null">
+        bridgeSite,
+      </if>
+      <if test="beamqualityCheckTime != null">
+        beamqualityCheckTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="struId != null">
+        #{struId,jdbcType=VARCHAR},
+      </if>
+      <if test="axialDevi != null">
+        #{axialDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionDevi != null">
+        #{sectionDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="topElevDevi != null">
+        #{topElevDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="segmHeightDevi != null">
+        #{segmHeightDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="heightDevi != null">
+        #{heightDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="crossSlopeDevi != null">
+        #{crossSlopeDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="embePartsDevi != null">
+        #{embePartsDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="smooDevi != null">
+        #{smooDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="cableTubeAxisDevi != null">
+        #{cableTubeAxisDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="prestTendDevi != null">
+        #{prestTendDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="cableTensi != null">
+        #{cableTensi,jdbcType=VARCHAR},
+      </if>
+      <if test="bridgeSite != null">
+        #{bridgeSite,jdbcType=VARCHAR},
+      </if>
+      <if test="beamqualityCheckTime != null">
+        #{beamqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lr.bridge.pojo.BeamQuality">
+    update beamquality
+    <set>
+      <if test="struId != null">
+        struId = #{struId,jdbcType=VARCHAR},
+      </if>
+      <if test="axialDevi != null">
+        axialDevi = #{axialDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="sectionDevi != null">
+        sectionDevi = #{sectionDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="topElevDevi != null">
+        topElevDevi = #{topElevDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="segmHeightDevi != null">
+        segmHeightDevi = #{segmHeightDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="heightDevi != null">
+        heightDevi = #{heightDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="crossSlopeDevi != null">
+        crossSlopeDevi = #{crossSlopeDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="embePartsDevi != null">
+        embePartsDevi = #{embePartsDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="smooDevi != null">
+        smooDevi = #{smooDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="cableTubeAxisDevi != null">
+        cableTubeAxisDevi = #{cableTubeAxisDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="prestTendDevi != null">
+        prestTendDevi = #{prestTendDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="cableTensi != null">
+        cableTensi = #{cableTensi,jdbcType=VARCHAR},
+      </if>
+      <if test="bridgeSite != null">
+        bridgeSite = #{bridgeSite,jdbcType=VARCHAR},
+      </if>
+      <if test="beamqualityCheckTime != null">
+        beamqualityCheckTime = #{beamqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lr.bridge.pojo.BeamQuality">
+    update beamquality
+    set struId = #{struId,jdbcType=VARCHAR},
+      axialDevi = #{axialDevi,jdbcType=VARCHAR},
+      sectionDevi = #{sectionDevi,jdbcType=VARCHAR},
+      topElevDevi = #{topElevDevi,jdbcType=VARCHAR},
+      segmHeightDevi = #{segmHeightDevi,jdbcType=VARCHAR},
+      heightDevi = #{heightDevi,jdbcType=VARCHAR},
+      crossSlopeDevi = #{crossSlopeDevi,jdbcType=VARCHAR},
+      embePartsDevi = #{embePartsDevi,jdbcType=VARCHAR},
+      smooDevi = #{smooDevi,jdbcType=VARCHAR},
+      cableTubeAxisDevi = #{cableTubeAxisDevi,jdbcType=VARCHAR},
+      prestTendDevi = #{prestTendDevi,jdbcType=VARCHAR},
+      cableTensi = #{cableTensi,jdbcType=VARCHAR},
+      bridgeSite = #{bridgeSite,jdbcType=VARCHAR},
+      beamqualityCheckTime = #{beamqualityCheckTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

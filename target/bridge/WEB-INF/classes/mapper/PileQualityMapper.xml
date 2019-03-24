@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lr.bridge.dao.PileQualityMapper">
+  <resultMap id="BaseResultMap" type="com.lr.bridge.pojo.PileQuality">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="struId" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pileDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sediThiDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="vertDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="holeDepthDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="aperDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="mudPropDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="mudSurfDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="rebarDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="conctre" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="fillingFactor" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pileTopDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="pilequalityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, struId, pileDevi, sediThiDevi, vertDevi, holeDepthDevi, aperDevi, mudPropDevi, 
+    mudSurfDevi, rebarDevi, conctre, fillingFactor, pileTopDevi, pilequalityCheckTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from pilequality
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from pilequality
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lr.bridge.pojo.PileQuality">
+    insert into pilequality (id, struId, pileDevi, 
+      sediThiDevi, vertDevi, holeDepthDevi, 
+      aperDevi, mudPropDevi, mudSurfDevi, 
+      rebarDevi, conctre, fillingFactor, 
+      pileTopDevi, pilequalityCheckTime)
+    values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{pileDevi,jdbcType=VARCHAR}, 
+      #{sediThiDevi,jdbcType=VARCHAR}, #{vertDevi,jdbcType=VARCHAR}, #{holeDepthDevi,jdbcType=VARCHAR}, 
+      #{aperDevi,jdbcType=VARCHAR}, #{mudPropDevi,jdbcType=VARCHAR}, #{mudSurfDevi,jdbcType=VARCHAR}, 
+      #{rebarDevi,jdbcType=VARCHAR}, #{conctre,jdbcType=VARCHAR}, #{fillingFactor,jdbcType=VARCHAR}, 
+      #{pileTopDevi,jdbcType=VARCHAR}, #{pilequalityCheckTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lr.bridge.pojo.PileQuality">
+    insert into pilequality
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="struId != null">
+        struId,
+      </if>
+      <if test="pileDevi != null">
+        pileDevi,
+      </if>
+      <if test="sediThiDevi != null">
+        sediThiDevi,
+      </if>
+      <if test="vertDevi != null">
+        vertDevi,
+      </if>
+      <if test="holeDepthDevi != null">
+        holeDepthDevi,
+      </if>
+      <if test="aperDevi != null">
+        aperDevi,
+      </if>
+      <if test="mudPropDevi != null">
+        mudPropDevi,
+      </if>
+      <if test="mudSurfDevi != null">
+        mudSurfDevi,
+      </if>
+      <if test="rebarDevi != null">
+        rebarDevi,
+      </if>
+      <if test="conctre != null">
+        conctre,
+      </if>
+      <if test="fillingFactor != null">
+        fillingFactor,
+      </if>
+      <if test="pileTopDevi != null">
+        pileTopDevi,
+      </if>
+      <if test="pilequalityCheckTime != null">
+        pilequalityCheckTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="struId != null">
+        #{struId,jdbcType=VARCHAR},
+      </if>
+      <if test="pileDevi != null">
+        #{pileDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="sediThiDevi != null">
+        #{sediThiDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="vertDevi != null">
+        #{vertDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="holeDepthDevi != null">
+        #{holeDepthDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="aperDevi != null">
+        #{aperDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="mudPropDevi != null">
+        #{mudPropDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="mudSurfDevi != null">
+        #{mudSurfDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="rebarDevi != null">
+        #{rebarDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="conctre != null">
+        #{conctre,jdbcType=VARCHAR},
+      </if>
+      <if test="fillingFactor != null">
+        #{fillingFactor,jdbcType=VARCHAR},
+      </if>
+      <if test="pileTopDevi != null">
+        #{pileTopDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="pilequalityCheckTime != null">
+        #{pilequalityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lr.bridge.pojo.PileQuality">
+    update pilequality
+    <set>
+      <if test="struId != null">
+        struId = #{struId,jdbcType=VARCHAR},
+      </if>
+      <if test="pileDevi != null">
+        pileDevi = #{pileDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="sediThiDevi != null">
+        sediThiDevi = #{sediThiDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="vertDevi != null">
+        vertDevi = #{vertDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="holeDepthDevi != null">
+        holeDepthDevi = #{holeDepthDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="aperDevi != null">
+        aperDevi = #{aperDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="mudPropDevi != null">
+        mudPropDevi = #{mudPropDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="mudSurfDevi != null">
+        mudSurfDevi = #{mudSurfDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="rebarDevi != null">
+        rebarDevi = #{rebarDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="conctre != null">
+        conctre = #{conctre,jdbcType=VARCHAR},
+      </if>
+      <if test="fillingFactor != null">
+        fillingFactor = #{fillingFactor,jdbcType=VARCHAR},
+      </if>
+      <if test="pileTopDevi != null">
+        pileTopDevi = #{pileTopDevi,jdbcType=VARCHAR},
+      </if>
+      <if test="pilequalityCheckTime != null">
+        pilequalityCheckTime = #{pilequalityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lr.bridge.pojo.PileQuality">
+    update pilequality
+    set struId = #{struId,jdbcType=VARCHAR},
+      pileDevi = #{pileDevi,jdbcType=VARCHAR},
+      sediThiDevi = #{sediThiDevi,jdbcType=VARCHAR},
+      vertDevi = #{vertDevi,jdbcType=VARCHAR},
+      holeDepthDevi = #{holeDepthDevi,jdbcType=VARCHAR},
+      aperDevi = #{aperDevi,jdbcType=VARCHAR},
+      mudPropDevi = #{mudPropDevi,jdbcType=VARCHAR},
+      mudSurfDevi = #{mudSurfDevi,jdbcType=VARCHAR},
+      rebarDevi = #{rebarDevi,jdbcType=VARCHAR},
+      conctre = #{conctre,jdbcType=VARCHAR},
+      fillingFactor = #{fillingFactor,jdbcType=VARCHAR},
+      pileTopDevi = #{pileTopDevi,jdbcType=VARCHAR},
+      pilequalityCheckTime = #{pilequalityCheckTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

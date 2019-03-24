@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lr.bridge.dao.BearingQualityMapper">
+  <resultMap id="BaseResultMap" type="com.lr.bridge.pojo.BearingQuality">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="struId" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="upCentVert" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="downCentTran" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sameCentVert" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sameRela" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="edgeHeig" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="crossLineTors" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="actiVert" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="bearingqualityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, struId, upCentVert, downCentTran, sameCentVert, sameRela, edgeHeig, crossLineTors, 
+    actiVert, bearingqualityCheckTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from bearingquality
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from bearingquality
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lr.bridge.pojo.BearingQuality">
+    insert into bearingquality (id, struId, upCentVert, 
+      downCentTran, sameCentVert, sameRela, 
+      edgeHeig, crossLineTors, actiVert, 
+      bearingqualityCheckTime)
+    values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{upCentVert,jdbcType=VARCHAR}, 
+      #{downCentTran,jdbcType=VARCHAR}, #{sameCentVert,jdbcType=VARCHAR}, #{sameRela,jdbcType=VARCHAR}, 
+      #{edgeHeig,jdbcType=VARCHAR}, #{crossLineTors,jdbcType=VARCHAR}, #{actiVert,jdbcType=VARCHAR}, 
+      #{bearingqualityCheckTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lr.bridge.pojo.BearingQuality">
+    insert into bearingquality
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="struId != null">
+        struId,
+      </if>
+      <if test="upCentVert != null">
+        upCentVert,
+      </if>
+      <if test="downCentTran != null">
+        downCentTran,
+      </if>
+      <if test="sameCentVert != null">
+        sameCentVert,
+      </if>
+      <if test="sameRela != null">
+        sameRela,
+      </if>
+      <if test="edgeHeig != null">
+        edgeHeig,
+      </if>
+      <if test="crossLineTors != null">
+        crossLineTors,
+      </if>
+      <if test="actiVert != null">
+        actiVert,
+      </if>
+      <if test="bearingqualityCheckTime != null">
+        bearingqualityCheckTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="struId != null">
+        #{struId,jdbcType=VARCHAR},
+      </if>
+      <if test="upCentVert != null">
+        #{upCentVert,jdbcType=VARCHAR},
+      </if>
+      <if test="downCentTran != null">
+        #{downCentTran,jdbcType=VARCHAR},
+      </if>
+      <if test="sameCentVert != null">
+        #{sameCentVert,jdbcType=VARCHAR},
+      </if>
+      <if test="sameRela != null">
+        #{sameRela,jdbcType=VARCHAR},
+      </if>
+      <if test="edgeHeig != null">
+        #{edgeHeig,jdbcType=VARCHAR},
+      </if>
+      <if test="crossLineTors != null">
+        #{crossLineTors,jdbcType=VARCHAR},
+      </if>
+      <if test="actiVert != null">
+        #{actiVert,jdbcType=VARCHAR},
+      </if>
+      <if test="bearingqualityCheckTime != null">
+        #{bearingqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lr.bridge.pojo.BearingQuality">
+    update bearingquality
+    <set>
+      <if test="struId != null">
+        struId = #{struId,jdbcType=VARCHAR},
+      </if>
+      <if test="upCentVert != null">
+        upCentVert = #{upCentVert,jdbcType=VARCHAR},
+      </if>
+      <if test="downCentTran != null">
+        downCentTran = #{downCentTran,jdbcType=VARCHAR},
+      </if>
+      <if test="sameCentVert != null">
+        sameCentVert = #{sameCentVert,jdbcType=VARCHAR},
+      </if>
+      <if test="sameRela != null">
+        sameRela = #{sameRela,jdbcType=VARCHAR},
+      </if>
+      <if test="edgeHeig != null">
+        edgeHeig = #{edgeHeig,jdbcType=VARCHAR},
+      </if>
+      <if test="crossLineTors != null">
+        crossLineTors = #{crossLineTors,jdbcType=VARCHAR},
+      </if>
+      <if test="actiVert != null">
+        actiVert = #{actiVert,jdbcType=VARCHAR},
+      </if>
+      <if test="bearingqualityCheckTime != null">
+        bearingqualityCheckTime = #{bearingqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lr.bridge.pojo.BearingQuality">
+    update bearingquality
+    set struId = #{struId,jdbcType=VARCHAR},
+      upCentVert = #{upCentVert,jdbcType=VARCHAR},
+      downCentTran = #{downCentTran,jdbcType=VARCHAR},
+      sameCentVert = #{sameCentVert,jdbcType=VARCHAR},
+      sameRela = #{sameRela,jdbcType=VARCHAR},
+      edgeHeig = #{edgeHeig,jdbcType=VARCHAR},
+      crossLineTors = #{crossLineTors,jdbcType=VARCHAR},
+      actiVert = #{actiVert,jdbcType=VARCHAR},
+      bearingqualityCheckTime = #{bearingqualityCheckTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
