@@ -17,11 +17,13 @@
       <arg column="fillingFactor" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="pileTopDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="pilequalityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="isQualify" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     id, struId, pileDevi, sediThiDevi, vertDevi, holeDepthDevi, aperDevi, mudPropDevi, 
-    mudSurfDevi, rebarDevi, conctre, fillingFactor, pileTopDevi, pilequalityCheckTime
+    mudSurfDevi, rebarDevi, conctre, fillingFactor, pileTopDevi, pilequalityCheckTime, 
+    isQualify
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -38,12 +40,14 @@
       sediThiDevi, vertDevi, holeDepthDevi, 
       aperDevi, mudPropDevi, mudSurfDevi, 
       rebarDevi, conctre, fillingFactor, 
-      pileTopDevi, pilequalityCheckTime)
+      pileTopDevi, pilequalityCheckTime, isQualify
+      )
     values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{pileDevi,jdbcType=VARCHAR}, 
       #{sediThiDevi,jdbcType=VARCHAR}, #{vertDevi,jdbcType=VARCHAR}, #{holeDepthDevi,jdbcType=VARCHAR}, 
       #{aperDevi,jdbcType=VARCHAR}, #{mudPropDevi,jdbcType=VARCHAR}, #{mudSurfDevi,jdbcType=VARCHAR}, 
       #{rebarDevi,jdbcType=VARCHAR}, #{conctre,jdbcType=VARCHAR}, #{fillingFactor,jdbcType=VARCHAR}, 
-      #{pileTopDevi,jdbcType=VARCHAR}, #{pilequalityCheckTime,jdbcType=TIMESTAMP})
+      #{pileTopDevi,jdbcType=VARCHAR}, #{pilequalityCheckTime,jdbcType=TIMESTAMP}, #{isQualify,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.lr.bridge.pojo.PileQuality">
     insert into pilequality
@@ -90,6 +94,9 @@
       <if test="pilequalityCheckTime != null">
         pilequalityCheckTime,
       </if>
+      <if test="isQualify != null">
+        isQualify,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -133,6 +140,9 @@
       </if>
       <if test="pilequalityCheckTime != null">
         #{pilequalityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isQualify != null">
+        #{isQualify,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -178,6 +188,9 @@
       <if test="pilequalityCheckTime != null">
         pilequalityCheckTime = #{pilequalityCheckTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="isQualify != null">
+        isQualify = #{isQualify,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -195,7 +208,8 @@
       conctre = #{conctre,jdbcType=VARCHAR},
       fillingFactor = #{fillingFactor,jdbcType=VARCHAR},
       pileTopDevi = #{pileTopDevi,jdbcType=VARCHAR},
-      pilequalityCheckTime = #{pilequalityCheckTime,jdbcType=TIMESTAMP}
+      pilequalityCheckTime = #{pilequalityCheckTime,jdbcType=TIMESTAMP},
+      isQualify = #{isQualify,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

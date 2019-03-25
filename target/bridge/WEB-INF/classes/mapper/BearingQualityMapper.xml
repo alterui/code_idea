@@ -13,11 +13,12 @@
       <arg column="crossLineTors" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="actiVert" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="bearingqualityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="isQualify" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     id, struId, upCentVert, downCentTran, sameCentVert, sameRela, edgeHeig, crossLineTors, 
-    actiVert, bearingqualityCheckTime
+    actiVert, bearingqualityCheckTime, isQualify
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -33,11 +34,11 @@
     insert into bearingquality (id, struId, upCentVert, 
       downCentTran, sameCentVert, sameRela, 
       edgeHeig, crossLineTors, actiVert, 
-      bearingqualityCheckTime)
+      bearingqualityCheckTime, isQualify)
     values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{upCentVert,jdbcType=VARCHAR}, 
       #{downCentTran,jdbcType=VARCHAR}, #{sameCentVert,jdbcType=VARCHAR}, #{sameRela,jdbcType=VARCHAR}, 
       #{edgeHeig,jdbcType=VARCHAR}, #{crossLineTors,jdbcType=VARCHAR}, #{actiVert,jdbcType=VARCHAR}, 
-      #{bearingqualityCheckTime,jdbcType=TIMESTAMP})
+      #{bearingqualityCheckTime,jdbcType=TIMESTAMP}, #{isQualify,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.lr.bridge.pojo.BearingQuality">
     insert into bearingquality
@@ -72,6 +73,9 @@
       <if test="bearingqualityCheckTime != null">
         bearingqualityCheckTime,
       </if>
+      <if test="isQualify != null">
+        isQualify,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -103,6 +107,9 @@
       </if>
       <if test="bearingqualityCheckTime != null">
         #{bearingqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isQualify != null">
+        #{isQualify,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -136,6 +143,9 @@
       <if test="bearingqualityCheckTime != null">
         bearingqualityCheckTime = #{bearingqualityCheckTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="isQualify != null">
+        isQualify = #{isQualify,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -149,7 +159,17 @@
       edgeHeig = #{edgeHeig,jdbcType=VARCHAR},
       crossLineTors = #{crossLineTors,jdbcType=VARCHAR},
       actiVert = #{actiVert,jdbcType=VARCHAR},
-      bearingqualityCheckTime = #{bearingqualityCheckTime,jdbcType=TIMESTAMP}
+      bearingqualityCheckTime = #{bearingqualityCheckTime,jdbcType=TIMESTAMP},
+      isQualify = #{isQualify,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+    <select id="findAll" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM bearingquality where
+    isQualify= #{isQualify,jdbcType=INTEGER}
+    and 1=1
+    </select>
 </mapper>

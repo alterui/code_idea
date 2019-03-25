@@ -1,7 +1,11 @@
 package com.lr.bridge.service;
 
-import com.lr.bridge.pojo.User;
+import java.util.Map;
 
 public interface UserService {
-	 User getUser(int id);
+    Map<String,String> register(String userName, String password,String repassword);
+    Map<String,String> login(String userName, String password);
+
+
+
 }

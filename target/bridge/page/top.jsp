@@ -37,7 +37,7 @@
                 <a href="javascript:;">质量管理</a>
                 <dl class="layui-nav-child">
                     <dd><a href="">质量验收标准</a></dd>
-                    <dd><a href="">质量验收</a></dd>
+                    <dd><a href="/page/bear">质量验收</a></dd>
                     <dd><a href="">质量可视化管理</a></dd>
                 </dl>
             </li>
@@ -55,13 +55,13 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">
                     <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
-                    管理员
+                    ${userName}
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="">基本资料</a></dd>
                     <dd><a href="">安全设置</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">退出</a></li>
+            <li class="layui-nav-item"><a href="/logout">退出</a></li>
         </ul>
     </div>

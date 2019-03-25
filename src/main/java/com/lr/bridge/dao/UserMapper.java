@@ -1,7 +1,10 @@
 package com.lr.bridge.dao;
 
 import com.lr.bridge.pojo.User;
+import org.springframework.stereotype.Repository;
 
+
+@Repository
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +17,6 @@ public interface UserMapper {
     int updateByPrimaryKeySelective(User record);
 
     int updateByPrimaryKey(User record);
+
+    User selectByUserName(String userName);
 }
