@@ -25,7 +25,9 @@ public class PierQuality {
 
     private Date pierqualityCheckTime;
 
-    public PierQuality(Integer id, String struId, String length, String width, String topElev, String axisOffs, String vert, String surfVert, String planeness, String inteFaultTable, Date pierqualityCheckTime) {
+    private Integer isQualify;
+
+    public PierQuality(Integer id, String struId, String length, String width, String topElev, String axisOffs, String vert, String surfVert, String planeness, String inteFaultTable, Date pierqualityCheckTime, Integer isQualify) {
         this.id = id;
         this.struId = struId;
         this.length = length;
@@ -37,6 +39,7 @@ public class PierQuality {
         this.planeness = planeness;
         this.inteFaultTable = inteFaultTable;
         this.pierqualityCheckTime = pierqualityCheckTime;
+        this.isQualify = isQualify;
     }
 
     public PierQuality() {
@@ -129,5 +132,13 @@ public class PierQuality {
 
     public void setPierqualityCheckTime(Date pierqualityCheckTime) {
         this.pierqualityCheckTime = pierqualityCheckTime;
+    }
+
+    public Integer getIsQualify() {
+        return isQualify;
+    }
+
+    public void setIsQualify(Integer isQualify) {
+        this.isQualify = isQualify;
     }
 }

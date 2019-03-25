@@ -31,7 +31,9 @@ public class PileQuality {
 
     private Date pilequalityCheckTime;
 
-    public PileQuality(Integer id, String struId, String pileDevi, String sediThiDevi, String vertDevi, String holeDepthDevi, String aperDevi, String mudPropDevi, String mudSurfDevi, String rebarDevi, String conctre, String fillingFactor, String pileTopDevi, Date pilequalityCheckTime) {
+    private Integer isQualify;
+
+    public PileQuality(Integer id, String struId, String pileDevi, String sediThiDevi, String vertDevi, String holeDepthDevi, String aperDevi, String mudPropDevi, String mudSurfDevi, String rebarDevi, String conctre, String fillingFactor, String pileTopDevi, Date pilequalityCheckTime, Integer isQualify) {
         this.id = id;
         this.struId = struId;
         this.pileDevi = pileDevi;
@@ -46,6 +48,7 @@ public class PileQuality {
         this.fillingFactor = fillingFactor;
         this.pileTopDevi = pileTopDevi;
         this.pilequalityCheckTime = pilequalityCheckTime;
+        this.isQualify = isQualify;
     }
 
     public PileQuality() {
@@ -162,5 +165,13 @@ public class PileQuality {
 
     public void setPilequalityCheckTime(Date pilequalityCheckTime) {
         this.pilequalityCheckTime = pilequalityCheckTime;
+    }
+
+    public Integer getIsQualify() {
+        return isQualify;
+    }
+
+    public void setIsQualify(Integer isQualify) {
+        this.isQualify = isQualify;
     }
 }

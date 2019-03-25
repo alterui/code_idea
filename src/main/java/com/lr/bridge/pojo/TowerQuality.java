@@ -33,7 +33,9 @@ public class TowerQuality {
 
     private Date towerqualityCheckTime;
 
-    public TowerQuality(Integer id, String struId, String axisDevi, String crossDimeDevi, String vert, String coluWallThic, String anchnDevi, String cableAxisDevi, String crossbeamDimeDevi, String crossbeamTopDevi, String crossbeamAxisDevi, String crossbeamThicDevi, String embePartsDevi, String jointDisl, Date towerqualityCheckTime) {
+    private Integer isQualify;
+
+    public TowerQuality(Integer id, String struId, String axisDevi, String crossDimeDevi, String vert, String coluWallThic, String anchnDevi, String cableAxisDevi, String crossbeamDimeDevi, String crossbeamTopDevi, String crossbeamAxisDevi, String crossbeamThicDevi, String embePartsDevi, String jointDisl, Date towerqualityCheckTime, Integer isQualify) {
         this.id = id;
         this.struId = struId;
         this.axisDevi = axisDevi;
@@ -49,6 +51,7 @@ public class TowerQuality {
         this.embePartsDevi = embePartsDevi;
         this.jointDisl = jointDisl;
         this.towerqualityCheckTime = towerqualityCheckTime;
+        this.isQualify = isQualify;
     }
 
     public TowerQuality() {
@@ -173,5 +176,13 @@ public class TowerQuality {
 
     public void setTowerqualityCheckTime(Date towerqualityCheckTime) {
         this.towerqualityCheckTime = towerqualityCheckTime;
+    }
+
+    public Integer getIsQualify() {
+        return isQualify;
+    }
+
+    public void setIsQualify(Integer isQualify) {
+        this.isQualify = isQualify;
     }
 }

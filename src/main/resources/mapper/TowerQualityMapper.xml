@@ -18,12 +18,13 @@
       <arg column="embePartsDevi" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="jointDisl" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="towerqualityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="isQualify" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     id, struId, axisDevi, crossDimeDevi, vert, coluWallThic, anchnDevi, cableAxisDevi, 
     crossbeamDimeDevi, crossbeamTopDevi, crossbeamAxisDevi, crossbeamThicDevi, embePartsDevi, 
-    jointDisl, towerqualityCheckTime
+    jointDisl, towerqualityCheckTime, isQualify
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -40,14 +41,14 @@
       crossDimeDevi, vert, coluWallThic, 
       anchnDevi, cableAxisDevi, crossbeamDimeDevi, 
       crossbeamTopDevi, crossbeamAxisDevi, crossbeamThicDevi, 
-      embePartsDevi, jointDisl, towerqualityCheckTime
-      )
+      embePartsDevi, jointDisl, towerqualityCheckTime, 
+      isQualify)
     values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{axisDevi,jdbcType=VARCHAR}, 
       #{crossDimeDevi,jdbcType=VARCHAR}, #{vert,jdbcType=VARCHAR}, #{coluWallThic,jdbcType=VARCHAR}, 
       #{anchnDevi,jdbcType=VARCHAR}, #{cableAxisDevi,jdbcType=VARCHAR}, #{crossbeamDimeDevi,jdbcType=VARCHAR}, 
       #{crossbeamTopDevi,jdbcType=VARCHAR}, #{crossbeamAxisDevi,jdbcType=VARCHAR}, #{crossbeamThicDevi,jdbcType=VARCHAR}, 
-      #{embePartsDevi,jdbcType=VARCHAR}, #{jointDisl,jdbcType=VARCHAR}, #{towerqualityCheckTime,jdbcType=TIMESTAMP}
-      )
+      #{embePartsDevi,jdbcType=VARCHAR}, #{jointDisl,jdbcType=VARCHAR}, #{towerqualityCheckTime,jdbcType=TIMESTAMP}, 
+      #{isQualify,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.lr.bridge.pojo.TowerQuality">
     insert into towerquality
@@ -97,6 +98,9 @@
       <if test="towerqualityCheckTime != null">
         towerqualityCheckTime,
       </if>
+      <if test="isQualify != null">
+        isQualify,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -143,6 +147,9 @@
       </if>
       <if test="towerqualityCheckTime != null">
         #{towerqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isQualify != null">
+        #{isQualify,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -191,6 +198,9 @@
       <if test="towerqualityCheckTime != null">
         towerqualityCheckTime = #{towerqualityCheckTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="isQualify != null">
+        isQualify = #{isQualify,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -209,7 +219,8 @@
       crossbeamThicDevi = #{crossbeamThicDevi,jdbcType=VARCHAR},
       embePartsDevi = #{embePartsDevi,jdbcType=VARCHAR},
       jointDisl = #{jointDisl,jdbcType=VARCHAR},
-      towerqualityCheckTime = #{towerqualityCheckTime,jdbcType=TIMESTAMP}
+      towerqualityCheckTime = #{towerqualityCheckTime,jdbcType=TIMESTAMP},
+      isQualify = #{isQualify,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

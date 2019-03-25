@@ -18,12 +18,13 @@
       <arg column="cableTensi" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="bridgeSite" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="beamqualityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="isQualify" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     id, struId, axialDevi, sectionDevi, topElevDevi, segmHeightDevi, heightDevi, crossSlopeDevi, 
     embePartsDevi, smooDevi, cableTubeAxisDevi, prestTendDevi, cableTensi, bridgeSite, 
-    beamqualityCheckTime
+    beamqualityCheckTime, isQualify
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -40,14 +41,14 @@
       sectionDevi, topElevDevi, segmHeightDevi, 
       heightDevi, crossSlopeDevi, embePartsDevi, 
       smooDevi, cableTubeAxisDevi, prestTendDevi, 
-      cableTensi, bridgeSite, beamqualityCheckTime
-      )
+      cableTensi, bridgeSite, beamqualityCheckTime, 
+      isQualify)
     values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{axialDevi,jdbcType=VARCHAR}, 
       #{sectionDevi,jdbcType=VARCHAR}, #{topElevDevi,jdbcType=VARCHAR}, #{segmHeightDevi,jdbcType=VARCHAR}, 
       #{heightDevi,jdbcType=VARCHAR}, #{crossSlopeDevi,jdbcType=VARCHAR}, #{embePartsDevi,jdbcType=VARCHAR}, 
       #{smooDevi,jdbcType=VARCHAR}, #{cableTubeAxisDevi,jdbcType=VARCHAR}, #{prestTendDevi,jdbcType=VARCHAR}, 
-      #{cableTensi,jdbcType=VARCHAR}, #{bridgeSite,jdbcType=VARCHAR}, #{beamqualityCheckTime,jdbcType=TIMESTAMP}
-      )
+      #{cableTensi,jdbcType=VARCHAR}, #{bridgeSite,jdbcType=VARCHAR}, #{beamqualityCheckTime,jdbcType=TIMESTAMP}, 
+      #{isQualify,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.lr.bridge.pojo.BeamQuality">
     insert into beamquality
@@ -97,6 +98,9 @@
       <if test="beamqualityCheckTime != null">
         beamqualityCheckTime,
       </if>
+      <if test="isQualify != null">
+        isQualify,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -143,6 +147,9 @@
       </if>
       <if test="beamqualityCheckTime != null">
         #{beamqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isQualify != null">
+        #{isQualify,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -191,6 +198,9 @@
       <if test="beamqualityCheckTime != null">
         beamqualityCheckTime = #{beamqualityCheckTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="isQualify != null">
+        isQualify = #{isQualify,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -209,7 +219,8 @@
       prestTendDevi = #{prestTendDevi,jdbcType=VARCHAR},
       cableTensi = #{cableTensi,jdbcType=VARCHAR},
       bridgeSite = #{bridgeSite,jdbcType=VARCHAR},
-      beamqualityCheckTime = #{beamqualityCheckTime,jdbcType=TIMESTAMP}
+      beamqualityCheckTime = #{beamqualityCheckTime,jdbcType=TIMESTAMP},
+      isQualify = #{isQualify,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -23,7 +23,9 @@ public class BearingQuality {
 
     private Date bearingqualityCheckTime;
 
-    public BearingQuality(Integer id, String struId, String upCentVert, String downCentTran, String sameCentVert, String sameRela, String edgeHeig, String crossLineTors, String actiVert, Date bearingqualityCheckTime) {
+    private Integer isQualify;
+
+    public BearingQuality(Integer id, String struId, String upCentVert, String downCentTran, String sameCentVert, String sameRela, String edgeHeig, String crossLineTors, String actiVert, Date bearingqualityCheckTime, Integer isQualify) {
         this.id = id;
         this.struId = struId;
         this.upCentVert = upCentVert;
@@ -34,6 +36,7 @@ public class BearingQuality {
         this.crossLineTors = crossLineTors;
         this.actiVert = actiVert;
         this.bearingqualityCheckTime = bearingqualityCheckTime;
+        this.isQualify = isQualify;
     }
 
     public BearingQuality() {
@@ -118,5 +121,13 @@ public class BearingQuality {
 
     public void setBearingqualityCheckTime(Date bearingqualityCheckTime) {
         this.bearingqualityCheckTime = bearingqualityCheckTime;
+    }
+
+    public Integer getIsQualify() {
+        return isQualify;
+    }
+
+    public void setIsQualify(Integer isQualify) {
+        this.isQualify = isQualify;
     }
 }

@@ -2,10 +2,10 @@ package com.lr.bridge.service.impl;
 
 import javax.annotation.Resource;
 
+import com.lr.bridge.dao.UserMapper;
 import com.lr.bridge.pojo.User;
 import org.springframework.stereotype.Service;
 
-import com.lr.bridge.dao.UserMapper;
 import com.lr.bridge.service.UserService;
 
 @Service

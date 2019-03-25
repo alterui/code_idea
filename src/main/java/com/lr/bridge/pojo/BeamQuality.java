@@ -33,7 +33,9 @@ public class BeamQuality {
 
     private Date beamqualityCheckTime;
 
-    public BeamQuality(Integer id, String struId, String axialDevi, String sectionDevi, String topElevDevi, String segmHeightDevi, String heightDevi, String crossSlopeDevi, String embePartsDevi, String smooDevi, String cableTubeAxisDevi, String prestTendDevi, String cableTensi, String bridgeSite, Date beamqualityCheckTime) {
+    private Integer isQualify;
+
+    public BeamQuality(Integer id, String struId, String axialDevi, String sectionDevi, String topElevDevi, String segmHeightDevi, String heightDevi, String crossSlopeDevi, String embePartsDevi, String smooDevi, String cableTubeAxisDevi, String prestTendDevi, String cableTensi, String bridgeSite, Date beamqualityCheckTime, Integer isQualify) {
         this.id = id;
         this.struId = struId;
         this.axialDevi = axialDevi;
@@ -49,6 +51,7 @@ public class BeamQuality {
         this.cableTensi = cableTensi;
         this.bridgeSite = bridgeSite;
         this.beamqualityCheckTime = beamqualityCheckTime;
+        this.isQualify = isQualify;
     }
 
     public BeamQuality() {
@@ -173,5 +176,13 @@ public class BeamQuality {
 
     public void setBeamqualityCheckTime(Date beamqualityCheckTime) {
         this.beamqualityCheckTime = beamqualityCheckTime;
+    }
+
+    public Integer getIsQualify() {
+        return isQualify;
+    }
+
+    public void setIsQualify(Integer isQualify) {
+        this.isQualify = isQualify;
     }
 }

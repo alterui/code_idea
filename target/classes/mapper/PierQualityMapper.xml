@@ -14,11 +14,12 @@
       <arg column="planeness" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="inteFaultTable" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="pierqualityCheckTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="isQualify" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     id, struId, length, width, topElev, axisOffs, vert, surfVert, planeness, inteFaultTable, 
-    pierqualityCheckTime
+    pierqualityCheckTime, isQualify
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -34,11 +35,13 @@
     insert into pierquality (id, struId, length, 
       width, topElev, axisOffs, 
       vert, surfVert, planeness, 
-      inteFaultTable, pierqualityCheckTime)
+      inteFaultTable, pierqualityCheckTime, 
+      isQualify)
     values (#{id,jdbcType=INTEGER}, #{struId,jdbcType=VARCHAR}, #{length,jdbcType=VARCHAR}, 
       #{width,jdbcType=VARCHAR}, #{topElev,jdbcType=VARCHAR}, #{axisOffs,jdbcType=VARCHAR}, 
       #{vert,jdbcType=VARCHAR}, #{surfVert,jdbcType=VARCHAR}, #{planeness,jdbcType=VARCHAR}, 
-      #{inteFaultTable,jdbcType=VARCHAR}, #{pierqualityCheckTime,jdbcType=TIMESTAMP})
+      #{inteFaultTable,jdbcType=VARCHAR}, #{pierqualityCheckTime,jdbcType=TIMESTAMP}, 
+      #{isQualify,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.lr.bridge.pojo.PierQuality">
     insert into pierquality
@@ -76,6 +79,9 @@
       <if test="pierqualityCheckTime != null">
         pierqualityCheckTime,
       </if>
+      <if test="isQualify != null">
+        isQualify,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -110,6 +116,9 @@
       </if>
       <if test="pierqualityCheckTime != null">
         #{pierqualityCheckTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isQualify != null">
+        #{isQualify,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -146,6 +155,9 @@
       <if test="pierqualityCheckTime != null">
         pierqualityCheckTime = #{pierqualityCheckTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="isQualify != null">
+        isQualify = #{isQualify,jdbcType=INTEGER},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -160,7 +172,8 @@
       surfVert = #{surfVert,jdbcType=VARCHAR},
       planeness = #{planeness,jdbcType=VARCHAR},
       inteFaultTable = #{inteFaultTable,jdbcType=VARCHAR},
-      pierqualityCheckTime = #{pierqualityCheckTime,jdbcType=TIMESTAMP}
+      pierqualityCheckTime = #{pierqualityCheckTime,jdbcType=TIMESTAMP},
+      isQualify = #{isQualify,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
