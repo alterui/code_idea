@@ -23,7 +23,7 @@
     <style type="text/css">
         body{
             font-family: "Microsoft YaHei", Helvetica, Arial, Lucida Grande, Tahoma, sans-serif;
-            background-image: url('${ctx}/img/bg.jpg');
+            background-image: url('${ctx}/static/img/bg.jpg');
             background-size:cover
         }
     </style>

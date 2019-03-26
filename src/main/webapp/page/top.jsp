@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>南京浦仪大桥信息协同平台质量环保子系统</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/layui.js">
 
     <script>
         //JavaScript代码区域
