@@ -19,9 +19,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <c:set var="ctx" value="${pageContext.request.contextPath}" />
-        <link rel="stylesheet" href="${ctx}/layui/css/layui.css" >
-        <script src="${ctx}/layui/layui.all.js"></script>
-        <script src="${ctx}/layui/layui.js"></script>
+        <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" >
+        <script src="${ctx}/static/layui/layui.all.js"></script>
+        <script src="${ctx}/static/layui/layui.js"></script>
         <script type="text/javascript">
             //JavaScript代码区域
             layui.use('element', function(){

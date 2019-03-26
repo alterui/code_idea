@@ -18,9 +18,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>注册页</title>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
-    <link rel="stylesheet" href="${ctx}/layui/css/layui.css" >
-    <link rel="stylesheet" href="${ctx}/layui/layui.all.js" >
-    <link rel="stylesheet" href="${ctx}/layui/layui.js" >
+    <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" >
+    <link rel="stylesheet" href="${ctx}/static/layui/layui.all.js" >
+    <link rel="stylesheet" href="${ctx}/static/layui/layui.js" >
     <link rel="stylesheet" href="${ctx}/static/css/style.css" >
 
 

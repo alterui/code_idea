@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>南京浦仪大桥信息协同平台质量环保子系统</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/layui/css/layui.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/layui/css/layui.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -125,7 +125,7 @@
         © 2019 南京浦仪大桥
     </div>
 </div>
-<script src="${pageContext.request.contextPath}/layui/layui.js"></script>
+<script src="${pageContext.request.contextPath}/static/layui/layui.js"></script>
 <script>
     //JavaScript代码区域
     layui.use('element', function(){

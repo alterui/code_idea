@@ -4,11 +4,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
+
 <div class="layui-tab layui-tab-card">
+
+
     <form  method="post">
         <input type="hidden" name="currentUrl" id="currentUrl" value="">
         <table class="layui-table">
             <colgroup>
+                <col width="200">
                 <col width="200">
                 <col width="200">
                 <col width="200">
@@ -75,16 +79,43 @@
                                         pattern="yyyy-MM-dd HH:mm:ss"/>
                     </td>
                     <td>
+                        <div class="layui-form-item">
 
+                            <div class="layui-input-block">
+                                <input type="radio" name="${bear.id}" value="男" title="男" checked="checked">
+                                <input type="radio" name="${bear.id}" value="女" title="女">
 
-                        <a class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
+                            </div>
+                        </div>
+<%--
+
+                      合格<input type="radio" name="sex_${bear.id}" value="合格"  checked="checked">
+                      不合格<input type="radio" name="sex_${bear.id}" value="不合格" >
+--%>
+
                     </td>
 
                 </tr>
             </c:forEach>
             </tbody>
         </table>
+
+
     </form>
+
+    <script type="text/javascript">
+
+        layui.use('form',function(){
+            var form = layui.form;
+
+            //刷新界面 所有元素
+
+            form.render();
+
+        });
+
+
+    </script>
 
     <div class=".layui-location-block">
         <c:if test="${pageInfo.pages > 1}">
