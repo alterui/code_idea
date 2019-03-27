@@ -18,6 +18,8 @@ import java.util.List;
 @Service
 public class BearingQualityServiceImpl implements BearingQualityService {
 
+
+
     @Resource
     private BearingQualityMapper bearingQualityMapper;
     @Override
@@ -31,4 +33,53 @@ public class BearingQualityServiceImpl implements BearingQualityService {
 
 
     }
+
+    /**
+     * 支座分页显示
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @Override
+    public PageInfo<BearingQuality> showBear(Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> bearingQualityList = bearingQualityMapper.selectById();
+        return new PageInfo<BearingQuality>(bearingQualityList);
+    }
+
+
+    @Override
+    public List<BearingQuality> getBearingStruId() {
+        return bearingQualityMapper.selectById();
+    }
+
+    /**
+     * 删除
+     * @param id
+     * @return
+     */
+    @Override
+    public int deleteById(Integer id) {
+        return bearingQualityMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByIsQualify(int isQualify, int id) {
+       return bearingQualityMapper.updateByIsQualify(isQualify, id);
+    }
+
+
+    public BearingQuality selectByPrimaryKey(Integer id){
+        return bearingQualityMapper.selectByPrimaryKey(id);
+    }
+
+     public int insert(BearingQuality record){
+         return bearingQualityMapper.insert(record);
+     }
+
+    public int updateByPrimaryKey(BearingQuality record){
+        return bearingQualityMapper.updateByPrimaryKey(record);
+    }
+
+
 }

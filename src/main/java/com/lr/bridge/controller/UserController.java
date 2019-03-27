@@ -21,6 +21,8 @@ public class UserController {
     public String register(HttpServletRequest request,
                           Model model) {
 
+        System.out.println(11);
+
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String repassword = request.getParameter("repassword");

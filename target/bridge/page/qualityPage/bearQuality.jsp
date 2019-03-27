@@ -54,6 +54,8 @@
             display: inline-block;
             width: 33.333% !important;
         }
+
+
     </style>
 
 
@@ -73,7 +75,7 @@
                 <div class="layui-tab layui-tab-card">
 
 
-                    <form   method="post" >
+                    <form   method="post"  action="/page/bear/qualified">
                         <input type="hidden" name="currentUrl" id="currentUrl" value="">
                         <table class="layui-table">
                             <colgroup>
@@ -110,6 +112,7 @@
                             <c:forEach items="${pageInfo.list}" var="bear">
                                 <tr>
                                     <td>
+                                            <input type="hidden" name="id" value="${bear.id}">
                                             ${bear.struId}
                                     </td>
                                     <td>
@@ -144,13 +147,11 @@
                                                         pattern="yyyy-MM-dd HH:mm:ss"/>
                                     </td>
                                     <td>
-                                        合格<input type="radio" name="sex_${bear.id}" value="合格"  checked="checked">
-                                        不合格<input type="radio" name="sex_${bear.id}" value="不合格" >
-                                            <%--
+                                        合格<input  type="radio" name="bear_${bear.id}" value="1"  checked="checked"
 
-                                             合格<input type="radio" name="sex_${bear.id}" value="合格"  checked="checked">
-                                              不合格<input type="radio" name="sex_${bear.id}" value="不合格" >
-                                            --%>
+                                                >&nbsp;&nbsp;
+                                        不合格<input type="radio" name="bear_${bear.id}" value="0" >
+
 
                                     </td>
 

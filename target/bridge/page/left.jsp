@@ -39,51 +39,52 @@
 
             </div>
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">主梁</a>
-                    <dl class="layui-nav-child">
+                <li class="layui-nav-item ">
+                    <a class="" href="${ctx}/page/crudPage/beamCrudPage.jsp">主梁</a>
+                   <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
                         <dd><a href="javascript:;">列表三</a></dd>
                         <dd><a href="">超链接</a></dd>
-                    </dl>
+                    </dl>--%>
                 </li>
 
 
                 <li class="layui-nav-item">
-                    <a href="javascript:;">支座</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>
+                    <a href="/page/bear/show">支座</a>
+                    <%--<dl class="layui-nav-child">
+                        <c:forEach items="${bearName}" var="name">
+                            <dd><a href="javascript:;">${name.struId}</a></dd>
+                        </c:forEach>
+
+                    </dl>--%>
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="javascript:;">桥墩</a>
-                    <dl class="layui-nav-child">
+                    <a href="${ctx}/page/crudPage/pierCrudPage.jsp">桥墩</a>
+                   <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
                         <dd><a href="">超链接</a></dd>
-                    </dl>
+                    </dl>--%>
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="javascript:;">桩</a>
-                    <dl class="layui-nav-child">
+                    <a href="${ctx}/page/crudPage/pileCrudPage.jsp">桩</a>
+                   <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
                         <dd><a href="">超链接</a></dd>
-                    </dl>
+                    </dl>--%>
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="javascript:;">锁塔</a>
-                    <dl class="layui-nav-child">
+                    <a href="${ctx}/page/crudPage/towerCrudPage.jsp">锁塔</a>
+                    <%--<dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
                         <dd><a href="">超链接</a></dd>
-                    </dl>
+                    </dl>--%>
                 </li>
 
             </ul>

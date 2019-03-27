@@ -170,6 +170,23 @@
     *
     FROM bearingquality where
     isQualify= #{isQualify,jdbcType=INTEGER}
-    and 1=1
     </select>
+
+
+ <update id="updateByIsQualify" parameterType="java.lang.Integer">
+    update bearingquality
+    set
+      isQualify = #{isQualify,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <select id="selectById"  resultMap="BaseResultMap">
+        select
+        *
+        from bearingquality where
+        id > 1
+    </select>
+
+
 </mapper>
