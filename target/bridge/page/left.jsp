@@ -30,7 +30,16 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <div >
                 <style>
-                    .div-height{ width:300px; height:35px}
+                    .div-height{ width:100px; height:35px}
+
+
+                  .center {
+                      text-align: center;
+
+
+
+                  }
+
                 </style>
                 <li class="layui-nav-item">
                     <a href=""><div class="div-height"><font size="5" color="#e6e6fa">结构分布</font></div></a>
@@ -40,7 +49,7 @@
             </div>
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item ">
-                    <a class="" href="${ctx}/page/crudPage/beamCrudPage.jsp">主梁</a>
+                    <a class="" href="${ctx}/page/crudPage/beamCrudPage.jsp"><div class="center"><font size="4">主梁质量验收数据</font> </div></a>
                    <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
@@ -51,7 +60,7 @@
 
 
                 <li class="layui-nav-item">
-                    <a href="/page/bear/show">支座</a>
+                    <a href="/page/bear/show"><div class="center"><font size="4">支座质量验收数据</font></div></a>
                     <%--<dl class="layui-nav-child">
                         <c:forEach items="${bearName}" var="name">
                             <dd><a href="javascript:;">${name.struId}</a></dd>
@@ -61,7 +70,7 @@
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/pierCrudPage.jsp">桥墩</a>
+                    <a href="${ctx}/page/crudPage/pierCrudPage.jsp"><div class="center"><font size="4">桥墩质量验收数据</font></div></a>
                    <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
@@ -70,7 +79,7 @@
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/pileCrudPage.jsp">桩</a>
+                    <a href="${ctx}/page/crudPage/pileCrudPage.jsp"><div class="center"><font size="4">桩质量验收数据</font></div></a>
                    <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
@@ -79,7 +88,7 @@
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/towerCrudPage.jsp">锁塔</a>
+                    <a href="${ctx}/page/crudPage/towerCrudPage.jsp"><div class="center"></div></a>
                     <%--<dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>

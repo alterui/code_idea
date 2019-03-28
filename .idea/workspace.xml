@@ -11,30 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2830dbe2-521c-4d84-b23c-6d5e66b062bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/page/crudPage/bearAddPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ALTERUI.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ALTERUI.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/img/tx.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/crudPage/bearCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/crudPage/bearCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/crudPage/bearEditPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/crudPage/bearEditPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/top.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BearingQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BearingQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/BearingQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/BearingQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/BearingQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/BearingQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/BearingQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/BearingQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/page/crudPage/bearCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/page/crudPage/bearCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/page/crudPage/bearEditPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/page/crudPage/bearEditPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BearingQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BearingQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/BearingQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/BearingQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/BearingQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/BearingQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/BearingQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/BearingQualityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/page/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/page/left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/page/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/page/top.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,26 +33,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/page/crudPage/beamCrudPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="236" column="75" selection-start-line="236" selection-start-column="75" selection-end-line="236" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="744">
+              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/page/crudPage/bearAddPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="28" column="55" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="3576">
+              <caret line="149" column="83" selection-start-line="149" selection-start-column="83" selection-end-line="149" selection-end-column="83" />
             </state>
           </provider>
         </entry>
@@ -77,7 +54,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="4680">
               <caret line="195" column="51" selection-start-line="195" selection-start-column="51" selection-end-line="195" selection-end-column="51" />
             </state>
           </provider>
@@ -86,13 +63,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/page/crudPage/bearEditPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="62" selection-start-line="53" selection-start-column="11" selection-end-line="62" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="1200">
+              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/page/left.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1944">
+              <caret line="81" column="117" selection-start-line="81" selection-start-column="117" selection-end-line="81" selection-end-column="117" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/page/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/page/top.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="245">
+              <caret line="57" column="82" selection-start-line="57" selection-start-column="82" selection-end-line="57" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -102,11 +101,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2784">
               <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
+            <state relative-caret-position="1512">
               <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -136,7 +130,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
+            <state relative-caret-position="888">
               <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
             </state>
           </provider>
@@ -215,7 +209,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/page/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/qualityStandard.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/top.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/test.xhtml" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/test.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/util/JSONUtil.java" />
@@ -226,7 +219,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/page/crudPage/pierCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/crudPage/pileCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/crudPage/towerCrudPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/left.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/back.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/crudPage/bearAddPage.jsp" />
@@ -238,6 +230,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/crudPage/bearCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/left.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/top.jsp" />
       </list>
     </option>
   </component>
@@ -288,7 +282,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="480" />
     <option name="y" value="540" />
     <option name="width" value="1235" />
@@ -304,6 +298,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -435,50 +430,7 @@
               <item name="bridge" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="crudPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="qualityPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="qualityTable" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
@@ -495,49 +447,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-              <item name="font" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
@@ -549,7 +459,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -566,21 +475,21 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\bridge\src\main\webapp\static\img" />
+      <recent name="D:\code\bridge\src\main\webapp\static\css" />
+      <recent name="D:\code\bridge\src\main\webapp\page\crudPage" />
+      <recent name="D:\code\bridge\src\main\webapp\static\js" />
+      <recent name="D:\code\bridge\src\main\webapp\page" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lr.bridge.controller" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\code\bridge\src\main\webapp\static" />
       <recent name="D:\code\bridge\src\main\webapp\page\qualityPage" />
       <recent name="D:\code\bridge\src\main\webapp" />
       <recent name="D:\code\bridge\src\main\webapp\WEB-INF" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lr.bridge.controller" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\bridge\src\main\webapp\static\css" />
-      <recent name="D:\code\bridge\src\main\webapp\page\crudPage" />
-      <recent name="D:\code\bridge\src\main\webapp\static\js" />
-      <recent name="D:\code\bridge\src\main\webapp\page" />
-      <recent name="D:\code\bridge\src\main\webapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -707,12 +616,14 @@
       <workItem from="1553674019153" duration="16214000" />
       <workItem from="1553737847487" duration="5231000" />
       <workItem from="1553743500547" duration="512000" />
-      <workItem from="1553744049085" duration="10866000" />
+      <workItem from="1553744049085" duration="11465000" />
+      <workItem from="1553773407810" duration="2482000" />
+      <workItem from="1553775935251" duration="238000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144119000" />
+    <option name="totallyTimeSpent" value="147438000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -727,7 +638,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8967611" visible="true" weight="0.08512064" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8967611" visible="true" weight="0.2580429" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -737,7 +648,7 @@
       <window_info id="Web" order="7" sideWeight="0.103238866" side_tool="true" weight="0.21313673" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49865952" visible="true" weight="0.061452515" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49865952" weight="0.3226257" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.08100559" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -902,20 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/top.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="40" column="40" lean-forward="true" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/page/index_bp.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1104">
@@ -955,13 +852,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6456">
           <caret line="269" column="6" selection-end-line="269" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/left.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
@@ -1054,24 +944,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/crudPage/bearAddPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3576">
-          <caret line="149" column="83" selection-start-line="149" selection-start-column="83" selection-end-line="149" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/page/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1224">
           <caret line="51" column="14" selection-start-line="48" selection-start-column="8" selection-end-line="51" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/crudPage/beamCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="744">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1109,39 +985,65 @@
         <state relative-caret-position="-360" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="28" column="55" lean-forward="true" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="55" />
+        <state relative-caret-position="-68">
+          <caret line="236" column="75" selection-start-line="236" selection-start-column="75" selection-end-line="236" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="28" column="55" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/crudPage/beamCrudPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/crudPage/bearAddPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3576">
+          <caret line="149" column="83" selection-start-line="149" selection-start-column="83" selection-end-line="149" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="4680">
           <caret line="195" column="51" selection-start-line="195" selection-start-column="51" selection-end-line="195" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/page/crudPage/bearEditPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="62" selection-start-line="53" selection-start-column="11" selection-end-line="62" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1200">
+          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/left.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1944">
+          <caret line="81" column="117" selection-start-line="81" selection-start-column="117" selection-end-line="81" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -1149,17 +1051,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2784">
           <caret line="116" column="29" selection-start-line="116" selection-start-column="29" selection-end-line="116" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
+        <state relative-caret-position="1512">
           <caret line="83" column="19" selection-start-line="83" selection-start-column="19" selection-end-line="83" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1177,13 +1074,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="236" column="75" selection-start-line="236" selection-start-column="75" selection-end-line="236" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="888">
+          <caret line="41" column="62" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/top.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="57" column="82" selection-start-line="57" selection-start-column="82" selection-end-line="57" selection-end-column="82" />
         </state>
       </provider>
     </entry>
