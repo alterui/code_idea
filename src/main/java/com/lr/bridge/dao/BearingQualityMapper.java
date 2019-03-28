@@ -26,5 +26,7 @@ public interface BearingQualityMapper {
 
     List<BearingQuality> selectById();
 
+    List<BearingQuality> selectByLikeName(String name);
+
 
 }

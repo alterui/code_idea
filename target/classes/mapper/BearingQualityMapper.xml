@@ -189,4 +189,12 @@
     </select>
 
 
+    <select id="selectByLikeName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from bearingquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+    </select>
+
+
 </mapper>

@@ -31,7 +31,7 @@
     <script src="${ctx}/layui/layui.js"></script>
 
 
-    <script type="text/javascript" >
+    <script type="text/javascript">
         //JavaScript代码区域
         layui.use('element', function () {
             var element = layui.element;
@@ -57,10 +57,11 @@
 
                 window.location.href = "${pageContext.request.contextPath}/page/bear/delete/" + id;
 
-/*
-                $.ajax({
-                    type: "POST",  //提交方式
-                    url: "${pageContext.request.contextPath}/page/bear/delete/" + id,//路径
+                /*
+                                $.ajax({
+                                    type: "POST",  //提交方式
+                                    url: "
+                ${pageContext.request.contextPath}/page/bear/delete/" + id,//路径
                     dataType: "text",
                     success: function (result) {//返回数据根据结果进行相应的处理
                         if (result.success) {
@@ -103,7 +104,8 @@
                 /*覆盖 layui*/
                 .layui-input {
                     display: inline-block;
-                    width: 33.333% !important;
+                    width: 15% !important;
+
                 }
 
 
@@ -111,11 +113,28 @@
 
 
             <blockquote class="layui-elem-quote">
-                <span class="layui-breadcrumb" lay-separator="/">
+                <span class="layui-breadcrumb" lay-separator="|">
                   <a>当前位置</a>
-                  <a><cite>梁质量数据</cite></a>
+                  <a href="/page/bear/show"><font color="#228b22">支座质量数据</font></a>
                 </span>
             </blockquote>
+
+             <div class="layui-tab" >
+
+                <form action="/page/bear/search" method="post">
+
+
+                    <button class="layui-btn"   style=" float: right">搜索</button>
+                    <input type="text" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
+
+
+
+
+
+
+                </form>
+
+             </div>
 
             <div class="layui-tab">
 
@@ -123,7 +142,6 @@
                 <div class="layui-tab layui-tab-card">
 
 
-                    <input type="hidden" name="currentUrl" id="currentUrl" value="">
                     <table class="layui-table">
                         <colgroup>
                             <col width="200">
@@ -211,8 +229,16 @@
 
                                 <div style="width: 216px; margin: 0; text-align:right; float:right" ;>
 
-                                    <button class="layui-btn layui-btn-normal layui-btn-radius" type="submit">增加数据
-                                    </button>
+                                    <%-- <button class="layui-btn layui-btn-normal layui-btn-radius" >
+                                         <a href="bearAddPage.jsp">
+                                             增加数据
+                                         </a>
+                                     </button>--%>
+
+                                    <a href="${ctx}/page/crudPage/bearAddPage.jsp"
+                                       class="layui-btn layui-btn-mini">增加数据
+                                    </a>
+
                                 </div>
                             </td>
                         </tr>
@@ -313,4 +339,5 @@
         </div>
     </div>
 </div>
+</body>
 </html>

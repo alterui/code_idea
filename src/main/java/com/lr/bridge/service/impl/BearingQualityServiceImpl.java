@@ -81,5 +81,12 @@ public class BearingQualityServiceImpl implements BearingQualityService {
         return bearingQualityMapper.updateByPrimaryKey(record);
     }
 
+    public PageInfo<BearingQuality> selectByLikeName(String name, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> bearingQualityList = bearingQualityMapper.selectByLikeName(name);
+        return new PageInfo<BearingQuality>(bearingQualityList);
+
+    }
+
 
 }

@@ -3,16 +3,15 @@ package com.lr.bridge.controller;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.BearingQuality;
 import com.lr.bridge.service.BearingQualityService;
-import com.lr.bridge.util.JSONUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
+import java.util.List;
 
 
 @Controller
@@ -26,7 +25,7 @@ public class BearingQualityController {
     public String index(HttpServletRequest request,
                           Model model,
                            @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                           @RequestParam(required = false, defaultValue = "4") Integer pageSize){
+                           @RequestParam(required = false, defaultValue = "5") Integer pageSize){
 
 
 
@@ -42,7 +41,7 @@ public class BearingQualityController {
     public String qualified(HttpServletRequest request,
                            Model model,
                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "4") Integer pageSize){
+                            @RequestParam(required = false, defaultValue = "5") Integer pageSize){
 
 
         String[] ids = request.getParameterValues("id");
@@ -73,7 +72,7 @@ public class BearingQualityController {
     public String show(HttpServletRequest request,
                         Model model,
                         @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "4") Integer pageSize){
+                        @RequestParam(required = false, defaultValue = "5") Integer pageSize){
 
 
 
@@ -94,7 +93,7 @@ public class BearingQualityController {
     public String deleteBear(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "4") Integer pageSize,
+                             @RequestParam(required = false, defaultValue = "5") Integer pageSize,
                              @PathVariable("id") Integer id) {
 
         bearingQualityService.deleteById(id);
@@ -108,7 +107,7 @@ public class BearingQualityController {
 
 
     /**
-     * 修改
+     * 取值显示在页面上
      *
      * @param id
      */
@@ -130,7 +129,7 @@ public class BearingQualityController {
     public String updateBear(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "4") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
 
         //取值
         String id = request.getParameter("id");
@@ -169,6 +168,84 @@ public class BearingQualityController {
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
         model.addAttribute("pageInfo", bearingQualityInfo);
+        return "page/crudPage/bearCrudPage";
+    }
+
+
+
+    /**
+     * 增加一条数据
+     */
+    @RequestMapping(value = "/add")
+    public String addBear(HttpServletRequest request,
+                             Model model,
+                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+
+        //取值
+
+        String struId = request.getParameter("struId");
+        String upCentVert = request.getParameter("upCentVert");
+        String downCentTran = request.getParameter("downCentTran");
+        String sameCentVert = request.getParameter("sameCentVert");
+        String sameRela = request.getParameter("sameRela");
+        String edgeHeig = request.getParameter("edgeHeig");
+        String crossLineTors = request.getParameter("crossLineTors");
+        String actiVert = request.getParameter("actiVert");
+        //String bearingqualityCheckTime = request.getParameter("bearingqualityCheckTime");
+        String isQualify = request.getParameter("isQualify");
+
+
+
+        BearingQuality bearingQuality = new BearingQuality();
+
+
+
+        //保存
+
+        bearingQuality.setStruId(struId);
+        bearingQuality.setUpCentVert(upCentVert);
+        bearingQuality.setDownCentTran(downCentTran);
+        bearingQuality.setSameCentVert(sameCentVert);
+        bearingQuality.setSameRela(sameRela);
+        bearingQuality.setEdgeHeig(edgeHeig);
+        bearingQuality.setCrossLineTors(crossLineTors);
+        bearingQuality.setActiVert(actiVert);
+
+        bearingQuality.setBearingqualityCheckTime(new Date());
+
+        bearingQuality.setIsQualify(-1);
+
+        bearingQualityService.insert(bearingQuality);
+
+        //show
+        model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
+        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
+        model.addAttribute("pageInfo", bearingQualityInfo);
+        return "page/crudPage/bearCrudPage";
+    }
+
+
+
+    /**
+     * 搜索
+     */
+    @RequestMapping(value = "/search")
+    public String searchName(HttpServletRequest request,
+                          Model model,
+                          @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                          @RequestParam(required = false, defaultValue = "6") Integer pageSize) {
+
+        //取值
+        String name = request.getParameter("search");
+
+
+        PageInfo<BearingQuality> bearingQualityList = bearingQualityService.selectByLikeName(name, pageIndex, pageSize);
+        System.out.println(bearingQualityList.getEndRow());
+        //show
+        model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
+        //PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
+        model.addAttribute("pageInfo", bearingQualityList);
         return "page/crudPage/bearCrudPage";
     }
 

@@ -24,6 +24,7 @@
     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
+
     <link rel="stylesheet" href="${ctx}/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
     <link rel="stylesheet" href="${ctx}/static/js/back.bak.js">
@@ -54,7 +55,7 @@
                 /*覆盖 layui*/
                 .layui-input {
                     display: inline-block;
-                    width: 33.333% !important;
+                    width: 15% !important;
                 }
 
 
@@ -67,6 +68,13 @@
                   <a><cite>修改梁质量数据</cite></a>
                 </span>
             </blockquote>
+
+
+
+
+
+
+
 
             <div class="layui-tab">
 
@@ -109,45 +117,45 @@
                                 <td>
                                     <input type="hidden" name="id" value="${bear.id}">
 
-                                    <input name="struId" type="textarea" value="${bear.struId}" style="width: 150px">
+                                    <input name="struId" type="textarea" value="${bear.struId}" style="width: 150px" required>
 
                                 </td>
                                 <td>
                                     <input name="upCentVert" type="textarea" value="${bear.upCentVert}"
-                                           style="width: 120px">
+                                           style="width: 120px" required>
                                 </td>
                                 <td>
                                     <input name="downCentTran" type="textarea" value="${bear.downCentTran}"
-                                           style="width: 120px">
+                                           style="width: 120px" required>
                                 </td>
 
                                 <td>
                                     <input name="sameCentVert" type="textarea" value="${bear.sameCentVert}"
-                                           style="width: 120px">
+                                           style="width: 120px" required>
 
                                 </td>
 
                                 <td>
                                     <input name="sameRela" type="textarea" value="${bear.sameRela}"
-                                           style="width: 120px">
+                                           style="width: 120px" required>
 
                                 </td>
 
                                 <td>
                                     <input name="edgeHeig" type="textarea" value="${bear.edgeHeig}"
-                                           style="width: 120px">
+                                           style="width: 120px" required>
 
                                 </td>
 
                                 <td>
                                     <input name="crossLineTors" type="textarea" value=" ${bear.crossLineTors}"
-                                           style="width: 120px">
+                                           style="width: 120px" required>
 
                                 </td>
 
                                 <td>
                                     <input name="actiVert" type="textarea" value="${ bear.actiVert}"
-                                           style="width: 120px">
+                                           style="width: 120px" required>
 
                                 </td>
 

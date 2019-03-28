@@ -37,4 +37,7 @@ public interface BearingQualityService {
     int insert(BearingQuality record);
 
     int updateByPrimaryKey(BearingQuality record);
+
+    PageInfo<BearingQuality> selectByLikeName(String name,Integer pageIndex,
+                                              Integer pageSize);
 }
