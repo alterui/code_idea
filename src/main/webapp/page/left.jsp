@@ -49,7 +49,7 @@
             </div>
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item ">
-                    <a class="" href="${ctx}/page/crudPage/beamCrudPage.jsp"><div class="center"><font size="4">主梁质量验收数据</font> </div></a>
+                    <a class="" href="${ctx}/page/crudPage/beamCrudPage.jsp"><font size="4">主梁质量验收数据</font> </a>
                    <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
@@ -60,7 +60,7 @@
 
 
                 <li class="layui-nav-item">
-                    <a href="/page/bear/show"><div class="center"><font size="4">支座质量验收数据</font></div></a>
+                    <a href="/page/bear/show"><font size="4">支座质量验收数据</font></a>
                     <%--<dl class="layui-nav-child">
                         <c:forEach items="${bearName}" var="name">
                             <dd><a href="javascript:;">${name.struId}</a></dd>
@@ -70,7 +70,7 @@
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/pierCrudPage.jsp"><div class="center"><font size="4">桥墩质量验收数据</font></div></a>
+                    <a href="${ctx}/page/crudPage/pierCrudPage.jsp"><font size="4">桥墩质量验收数据</font> </a>
                    <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
@@ -79,7 +79,7 @@
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/pileCrudPage.jsp"><div class="center"><font size="4">桩质量验收数据</font></div></a>
+                    <a href="${ctx}/page/crudPage/pileCrudPage.jsp"><font size="4">桩质量验收数据</font></a>
                    <%-- <dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>
@@ -88,7 +88,7 @@
                 </li>
 
                 <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/towerCrudPage.jsp"><div class="center"></div></a>
+                    <a href="${ctx}/page/crudPage/towerCrudPage.jsp"></a>
                     <%--<dl class="layui-nav-child">
                         <dd><a href="javascript:;">列表一</a></dd>
                         <dd><a href="javascript:;">列表二</a></dd>

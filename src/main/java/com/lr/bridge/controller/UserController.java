@@ -3,7 +3,6 @@ package com.lr.bridge.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import com.lr.bridge.service.impl.UserServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +20,7 @@ public class UserController {
     public String register(HttpServletRequest request,
                           Model model) {
 
-        System.out.println(11);
+
 
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");

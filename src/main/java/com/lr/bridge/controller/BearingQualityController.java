@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
-import java.util.List;
+
+
 
 
 @Controller
@@ -50,6 +51,7 @@ public class BearingQualityController {
             int isQualify = Integer.parseInt(parameter);
             //修改状态
             bearingQualityService.updateByIsQualify(isQualify, Integer.parseInt(id));
+
         }
 
         model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
