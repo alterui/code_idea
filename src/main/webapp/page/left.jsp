@@ -41,60 +41,58 @@
                   }
 
                 </style>
-                <li class="layui-nav-item">
-                    <a href=""><div class="div-height"><font size="5" color="#e6e6fa">结构分布</font></div></a>
-
-                </li>
+               <%-- <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">所有商品</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">列表一</a></dd>
+                            <dd><a href="javascript:;">列表二</a></dd>
+                            <dd><a href="javascript:;">列表三</a></dd>
+                            <dd><a href="">超链接</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item">
+                        <a href="javascript:;">解决方案</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">列表一</a></dd>
+                            <dd><a href="javascript:;">列表二</a></dd>
+                            <dd><a href="">超链接</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item"><a href="">云市场</a></li>
+                    <li class="layui-nav-item"><a href="">发布商品</a></li>
+                </ul>--%>
 
             </div>
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item ">
-                    <a class="" href="${ctx}/page/crudPage/beamCrudPage.jsp"><font size="4">主梁质量验收数据</font> </a>
-                   <%-- <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="javascript:;">列表三</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>--%>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="" href="javascript:;">质量安全</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="${ctx}/page/crudPage/beamCrudPage.jsp">梁质量验收数据</a></dd>
+                        <dd><a href="${ctx}/page/bear/show">支座质量验收数据</a></dd>
+                        <dd><a href="${ctx}/page/crudPage/pierCrudPage.jsp">墩台质量验收数据</a></dd>
+                        <dd><a href="${ctx}/page/crudPage/pileCrudPage.jsp">桩质量验收数据</a></dd>
+                        <dd><a href="${ctx}/page/crudPage/towerCrudPage.jsp">索塔质量验收数据</a></dd>
+                    </dl>
                 </li>
 
 
                 <li class="layui-nav-item">
-                    <a href="/page/bear/show"><font size="4">支座质量验收数据</font></a>
-                    <%--<dl class="layui-nav-child">
-                        <c:forEach items="${bearName}" var="name">
-                            <dd><a href="javascript:;">${name.struId}</a></dd>
-                        </c:forEach>
-
-                    </dl>--%>
+                    <a href="javascript:;">环保安全</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">环境风险应急预案报审表</a></dd>
+                        <dd><a href="javascript:;">环境保证体系报审表</a></dd>
+                        <dd><a href="javascript:;">环保施工技术方案报审表</a></dd>
+                        <dd><a href="javascript:;">环保条件验收申请表</a></dd>
+                    </dl>
                 </li>
 
-                <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/pierCrudPage.jsp"><font size="4">桥墩质量验收数据</font> </a>
-                   <%-- <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>--%>
-                </li>
 
-                <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/pileCrudPage.jsp"><font size="4">桩质量验收数据</font></a>
-                   <%-- <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>--%>
-                </li>
 
-                <li class="layui-nav-item">
-                    <a href="${ctx}/page/crudPage/towerCrudPage.jsp"></a>
-                    <%--<dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
-                    </dl>--%>
-                </li>
+
+
+
 
             </ul>
         </div>

@@ -54,37 +54,7 @@
         function deleteData(id) {
             if (confirmDelete() == true) {
 
-
                 window.location.href = "${pageContext.request.contextPath}/page/bear/delete/" + id;
-
-                /*
-                                $.ajax({
-                                    type: "POST",  //提交方式
-                                    url: "
-                ${pageContext.request.contextPath}/page/bear/delete/" + id,//路径
-                    dataType: "text",
-                    success: function (result) {//返回数据根据结果进行相应的处理
-                        if (result.success) {
-                            alert("success");
-                        } else {
-                            alert("fail");
-                        }
-                    }
-                });
-                */
-
-                /* $.ajax({
-                     async: false,
-                     type: "POST",
-                     url: '/page/bear/delete/' + id,
-                     contentType: "application/x-www-form-urlencoded; charset=utf-8",
-                     dataType: "text",
-                     complete: function () {
-                         window.location.reload();
-                     }
-                 })*/
-
-
             }
         }
 
@@ -105,41 +75,23 @@
                 .layui-input {
                     display: inline-block;
                     width: 15% !important;
-
                 }
-
-
             </style>
 
-
             <blockquote class="layui-elem-quote">
-                <span class="layui-breadcrumb" lay-separator="|">
-                  <a>当前位置</a>
-                  <a href="/page/bear/show"><font color="#228b22">支座质量数据</font></a>
-                </span>
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/bear/show"><font color="#228b22">支座质量数据</font></a>
             </blockquote>
 
+            <!-- 搜索框 -->
              <div class="layui-tab" >
-
                 <form action="/page/bear/search" method="post">
-
-
                     <button class="layui-btn"   style=" float: right">搜索</button>
                     <input type="text" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
-
-
-
-
-
-
                 </form>
-
-             </div>
-
             <div class="layui-tab">
 
 
-                <div class="layui-tab layui-tab-card">
+             <div class="layui-tab layui-tab-card">
 
 
                     <table class="layui-table">

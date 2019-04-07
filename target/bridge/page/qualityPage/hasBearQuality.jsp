@@ -1,8 +1,8 @@
 <%--
-  Created by IntelliJ IDEA.质量验收
+  Created by IntelliJ IDEA.质量验收已经确认
   User: ALTERUI
-  Date: 2019/3/25
-  Time: 15:57
+  Date: 2019/4/07
+  Time: 13:28
   To change this template use File | Settings | File Templates.
 --%>
 
@@ -21,22 +21,64 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-    <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
+    <c:set var="ctx" value="${pageContext.request.contextPath}" />
+    <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
-    <link rel="stylesheet" href="${ctx}/static/js/back.bak.js">
     <script src="${ctx}/layui/layui.all.js"></script>
     <script src="${ctx}/layui/layui.js"></script>
-
-
     <script type="text/javascript">
         //JavaScript代码区域
-        layui.use('element', function () {
+        layui.use('element', function(){
             var element = layui.element;
 
         });
+
+
+
+
+        //更改为合格的确认
+        function confirmQuality() {
+            var msg = "您确定更改为合格吗？";
+            if (confirm(msg) == true) {
+
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //更改为合格
+        function qualityData(id) {
+            if (confirmQuality() == true) {
+
+                window.location.href = "${pageContext.request.contextPath}/page/bear/editQualified/" + id;
+            }
+        }
+
+
+
+        //不合格的确认
+        function confirmNotQuality() {
+            var msg = "您确定更改为不合格吗？";
+            if (confirm(msg) == true) {
+
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //不合格
+        function notQualityData(id) {
+            if (confirmNotQuality() == true) {
+
+                window.location.href = "${pageContext.request.contextPath}/page/bear/editNotQualified/" + id;
+            }
+        }
+
+
 
 
     </script>
@@ -50,29 +92,61 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
 
-            <style>
-                /*覆盖 layui*/
-                .layui-input {
-                    display: inline-block;
-                    width: 33.333% !important;
-                }
+    <style>
+        /*覆盖 layui*/
+        .layui-input {
+            display: inline-block;
+            width: 33.333% !important;
+        }
+
+        .table-align{
+          vertical-align: middle;
+            text-align: center;
+
+        }
 
 
-            </style>
 
+
+
+    </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a href="/page/bear/show">支座质量验收数据</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a><cite>添加支座质量数据</cite></a>
+                位置跳转&nbsp;&nbsp;<b></b>&nbsp;&nbsp;
+                <a href="/page/bear/"><font color="#228b22">待确认验收</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                <a href="/page/bear/hasQuality"><font color="#228b22">已确认验收</font></a>
+
+
+                <div style="float: right">
+                    其他质量验收&nbsp;&nbsp;<b></b>&nbsp;&nbsp;
+                    <a  class="layui-this" href="/page/bear/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/bear/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/bear/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/bear/">锁塔质量验收</a>
+                </div>
             </blockquote>
+
+
+            <div class="layui-tab" >
+
+                <form action="/page/bear/qualitySearch" method="post">
+
+
+                    <button class="layui-btn"   style=" float: right">搜索</button>
+                    <input type="text" name="qualitySearch"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
+
+                </form>
+
 
             <div class="layui-tab">
 
 
                 <div class="layui-tab layui-tab-card">
-                    <form action="/page/bear/add" method="post"  class="layui-form">
 
+
+                    <form   method="post"  action="/page/bear/qualified">
+                        <input type="hidden" name="currentUrl" id="currentUrl" value="">
 
                         <table class="layui-table">
                             <colgroup>
@@ -85,10 +159,11 @@
                                 <col width="200">
                                 <col width="200">
                                 <col width="200">
-                                <col width="250">
+                                <col width="200">
+                                <col width="200">
                             </colgroup>
                             <thead>
-                            <tr>
+                            <tr >
                                 <th>结构编号</th>
                                 <th>上座板中心纵向错动量</th>
                                 <th>下座板中心横向错动量</th>
@@ -97,77 +172,106 @@
                                 <th>每一支座的边缘高差</th>
                                 <th>上下座板十字线扭转</th>
                                 <th>活动支座的纵向错动量</th>
-
+                                <th>验收时间</th>
+                                <th>是否合格</th>
+                                <th>操作</th>
 
                             </tr>
                             </thead>
                             <tbody>
 
+                            <c:forEach items="${pageInfo.list}" var="bear">
+                                <tr>
+                                    <td>
+                                            <input type="hidden" name="id" value="${bear.id}">
+                                            ${bear.struId}
+                                    </td>
+                                    <td>
+                                            ${bear.upCentVert}
+                                    </td>
+                                    <td>
+                                            ${bear.downCentTran}
+                                    </td>
 
-                            <tr>
-                                <td>
+                                    <td>
+                                            ${bear.sameCentVert}
+                                    </td>
 
+                                    <td>
+                                            ${bear.sameRela}
+                                    </td>
 
+                                    <td>
+                                            ${bear.edgeHeig}
+                                    </td>
 
-                                    <input name="struId" type="textarea" style="width: 150px" required>
+                                    <td>
+                                            ${bear.crossLineTors}
+                                    </td>
 
-                                </td>
-                                <td>
-                                    <input name="upCentVert" type="textarea" required
-                                           style="width: 120px">
-                                </td>
-                                <td>
-                                    <input name="downCentTran" type="textarea" required
-                                           style="width: 120px">
-                                </td>
+                                    <td>
+                                            ${ bear.actiVert}
+                                    </td>
 
-                                <td>
-                                    <input name="sameCentVert" type="textarea" required
-                                           style="width: 120px">
+                                    <td>
+                                        <fmt:formatDate value="${bear.bearingqualityCheckTime}"
+                                                        pattern="yyyy-MM-dd HH:mm:ss"/>
+                                    </td>
 
-                                </td>
+                                    <td>
+                                        <!-- 0代表不合格，1代表合格-->
+                                        <c:choose>
+                                            <c:when test="${bear.isQualify==0}">
+                                            <b><font color="red">不合格</font></b>
+                                            </c:when>
 
-                                <td>
-                                    <input name="sameRela" type="textarea" required
-                                           style="width: 120px">
+                                            <c:otherwise>
+                                                <b><font color="green">合格</font></b>
+                                            </c:otherwise>
+                                        </c:choose>
 
-                                </td>
-
-                                <td>
-                                    <input name="edgeHeig" type="textarea" required
-                                           style="width: 120px">
-
-                                </td>
-
-                                <td>
-                                    <input name="crossLineTors" type="textarea" required
-                                           style="width: 120px">
-
-                                </td>
-
-                                <td>
-                                    <input name="actiVert" type="textarea" required
-                                           style="width: 120px">
-
-                                </td>
-
-
-                            </tr>
-
-                            <tr>
-
-                                <td colspan="8">
-
-                                    <div style="width: 216px; margin: 0; text-align:right; float:right" ;>
+                                    </td>
+                                    <td>
 
 
-                                        <button class="layui-btn layui-btn-mini" type="submit">保存
-                                        </button>
+                                        <c:choose>
+                                            <c:when test="${bear.isQualify==0}">
+                                                <a onclick="qualityData(${bear.id})"
+                                                   class="layui-btn layui-btn-mini">更改为合格
+
+                                                </a>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a
+                                                   onclick="notQualityData(${bear.id})"
+                                                    class="layui-btn layui-btn-danger layui-btn-mini">更改为不合格
+                                                </a>
+                                            </c:otherwise>
+                                        </c:choose>
+
+
+
+
+
+
+                                    </td>
+
+                                </tr>
+                            </c:forEach>
+                           <%-- <tr>
+
+                                <td colspan="10">
+                                    <div style="width: 216px; margin: 0; text-align:right; float:right"; >
+
+                                        <button class="layui-btn layui-btn-fluid" type="submit" >提交</button>
                                     </div>
+
                                 </td>
-                            </tr>
+                            </tr>--%>
                             </tbody>
                         </table>
+
+
                     </form>
 
 
@@ -262,8 +366,6 @@
             </div>
 
 
-        </div>
+            </div>
     </div>
 </div>
-</body>
-</html>

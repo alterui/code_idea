@@ -62,10 +62,9 @@
 
 
             <blockquote class="layui-elem-quote">
-                <span class="layui-breadcrumb" lay-separator="/">
-                  <a>当前位置</a>
-                  <a><cite><font color="#228b22">增加梁质量数据</font></cite></a>
-                </span>
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                <a href="/page/bear/show">支座质量验收数据</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                <a><cite>添加支座质量数据</cite></a>
             </blockquote>
 
             <div class="layui-tab">
@@ -162,7 +161,7 @@
                                     <div style="width: 216px; margin: 0; text-align:right; float:right" ;>
 
 
-                                        <button class="layui-btn layui-btn-normal layui-btn-radius" type="submit">保存
+                                        <button class="layui-btn layui-btn-mini" type="submit">保存
                                         </button>
                                     </div>
                                 </td>

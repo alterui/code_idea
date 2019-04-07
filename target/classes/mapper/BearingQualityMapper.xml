@@ -196,5 +196,33 @@
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
     </select>
 
+    <select id="selectByLikeNameAndQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from bearingquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        AND  (isQualify = 0 OR isQualify = 1)
+    </select>
+
+
+
+    <select id="selectByLikeNameAndNotQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from bearingquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        AND  isQualify = -1
+
+    </select>
+
+
+    <select id="selectByHasQuality"  resultMap="BaseResultMap">
+        select
+        *
+        from bearingquality
+        where
+        isQualify=0 OR isQualify = 1
+    </select>
+
 
 </mapper>

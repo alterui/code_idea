@@ -22,8 +22,23 @@ public class BearingQualityServiceImpl implements BearingQualityService {
 
     @Resource
     private BearingQualityMapper bearingQualityMapper;
+
+    /**
+     * 显示已经确认
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
     @Override
-    public PageInfo<BearingQuality> pageArticle(Integer pageIndex,
+    public PageInfo<BearingQuality> selectByHasQuality(Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> articleList = bearingQualityMapper.selectByHasQuality();
+
+        return new PageInfo<BearingQuality>(articleList);
+    }
+
+    @Override
+    public PageInfo<BearingQuality> showQuality(Integer pageIndex,
                                                 Integer pageSize) {
 
         PageHelper.startPage(pageIndex, pageSize);
@@ -84,6 +99,21 @@ public class BearingQualityServiceImpl implements BearingQualityService {
     public PageInfo<BearingQuality> selectByLikeName(String name, Integer pageIndex, Integer pageSize) {
         PageHelper.startPage(pageIndex, pageSize);
         List<BearingQuality> bearingQualityList = bearingQualityMapper.selectByLikeName(name);
+        return new PageInfo<BearingQuality>(bearingQualityList);
+
+    }
+
+    public PageInfo<BearingQuality> selectByLikeNameAndQuality(String name, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> bearingQualityList = bearingQualityMapper.selectByLikeNameAndQuality(name);
+        return new PageInfo<BearingQuality>(bearingQualityList);
+
+    }
+
+
+    public PageInfo<BearingQuality> selectByLikeNameAndNotQuality(String name, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> bearingQualityList = bearingQualityMapper.selectByLikeNameAndNotQuality(name);
         return new PageInfo<BearingQuality>(bearingQualityList);
 
     }

@@ -35,7 +35,43 @@
 
         });
 
+        //合格的确认
+        function confirmQuality() {
+            var msg = "您确定合格吗？";
+            if (confirm(msg) == true) {
 
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //合格
+        function qualityData(id) {
+            if (confirmQuality() == true) {
+
+                window.location.href = "${pageContext.request.contextPath}/page/bear/qualified/" + id;
+            }
+        }
+
+        //不合格的确认
+        function confirmNotQuality() {
+            var msg = "您确定不合格吗？";
+            if (confirm(msg) == true) {
+
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        //不合格
+        function notQualityData(id) {
+            if (confirmNotQuality() == true) {
+
+                window.location.href = "${pageContext.request.contextPath}/page/bear/notQualified/" + id;
+            }
+        }
 
     </script>
 
@@ -55,19 +91,35 @@
             width: 33.333% !important;
         }
 
-
     </style>
 
+            <blockquote class="layui-elem-quote">
+                位置跳转&nbsp;&nbsp;<b></b>&nbsp;&nbsp;
+                <a href="/page/bear/"><font color="#228b22">待确认验收</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                <a href="/page/bear/hasQuality"><font color="#228b22">已确认验收</font></a>
 
-    <blockquote class="layui-elem-quote">
-    <span class="layui-breadcrumb" lay-separator="|">
-                <a class="layui-this" href="/page/bear/">梁质量验收</a>
-                <a class="layui-this" href="/page/bear/">支座质量验收</a>
-                <a class="layui-this" href="/page/bear/">墩台质量验收</a>
-                <a class="layui-this" href="/page/bear/">桩质量验收</a>
-                <a class="layui-this" href="/page/bear/">锁塔质量验收</a>
-    </span>
-    </blockquote>
+
+                <div style="float: right">
+                    其他质量验收&nbsp;&nbsp;<b></b>&nbsp;&nbsp;
+                    <a  class="layui-this" href="/page/bear/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/bear/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/bear/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/bear/">锁塔质量验收</a>
+                </div>
+            </blockquote>
+
+
+            <div class="layui-tab" >
+
+                <form action="/page/bear/notQualitySearch" method="post">
+
+
+                    <button class="layui-btn"   style=" float: right">搜索</button>
+                    <input type="text" name="notQualitySearch"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
+
+                </form>
+
 
             <div class="layui-tab">
 
@@ -147,26 +199,36 @@
                                                         pattern="yyyy-MM-dd HH:mm:ss"/>
                                     </td>
                                     <td>
-                                        合格<input  type="radio" name="bear_${bear.id}" value="1"  checked="checked"
+                                       <%-- 合格<input  type="radio" name="bear_${bear.id}" value="1"  checked="checked"
 
                                                 >&nbsp;&nbsp;
-                                        不合格<input type="radio" name="bear_${bear.id}" value="0" >
+                                        不合格<input type="radio" name="bear_${bear.id}" value="0" >--%>
+
+
+                                           <a onclick="qualityData(${bear.id})"
+                                              class="layui-btn layui-btn-mini">合格
+
+                                           </a>
+                                           <a
+                                                   onclick="notQualityData(${bear.id})"
+                                                   class="layui-btn layui-btn-danger layui-btn-mini">不合格
+                                           </a>
 
 
                                     </td>
 
                                 </tr>
                             </c:forEach>
-                            <tr>
+                           <%-- <tr>
 
                                 <td colspan="10">
-
                                     <div style="width: 216px; margin: 0; text-align:right; float:right"; >
 
                                         <button class="layui-btn layui-btn-fluid" type="submit" >提交</button>
                                     </div>
+
                                 </td>
-                            </tr>
+                            </tr>--%>
                             </tbody>
                         </table>
 

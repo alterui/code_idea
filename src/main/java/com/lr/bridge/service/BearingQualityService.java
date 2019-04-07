@@ -13,13 +13,16 @@ public interface BearingQualityService {
 
 
     /**
-     * 分页显示
+     * 显示待质量验收的
      *
      * @param pageIndex 第几页开始
      * @param pageSize  一页显示多少
      * @return 支座列表
      */
-    PageInfo<BearingQuality> pageArticle(Integer pageIndex,
+    PageInfo<BearingQuality> showQuality(Integer pageIndex,
+                                         Integer pageSize);
+
+    PageInfo<BearingQuality> selectByHasQuality(Integer pageIndex,
                                          Integer pageSize);
 
 
@@ -40,4 +43,12 @@ public interface BearingQualityService {
 
     PageInfo<BearingQuality> selectByLikeName(String name,Integer pageIndex,
                                               Integer pageSize);
+
+    PageInfo<BearingQuality> selectByLikeNameAndQuality(String name,Integer pageIndex,
+                                              Integer pageSize);
+
+    PageInfo<BearingQuality> selectByLikeNameAndNotQuality(String name,Integer pageIndex,
+                                                        Integer pageSize);
+
+
 }
