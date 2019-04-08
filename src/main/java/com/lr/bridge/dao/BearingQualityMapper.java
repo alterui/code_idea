@@ -1,9 +1,12 @@
 package com.lr.bridge.dao;
 
 import com.lr.bridge.pojo.BearingQuality;
+import com.lr.bridge.vo.EntityCountDate;
+import com.lr.bridge.vo.EntityCountDateList;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface BearingQualityMapper {
@@ -32,6 +35,7 @@ public interface BearingQualityMapper {
 
     List<BearingQuality> selectByLikeNameAndQuality(String name);
     List<BearingQuality> selectByLikeNameAndNotQuality(String name);
+    List<EntityCountDateList> getIsQualityCountByDate();
 
 
 }

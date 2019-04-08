@@ -3,14 +3,21 @@ package com.lr.bridge.controller;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.BearingQuality;
 import com.lr.bridge.service.BearingQualityService;
+import com.lr.bridge.vo.EntityCountDate;
+import com.lr.bridge.vo.EntityCountDateList;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/page/bear")
@@ -428,6 +435,55 @@ public class BearingQualityController {
         model.addAttribute("bear", bearStandard);
         return "page/standardPage/bearStandard";
 
+    }
+
+    /**
+     * json格式返回到ajax
+     * @param request
+     * @param model
+     * @return
+     */
+
+    @RequestMapping(value = "/getChart")
+    @ResponseBody
+    public String getChart(HttpServletRequest request,
+                               Model model) {
+
+
+
+
+        try {
+            List<EntityCountDateList> lists = bearingQualityService.getIsQualityCountByDate();
+            for (EntityCountDateList list : lists) {
+                System.out.println(list.getCheckTime());
+                List b = new ArrayList();
+
+                for (EntityCountDate date : list.getEntityCounts()) {
+                    //0代表不合格，1代表合格
+                    /**
+                     * 1.先算出合格率
+                     * 2.构造一个List对象集合，对象为折线图的x，y轴
+                     */
+
+                    System.out.println(date.getIsQuality());
+
+                    System.out.println(date.getCount());
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
+        //标准值Id默认为1
+        String start = request.getParameter("start");
+
+
+
+
+        return "page/standardPage/bearStandard";
     }
 
 }

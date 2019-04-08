@@ -2,9 +2,12 @@ package com.lr.bridge.service;
 
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.BearingQuality;
+import com.lr.bridge.vo.EntityCountDate;
+import com.lr.bridge.vo.EntityCountDateList;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ALTERUI on 2019/3/25 16:44
@@ -49,6 +52,9 @@ public interface BearingQualityService {
 
     PageInfo<BearingQuality> selectByLikeNameAndNotQuality(String name,Integer pageIndex,
                                                         Integer pageSize);
+
+
+    List<EntityCountDateList> getIsQualityCountByDate();
 
 
 }

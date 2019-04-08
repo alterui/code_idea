@@ -16,12 +16,22 @@
       <arg column="isQualify" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
+    
+    <resultMap id="isQualityCountDate" type="com.lr.bridge.vo.EntityCountDateList">
+        <id property="checkTime" column="checkTime"/>
+        <collection property="entityCounts" ofType="com.lr.bridge.vo.EntityCountDate">
+            <result property="isQualify" column="isQualify"/>
+            <result property="count" column="count"/>
+        </collection>
+    </resultMap>
+
+
   <sql id="Base_Column_List">
     id, struId, upCentVert, downCentTran, sameCentVert, sameRela, edgeHeig, crossLineTors, 
     actiVert, bearingqualityCheckTime, isQualify
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from bearingquality
     where id = #{id,jdbcType=INTEGER}
@@ -222,6 +232,20 @@
         from bearingquality
         where
         isQualify=0 OR isQualify = 1
+    </select>
+
+    <!-- 分组查询-->
+    <select id="getIsQualityCountByDate"   resultMap="isQualityCountDate">
+
+          SELECT isQualify,COUNT(*) AS 'count' ,SUBSTR(bearingqualityCheckTime,1,10) AS 'checkTime'
+                FROM bearingquality
+                WHERE  bearingqualityCheckTime
+                BETWEEN '2019-03-07  00:00:00'
+                AND '2019-04-07 23:59:59'
+                AND (isQualify = 0 OR isQualify = 1)
+                GROUP BY SUBSTR(bearingqualityCheckTime,1,10),isQualify
+
+
     </select>
 
 

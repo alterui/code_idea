@@ -5,12 +5,15 @@ import com.github.pagehelper.PageInfo;
 import com.lr.bridge.dao.BearingQualityMapper;
 import com.lr.bridge.pojo.BearingQuality;
 import com.lr.bridge.service.BearingQualityService;
+import com.lr.bridge.vo.EntityCountDate;
+import com.lr.bridge.vo.EntityCountDateList;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by ALTERUI on 2019/3/25 16:52
@@ -83,6 +86,11 @@ public class BearingQualityServiceImpl implements BearingQualityService {
        return bearingQualityMapper.updateByIsQualify(isQualify, id);
     }
 
+
+    @Override
+    public  List<EntityCountDateList> getIsQualityCountByDate() {
+        return bearingQualityMapper.getIsQualityCountByDate();
+    }
 
     public BearingQuality selectByPrimaryKey(Integer id){
         return bearingQualityMapper.selectByPrimaryKey(id);
