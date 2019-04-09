@@ -235,13 +235,13 @@
     </select>
 
     <!-- 分组查询-->
-    <select id="getIsQualityCountByDate"   resultMap="isQualityCountDate">
+    <select id="getIsQualityCountByDate"  parameterType="java.lang.String" resultMap="isQualityCountDate">
 
           SELECT isQualify,COUNT(*) AS 'count' ,SUBSTR(bearingqualityCheckTime,1,10) AS 'checkTime'
                 FROM bearingquality
                 WHERE  bearingqualityCheckTime
-                BETWEEN '2019-03-07  00:00:00'
-                AND '2019-04-07 23:59:59'
+                BETWEEN #{start}
+                AND #{end}
                 AND (isQualify = 0 OR isQualify = 1)
                 GROUP BY SUBSTR(bearingqualityCheckTime,1,10),isQualify
 

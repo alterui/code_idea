@@ -35,7 +35,8 @@ public interface BearingQualityMapper {
 
     List<BearingQuality> selectByLikeNameAndQuality(String name);
     List<BearingQuality> selectByLikeNameAndNotQuality(String name);
-    List<EntityCountDateList> getIsQualityCountByDate();
+
+    List<EntityCountDateList> getIsQualityCountByDate(@Param("start") String start,@Param("end") String end);
 
 
 }

@@ -54,7 +54,7 @@ public interface BearingQualityService {
                                                         Integer pageSize);
 
 
-    List<EntityCountDateList> getIsQualityCountByDate();
+    List<EntityCountDateList> getIsQualityCountByDate(String start,String end);
 
 
 }

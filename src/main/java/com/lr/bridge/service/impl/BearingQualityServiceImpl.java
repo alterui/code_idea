@@ -88,8 +88,8 @@ public class BearingQualityServiceImpl implements BearingQualityService {
 
 
     @Override
-    public  List<EntityCountDateList> getIsQualityCountByDate() {
-        return bearingQualityMapper.getIsQualityCountByDate();
+    public  List<EntityCountDateList> getIsQualityCountByDate(String start,String end) {
+        return bearingQualityMapper.getIsQualityCountByDate(start,end);
     }
 
     public BearingQuality selectByPrimaryKey(Integer id){

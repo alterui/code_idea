@@ -107,7 +107,7 @@
 
             <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
             <div align="center">
-            <div  id="main" style="width: 600px;height:400px;"></div>
+            <div  id="main" style="width: 900px;height:450px;"></div>
             <script type="text/javascript">
 
 
@@ -152,23 +152,33 @@
                         dataType : "json", //返回数据形式为json
                         success : function(result) {
                             //请求成功时执行该函数内容，result即为服务器返回的json对象
+
+
+                            if(result.length==0){
+                                //没有数据
+                                alert("所选日期没有数据，请查询后再试");
+                            }
                             if (result) {
+
                                 for (var i = 0; i < result.length; i++) {
-                                    names.push(result[i].name); //挨个取出类别并填入类别数组
+
+                                    names.push(result[i].checkTime); //挨个取出类别并填入类别数组
                                 }
                                 for (var i = 0; i < result.length; i++) {
-                                    nums.push(result[i].num); //挨个取出销量并填入销量数组
+                                    nums.push(result[i].passRate); //挨个取出销量并填入销量数组
                                 }
+
+
                                 myChart.hideLoading(); //隐藏加载动画
                                 myChart.setOption({ //加载数据图表
-                                    xAxis : {
-                                        data : names
+                                    xAxis: {
+                                        data: names
                                     },
-                                    series : [ {
+                                    series: [{
                                         // 根据名字对应到相应的系列
-                                        name : '合格率',
-                                        data : nums
-                                    } ]
+                                        name: '合格率',
+                                        data: nums
+                                    }]
                                 });
 
                             }

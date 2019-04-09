@@ -5,6 +5,7 @@ import com.lr.bridge.pojo.BearingQuality;
 import com.lr.bridge.service.BearingQualityService;
 import com.lr.bridge.vo.EntityCountDate;
 import com.lr.bridge.vo.EntityCountDateList;
+import com.lr.bridge.vo.EntityPassRateDate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -446,17 +448,24 @@ public class BearingQualityController {
 
     @RequestMapping(value = "/getChart")
     @ResponseBody
-    public String getChart(HttpServletRequest request,
-                               Model model) {
+    public List<EntityPassRateDate> getChart(HttpServletRequest request,
+                                             Model model) {
 
 
 
-
+        List<EntityPassRateDate> results = new ArrayList<EntityPassRateDate>();
+        String start = request.getParameter("start");
+        start = start + "  00:00:00";
+        String end = request.getParameter("end");
+        end = end + "  23:59:59";
         try {
-            List<EntityCountDateList> lists = bearingQualityService.getIsQualityCountByDate();
+            List<EntityCountDateList> lists = bearingQualityService.getIsQualityCountByDate(start,end);
+            //用于存放返回到ajax的值
+
             for (EntityCountDateList list : lists) {
-                System.out.println(list.getCheckTime());
-                List b = new ArrayList();
+
+                List temp = new ArrayList();
+               /* System.out.println(list.getCheckTime());*/
 
                 for (EntityCountDate date : list.getEntityCounts()) {
                     //0代表不合格，1代表合格
@@ -464,26 +473,43 @@ public class BearingQualityController {
                      * 1.先算出合格率
                      * 2.构造一个List对象集合，对象为折线图的x，y轴
                      */
-
-                    System.out.println(date.getIsQuality());
-
-                    System.out.println(date.getCount());
+                    //02(不合格，有两个)  11(合格，1个)
+                    temp.add(date.getIsQuality());
+                    temp.add(date.getCount());
+                    /*System.out.println(date.getIsQuality());
+                    System.out.println(date.getCount());*/
                 }
+                //存放对象的值
+                EntityPassRateDate passRateDate = new EntityPassRateDate();
+
+                //开始算合格率
+                /**
+                 * 可能有2，或者4个
+                 */
+                if (temp.size() == 2) {
+                    //02，不合格，即合格率为0
+                    if (Integer.parseInt(temp.get(0).toString()) == 0) {
+                        passRateDate.setPassRate("0");
+                    }
+                    if (Integer.parseInt(temp.get(0).toString()) == 1) {
+                        passRateDate.setPassRate("1");
+                    }
+                } else if (temp.size() == 4) {
+                    //02(不合格，有两个)  11(合格，1个)
+                    DecimalFormat df   = new DecimalFormat("######0.0");
+                    double tempDouble = Double.parseDouble(temp.get(3).toString()) / (Double.parseDouble(temp.get(3).toString()) + Double.parseDouble(temp.get(1).toString()));
+                    passRateDate.setPassRate(String.valueOf(df.format(tempDouble)));
+                }
+
+                passRateDate.setCheckTime(list.getCheckTime());
+
+                results.add(passRateDate);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-
-
-
-        //标准值Id默认为1
-        String start = request.getParameter("start");
-
-
-
-
-        return "page/standardPage/bearStandard";
+        return results;
     }
 
 }

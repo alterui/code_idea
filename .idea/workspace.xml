@@ -11,29 +11,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2830dbe2-521c-4d84-b23c-6d5e66b062bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityCountDate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityCountDateList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/page/1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/page/chartsPage/passRate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/default/Thumbs.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/default/default_s.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/css/default/default_s2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/lhgcalendar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityPassRateDate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/top.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/page/chartsPage/passRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/page/chartsPage/passRate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BearingQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BearingQualityController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/BearingQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/BearingQualityMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/BearingQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/BearingQualityService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/BearingQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/BearingQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/page/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/page/top.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/page/chartsPage/passRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/page/chartsPage/passRate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BearingQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BearingQualityController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/BearingQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/BearingQualityMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/BearingQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/BearingQualityService.class" afterDir="false" />
@@ -67,9 +59,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/page/chartsPage/passRate.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-215">
+              <caret line="160" column="28" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityCountDateList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
+            <state relative-caret-position="488">
               <caret line="29" column="48" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="48" />
               <folding>
                 <element signature="e#247#248#0" expanded="true" />
@@ -90,8 +94,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+            <state relative-caret-position="195">
+              <caret line="38" column="94" selection-start-line="38" selection-start-column="94" selection-end-line="38" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -102,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
+            <state relative-caret-position="271">
+              <caret line="243" column="26" selection-start-line="243" selection-start-column="26" selection-end-line="243" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -111,10 +115,51 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-324">
-              <caret line="464" column="49" selection-start-line="464" selection-start-column="49" selection-end-line="464" selection-end-column="49" />
+            <state relative-caret-position="325">
+              <caret line="471" column="23" lean-forward="true" selection-start-line="471" selection-start-column="23" selection-end-line="471" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#17338#17358#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="229">
+              <caret line="91" column="48" lean-forward="true" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityPassRateDate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="7" column="28" selection-start-line="6" selection-start-column="20" selection-end-line="7" selection-end-column="28" />
+              <folding>
+                <element signature="e#201#202#0" expanded="true" />
+                <element signature="e#232#233#0" expanded="true" />
+                <element signature="e#280#281#0" expanded="true" />
+                <element signature="e#320#321#0" expanded="true" />
+                <element signature="e#356#357#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
+                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#480#481#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -167,7 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/UserService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/UserServiceImpl.java" />
@@ -210,14 +254,15 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/lhgcore.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/lhgcalendar.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/page/top.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/page/chartsPage/passRate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityCountDateList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityCountDate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityPassRateDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityCountDate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/page/chartsPage/passRate.jsp" />
       </list>
     </option>
   </component>
@@ -269,9 +314,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-282" />
-    <option name="y" value="268" />
-    <option name="width" value="1943" />
+    <option name="x" value="-283" />
+    <option name="y" value="267" />
+    <option name="width" value="1944" />
     <option name="height" value="1060" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -284,6 +329,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -465,7 +511,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -656,11 +701,12 @@
       <workItem from="1554692240288" duration="1272000" />
       <workItem from="1554693555711" duration="641000" />
       <workItem from="1554694241969" duration="18300000" />
+      <workItem from="1554769429877" duration="8282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209421000" />
+    <option name="totallyTimeSpent" value="217703000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,10 +718,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8967611" visible="true" weight="0.15013404" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8967611" visible="true" weight="0.20710456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -685,7 +731,7 @@
       <window_info id="Web" order="7" sideWeight="0.103238866" side_tool="true" weight="0.21313673" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.23184358" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.19273743" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28631285" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -723,13 +769,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PierQualityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PierQualityMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-108">
@@ -935,28 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/chartsPage/passRate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="204" column="21" selection-start-line="204" selection-start-column="21" selection-end-line="204" selection-end-column="21" />
-          <folding>
-            <element signature="e#2592#2598#0#HTML" expanded="true" />
-            <element signature="e#2598#2604#0#HTML" expanded="true" />
-            <element signature="e#2824#2830#0#HTML" expanded="true" />
-            <element signature="e#2830#2836#0#HTML" expanded="true" />
-            <element signature="e#2673#2679#0#HTML" expanded="true" />
-            <element signature="e#2679#2685#0#HTML" expanded="true" />
-            <element signature="e#2853#2859#0#HTML" expanded="true" />
-            <element signature="e#2859#2865#0#HTML" expanded="true" />
-            <element signature="e#2909#2915#0#HTML" expanded="true" />
-            <element signature="e#2915#2921#0#HTML" expanded="true" />
-            <element signature="e#2772#2778#0#HTML" expanded="true" />
-            <element signature="e#2778#2784#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/util/MD5Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -992,39 +1009,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2279#2280#0" expanded="true" />
-            <element signature="e#2345#2346#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="56" column="29" selection-start-line="56" selection-start-column="29" selection-end-line="56" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.2.RELEASE/spring-web-4.0.2.RELEASE.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="155" column="73" selection-start-line="155" selection-start-column="12" selection-end-line="155" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1035,9 +1023,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="91" column="48" lean-forward="true" selection-start-line="91" selection-start-column="48" selection-end-line="91" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="38" column="94" selection-start-line="38" selection-start-column="94" selection-end-line="38" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="243" column="26" selection-start-line="243" selection-start-column="26" selection-end-line="243" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityCountDateList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
+        <state relative-caret-position="488">
           <caret line="29" column="48" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="48" />
           <folding>
             <element signature="e#247#248#0" expanded="true" />
@@ -1054,19 +1076,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/vo/EntityPassRateDate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
+        <state relative-caret-position="189">
+          <caret line="7" column="28" selection-start-line="6" selection-start-column="20" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#232#233#0" expanded="true" />
+            <element signature="e#280#281#0" expanded="true" />
+            <element signature="e#320#321#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="true" />
+            <element signature="e#480#481#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/page/chartsPage/passRate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-215">
+          <caret line="160" column="28" selection-start-line="160" selection-start-column="28" selection-end-line="160" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-324">
-          <caret line="464" column="49" selection-start-line="464" selection-start-column="49" selection-end-line="464" selection-end-column="49" />
+        <state relative-caret-position="325">
+          <caret line="471" column="23" lean-forward="true" selection-start-line="471" selection-start-column="23" selection-end-line="471" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#17338#17358#0" expanded="true" />
           </folding>
         </state>
       </provider>
