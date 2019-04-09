@@ -30,7 +30,7 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
-        <div class="layui-logo">南京浦仪大桥信息协同平台</div>
+        <div class="layui-logo">浦仪大桥信息协同平台</div>
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
 
