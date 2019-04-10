@@ -112,7 +112,7 @@
             <button type="submit" lay-submit lay-filter="sub" class="layui-btn">注册</button>
         </div>
         <hr style="width: 85%" />
-        <p style="width: 85%"><a href="${ctx}/page/login.jsp" class="fl">已有账号？立即登录</a><a href="javascript:;" class="fr">忘记密码？</a></p>
+        <p style="width: 85%"><a href="${ctx}/page/loginAndRegPage/login.jsp" class="fl">已有账号？立即登录</a><a href="javascript:;" class="fr">忘记密码？</a></p>
     </form>
 </div>
 
