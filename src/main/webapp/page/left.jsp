@@ -81,7 +81,7 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">环保安全</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">环境风险应急预案报审表</a></dd>
+                        <dd><a href="${ctx}/page/env/show">报审申请表</a></dd>
                         <dd><a href="javascript:;">环境保证体系报审表</a></dd>
                         <dd><a href="javascript:;">环保施工技术方案报审表</a></dd>
                         <dd><a href="javascript:;">环保条件验收申请表</a></dd>

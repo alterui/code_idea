@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lr.bridge.dao.EnvProtectionMapper">
+  <resultMap id="BaseResultMap" type="com.lr.bridge.pojo.EnvProtection">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="cbdw" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="bdh" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="jldw" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="bh" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sqbmz" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="zjb" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="gcmz" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="cbr" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="zjyj" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="hbzxyj" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="sqsj" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, cbdw, bdh, jldw, bh, sqbmz, zjb, gcmz, cbr, zjyj, hbzxyj, sqsj
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from envprotection
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from envprotection
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lr.bridge.pojo.EnvProtection">
+    insert into envprotection (id, cbdw, bdh, 
+      jldw, bh, sqbmz, zjb, 
+      gcmz, cbr, zjyj, hbzxyj, 
+      sqsj)
+    values (#{id,jdbcType=INTEGER}, #{cbdw,jdbcType=VARCHAR}, #{bdh,jdbcType=VARCHAR}, 
+      #{jldw,jdbcType=VARCHAR}, #{bh,jdbcType=VARCHAR}, #{sqbmz,jdbcType=VARCHAR}, #{zjb,jdbcType=VARCHAR}, 
+      #{gcmz,jdbcType=VARCHAR}, #{cbr,jdbcType=VARCHAR}, #{zjyj,jdbcType=VARCHAR}, #{hbzxyj,jdbcType=VARCHAR}, 
+      #{sqsj,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lr.bridge.pojo.EnvProtection">
+    insert into envprotection
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="cbdw != null">
+        cbdw,
+      </if>
+      <if test="bdh != null">
+        bdh,
+      </if>
+      <if test="jldw != null">
+        jldw,
+      </if>
+      <if test="bh != null">
+        bh,
+      </if>
+      <if test="sqbmz != null">
+        sqbmz,
+      </if>
+      <if test="zjb != null">
+        zjb,
+      </if>
+      <if test="gcmz != null">
+        gcmz,
+      </if>
+      <if test="cbr != null">
+        cbr,
+      </if>
+      <if test="zjyj != null">
+        zjyj,
+      </if>
+      <if test="hbzxyj != null">
+        hbzxyj,
+      </if>
+      <if test="sqsj != null">
+        sqsj,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="cbdw != null">
+        #{cbdw,jdbcType=VARCHAR},
+      </if>
+      <if test="bdh != null">
+        #{bdh,jdbcType=VARCHAR},
+      </if>
+      <if test="jldw != null">
+        #{jldw,jdbcType=VARCHAR},
+      </if>
+      <if test="bh != null">
+        #{bh,jdbcType=VARCHAR},
+      </if>
+      <if test="sqbmz != null">
+        #{sqbmz,jdbcType=VARCHAR},
+      </if>
+      <if test="zjb != null">
+        #{zjb,jdbcType=VARCHAR},
+      </if>
+      <if test="gcmz != null">
+        #{gcmz,jdbcType=VARCHAR},
+      </if>
+      <if test="cbr != null">
+        #{cbr,jdbcType=VARCHAR},
+      </if>
+      <if test="zjyj != null">
+        #{zjyj,jdbcType=VARCHAR},
+      </if>
+      <if test="hbzxyj != null">
+        #{hbzxyj,jdbcType=VARCHAR},
+      </if>
+      <if test="sqsj != null">
+        #{sqsj,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lr.bridge.pojo.EnvProtection">
+    update envprotection
+    <set>
+      <if test="cbdw != null">
+        cbdw = #{cbdw,jdbcType=VARCHAR},
+      </if>
+      <if test="bdh != null">
+        bdh = #{bdh,jdbcType=VARCHAR},
+      </if>
+      <if test="jldw != null">
+        jldw = #{jldw,jdbcType=VARCHAR},
+      </if>
+      <if test="bh != null">
+        bh = #{bh,jdbcType=VARCHAR},
+      </if>
+      <if test="sqbmz != null">
+        sqbmz = #{sqbmz,jdbcType=VARCHAR},
+      </if>
+      <if test="zjb != null">
+        zjb = #{zjb,jdbcType=VARCHAR},
+      </if>
+      <if test="gcmz != null">
+        gcmz = #{gcmz,jdbcType=VARCHAR},
+      </if>
+      <if test="cbr != null">
+        cbr = #{cbr,jdbcType=VARCHAR},
+      </if>
+      <if test="zjyj != null">
+        zjyj = #{zjyj,jdbcType=VARCHAR},
+      </if>
+      <if test="hbzxyj != null">
+        hbzxyj = #{hbzxyj,jdbcType=VARCHAR},
+      </if>
+      <if test="sqsj != null">
+        sqsj = #{sqsj,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lr.bridge.pojo.EnvProtection">
+    update envprotection
+    set cbdw = #{cbdw,jdbcType=VARCHAR},
+      bdh = #{bdh,jdbcType=VARCHAR},
+      jldw = #{jldw,jdbcType=VARCHAR},
+      bh = #{bh,jdbcType=VARCHAR},
+      sqbmz = #{sqbmz,jdbcType=VARCHAR},
+      zjb = #{zjb,jdbcType=VARCHAR},
+      gcmz = #{gcmz,jdbcType=VARCHAR},
+      cbr = #{cbr,jdbcType=VARCHAR},
+      zjyj = #{zjyj,jdbcType=VARCHAR},
+      hbzxyj = #{hbzxyj,jdbcType=VARCHAR},
+      sqsj = #{sqsj,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+
+    <select id="selectAll"  resultMap="BaseResultMap">
+        select
+        *
+        from envprotection
+    </select>
+</mapper>
