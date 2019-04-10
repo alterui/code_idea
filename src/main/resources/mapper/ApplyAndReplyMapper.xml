@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lr.bridge.dao.ApplyAndReplyMapper">
+  <resultMap id="BaseResultMap" type="com.lr.bridge.pojo.ApplyAndReply">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="contractorUnit" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="bidNum" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="supervision" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="serialNum" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="formName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="director" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="projectName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="contractorName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="applicationTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="directorView" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="directorReplyTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="centerView" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="centerReplyTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, contractorUnit, bidNum, supervision, serialNum, formName, director, projectName, 
+    contractorName, applicationTime, directorView, directorReplyTime, centerView, centerReplyTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from applyandreply
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from applyandreply
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.lr.bridge.pojo.ApplyAndReply">
+    insert into applyandreply (id, contractorUnit, bidNum, 
+      supervision, serialNum, formName, 
+      director, projectName, contractorName, 
+      applicationTime, directorView, directorReplyTime, 
+      centerView, centerReplyTime)
+    values (#{id,jdbcType=INTEGER}, #{contractorUnit,jdbcType=VARCHAR}, #{bidNum,jdbcType=VARCHAR}, 
+      #{supervision,jdbcType=VARCHAR}, #{serialNum,jdbcType=VARCHAR}, #{formName,jdbcType=VARCHAR}, 
+      #{director,jdbcType=VARCHAR}, #{projectName,jdbcType=VARCHAR}, #{contractorName,jdbcType=VARCHAR}, 
+      #{applicationTime,jdbcType=TIMESTAMP}, #{directorView,jdbcType=VARCHAR}, #{directorReplyTime,jdbcType=TIMESTAMP}, 
+      #{centerView,jdbcType=VARCHAR}, #{centerReplyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lr.bridge.pojo.ApplyAndReply">
+    insert into applyandreply
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="contractorUnit != null">
+        contractorUnit,
+      </if>
+      <if test="bidNum != null">
+        bidNum,
+      </if>
+      <if test="supervision != null">
+        supervision,
+      </if>
+      <if test="serialNum != null">
+        serialNum,
+      </if>
+      <if test="formName != null">
+        formName,
+      </if>
+      <if test="director != null">
+        director,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="contractorName != null">
+        contractorName,
+      </if>
+      <if test="applicationTime != null">
+        applicationTime,
+      </if>
+      <if test="directorView != null">
+        directorView,
+      </if>
+      <if test="directorReplyTime != null">
+        directorReplyTime,
+      </if>
+      <if test="centerView != null">
+        centerView,
+      </if>
+      <if test="centerReplyTime != null">
+        centerReplyTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="contractorUnit != null">
+        #{contractorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="bidNum != null">
+        #{bidNum,jdbcType=VARCHAR},
+      </if>
+      <if test="supervision != null">
+        #{supervision,jdbcType=VARCHAR},
+      </if>
+      <if test="serialNum != null">
+        #{serialNum,jdbcType=VARCHAR},
+      </if>
+      <if test="formName != null">
+        #{formName,jdbcType=VARCHAR},
+      </if>
+      <if test="director != null">
+        #{director,jdbcType=VARCHAR},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorName != null">
+        #{contractorName,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationTime != null">
+        #{applicationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="directorView != null">
+        #{directorView,jdbcType=VARCHAR},
+      </if>
+      <if test="directorReplyTime != null">
+        #{directorReplyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="centerView != null">
+        #{centerView,jdbcType=VARCHAR},
+      </if>
+      <if test="centerReplyTime != null">
+        #{centerReplyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lr.bridge.pojo.ApplyAndReply">
+    update applyandreply
+    <set>
+      <if test="contractorUnit != null">
+        contractorUnit = #{contractorUnit,jdbcType=VARCHAR},
+      </if>
+      <if test="bidNum != null">
+        bidNum = #{bidNum,jdbcType=VARCHAR},
+      </if>
+      <if test="supervision != null">
+        supervision = #{supervision,jdbcType=VARCHAR},
+      </if>
+      <if test="serialNum != null">
+        serialNum = #{serialNum,jdbcType=VARCHAR},
+      </if>
+      <if test="formName != null">
+        formName = #{formName,jdbcType=VARCHAR},
+      </if>
+      <if test="director != null">
+        director = #{director,jdbcType=VARCHAR},
+      </if>
+      <if test="projectName != null">
+        projectName = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="contractorName != null">
+        contractorName = #{contractorName,jdbcType=VARCHAR},
+      </if>
+      <if test="applicationTime != null">
+        applicationTime = #{applicationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="directorView != null">
+        directorView = #{directorView,jdbcType=VARCHAR},
+      </if>
+      <if test="directorReplyTime != null">
+        directorReplyTime = #{directorReplyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="centerView != null">
+        centerView = #{centerView,jdbcType=VARCHAR},
+      </if>
+      <if test="centerReplyTime != null">
+        centerReplyTime = #{centerReplyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lr.bridge.pojo.ApplyAndReply">
+    update applyandreply
+    set contractorUnit = #{contractorUnit,jdbcType=VARCHAR},
+      bidNum = #{bidNum,jdbcType=VARCHAR},
+      supervision = #{supervision,jdbcType=VARCHAR},
+      serialNum = #{serialNum,jdbcType=VARCHAR},
+      formName = #{formName,jdbcType=VARCHAR},
+      director = #{director,jdbcType=VARCHAR},
+      projectName = #{projectName,jdbcType=VARCHAR},
+      contractorName = #{contractorName,jdbcType=VARCHAR},
+      applicationTime = #{applicationTime,jdbcType=TIMESTAMP},
+      directorView = #{directorView,jdbcType=VARCHAR},
+      directorReplyTime = #{directorReplyTime,jdbcType=TIMESTAMP},
+      centerView = #{centerView,jdbcType=VARCHAR},
+      centerReplyTime = #{centerReplyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <select id="selectAll"  resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply
+    </select>
+</mapper>

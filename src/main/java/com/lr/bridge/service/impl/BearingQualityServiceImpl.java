@@ -37,7 +37,7 @@ public class BearingQualityServiceImpl implements BearingQualityService {
         PageHelper.startPage(pageIndex, pageSize);
         List<BearingQuality> articleList = bearingQualityMapper.selectByHasQuality();
 
-        return new PageInfo<BearingQuality>(articleList);
+        return new PageInfo<>(articleList);
     }
 
     @Override
@@ -47,7 +47,7 @@ public class BearingQualityServiceImpl implements BearingQualityService {
         PageHelper.startPage(pageIndex, pageSize);
         List<BearingQuality> articleList = bearingQualityMapper.findAll(-1);
 
-        return new PageInfo<BearingQuality>(articleList);
+        return new PageInfo<>(articleList);
 
 
     }

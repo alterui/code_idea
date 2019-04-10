@@ -88,6 +88,12 @@ public class UserController {
         return "page/loginAndRegPage/login";
     }
 
+    @RequestMapping("/register")
+    public String registerPage(HttpServletRequest request, Model model) {
+
+        return "page/loginAndRegPage/register";
+    }
+
 
 
 }

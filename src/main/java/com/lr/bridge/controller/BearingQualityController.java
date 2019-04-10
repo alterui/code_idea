@@ -512,4 +512,28 @@ public class BearingQualityController {
         return results;
     }
 
+
+
+    /**
+     * 取值显示在验收标准页面上
+     */
+    @RequestMapping(value = "/showChart")
+    public String showCharts(HttpServletRequest request,
+                               Model model) {
+
+        return "page/chartsPage/passRate";
+    }
+
+
+    /**
+     * 取值显示在验收标准页面上
+     */
+    @RequestMapping(value = "/addData")
+    public String addData(HttpServletRequest request,
+                             Model model) {
+
+        return "page/crudPage/bearAddPage";
+    }
+
+
 }

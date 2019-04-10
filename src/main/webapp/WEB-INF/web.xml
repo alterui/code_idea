@@ -83,7 +83,7 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/page/loginAndReg/login.jsp</welcome-file>
+        <welcome-file>/</welcome-file>
     </welcome-file-list>
 
 </web-app>

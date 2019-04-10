@@ -115,7 +115,7 @@
               <property name="useActualColumnNames" value="true"/>
          </table>-->
 
-        <table tableName="user" domainObjectName="User" enableCountByExample="false"
+        <table tableName="applyAndReply" domainObjectName="ApplyAndReply" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="true"/>

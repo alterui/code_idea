@@ -56,7 +56,7 @@ public class EnvProtectionController {
             e.printStackTrace();
         } finally {
         }
-        return "page/envProtectionPage/reportForm";
+        return "page/envProtectionPage/reportForms";
 
     }
 

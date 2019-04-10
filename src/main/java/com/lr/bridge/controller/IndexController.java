@@ -21,9 +21,7 @@ public class IndexController {
 
     @RequestMapping("/")
     public String index(HttpServletRequest request, Model model) {
-        List<BearingQuality> bearingStruId = bearingQualityService.getBearingStruId();
 
-        model.addAttribute("bearName", bearingStruId);
-        return "page/adminPage/index";
+        return "page/loginAndRegPage/login";
     }
 }
