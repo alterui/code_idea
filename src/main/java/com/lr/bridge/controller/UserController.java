@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.BearingQuality;
+import com.lr.bridge.pojo.User;
 import com.lr.bridge.service.BearingQualityService;
 import com.lr.bridge.service.impl.UserServiceImpl;
 import org.springframework.stereotype.Controller;
@@ -27,17 +28,16 @@ public class UserController {
     public String register(HttpServletRequest request,
                           Model model) {
 
-
-
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String repassword = request.getParameter("repassword");
-        Map<String, String> map = userService.register(userName, password,repassword);
+        String fullName = request.getParameter("fullName");
+        Map<String, String> map = userService.register(userName, fullName,password,repassword);
         if (map.get("msg") == null) {
-            return "page/login";
+            return "page/loginAndRegPage/login";
         } else {
             model.addAttribute("msg", map.get("msg"));
-            return "page/register";
+            return "page/loginAndRegPage/register";
         }
 
     }
@@ -52,17 +52,28 @@ public class UserController {
 
         Map<String, String> map = userService.login(userName,password);
         if (map.get("msg") == null) {
-            session.setAttribute("userName", userName);
+            User user = userService.getUser(userName);
+            session.setAttribute("userName", user.getFullName());
 
-            model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
-            PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showQuality(pageIndex, pageSize);
-            model.addAttribute("pageInfo", bearingQualityInfo);
-            return "page/qualityPage/bearQuality";
+            //普通用户
+            if (user.getPermission() == 0) {
+                return "page/qualityPage/bearQuality";
+            }
+            //管理员用户
+            if (user.getPermission() == 1) {
+                model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
+                PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showQuality(pageIndex, pageSize);
+                model.addAttribute("pageInfo", bearingQualityInfo);
+                return "page/qualityPage/bearQuality";
+            }
+            return " ";
+
+
 
 
         } else {
             model.addAttribute("msg", map.get("msg"));
-            return "page/login";
+            return "page/loginAndRegPage/login";
         }
 
     }
@@ -74,7 +85,7 @@ public class UserController {
 
 
         session.removeAttribute("userName");
-        return "page/login";
+        return "page/loginAndRegPage/login";
     }
 
 

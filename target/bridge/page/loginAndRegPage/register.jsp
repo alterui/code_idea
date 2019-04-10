@@ -68,6 +68,16 @@
                 <i class="layui-icon" id="wr" style="color: red; font-weight: bolder;" hidden>ဆ</i>
             </div>
         </div>
+
+        <div class="layui-input-inline">
+            <!-- 用户名 -->
+            <div class="layui-inline" style="width: 85%">
+                <input type="text"  name="fullName" required  lay-verify="required" placeholder="请输入姓名" autocomplete="off" class="layui-input">
+            </div>
+
+        </div>
+
+
         <!-- 密码 -->
         <div class="layui-input-inline">
             <div class="layui-inline" style="width: 85%">

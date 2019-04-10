@@ -20,8 +20,13 @@ public class UserServiceImpl implements UserService{
 	private UserMapper userMapper;
 
     @Override
-    public Map<String,String> register(String userName,String password,String repassword) {
-        Map<String, String> map = new HashMap<String, String>();
+    public User getUser(String userName) {
+        return userMapper.selectByUserName(userName);
+    }
+
+    @Override
+    public Map<String,String> register(String userName,String fullName,String password,String repassword) {
+        Map<String, String> map = new HashMap<>();
 
         if (StringUtils.isBlank(userName)) {
             map.put("msg", "用户名不能为空");
@@ -32,6 +37,20 @@ public class UserServiceImpl implements UserService{
             map.put("msg", "密码不能不空");
             return map;
         }
+
+
+        if (StringUtils.isBlank(repassword)) {
+            map.put("msg", "确认密码不能不空");
+            return map;
+        }
+
+
+        if (StringUtils.isBlank(fullName)) {
+            map.put("msg", "姓名不能不空");
+            return map;
+        }
+
+
 
         if (userMapper.selectByUserName(userName) != null) {
             map.put("msg", "用户名已经存在，请重新输入！");
@@ -47,6 +66,10 @@ public class UserServiceImpl implements UserService{
         user.setUserName(userName);
 
         user.setPassword(MD5Util.getMD5(password) );
+        user.setFullName(fullName);
+
+        //0为普通用户，1为管理员用户
+        user.setPermission(0);
 
         userMapper.insert(user);
 

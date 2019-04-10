@@ -5,11 +5,13 @@
     <constructor>
       <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
       <arg column="userName" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="fullName" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="password" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="permission" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
-    id, userName, password
+    id, userName, fullName, password, permission
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -22,10 +24,10 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.lr.bridge.pojo.User">
-    insert into user (id, userName, password
-      )
-    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}
-      )
+    insert into user (id, userName, fullName, 
+      password, permission)
+    values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{fullName,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{permission,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.lr.bridge.pojo.User">
     insert into user
@@ -36,8 +38,14 @@
       <if test="userName != null">
         userName,
       </if>
+      <if test="fullName != null">
+        fullName,
+      </if>
       <if test="password != null">
         password,
+      </if>
+      <if test="permission != null">
+        permission,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -47,8 +55,14 @@
       <if test="userName != null">
         #{userName,jdbcType=VARCHAR},
       </if>
+      <if test="fullName != null">
+        #{fullName,jdbcType=VARCHAR},
+      </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="permission != null">
+        #{permission,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -58,8 +72,14 @@
       <if test="userName != null">
         userName = #{userName,jdbcType=VARCHAR},
       </if>
+      <if test="fullName != null">
+        fullName = #{fullName,jdbcType=VARCHAR},
+      </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="permission != null">
+        permission = #{permission,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -67,9 +87,12 @@
   <update id="updateByPrimaryKey" parameterType="com.lr.bridge.pojo.User">
     update user
     set userName = #{userName,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR}
+      fullName = #{fullName,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      permission = #{permission,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
 
     <select id="selectByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
@@ -77,4 +100,6 @@
         from user
         where userName = #{userName,jdbcType=VARCHAR}
     </select>
+
+
 </mapper>

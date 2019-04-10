@@ -115,7 +115,7 @@
               <property name="useActualColumnNames" value="true"/>
          </table>-->
 
-        <table tableName="envprotection" domainObjectName="EnvProtection" enableCountByExample="false"
+        <table tableName="user" domainObjectName="User" enableCountByExample="false"
                enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
             <property name="useActualColumnNames" value="true"/>

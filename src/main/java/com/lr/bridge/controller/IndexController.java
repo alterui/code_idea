@@ -24,6 +24,6 @@ public class IndexController {
         List<BearingQuality> bearingStruId = bearingQualityService.getBearingStruId();
 
         model.addAttribute("bearName", bearingStruId);
-        return "page/index";
+        return "page/adminPage/index";
     }
 }

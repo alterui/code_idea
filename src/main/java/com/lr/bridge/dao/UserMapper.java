@@ -3,6 +3,7 @@ package com.lr.bridge.dao;
 import com.lr.bridge.pojo.User;
 import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 
 @Repository
 public interface UserMapper {
