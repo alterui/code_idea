@@ -78,7 +78,7 @@
                 </li>
 
 
-                <li class="layui-nav-item">
+                <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">环保安全</a>
                     <dl class="layui-nav-child">
                         <dd><a href="${ctx}/page/apply/show">报审申请表</a></dd>
@@ -87,10 +87,6 @@
                         <dd><a href="javascript:;">环保条件验收申请表</a></dd>
                     </dl>
                 </li>
-
-
-
-
 
 
 

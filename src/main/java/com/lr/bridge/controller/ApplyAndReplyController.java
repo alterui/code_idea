@@ -3,6 +3,7 @@ package com.lr.bridge.controller;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.ApplyAndReply;
 import com.lr.bridge.service.ApplyAndReplyService;
+import com.lr.bridge.util.MD5Util;
 import com.lr.bridge.util.WordGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +20,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by ALTERUI on 2019/4/9 17:34
@@ -89,11 +87,13 @@ public class ApplyAndReplyController {
         map.put("contractorName", applyAndReply.getContractorName());
         Date applicationTime = applyAndReply.getApplicationTime();
 
-       /* String date = String.valueOf(applicationTime);
-        String[] split = date.split("-");*/
-        String year = String.valueOf(applicationTime.getYear());
-        String month = String.valueOf(applicationTime.getMinutes());
-        String day = String.valueOf(applicationTime.getDay());
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String date = simpleDateFormat.format(applicationTime);
+
+        String[] split = date.split("-");
+        String year = split[0];
+        String month = split[1];
+        String day = split[2];
         /*System.out.println(year + month + day);*/
         map.put("year", year);
         map.put("month", month);
@@ -112,8 +112,12 @@ public class ApplyAndReplyController {
 
             resp.setCharacterEncoding("utf-8");
             resp.setContentType("application/msword");
+            Random random = new Random();
+            String res = MD5Util.getMD5(String.valueOf(random.nextInt(1000)));
+            //System.out.println(res);
+            res = res.substring(0, 15);
             // 设置浏览器以下载的方式处理该文件默认名为resume.doc
-            resp.addHeader("Content-Disposition", "attachment;filename=resume.doc");
+            resp.addHeader("Content-Disposition", "attachment;filename="+res+".doc");
 
             out = resp.getOutputStream();
             byte[] buffer = new byte[512];	// 缓冲区
@@ -137,8 +141,5 @@ public class ApplyAndReplyController {
 
 
     }
-
-
-
 
 }

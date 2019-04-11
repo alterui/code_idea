@@ -12,14 +12,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
+
 
 @Controller
 @RequestMapping("/page/bear")
@@ -191,7 +190,7 @@ public class BearingQualityController {
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
         model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/crudPage/bearCrudPage";
+        return "page/bearCrudPage/bearCrudPage";
 
     }
 
@@ -212,7 +211,7 @@ public class BearingQualityController {
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
         model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/crudPage/bearCrudPage";
+        return "page/bearCrudPage/bearCrudPage";
     }
 
 
@@ -228,7 +227,7 @@ public class BearingQualityController {
 
         BearingQuality bear = bearingQualityService.selectByPrimaryKey(id);
         model.addAttribute("bear", bear);
-        return "page/crudPage/bearEditPage";
+        return "page/bearCrudPage/bearEditPage";
     }
 
 
@@ -276,7 +275,7 @@ public class BearingQualityController {
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
         model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/crudPage/bearCrudPage";
+        return "page/bearCrudPage/bearCrudPage";
     }
 
     /**
@@ -317,7 +316,7 @@ public class BearingQualityController {
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
         model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/crudPage/bearCrudPage";
+        return "page/bearCrudPage/bearCrudPage";
     }
 
     /**
@@ -335,7 +334,7 @@ public class BearingQualityController {
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
         //PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
         model.addAttribute("pageInfo", bearingQualityList);
-        return "page/crudPage/bearCrudPage";
+        return "page/bearCrudPage/bearCrudPage";
     }
 
 
@@ -532,7 +531,7 @@ public class BearingQualityController {
     public String addData(HttpServletRequest request,
                              Model model) {
 
-        return "page/crudPage/bearAddPage";
+        return "page/bearCrudPage/bearAddPage";
     }
 
 
