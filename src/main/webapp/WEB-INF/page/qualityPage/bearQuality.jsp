@@ -24,10 +24,10 @@
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
-    <link rel="stylesheet" href="${ctx}/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
-    <script src="${ctx}/layui/layui.all.js"></script>
-    <script src="${ctx}/layui/layui.js"></script>
+    <script src="${ctx}/static/layui/layui.all.js"></script>
+    <script src="${ctx}/static/layui/layui.js"></script>
     <script type="text/javascript">
         //JavaScript代码区域
         layui.use('element', function(){
@@ -94,14 +94,16 @@
     </style>
 
             <blockquote class="layui-elem-quote">
-                位置跳转&nbsp;&nbsp;<b></b>&nbsp;&nbsp;
+
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;支座质量验收&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                位置跳转&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/bear/"><font color="#228b22">待确认验收</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/bear/hasQuality"><font color="#228b22">已确认验收</font></a>
 
 
                 <div style="float: right">
-                    其他质量验收&nbsp;&nbsp;<b></b>&nbsp;&nbsp;
-                    <a  class="layui-this" href="/page/bear/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    其他质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a  class="layui-this" href="/page/beam/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;

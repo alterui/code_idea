@@ -24,11 +24,11 @@
     <c:set var="ctx" value="${pageContext.request.contextPath}"/>
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
-    <link rel="stylesheet" href="${ctx}/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
     <link rel="stylesheet" href="${ctx}/static/js/back.bak.js">
-    <script src="${ctx}/layui/layui.all.js"></script>
-    <script src="${ctx}/layui/layui.js"></script>
+    <script src="${ctx}/static/layui/layui.all.js"></script>
+    <script src="${ctx}/static/layui/layui.js"></script>
 
 
     <script type="text/javascript">
@@ -182,7 +182,7 @@
                                 <div style="width: 216px; margin: 0; text-align:right; float:right" ;>
 
                                     <%-- <button class="layui-btn layui-btn-normal layui-btn-radius" >
-                                         <a href="bearAddPage.jsp">
+                                         <a href="beamAddPage.jsp">
                                              增加数据
                                          </a>
                                      </button>--%>

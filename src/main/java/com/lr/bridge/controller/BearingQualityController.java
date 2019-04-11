@@ -495,7 +495,7 @@ public class BearingQualityController {
                     }
                 } else if (temp.size() == 4) {
                     //02(不合格，有两个)  11(合格，1个)
-                    DecimalFormat df   = new DecimalFormat("######0.0");
+                    DecimalFormat df   = new DecimalFormat("######0.00");
                     double tempDouble = Double.parseDouble(temp.get(3).toString()) / (Double.parseDouble(temp.get(3).toString()) + Double.parseDouble(temp.get(1).toString()));
                     passRateDate.setPassRate(String.valueOf(df.format(tempDouble)));
                 }
@@ -520,7 +520,7 @@ public class BearingQualityController {
     public String showCharts(HttpServletRequest request,
                                Model model) {
 
-        return "page/chartsPage/passRate";
+        return "page/chartsPage/bearPassRate";
     }
 
 

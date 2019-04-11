@@ -21,6 +21,18 @@
       <arg column="isQualify" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
+
+
+    <resultMap id="isQualityCountDate" type="com.lr.bridge.vo.EntityCountDateList">
+        <id property="checkTime" column="checkTime"/>
+        <collection property="entityCounts" ofType="com.lr.bridge.vo.EntityCountDate">
+            <result property="isQualify" column="isQualify"/>
+            <result property="count" column="count"/>
+        </collection>
+    </resultMap>
+
+
+
   <sql id="Base_Column_List">
     id, struId, axialDevi, sectionDevi, topElevDevi, segmHeightDevi, heightDevi, crossSlopeDevi, 
     embePartsDevi, smooDevi, cableTubeAxisDevi, prestTendDevi, cableTensi, bridgeSite, 
@@ -223,4 +235,83 @@
       isQualify = #{isQualify,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+
+
+    <!-- -->
+
+    <select id="findAll" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM beamquality where
+    isQualify= #{isQualify,jdbcType=INTEGER}
+    </select>
+
+
+    <update id="updateByIsQualify" parameterType="java.lang.Integer">
+    update beamquality
+    set
+      isQualify = #{isQualify,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <select id="selectById"  resultMap="BaseResultMap">
+        select
+        *
+        from beamquality where
+        id > 1
+    </select>
+
+
+    <select id="selectByLikeName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from beamquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+    </select>
+
+    <select id="selectByLikeNameAndQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from beamquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        AND  (isQualify = 0 OR isQualify = 1)
+    </select>
+
+
+
+    <select id="selectByLikeNameAndNotQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from beamquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        AND  isQualify = -1
+
+    </select>
+
+
+    <select id="selectByHasQuality"  resultMap="BaseResultMap">
+        select
+        *
+        from beamquality
+        where
+        isQualify=0 OR isQualify = 1
+    </select>
+
+    <!-- 分组查询-->
+    <select id="getIsQualityCountByDate"  parameterType="java.lang.String" resultMap="isQualityCountDate">
+
+          SELECT isQualify,COUNT(*) AS 'count' ,SUBSTR(beamqualityCheckTime,1,10) AS 'checkTime'
+                FROM beamquality
+                WHERE  beamqualityCheckTime
+                BETWEEN #{start}
+                AND #{end}
+                AND (isQualify = 0 OR isQualify = 1)
+                GROUP BY SUBSTR(beamqualityCheckTime,1,10),isQualify
+
+
+    </select>
+
 </mapper>

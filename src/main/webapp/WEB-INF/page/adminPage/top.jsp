@@ -38,8 +38,8 @@
                 <a href="javascript:;">质量管理</a>
                 <dl class="layui-nav-child">
                     <dd><a href="/page/bear/bearStandard">质量验收标准</a></dd>
-                    <dd><a href="/page/bear">质量验收</a></dd>
-                    <dd><a href="/page/bear/showChart">质量可视化管理</a></dd>
+                    <dd><a href="/page/beam">质量验收</a></dd>
+                    <dd><a href="/page/beam/showChart">质量可视化管理</a></dd>
                 </dl>
             </li>
 

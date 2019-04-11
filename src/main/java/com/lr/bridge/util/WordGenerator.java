@@ -12,8 +12,6 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.HashMap;
 import java.util.Map;
-
-import freemarker.cache.ClassTemplateLoader;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.cache.TemplateLoader;
 import freemarker.template.Configuration;
@@ -44,12 +42,10 @@ public class WordGenerator {
 
             //使用FileTemplateLoader
             templateLoader=new FileTemplateLoader(new File("D:\\code\\bridge\\src\\main\\java\\com\\lr\\bridge\\ftl"));
-            path="resume.ftl";
-
+            /*path="resume.ftl";*/
             cfg.setTemplateLoader(templateLoader);
-
-            /*Template t=cfg.getTemplate(path,"UTF-8");*/
             allTemplates = new HashMap<>();
+            //可以放很多
             allTemplates.put("resume", cfg.getTemplate("resume.ftl"));
         } catch (IOException e) {
             e.printStackTrace();
@@ -63,18 +59,18 @@ public class WordGenerator {
 
     public static File createDoc(Map<?, ?> dataMap, String type) {
         String name = "temp" + (int) (Math.random() * 100000) + ".doc";
-        File f = new File(name);
+        File file = new File(name);
         Template t = allTemplates.get(type);
         try {
             // 这个地方不能使用FileWriter因为需要指定编码类型否则生成的Word文档会因为有无法识别的编码而无法打开
-            Writer w = new OutputStreamWriter(new FileOutputStream(f), "utf-8");
+            Writer w = new OutputStreamWriter(new FileOutputStream(file), "utf-8");
             t.process(dataMap, w);
             w.close();
         } catch (Exception ex) {
             ex.printStackTrace();
             throw new RuntimeException(ex);
         }
-        return f;
+        return file;
     }
 
 }

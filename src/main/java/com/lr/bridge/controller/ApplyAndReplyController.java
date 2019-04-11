@@ -29,11 +29,8 @@ import java.util.*;
 @RequestMapping("/page/apply")
 public class ApplyAndReplyController {
 
-
     @Resource
     private ApplyAndReplyService applyAndReplyService;
-
-
     /**
      * 申请审批表显示数据
      * @param request
@@ -60,8 +57,6 @@ public class ApplyAndReplyController {
         return "page/applyAndReportPage/reportForm";
 
     }
-
-
     /**
      * 取值显示在页面上
      *

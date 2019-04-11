@@ -25,11 +25,11 @@
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
 
-    <link rel="stylesheet" href="${ctx}/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
     <link rel="stylesheet" href="${ctx}/static/js/back.bak.js">
-    <script src="${ctx}/layui/layui.all.js"></script>
-    <script src="${ctx}/layui/layui.js"></script>
+    <script src="${ctx}/static/layui/layui.all.js"></script>
+    <script src="${ctx}/static/layui/layui.js"></script>
 
 
     <script type="text/javascript">

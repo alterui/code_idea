@@ -187,7 +187,7 @@
                                     <div style="width: 216px; margin: 0; text-align:right; float:right" ;>
 
                                         <%-- <button class="layui-btn layui-btn-normal layui-btn-radius" >
-                                             <a href="bearAddPage.jsp">
+                                             <a href="beamAddPage.jsp">
                                                  增加数据
                                              </a>
                                          </button>--%>

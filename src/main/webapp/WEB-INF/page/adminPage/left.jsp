@@ -69,7 +69,7 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a class="" href="javascript:;">质量安全</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="${ctx}/page/crudPage/beamCrudPage.jsp">梁质量验收数据</a></dd>
+                        <dd><a href="${ctx}/page/beam/show">梁质量验收数据</a></dd>
                         <dd><a href="${ctx}/page/bear/show">支座质量验收数据</a></dd>
                         <dd><a href="${ctx}/page/crudPage/pierCrudPage.jsp">墩台质量验收数据</a></dd>
                         <dd><a href="${ctx}/page/crudPage/pileCrudPage.jsp">桩质量验收数据</a></dd>
