@@ -93,7 +93,7 @@
                     <a  class="layui-this" href="/page/beam/showChart">梁验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/showChart">支座验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pier/showChart">墩台验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/bear/showChart">桩验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/pile/showChart">桩验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/showChart">锁塔验收合格折线图</a>
                 </div>
 

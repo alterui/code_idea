@@ -64,7 +64,7 @@
 
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a ><font color="#228b22">梁质量验收标准设置</font></a>
+                <a ><font color="#228b22">墩台质量验收标准设置</font></a>
 
 
                 <div style="float: right">
@@ -72,7 +72,7 @@
                     <a  class="layui-this" href="/page/beam/beamStandard">梁质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/bearStandard">支座质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pier/pierStandard">墩台质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="">桩质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/pile/pileStandard">桩质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="">锁塔质量验收标准</a>
                 </div>
             </blockquote>

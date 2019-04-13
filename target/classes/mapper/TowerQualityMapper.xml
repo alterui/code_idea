@@ -21,7 +21,19 @@
       <arg column="isQualify" javaType="java.lang.Integer" jdbcType="INTEGER" />
     </constructor>
   </resultMap>
-  <sql id="Base_Column_List">
+
+
+
+
+    <resultMap id="isQualityCountDate" type="com.lr.bridge.vo.EntityCountDateList">
+        <id property="checkTime" column="checkTime"/>
+        <collection property="entityCounts" ofType="com.lr.bridge.vo.EntityCountDate">
+            <result property="isQualify" column="isQualify"/>
+            <result property="count" column="count"/>
+        </collection>
+    </resultMap>
+
+    <sql id="Base_Column_List">
     id, struId, axisDevi, crossDimeDevi, vert, coluWallThic, anchnDevi, cableAxisDevi, 
     crossbeamDimeDevi, crossbeamTopDevi, crossbeamAxisDevi, crossbeamThicDevi, embePartsDevi, 
     jointDisl, towerqualityCheckTime, isQualify

@@ -72,7 +72,7 @@
                         <dd><a href="${ctx}/page/beam/show">梁质量验收数据</a></dd>
                         <dd><a href="${ctx}/page/bear/show">支座质量验收数据</a></dd>
                         <dd><a href="${ctx}/page/pier/show">墩台质量验收数据</a></dd>
-                        <dd><a href="${ctx}/page/crudPage/pileCrudPage.jsp">桩质量验收数据</a></dd>
+                        <dd><a href="${ctx}/page/pile/show">桩质量验收数据</a></dd>
                         <dd><a href="${ctx}/page/crudPage/towerCrudPage.jsp">索塔质量验收数据</a></dd>
                     </dl>
                 </li>

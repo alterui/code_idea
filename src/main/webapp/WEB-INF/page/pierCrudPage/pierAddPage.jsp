@@ -63,8 +63,8 @@
 
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a href="/page/pier/show">梁验收数据</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a><cite>添加梁质量数据</cite></a>
+                <a href="/page/pier/show">墩台验收数据</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                <a><cite>添加墩台质量数据</cite></a>
             </blockquote>
 
             <div class="layui-tab">
