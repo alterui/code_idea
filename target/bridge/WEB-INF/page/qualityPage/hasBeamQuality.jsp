@@ -114,8 +114,8 @@
                 <div style="float: right">
                     其他质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/beam/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/bear/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a  href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a  href="/page/pier/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/">锁塔质量验收</a>
                 </div>
