@@ -12,52 +12,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2830dbe2-521c-4d84-b23c-6d5e66b062bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/PileQualityController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/PileQualityService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/PileQualityServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileAddPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileEditPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pileStandard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/TowerQualityController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/TowerQualityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/TowerQualityServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasTowerQuality.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/towerStandard.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerAddPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerEditPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ALTERUI.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ALTERUI.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PileQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PileQualityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PileQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PileQualityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/TowerQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/TowerQualityMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/ftl/resume.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/ftl/resume.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/adminPage/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/adminPage/left.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/beamPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/beamPassRate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBeamQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBeamQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/beamStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/beamStandard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/bearStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/bearStandard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pierStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pierStandard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pileStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pileStandard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/PileQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/PileQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/PileQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/PileQualityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/TowerQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/TowerQualityMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/TowerQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/TowerQualityMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/adminPage/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/adminPage/left.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/beamPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/beamPassRate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/bearPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/bearPassRate.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/pierPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/pierPassRate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/pilePassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/pilePassRate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pierCrudPage/pierAddPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pierCrudPage/pierAddPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pierCrudPage/pierEditPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pierCrudPage/pierEditPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/beamQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/beamQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/bearQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/bearQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasBeamQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasBeamQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasBearQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasBearQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasPierQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasPierQuality.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasPileQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasPileQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/pierQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/pierQuality.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/pileQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/pileQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/standardPage/beamStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/standardPage/beamStandard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/standardPage/bearStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/standardPage/bearStandard.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/standardPage/pierStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/standardPage/pierStandard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/PileQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/PileQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PileQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PileQualityMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/standardPage/pileStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/standardPage/pileStandard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/TowerQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/TowerQualityMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/TowerQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TowerQualityMapper.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -81,189 +90,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.13/freemarker-2.3.13.jar!/freemarker/template/Template.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="156" column="50" selection-start-line="156" selection-start-column="50" selection-end-line="156" selection-end-column="50" />
+            <state relative-caret-position="44">
+              <caret line="108" selection-start-line="108" selection-end-line="108" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileEditPage.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1787">
-              <caret line="181" column="59" selection-start-line="181" selection-start-column="59" selection-end-line="181" selection-end-column="59" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1998#2004#0#HTML" expanded="true" />
-                <element signature="e#2004#2010#0#HTML" expanded="true" />
-                <element signature="e#2018#2024#0#HTML" expanded="true" />
-                <element signature="e#2024#2030#0#HTML" expanded="true" />
-                <element signature="e#2084#2090#0#HTML" expanded="true" />
-                <element signature="e#2090#2096#0#HTML" expanded="true" />
-                <element signature="e#2104#2110#0#HTML" expanded="true" />
-                <element signature="e#2110#2116#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#9816#9820#1#HTML" expanded="true" />
-                <element signature="e#12463#12467#1#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="122" column="9" lean-forward="true" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
-              <folding>
-                <element signature="e#4043#4049#0#HTML" expanded="true" />
-                <element signature="e#4049#4055#0#HTML" expanded="true" />
-                <element signature="e#4063#4069#0#HTML" expanded="true" />
-                <element signature="e#4069#4075#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="147" column="46" selection-start-line="147" selection-start-column="46" selection-end-line="147" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pierStandard.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="112" column="42" selection-start-line="112" selection-start-column="42" selection-end-line="112" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/adminPage/left.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="74" column="58" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pileStandard.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="95" column="46" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1994#2000#0#HTML" expanded="true" />
-                <element signature="e#2000#2006#0#HTML" expanded="true" />
-                <element signature="e#2014#2020#0#HTML" expanded="true" />
-                <element signature="e#2020#2026#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#blockquote#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#2165#2171#0#HTML" expanded="true" />
-                <element signature="e#2171#2177#0#HTML" expanded="true" />
-                <element signature="e#2184#2190#0#HTML" expanded="true" />
-                <element signature="e#2190#2196#0#HTML" expanded="true" />
-                <element signature="e#2282#2288#0#HTML" expanded="true" />
-                <element signature="e#2288#2294#0#HTML" expanded="true" />
-                <element signature="e#2302#2308#0#HTML" expanded="true" />
-                <element signature="e#2308#2314#0#HTML" expanded="true" />
-                <element signature="e#2400#2406#0#HTML" expanded="true" />
-                <element signature="e#2406#2412#0#HTML" expanded="true" />
-                <element signature="e#2420#2426#0#HTML" expanded="true" />
-                <element signature="e#2426#2432#0#HTML" expanded="true" />
-                <element signature="e#2518#2524#0#HTML" expanded="true" />
-                <element signature="e#2524#2530#0#HTML" expanded="true" />
-                <element signature="e#2538#2544#0#HTML" expanded="true" />
-                <element signature="e#2544#2550#0#HTML" expanded="true" />
-                <element signature="e#2635#2641#0#HTML" expanded="true" />
-                <element signature="e#2641#2647#0#HTML" expanded="true" />
-                <element signature="e#2655#2661#0#HTML" expanded="true" />
-                <element signature="e#2661#2667#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="59">
+              <caret line="76" column="26" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierAddPage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="105" column="33" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="105" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileAddPage.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1740">
-              <caret line="175" column="59" selection-start-line="175" selection-start-column="59" selection-end-line="175" selection-end-column="59" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#2002#2008#0#HTML" expanded="true" />
-                <element signature="e#2008#2014#0#HTML" expanded="true" />
-                <element signature="e#2022#2028#0#HTML" expanded="true" />
-                <element signature="e#2028#2034#0#HTML" expanded="true" />
-                <element signature="e#2086#2092#0#HTML" expanded="true" />
-                <element signature="e#2092#2098#0#HTML" expanded="true" />
-                <element signature="e#2106#2112#0#HTML" expanded="true" />
-                <element signature="e#2112#2118#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#9335#9339#1#HTML" expanded="true" />
-                <element signature="e#11982#11986#1#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/ftl/resume.ftl">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -281,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pagination</find>
       <find>layui.js</find>
       <find>articleForm</find>
       <find>pageInfo</find>
@@ -307,10 +152,11 @@
       <find>200</find>
       <find>170</find>
       <find>130</find>
-      <find>Beam</find>
       <find>80</find>
-      <find>beam</find>
       <find>60</find>
+      <find>beam</find>
+      <find>Beam</find>
+      <find>100</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -326,13 +172,15 @@
       <replace>Pier</replace>
       <replace>100</replace>
       <replace>170</replace>
-      <replace>130</replace>
       <replace>160</replace>
       <replace>pier</replace>
       <replace>Pile</replace>
       <replace>80</replace>
       <replace>pile</replace>
       <replace>70</replace>
+      <replace>Tower</replace>
+      <replace>tower</replace>
+      <replace>130</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -341,17 +189,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/util/WordGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BeamQualityService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BeamQualityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BeamQualityServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearAddPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearEditPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearmQualityController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamAddPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamEditPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/BeamQualityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/passRate.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" />
@@ -363,35 +200,46 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PierQualityMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PierQualityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/PierQualityController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierAddPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierEditPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/PileQualityService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/PileQualityServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PileQualityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/PileQualityMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/PileQualityController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileAddPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileEditPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierAddPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierEditPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/TowerQualityService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/TowerQualityServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/TowerQualityMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/TowerQualityController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerAddPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerEditPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBeamQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pileStandard.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pierStandard.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/bearStandard.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/beamStandard.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBeamQuality.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasTowerQuality.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/beamPassRate.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/adminPage/left.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pierStandard.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileAddPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileEditPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pileStandard.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/towerStandard.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp" />
       </list>
     </option>
   </component>
@@ -442,11 +290,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-278" />
-    <option name="y" value="67" />
-    <option name="width" value="1870" />
-    <option name="height" value="1020" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="-19" />
+    <option name="y" value="102" />
+    <option name="width" value="1589" />
+    <option name="height" value="1102" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -521,51 +369,7 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="lr" type="462c0819:PsiDirectoryNode" />
               <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lr" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lr" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
               <item name="ftl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lr" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="interceptor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lr" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="pojo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
@@ -589,28 +393,6 @@
               <item name="bridge" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lr" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="lr" type="462c0819:PsiDirectoryNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
@@ -717,36 +499,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="loginAndRegPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="pierCrudPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="pileCrudPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
               <item name="qualityPage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -758,6 +510,16 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
               <item name="standardPage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
+              <item name="bridge" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="towerCrudPage" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
@@ -811,7 +573,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553743457027" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/lr/bridge/ftl" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -820,24 +582,24 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\chartsPage" />
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\standardPage" />
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\qualityPage" />
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\pileCrudPage" />
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\pierCrudPage" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\bridge\src\main\java\com\lr\bridge\ftl" />
+      <recent name="D:\code\bridge\src\main\webapp\static" />
+      <recent name="D:\code\bridge\src\main\webapp" />
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF" />
+      <recent name="D:\code\bridge\src\main\webapp\page\adminPage" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.lr.bridge.controller" />
       <recent name="com.lr.bridge.service.impl" />
       <recent name="com.lr.bridge.service" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\code\bridge\src\main\webapp\static" />
-      <recent name="D:\code\bridge\src\main\webapp" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\bridge\src\main\java\com\lr\bridge\ftl" />
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF" />
-      <recent name="D:\code\bridge\src\main\webapp\page\adminPage" />
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\chartsPage" />
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\qualityPage" />
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\standardPage" />
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\towerCrudPage" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1023,12 +785,13 @@
       <workItem from="1554947635579" duration="11197000" />
       <workItem from="1554973973609" duration="13916000" />
       <workItem from="1555058902203" duration="420000" />
-      <workItem from="1555116341323" duration="13206000" />
+      <workItem from="1555116341323" duration="15617000" />
+      <workItem from="1555202131388" duration="11449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304507000" />
+    <option name="totallyTimeSpent" value="318367000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1040,10 +803,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-15" y="82" width="1271" height="881" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8589386" visible="true" weight="0.29155496" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8589386" visible="true" weight="0.32893652" />
       <window_info id="Structure" order="1" sideWeight="0.14106146" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1052,8 +815,8 @@
       <window_info id="Favorites" order="6" side_tool="true" weight="0.3297587" />
       <window_info id="Web" order="7" sideWeight="0.14106146" side_tool="true" weight="0.2419571" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.34497207" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.1829609" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.34356725" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.3164219" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.28631285" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1091,159 +854,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamEditPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="66" column="28" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1998#2004#0#HTML" expanded="true" />
-            <element signature="e#2004#2010#0#HTML" expanded="true" />
-            <element signature="e#2018#2024#0#HTML" expanded="true" />
-            <element signature="e#2024#2030#0#HTML" expanded="true" />
-            <element signature="e#2085#2091#0#HTML" expanded="true" />
-            <element signature="e#2091#2097#0#HTML" expanded="true" />
-            <element signature="e#2105#2111#0#HTML" expanded="true" />
-            <element signature="e#2111#2117#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#9087#9091#1#HTML" expanded="true" />
-            <element signature="e#11734#11738#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/back.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/layui/css/layui.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="1" column="23807" selection-start-line="1" selection-start-column="23794" selection-end-line="1" selection-end-column="23807" />
-          <folding>
-            <element signature="e#61525#61664#2" expanded="true" />
-            <element signature="e#63118#63257#2" expanded="true" />
-            <element signature="e#63805#63944#2" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BeamQualityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="52" column="30" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BeamQualityServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="86" column="46" lean-forward="true" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2566#2567#0" expanded="true" />
-            <element signature="e#2633#2634#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12825">
-          <caret line="493" column="70" selection-start-line="493" selection-start-column="70" selection-end-line="493" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1215">
-          <caret line="61" column="54" selection-start-line="61" selection-start-column="54" selection-end-line="61" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2268">
-          <caret line="103" column="25" selection-start-line="103" selection-start-column="25" selection-end-line="103" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/util/WordGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1323">
-          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/ftl/resume.ftl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="125" column="32" lean-forward="true" selection-start-line="97" selection-start-column="23" selection-end-line="125" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/PierQualityService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PierQualityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="712">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/PierQualityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="262" column="36" selection-start-line="262" selection-start-column="36" selection-end-line="262" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/PierQualityServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -1258,43 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-13321">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierEditPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="160" lean-forward="true" selection-start-line="115" selection-start-column="30" selection-end-line="160" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1998#2004#0#HTML" expanded="true" />
-            <element signature="e#2004#2010#0#HTML" expanded="true" />
-            <element signature="e#2018#2024#0#HTML" expanded="true" />
-            <element signature="e#2024#2030#0#HTML" expanded="true" />
-            <element signature="e#2084#2090#0#HTML" expanded="true" />
-            <element signature="e#2090#2096#0#HTML" expanded="true" />
-            <element signature="e#2104#2110#0#HTML" expanded="true" />
-            <element signature="e#2110#2116#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#9952#9956#1#HTML" expanded="true" />
-            <element signature="e#12599#12603#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="109" column="35" lean-forward="true" selection-start-line="97" selection-start-column="23" selection-end-line="109" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1325,16 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BeamQualityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="40" lean-forward="true" selection-start-line="25" selection-start-column="3" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PileQualityMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -1342,20 +905,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BeamQualityMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="315" lean-forward="true" selection-start-line="243" selection-start-column="3" selection-end-line="315" />
         </state>
       </provider>
     </entry>
@@ -1383,101 +932,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/bearStandard.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="74" column="71" selection-start-line="74" selection-start-column="71" selection-end-line="74" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/beamStandard.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="74" column="71" selection-start-line="74" selection-start-column="71" selection-end-line="74" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBeamQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="118" column="59" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="118" column="59" selection-start-line="118" selection-start-column="59" selection-end-line="118" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="108" column="59" selection-start-line="108" selection-start-column="59" selection-end-line="108" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="95" column="68" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="95" column="68" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/beamPassRate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="95" column="68" selection-start-line="95" selection-start-column="68" selection-end-line="95" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2005">
-          <caret line="129" column="37" selection-start-line="129" selection-start-column="37" selection-end-line="129" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/adminPage/top.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/adminPage/left.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="74" column="58" selection-start-line="74" selection-start-column="58" selection-end-line="74" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pierStandard.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1513,103 +971,119 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="122" column="9" lean-forward="true" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
-          <folding>
-            <element signature="e#4043#4049#0#HTML" expanded="true" />
-            <element signature="e#4049#4055#0#HTML" expanded="true" />
-            <element signature="e#4063#4069#0#HTML" expanded="true" />
-            <element signature="e#4069#4075#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileEditPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1787">
+        <state relative-caret-position="4887">
           <caret line="181" column="59" selection-start-line="181" selection-start-column="59" selection-end-line="181" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1998#2004#0#HTML" expanded="true" />
-            <element signature="e#2004#2010#0#HTML" expanded="true" />
-            <element signature="e#2018#2024#0#HTML" expanded="true" />
-            <element signature="e#2024#2030#0#HTML" expanded="true" />
-            <element signature="e#2084#2090#0#HTML" expanded="true" />
-            <element signature="e#2090#2096#0#HTML" expanded="true" />
-            <element signature="e#2104#2110#0#HTML" expanded="true" />
-            <element signature="e#2110#2116#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#9816#9820#1#HTML" expanded="true" />
-            <element signature="e#12463#12467#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="156" column="50" selection-start-line="156" selection-start-column="50" selection-end-line="156" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
+        <state relative-caret-position="3024">
           <caret line="112" column="42" selection-start-line="112" selection-start-column="42" selection-end-line="112" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierAddPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="147" column="46" selection-start-line="147" selection-start-column="46" selection-end-line="147" selection-end-column="46" />
+        <state relative-caret-position="1782">
+          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pileStandard.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="95" column="46" selection-start-line="95" selection-start-column="46" selection-end-line="95" selection-end-column="46" />
+        <state relative-caret-position="2943">
+          <caret line="109" column="35" selection-start-line="97" selection-start-column="23" selection-end-line="109" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierEditPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1782">
+          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/TowerQualityService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BeamQualityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="568">
+          <caret line="40" selection-start-line="25" selection-start-column="3" selection-end-line="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/TowerQualityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/BeamQualityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2107">
+          <caret line="315" selection-start-line="243" selection-start-column="3" selection-end-line="315" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="310" column="37" selection-start-line="310" selection-start-column="37" selection-end-line="310" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/TowerQualityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2916">
+          <caret line="120" column="47" selection-start-line="120" selection-start-column="47" selection-end-line="120" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/TowerQualityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2939">
+          <caret line="409" column="8" selection-start-line="409" selection-start-column="8" selection-end-line="409" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerAddPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="108" column="45" lean-forward="true" selection-start-line="96" selection-start-column="30" selection-end-line="108" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1994#2000#0#HTML" expanded="true" />
-            <element signature="e#2000#2006#0#HTML" expanded="true" />
-            <element signature="e#2014#2020#0#HTML" expanded="true" />
-            <element signature="e#2020#2026#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#blockquote#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2165#2171#0#HTML" expanded="true" />
-            <element signature="e#2171#2177#0#HTML" expanded="true" />
-            <element signature="e#2184#2190#0#HTML" expanded="true" />
-            <element signature="e#2190#2196#0#HTML" expanded="true" />
-            <element signature="e#2282#2288#0#HTML" expanded="true" />
-            <element signature="e#2288#2294#0#HTML" expanded="true" />
-            <element signature="e#2302#2308#0#HTML" expanded="true" />
-            <element signature="e#2308#2314#0#HTML" expanded="true" />
-            <element signature="e#2400#2406#0#HTML" expanded="true" />
-            <element signature="e#2406#2412#0#HTML" expanded="true" />
-            <element signature="e#2420#2426#0#HTML" expanded="true" />
-            <element signature="e#2426#2432#0#HTML" expanded="true" />
-            <element signature="e#2518#2524#0#HTML" expanded="true" />
-            <element signature="e#2524#2530#0#HTML" expanded="true" />
-            <element signature="e#2538#2544#0#HTML" expanded="true" />
-            <element signature="e#2544#2550#0#HTML" expanded="true" />
-            <element signature="e#2635#2641#0#HTML" expanded="true" />
-            <element signature="e#2641#2647#0#HTML" expanded="true" />
-            <element signature="e#2655#2661#0#HTML" expanded="true" />
-            <element signature="e#2661#2667#0#HTML" expanded="true" />
+            <element signature="e#2002#2008#0#HTML" expanded="true" />
+            <element signature="e#2008#2014#0#HTML" expanded="true" />
+            <element signature="e#2022#2028#0#HTML" expanded="true" />
+            <element signature="e#2028#2034#0#HTML" expanded="true" />
+            <element signature="e#2088#2094#0#HTML" expanded="true" />
+            <element signature="e#2094#2100#0#HTML" expanded="true" />
+            <element signature="e#2108#2114#0#HTML" expanded="true" />
+            <element signature="e#2114#2120#0#HTML" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1621,17 +1095,219 @@
             <element signature="n#style#0;n#input#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#9757#9761#1#HTML" expanded="true" />
+            <element signature="e#12404#12408#1#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierAddPage.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerEditPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="105" column="33" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="105" selection-end-column="33" />
+        <state relative-caret-position="417">
+          <caret line="192" lean-forward="true" selection-start-line="123" selection-start-column="31" selection-end-line="192" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#1998#2004#0#HTML" expanded="true" />
+            <element signature="e#2004#2010#0#HTML" expanded="true" />
+            <element signature="e#2018#2024#0#HTML" expanded="true" />
+            <element signature="e#2024#2030#0#HTML" expanded="true" />
+            <element signature="e#2086#2092#0#HTML" expanded="true" />
+            <element signature="e#2092#2098#0#HTML" expanded="true" />
+            <element signature="e#2106#2112#0#HTML" expanded="true" />
+            <element signature="e#2112#2118#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#4;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#7;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#9;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#td#12;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#10312#10316#1#HTML" expanded="true" />
+            <element signature="e#12959#12963#1#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="109" column="60" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="109" column="60" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="119" column="60" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="119" column="60" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="127" column="60" selection-start-line="127" selection-start-column="60" selection-end-line="127" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBeamQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="119" column="60" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="109" column="60" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="109" column="60" selection-start-line="109" selection-start-column="60" selection-end-line="109" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pileStandard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/pierStandard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/bearStandard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/beamStandard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="75" column="73" selection-start-line="75" selection-start-column="73" selection-end-line="75" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="96" column="69" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="96" column="69" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="96" column="69" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/beamPassRate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148">
+          <caret line="96" column="69" selection-start-line="96" selection-start-column="69" selection-end-line="96" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-648">
+          <caret line="96" column="48" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/adminPage/left.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="69" column="60" lean-forward="true" selection-start-line="69" selection-start-column="60" selection-end-line="69" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/towerStandard.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="107" column="37" lean-forward="true" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasTowerQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="238" selection-start-line="238" selection-end-line="238" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="148" column="46" selection-start-line="148" selection-start-column="46" selection-end-line="148" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/freemarker/freemarker/2.3.13/freemarker-2.3.13.jar!/freemarker/template/Template.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="76" column="26" selection-start-line="76" selection-start-column="17" selection-end-line="76" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/ftl/resume.ftl">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">

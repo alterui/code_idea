@@ -2,6 +2,9 @@
   <dictionary name="ALTERUI">
     <words>
       <w>alterui</w>
+      <w>anchn</w>
+      <w>colu</w>
+      <w>disl</w>
       <w>embe</w>
       <w>inte</w>
       <w>layui</w>
@@ -13,6 +16,7 @@
       <w>smoo</w>
       <w>stru</w>
       <w>tensi</w>
+      <w>thic</w>
       <w>woff</w>
     </words>
   </dictionary>

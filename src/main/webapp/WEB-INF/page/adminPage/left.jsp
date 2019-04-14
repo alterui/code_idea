@@ -73,7 +73,7 @@
                         <dd><a href="${ctx}/page/bear/show">支座质量验收数据</a></dd>
                         <dd><a href="${ctx}/page/pier/show">墩台质量验收数据</a></dd>
                         <dd><a href="${ctx}/page/pile/show">桩质量验收数据</a></dd>
-                        <dd><a href="${ctx}/page/crudPage/towerCrudPage.jsp">索塔质量验收数据</a></dd>
+                        <dd><a href="${ctx}/page/tower/show">索塔质量验收数据</a></dd>
                     </dl>
                 </li>
 
@@ -82,7 +82,11 @@
                     <a href="javascript:;">环保安全</a>
                     <dl class="layui-nav-child">
                         <dd><a href="${ctx}/page/apply/show">报审申请表</a></dd>
-                        <dd><a href="javascript:;">环境保证体系报审表</a></dd>
+
+                        <c:if test="3>4">
+                            <dd><a href="javascript:;">环境保证体系报审表</a></dd>
+                        </c:if>
+
                         <dd><a href="javascript:;">环保施工技术方案报审表</a></dd>
                         <dd><a href="javascript:;">环保条件验收申请表</a></dd>
                     </dl>

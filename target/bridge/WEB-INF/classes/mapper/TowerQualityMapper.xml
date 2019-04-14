@@ -235,4 +235,82 @@
       isQualify = #{isQualify,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+
+
+
+    <select id="findAll" parameterType="java.lang.Integer"  resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM towerquality where
+    isQualify= #{isQualify,jdbcType=INTEGER}
+    </select>
+
+
+    <update id="updateByIsQualify" parameterType="java.lang.Integer">
+    update towerquality
+    set
+      isQualify = #{isQualify,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <select id="selectById"  resultMap="BaseResultMap">
+        select
+        *
+        from towerquality where
+        id > 1
+    </select>
+
+
+    <select id="selectByLikeName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from towerquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+    </select>
+
+    <select id="selectByLikeNameAndQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from towerquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        AND  (isQualify = 0 OR isQualify = 1)
+    </select>
+
+
+
+    <select id="selectByLikeNameAndNotQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from towerquality where
+        struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        AND  isQualify = -1
+
+    </select>
+
+
+    <select id="selectByHasQuality"  resultMap="BaseResultMap">
+        select
+        *
+        from towerquality
+        where
+        isQualify=0 OR isQualify = 1
+    </select>
+
+    <!-- 分组查询-->
+    <select id="getIsQualityCountByDate"  parameterType="java.lang.String" resultMap="isQualityCountDate">
+
+          SELECT isQualify,COUNT(*) AS 'count' ,SUBSTR(towerqualityCheckTime,1,10) AS 'checkTime'
+                FROM towerquality
+                WHERE  towerqualityCheckTime
+                BETWEEN #{start}
+                AND #{end}
+                AND (isQualify = 0 OR isQualify = 1)
+                GROUP BY SUBSTR(towerqualityCheckTime,1,10),isQualify
+
+
+    </select>
+
 </mapper>
