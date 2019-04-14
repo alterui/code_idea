@@ -12,9 +12,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
-<%@include file="../adminPage/top.jsp"%>
-<%@include file="../adminPage/left.jsp"%>
-<%@include file="../adminPage/bottom.jsp"%>
+<%@include file="../publicPage/top.jsp"%>
+<%@include file="../publicPage/left.jsp"%>
+<%@include file="../publicPage/bottom.jsp"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
