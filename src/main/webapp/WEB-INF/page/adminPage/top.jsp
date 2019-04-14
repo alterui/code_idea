@@ -37,8 +37,10 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">质量管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="/page/bear/bearStandard">质量验收标准</a></dd>
+                    <dd><a href="/page/beam/beamStandard">质量验收标准</a></dd>
+                    <c:if test="${permission==1}">
                     <dd><a href="/page/beam">质量验收</a></dd>
+                    </c:if>
                     <dd><a href="/page/beam/showChart">质量可视化管理</a></dd>
                 </dl>
             </li>
@@ -51,6 +53,17 @@
                     <dd><a href="">检查报告审核</a></dd>
                 </dl>
             </li>
+
+
+            <c:if test="${permission==1}">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="">普通用户管理</a></dd>
+                        <dd><a href="">管理员用户管理</a></dd>
+                    </dl>
+                </li>
+            </c:if>
         </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">

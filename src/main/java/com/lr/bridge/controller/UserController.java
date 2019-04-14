@@ -47,7 +47,7 @@ public class UserController {
     @RequestMapping("/login")
     public String login(HttpServletRequest request, Model model, HttpSession session,
                         @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "6") Integer pageSize) {
+                        @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
 
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
@@ -56,19 +56,27 @@ public class UserController {
         if (map.get("msg") == null) {
             User user = userService.getUser(userName);
             session.setAttribute("userName", user.getFullName());
+            session.setAttribute("permission", user.getPermission());
 
             //普通用户
             if (user.getPermission() == 0) {
-                return "page/qualityPage/beamQuality";
+
+                model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
+                PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
+                model.addAttribute("pageInfo", beamQualityInfo);
+                return "page/beamCrudPage/beamCrudPage";
+
             }
             //管理员用户
             if (user.getPermission() == 1) {
-                model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
+                model.addAttribute("pageUrlPrefix", "/page/beam?pageIndex");
                 PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showQuality(pageIndex, pageSize);
                 model.addAttribute("pageInfo", beamQualityInfo);
                 return "page/qualityPage/beamQuality";
             }
-            return " ";
+
+            return "/";
+
 
 
 

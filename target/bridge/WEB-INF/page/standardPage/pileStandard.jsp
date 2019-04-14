@@ -72,7 +72,6 @@
                     <a  class="layui-this" href="/page/beam/beamStandard">梁质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/bearStandard">支座质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pier/pierStandard">墩台质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pile/pileStandard">桩质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/tower/towerStandard">锁塔质量验收标准</a>
                 </div>
             </blockquote>

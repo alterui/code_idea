@@ -81,7 +81,7 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/bear/show"><font color="#228b22">支座质量数据</font></a>
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/apply/show"><font color="#228b22">报审申请表</font></a>
             </blockquote>
 
             <!-- 搜索框 -->

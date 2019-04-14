@@ -104,9 +104,7 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;锁塔质量验收&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                位置跳转&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;锁塔质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/tower/"><font color="#228b22">待确认验收</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/tower/hasQuality"><font color="#228b22">已确认验收</font></a>
 
@@ -117,7 +115,6 @@
                     <a  href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a  href="/page/pier/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pile/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/tower/">锁塔质量验收</a>
                 </div>
             </blockquote>
 

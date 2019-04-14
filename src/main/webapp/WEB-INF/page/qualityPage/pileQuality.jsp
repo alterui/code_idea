@@ -95,8 +95,7 @@
 
             <blockquote class="layui-elem-quote">
 
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;桩质量验收&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                位置跳转&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;桩质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/pile/"><font color="#228b22">待确认验收</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/pile/hasQuality"><font color="#228b22">已确认验收</font></a>
 
@@ -106,7 +105,6 @@
                     <a  class="layui-this" href="/page/beam/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pier/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pile/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/tower/">锁塔质量验收</a>
                 </div>
             </blockquote>
