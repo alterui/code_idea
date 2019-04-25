@@ -1,7 +1,9 @@
 package com.lr.bridge.service;
 
+import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.User;
 
+import java.util.List;
 import java.util.Map;
 
 public interface UserService {
@@ -9,6 +11,9 @@ public interface UserService {
 
     User getUser(String userName);
     Map<String,String> login(String userName, String password);
+
+    PageInfo<User> showUser(Integer pageIndex,
+                            Integer pageSize);
 
 
 

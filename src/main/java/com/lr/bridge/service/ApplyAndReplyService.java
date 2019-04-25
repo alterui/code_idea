@@ -12,4 +12,6 @@ public interface ApplyAndReplyService {
                                                  Integer pageSize);
 
     ApplyAndReply selectByPrimaryKey(Integer id);
+
+    int insert(ApplyAndReply record);
 }

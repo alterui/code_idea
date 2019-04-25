@@ -81,7 +81,7 @@
                 <li class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;">环保安全</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="${ctx}/page/apply/show">报审申请表</a></dd>
+                        <dd><a href="${ctx}/page/apply/show">报审表和申请表</a></dd>
 
 
                             <dd><a href="javascript:;">环境保证体系报审表</a></dd>

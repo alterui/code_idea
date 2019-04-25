@@ -28,6 +28,11 @@ public class ApplyAndReplyServiceImpl implements ApplyAndReplyService {
     }
 
     @Override
+    public int insert(ApplyAndReply record) {
+        return applyAndReplyMapper.insert(record);
+    }
+
+    @Override
     public ApplyAndReply selectByPrimaryKey(Integer id) {
         return applyAndReplyMapper.selectByPrimaryKey(id);
     }

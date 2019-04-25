@@ -4,6 +4,7 @@ import com.lr.bridge.pojo.User;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Repository
 public interface UserMapper {
@@ -20,4 +21,7 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User selectByUserName(String userName);
+
+
+    List<User> showUserOrAdmin(Integer permission);
 }

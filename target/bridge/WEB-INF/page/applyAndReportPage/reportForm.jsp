@@ -81,7 +81,7 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/apply/show"><font color="#228b22">报审申请表</font></a>
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/apply/show"><font color="#228b22">报审表和申请表</font></a>
             </blockquote>
 
             <!-- 搜索框 -->
@@ -98,16 +98,16 @@
 
                         <table class="layui-table">
                             <colgroup>
-                                <col width="150">
-                                <col width="150">
-                                <col width="150">
-                                <col width="150">
-                                <col width="150">
-                                <col width="150">
-                                <col width="150">
-                                <col width="150">
-                                <col width="150">
-                                <col width="300">
+                                <col width="120">
+                                <col width="120">
+                                <col width="120">
+                                <col width="120">
+                                <col width="120">
+                                <col width="120">
+                                <col width="120">
+                                <col width="120">
+                                <col width="120">
+                                <col width="400">
                             </colgroup>
                             <thead>
                             <tr>
@@ -172,6 +172,10 @@
                                                 class="layui-btn layui-btn-danger layui-btn-mini">删除
                                         </a>
 
+                                        <a href="/page/apply/previewForm/${env.id}"
+                                           class="layui-btn layui-btn-mini">预览
+                                        </a>
+
                                         <a href="/page/apply/downloadDoc/${env.id}"
                                                 class="layui-btn layui-btn-normal">下载
                                         </a>
@@ -192,7 +196,7 @@
                                              </a>
                                          </button>--%>
 
-                                        <a href="${ctx}/page/crudPage/bearAddPage.jsp"
+                                        <a href="${ctx}/page/apply/addPage"
                                            class="layui-btn layui-btn-mini">增加数据
                                         </a>
 

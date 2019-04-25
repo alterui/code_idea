@@ -105,5 +105,21 @@ public class UserController {
     }
 
 
+    @RequestMapping("/showUser")
+    public String showUser(HttpServletRequest request, Model model,
+                           @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                           @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+        PageInfo<User> userPageInfo = userService.showUser(pageIndex, pageSize);
+
+        model.addAttribute("pageUrlPrefix", "showUser?pageIndex");
+        model.addAttribute("pageInfo", userPageInfo);
+        return "page/userPage/showUser";
+
+
+    }
+
+
+
+
 
 }

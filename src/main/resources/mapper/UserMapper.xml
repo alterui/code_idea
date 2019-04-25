@@ -102,4 +102,13 @@
     </select>
 
 
+    <select id="showUserOrAdmin" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where permission = #{permission,jdbcType=INTEGER}
+    </select>
+
+
+
 </mapper>

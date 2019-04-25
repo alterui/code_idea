@@ -2,13 +2,17 @@ package com.lr.bridge.service.impl;
 
 import javax.annotation.Resource;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.lr.bridge.dao.UserMapper;
+import com.lr.bridge.pojo.PileQuality;
 import com.lr.bridge.pojo.User;
 import com.lr.bridge.util.MD5Util;
 import org.springframework.stereotype.Service;
 import org.apache.commons.lang.StringUtils;
 import com.lr.bridge.service.UserService;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -75,6 +79,18 @@ public class UserServiceImpl implements UserService{
 
 
         return map;
+
+    }
+
+    @Override
+    public PageInfo<User> showUser(Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+
+        PageHelper.startPage(pageIndex, pageSize);
+        //0表示普通用户，1表示管理员用户
+        List<User> userList = userMapper.showUserOrAdmin(0);
+        return new PageInfo<>(userList);
+
 
     }
 

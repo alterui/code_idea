@@ -14,6 +14,7 @@ import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -47,13 +48,7 @@ public class ApplyAndReplyController {
         //得到所有的申请表
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
         PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showAllApplyAndReply(pageIndex,pageSize);
-
-        try {
-            model.addAttribute("pageInfo", applyAndReplyPageInfo);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-        }
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
         return "page/applyAndReportPage/reportForm";
 
     }
@@ -135,5 +130,62 @@ public class ApplyAndReplyController {
 
 
     }
+
+
+
+    @RequestMapping(value = "/previewForm/{id}")
+    public String previewForm(HttpServletRequest request,
+                        HttpServletResponse resp,
+                        Model model,
+                        @PathVariable("id") Integer id) {
+
+        ApplyAndReply applyAndReply = applyAndReplyService.selectByPrimaryKey(id);
+        model.addAttribute("apply", applyAndReply);
+        return "page/applyAndReportPage/previewForm";
+
+
+    }
+
+
+    @RequestMapping(value = "/addPage")
+    public String addPage(HttpServletRequest request,
+                              HttpServletResponse resp,
+                              Model model) {
+
+
+        return "page/applyAndReportPage/addApplyPage";
+
+
+    }
+
+    @RequestMapping(value = "/add")
+    public String add(HttpServletRequest request,
+                      HttpServletResponse resp,
+                      Model model,
+                      HttpSession session,
+                      @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                      @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+
+        ApplyAndReply applyAndReply = new ApplyAndReply();
+
+        applyAndReply.setContractorUnit(request.getParameter("contractorUnit"));
+        applyAndReply.setBidNum(request.getParameter("bidNum"));
+        applyAndReply.setSupervision(request.getParameter("supervision"));
+        applyAndReply.setSerialNum(request.getParameter("serialNum"));
+        applyAndReply.setFormName(request.getParameter("formName"));
+        applyAndReply.setDirector(request.getParameter("director"));
+        applyAndReply.setProjectName(request.getParameter("projectName"));
+        applyAndReply.setContractorName((String) session.getAttribute("userName"));
+        applyAndReply.setApplicationTime(new Date());
+
+        applyAndReplyService.insert(applyAndReply);
+
+        model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showAllApplyAndReply(pageIndex,pageSize);
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+        return "page/applyAndReportPage/reportForm";
+
+    }
+
 
 }

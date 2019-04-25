@@ -475,8 +475,8 @@ public class BearingQualityController {
                     //02(不合格，有两个)  11(合格，1个)
                     temp.add(date.getIsQuality());
                     temp.add(date.getCount());
-                    /*System.out.println(date.getIsQuality());
-                    System.out.println(date.getCount());*/
+                    System.out.println(date.getIsQuality());
+                    System.out.println(date.getCount());
                 }
                 //存放对象的值
                 EntityPassRateDate passRateDate = new EntityPassRateDate();
