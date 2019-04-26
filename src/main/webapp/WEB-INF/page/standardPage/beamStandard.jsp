@@ -96,9 +96,7 @@
                                 <col width="60">
                                 <col width="60">
                                 <col width="60">
-                                <col width="60">
-                                <col width="60">
-                                <col width="60">
+
                             </colgroup>
                             <thead>
                             <tr>

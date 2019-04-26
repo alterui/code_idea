@@ -86,7 +86,6 @@
                                 <col width="200">
                                 <col width="200">
 
-                                <col width="200">
                             </colgroup>
                             <thead>
                             <tr>

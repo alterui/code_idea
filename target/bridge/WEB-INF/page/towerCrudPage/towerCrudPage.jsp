@@ -79,7 +79,7 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/tower/show"><font color="#228b22">锁塔质量数据</font></a>
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/tower/show"><font color="#228b22">索塔质量数据</font></a>
             </blockquote>
 
             <!-- 搜索框 -->

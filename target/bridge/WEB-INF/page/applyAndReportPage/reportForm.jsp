@@ -90,7 +90,7 @@
                     <button class="layui-btn"   style=" float: right">搜索</button>
                     <input type="text" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
                 </form>
-                <div class="layui-tab">
+            <div class="layui-tab">
 
 
                     <div class="layui-tab layui-tab-card">
@@ -107,21 +107,21 @@
                                 <col width="120">
                                 <col width="120">
                                 <col width="120">
-                                <col width="400">
+                                <col width="340">
                             </colgroup>
                             <thead>
-                            <tr>
+                            <tr >
 
-                                <th>承包单位</th>
-                                <th>标段号</th>
-                                <th>监理单位</th>
-                                <th>编号</th>
-                                <th>申请审批表名称</th>
-                                <th>总监办名称</th>
-                                <th>工程名称</th>
-                                <th>承包人</th>
-                                <th>申请时间</th>
-                                <th>操作</th>
+                                <th style="text-align: center">承包单位</th>
+                                <th style="text-align: center">标段号</th>
+                                <th style="text-align: center">监理单位</th>
+                                <th style="text-align: center">编号</th>
+                                <th style="text-align: center">申请审批表名称</th>
+                                <th style="text-align: center">总监办名称</th>
+                                <th style="text-align: center">工程名称</th>
+                                <th style="text-align: center">承包人</th>
+                                <th style="text-align: center">申请时间</th>
+                                <th style="text-align: center">操作</th>
 
                             </tr>
                             </thead>
