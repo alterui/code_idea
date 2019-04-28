@@ -122,5 +122,12 @@ public class PileQualityServiceImpl implements PileQualityService {
 
     }
 
+    @Override
+    public PageInfo<PileQuality> selectByDate(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<PileQuality> bearingQualityList = pileQualityMapper.selectByDate(start, end);
+        return new PageInfo<PileQuality>(bearingQualityList);
+    }
+
 
 }

@@ -17,11 +17,11 @@
     <script src="${ctx}/static/layui/layui.js"></script>
 
     <script type="text/javascript">
-        //JavaScript代码区域
+       /* //JavaScript代码区域
         layui.use('element', function(){
             var element = layui.element;
 
-        });
+        });*/
     </script>
 </head>
 

@@ -39,4 +39,6 @@ public interface BeamQualityMapper {
 
     List<EntityCountDateList> getIsQualityCountByDate(@Param("start") String start, @Param("end") String end);
 
+    List<BeamQuality> selectByDate(@Param("start") String start,@Param("end") String end);
+
 }

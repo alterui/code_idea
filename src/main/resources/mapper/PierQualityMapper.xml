@@ -38,6 +38,7 @@
     <include refid="Base_Column_List" />
     from pierquality
     where id = #{id,jdbcType=INTEGER}
+    ORDER BY pierqualityCheckTime DESC
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from pierquality
@@ -197,6 +198,7 @@
     *
     FROM pierquality where
     isQualify= #{isQualify,jdbcType=INTEGER}
+    ORDER BY pierqualityCheckTime DESC
     </select>
 
 
@@ -213,6 +215,7 @@
         *
         from pierquality where
         id > 1
+        ORDER BY pierqualityCheckTime DESC
     </select>
 
 
@@ -221,6 +224,7 @@
         *
         from pierquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        ORDER BY pierqualityCheckTime DESC
     </select>
 
     <select id="selectByLikeNameAndQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -229,6 +233,7 @@
         from pierquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  (isQualify = 0 OR isQualify = 1)
+        ORDER BY pierqualityCheckTime DESC
     </select>
 
 
@@ -239,6 +244,7 @@
         from pierquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  isQualify = -1
+        ORDER BY pierqualityCheckTime DESC
 
     </select>
 
@@ -249,6 +255,7 @@
         from pierquality
         where
         isQualify=0 OR isQualify = 1
+        ORDER BY pierqualityCheckTime DESC
     </select>
 
     <!-- 分组查询-->
@@ -263,5 +270,17 @@
                 GROUP BY SUBSTR(pierqualityCheckTime,1,10),isQualify
 
 
+    </select>
+
+
+    <select id="selectByDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from pierquality
+        WHERE  pierqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify !=2
+        ORDER BY pierqualityCheckTime DESC
     </select>
 </mapper>

@@ -1,5 +1,6 @@
 package com.lr.bridge.service.impl;
 
+import cn.org.rapid_framework.page.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.dao.BearingQualityMapper;
@@ -86,6 +87,13 @@ public class BearingQualityServiceImpl implements BearingQualityService {
        return bearingQualityMapper.updateByIsQualify(isQualify, id);
     }
 
+
+    @Override
+    public PageInfo<BearingQuality> selectByDate(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> bearingQualityList = bearingQualityMapper.selectByDate(start, end);
+        return new PageInfo<BearingQuality>(bearingQualityList);
+    }
 
     @Override
     public  List<EntityCountDateList> getIsQualityCountByDate(String start,String end) {

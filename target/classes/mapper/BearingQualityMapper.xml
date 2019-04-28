@@ -35,6 +35,7 @@
     <include refid="Base_Column_List" />
     from bearingquality
     where id = #{id,jdbcType=INTEGER}
+    ORDER BY bearingqualityCheckTime DESC
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from bearingquality
@@ -180,6 +181,7 @@
     *
     FROM bearingquality where
     isQualify= #{isQualify,jdbcType=INTEGER}
+    ORDER BY bearingqualityCheckTime DESC
     </select>
 
 
@@ -196,6 +198,7 @@
         *
         from bearingquality where
         id > 1
+        ORDER BY bearingqualityCheckTime DESC
     </select>
 
 
@@ -204,6 +207,7 @@
         *
         from bearingquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        ORDER BY bearingqualityCheckTime DESC
     </select>
 
     <select id="selectByLikeNameAndQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -212,6 +216,7 @@
         from bearingquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  (isQualify = 0 OR isQualify = 1)
+        ORDER BY bearingqualityCheckTime DESC
     </select>
 
 
@@ -222,6 +227,7 @@
         from bearingquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  isQualify = -1
+        ORDER BY bearingqualityCheckTime DESC
 
     </select>
 
@@ -232,6 +238,7 @@
         from bearingquality
         where
         isQualify=0 OR isQualify = 1
+        ORDER BY bearingqualityCheckTime DESC
     </select>
 
     <!-- 分组查询-->
@@ -246,6 +253,19 @@
                 GROUP BY SUBSTR(bearingqualityCheckTime,1,10),isQualify
 
 
+    </select>
+
+
+
+    <select id="selectByDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from bearingquality
+        WHERE  bearingqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify !=2
+        ORDER BY bearingqualityCheckTime DESC
     </select>
 
 

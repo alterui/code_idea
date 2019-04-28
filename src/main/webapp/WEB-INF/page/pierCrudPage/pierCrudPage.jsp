@@ -25,41 +25,132 @@
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
-    <link rel="stylesheet" href="${ctx}/static/js/back.bak.js">
+
+    <script src="${ctx}/static/js/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
 
 
     <script type="text/javascript">
-        //JavaScript代码区域
-        layui.use('element', function () {
-            var element = layui.element;
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+
+            //墨绿主题
+            laydate.render({
+                elem: '#start'
+                ,theme: 'molv'
+            });
+
+            //墨绿主题
+            laydate.render({
+                elem: '#end'
+                ,theme: 'molv'
+            });
+
 
         });
 
 
-        function confirmDelete() {
-            var msg = "您确定要删除吗？";
-            if (confirm(msg) == true) {
-
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-
         //删除表里面的数据
         function deleteData(id) {
-            if (confirmDelete() == true) {
-
+            layer.confirm('真的要删除吗？',function (index) {
                 window.location.href = "${pageContext.request.contextPath}/page/pier/delete/" + id;
-            }
+            })
         }
 
+        layui.use('table', function(){
+            var table = layui.table;
 
-    </script>
+            //转换静态表格
+            table.init('demo', {
+
+            });
+        });
+        layui.use('table', function () {
+            var table = layui.table;
+            var $ = layui.$, active = {
+                reload: function () {
+                    var demoReload = $('#demoReload');
+
+                    //执行重载
+                    table.reload('tableDate', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        , where: {
+                            id: demoReload.val()
+                        }
+                    });
+                }
+            };
+
+
+            var $ = layui.$, active = {
+                delCheckData:function () {
+                    var checkStatus = table.checkStatus('tableDate')
+                        ,data = checkStatus.data
+                        ,delList=[];
+                    data.forEach(function(n){
+                        delList.push(n.id);
+                    });
+
+
+                    if(delList!=''){
+                        layer.confirm('真的删除这'+data.length+'行吗？', function(index){
+                            $.ajax({
+                                url: '/page/pier/deleteMore',
+                                type:'post',
+                                dataType:'json',
+                                data:"id="+delList,
+                                success:function (res) {
+
+                                    if(res.length==0){
+                                        window.location.href = "${pageContext.request.contextPath}/page/pier/show/";
+                                    }else{
+                                        layer.msg('删除失败');
+                                    }
+                                },
+                                'error':function () {
+                                    layer.msg('系统错误');
+                                }
+                            })
+                        })
+                    }else{
+                        layer.msg("请选择行");
+                    };
+                }
+            };
+
+            $('.demoTable .layui-btn').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+        });
+
+
+        function getPierSearch(){
+
+            var start = $("#start").val();
+            var end = $("#end").val();
+
+            if (start=="" || end=="") {
+                alert("起止时间不能为空！");
+                return false;
+            }
+            //结束时间不能比开始时间小。
+            var startTime = new Date(start).getTime();
+            var endTime = new Date(end).getTime();
+            if (startTime>endTime){
+                alert("开始时间不能大于结束时间！");
+                return false;
+            }
+
+            window.location.href = "${pageContext.request.contextPath}/page/pier/getSearch?start=" + start + " &end=" + end + "";
+
+        }
+
+  </script>
 
 
 </head>
@@ -86,43 +177,58 @@
              <div class="layui-tab" >
                 <form action="/page/pier/search" method="post">
                     <button class="layui-btn"   style=" float: right">搜索</button>
-                    <input type="text" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
+                    <input type="text" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入结构编号搜索" class="layui-input">
                 </form>
-            <div class="layui-tab">
+             </div>
+
+            <!-- 功能按钮 -->
+
+            <div class="demoTable">
+
+                <a href="/page/pier/addData" class="layui-btn layui-btn-mini">增加数据</a>
+                <button class="layui-btn layui-btn-danger" data-type="delCheckData">删除选中</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
+                结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
+                <button  onclick="return getPierSearch()"  class="layui-btn layui-btn-mini" type="submit">查询</button>
 
 
-             <div class="layui-tab layui-tab-card">
+            </div>
 
 
-                    <table class="layui-table">
-                        <colgroup>
-                            <col width="170">
-                            <col width="170">
-                            <col width="170">
-                            <col width="170">
-                            <col width="170">
-                            <col width="170">
-                            <col width="170">
-                            <col width="170">
-                            <col width="170">
-                            <col width="170">
-                            <col width="250">
-                        </colgroup>
-                        <thead>
+            <script type="text/html" id="barDemo">
+
+                <a href="/page/pier/edit/{{d.id}}"
+                   class="layui-btn layui-btn-sm">编辑</a>
+                <a
+                        onclick="deleteData({{d.id}})"
+                        class="layui-btn layui-btn-danger layui-btn-sm">删除
+                </a>
+
+            </script>
+
+
+
+             <table class="layui-table" lay-data="{id:'tableDate'}" lay-filter="demo">
+
+                    <thead>
                         <tr>
-                            <th>结构编号</th>
-                            <th>墩台长</th>
-                            <th>墩台宽</th>
-                            <th>顶面高程</th>
-                            <th>轴线偏差</th>
-                            <th>垂直度</th>
-                            <th>墙面垂直</th>
-                            <th>墙面平整度</th>
-                            <th>节段间错台</th>
-                            <th>验收时间</th>
+                            <th lay-data="{type:'checkbox'}"></th>
+                            <th lay-data="{hide:true,field:'id'}"></th>
 
+                            <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
+                            <th lay-data="{field:'length', align:'center',width:120, sort: true}">墩台长</th>
+                            <th lay-data="{field:'width', align:'center',width:120, sort: true}">墩台宽</th>
+                            <th lay-data="{field:'topElev', align:'center',width:120, sort: true}">顶面高程</th>
+                            <th lay-data="{field:'axisOffs', align:'center',width:120, sort: true}">轴线偏差</th>
+                            <th lay-data="{field:'vert', align:'center',width:120, sort: true}">垂直度</th>
+                            <th lay-data="{field:'surfVert', align:'center',width:120, sort: true}">墙面垂直</th>
+                            <th lay-data="{field:'planeness', align:'center',width:120, sort: true}">墙面平整度</th>
+                            <th lay-data="{field:'inteFaultTable', align:'center',width:120, sort: true}">节段间错台</th>
+                            <th lay-data="{field:'pierqualityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
 
-                            <th>操作</th>
+                            <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
 
                         </tr>
                         </thead>
@@ -131,7 +237,14 @@
                         <c:forEach items="${pageInfo.list}" var="pier">
                             <tr>
                                 <td>
-                                    <input type="hidden" name="id" value="${pier.id}">
+
+                                </td>
+
+                                <td>
+                                        ${pier.id}
+                                </td>
+
+                                <td>
                                         ${pier.struId}
                                 </td>
                                 <td>
@@ -166,45 +279,14 @@
                                 </td>
 
 
-
-
-
-
                                 <td>
                                     <fmt:formatDate value="${pier.pierqualityCheckTime}"
                                                     pattern="yyyy-MM-dd HH:mm:ss"/>
                                 </td>
-                                <td>
-                                    <a href="/page/pier/edit/${pier.id}"
-                                       class="layui-btn layui-btn-mini">编辑</a>
-                                    <a
-                                            onclick="deleteData(${pier.id})"
-                                            class="layui-btn layui-btn-danger layui-btn-mini">删除
-                                    </a>
 
-                                </td>
 
                             </tr>
                         </c:forEach>
-                        <tr>
-
-                            <td colspan="11">
-
-                                <div style="width: 216px; margin: 0; text-align:right; float:right" ;>
-
-                                    <%-- <button class="layui-btn layui-btn-normal layui-btn-radius" >
-                                         <a href="pierAddPage.jsp">
-                                             增加数据
-                                         </a>
-                                     </button>--%>
-
-                                    <a href="/page/pier/addData"
-                                       class="layui-btn layui-btn-mini">增加数据
-                                    </a>
-
-                                </div>
-                            </td>
-                        </tr>
                         </tbody>
                     </table>
 

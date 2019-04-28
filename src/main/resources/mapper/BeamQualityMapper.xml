@@ -43,6 +43,7 @@
     <include refid="Base_Column_List" />
     from beamquality
     where id = #{id,jdbcType=INTEGER}
+    ORDER BY beamqualityCheckTime DESC
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from beamquality
@@ -246,6 +247,7 @@
     *
     FROM beamquality where
     isQualify= #{isQualify,jdbcType=INTEGER}
+    ORDER BY beamqualityCheckTime DESC
     </select>
 
 
@@ -262,6 +264,7 @@
         *
         from beamquality where
         id > 1
+        ORDER BY beamqualityCheckTime DESC
     </select>
 
 
@@ -270,6 +273,7 @@
         *
         from beamquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        ORDER BY beamqualityCheckTime DESC
     </select>
 
     <select id="selectByLikeNameAndQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -278,6 +282,7 @@
         from beamquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  (isQualify = 0 OR isQualify = 1)
+        ORDER BY beamqualityCheckTime DESC
     </select>
 
 
@@ -288,6 +293,7 @@
         from beamquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  isQualify = -1
+        ORDER BY beamqualityCheckTime DESC
 
     </select>
 
@@ -298,6 +304,7 @@
         from beamquality
         where
         isQualify=0 OR isQualify = 1
+        ORDER BY beamqualityCheckTime DESC
     </select>
 
     <!-- 分组查询-->
@@ -312,6 +319,18 @@
                 GROUP BY SUBSTR(beamqualityCheckTime,1,10),isQualify
 
 
+    </select>
+
+
+    <select id="selectByDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from beamquality
+        WHERE  beamqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify !=2
+        ORDER BY beamqualityCheckTime DESC
     </select>
 
 </mapper>

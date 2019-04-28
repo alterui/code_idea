@@ -54,4 +54,8 @@ public interface PileQualityService {
     List<EntityCountDateList> getIsQualityCountByDate(String start, String end);
 
 
+
+    PageInfo<PileQuality> selectByDate(String start, String end,Integer pageIndex, Integer pageSize);
+
+
 }

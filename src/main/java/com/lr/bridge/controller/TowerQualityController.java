@@ -186,8 +186,8 @@ public class TowerQualityController {
     @RequestMapping("/show")
     public String show(HttpServletRequest request,
                         Model model,
-                        @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "5") Integer pageSize){
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.showTower(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
@@ -203,8 +203,8 @@ public class TowerQualityController {
     @RequestMapping(value = "/delete/{id}")
     public String deleteTower(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                              @PathVariable("id") Integer id) {
 
         towerQualityService.deleteById(id);
@@ -238,8 +238,8 @@ public class TowerQualityController {
     @RequestMapping(value = "/update")
     public String updateTower(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         TowerQuality towerQuality = new TowerQuality();
 
@@ -282,8 +282,8 @@ public class TowerQualityController {
     @RequestMapping(value = "/add")
     public String addTower(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
 
         TowerQuality towerQuality = new TowerQuality();
@@ -322,8 +322,8 @@ public class TowerQualityController {
     @RequestMapping(value = "/search")
     public String searchName(HttpServletRequest request,
                           Model model,
-                          @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                          @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                          @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                          @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
         PageInfo<TowerQuality> towerQualityList = towerQualityService.selectByLikeName(name, pageIndex, pageSize);
@@ -532,6 +532,73 @@ public class TowerQualityController {
 
         return "page/towerCrudPage/towerAddPage";
     }
+
+
+    /**
+     * 批量删除
+     *
+     */
+    @RequestMapping(value = "/deleteMore")
+    @ResponseBody
+    public List<String> deleteTowerMore(HttpServletRequest request,
+                                       Model model,
+                                       @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                       @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+
+        String[] split = ids.trim().split(",");
+
+        List<String> result = new ArrayList<>();
+
+        try {
+            for (String id : split) {
+                id= id.trim();
+
+                towerQualityService.deleteById(Integer.parseInt(id));
+
+            }
+        } catch (NumberFormatException e) {
+            result.add("删除失败");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+    /**
+     * 根据日期查找
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getSearch")
+    public String getSearch(HttpServletRequest request,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        PageInfo<TowerQuality> towerQualityPageInfo = towerQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
+
+
+        model.addAttribute("pageInfo", towerQualityPageInfo);
+        return "page/towerCrudPage/towerCrudPage";
+
+    }
+
 
 
 }

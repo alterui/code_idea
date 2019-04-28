@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -43,10 +45,10 @@ public class ApplyAndReplyController {
     @RequestMapping("/show")
     public String show(HttpServletRequest request,
                        Model model,
-                       @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                       @RequestParam(required = false, defaultValue = "5") Integer pageSize){
+                       @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                       @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         //得到所有的申请表
-        model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
+        model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
         PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showAllApplyAndReply(pageIndex,pageSize);
         model.addAttribute("pageInfo", applyAndReplyPageInfo);
         return "page/applyAndReportPage/reportForm";
@@ -163,8 +165,8 @@ public class ApplyAndReplyController {
                       HttpServletResponse resp,
                       Model model,
                       HttpSession session,
-                      @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                      @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                      @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                      @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         ApplyAndReply applyAndReply = new ApplyAndReply();
 
@@ -180,7 +182,7 @@ public class ApplyAndReplyController {
 
         applyAndReplyService.insert(applyAndReply);
 
-        model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
+        model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
         PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showAllApplyAndReply(pageIndex,pageSize);
         model.addAttribute("pageInfo", applyAndReplyPageInfo);
         return "page/applyAndReportPage/reportForm";
@@ -188,4 +190,145 @@ public class ApplyAndReplyController {
     }
 
 
-}
+
+    /**
+     * 删除
+     *
+     * @param id
+     */
+    @RequestMapping(value = "/delete/{id}")
+    public String deleteapply(HttpServletRequest request,
+                             Model model,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize,
+                             @PathVariable("id") Integer id) {
+
+        applyAndReplyService.deleteByPrimaryKey(id);
+
+        model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyInfo = applyAndReplyService.showAllApplyAndReply(pageIndex, pageSize);
+        model.addAttribute("pageInfo", applyAndReplyInfo);
+        return "page/applyAndReportPage/reportForm";
+    }
+
+
+    /**
+     * 批量删除
+     *
+     */
+    @RequestMapping(value = "/deleteMore")
+    @ResponseBody
+    public List<String> deleteApplyMore(HttpServletRequest request,
+                                       Model model,
+                                       @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                       @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+
+        String[] split = ids.trim().split(",");
+
+        List<String> result = new ArrayList<>();
+
+        try {
+            for (String id : split) {
+                id= id.trim();
+
+                applyAndReplyService.deleteByPrimaryKey(Integer.parseInt(id));
+
+            }
+        } catch (NumberFormatException e) {
+            result.add("删除失败");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+
+    /**
+     * 取值显示在页面上
+     *
+     * @param id
+     */
+    @RequestMapping(value = "/edit/{id}")
+    public String editApply(HttpServletRequest request,
+                           Model model,
+                           @PathVariable("id") Integer id) {
+
+        ApplyAndReply applyAndReply = applyAndReplyService.selectByPrimaryKey(id);
+        model.addAttribute("apply", applyAndReply);
+        return "page/applyAndReportPage/editApplyPage";
+    }
+
+
+
+    /**
+     * 修改
+     */
+    @RequestMapping(value = "/update")
+    public String updateApply(HttpServletRequest request,
+                             Model model,
+                             HttpSession session,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+
+        ApplyAndReply applyAndReply = new ApplyAndReply();
+
+        applyAndReply.setContractorUnit(request.getParameter("contractorUnit"));
+        applyAndReply.setBidNum(request.getParameter("bidNum"));
+        applyAndReply.setSupervision(request.getParameter("supervision"));
+        applyAndReply.setSerialNum(request.getParameter("serialNum"));
+        applyAndReply.setFormName(request.getParameter("formName"));
+        applyAndReply.setDirector(request.getParameter("director"));
+        applyAndReply.setProjectName(request.getParameter("projectName"));
+        applyAndReply.setContractorName((String) session.getAttribute("userName"));
+        applyAndReply.setApplicationTime(new Date());
+
+        applyAndReplyService.updateByPrimaryKey(applyAndReply);
+
+        model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showAllApplyAndReply(pageIndex,pageSize);
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+        return "page/applyAndReportPage/reportForm";
+
+
+
+    }
+
+
+    /**
+     * 根据日期查找
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getSearch")
+    public String getSearch(HttpServletRequest request,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+        return "page/applyAndReportPage/reportForm";
+
+    }
+
+
+
+
+    }

@@ -25,21 +25,11 @@
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
-    <link rel="stylesheet" href="${ctx}/static/js/back.bak.js">
+
+    <script src="${ctx}/static/js/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
-
-
-    <script type="text/javascript">
-        //JavaScript代码区域
-        layui.use('element', function () {
-            var element = layui.element;
-
-        });
-
-
-    </script>
 
 
 </head>
@@ -74,7 +64,7 @@
                     <form action="/page/beam/add" method="post"  class="layui-form">
 
 
-                        <table class="layui-table">
+                        <table class="layui-table" >
                             <colgroup>
                                 <col width="60">
                                 <col width="60">

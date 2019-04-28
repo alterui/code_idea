@@ -43,6 +43,7 @@
     <include refid="Base_Column_List" />
     from towerquality
     where id = #{id,jdbcType=INTEGER}
+    ORDER BY towerqualityCheckTime DESC
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from towerquality
@@ -245,6 +246,7 @@
     *
     FROM towerquality where
     isQualify= #{isQualify,jdbcType=INTEGER}
+    ORDER BY towerqualityCheckTime DESC
     </select>
 
 
@@ -261,6 +263,7 @@
         *
         from towerquality where
         id > 1
+        ORDER BY towerqualityCheckTime DESC
     </select>
 
 
@@ -269,6 +272,7 @@
         *
         from towerquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        ORDER BY towerqualityCheckTime DESC
     </select>
 
     <select id="selectByLikeNameAndQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -277,6 +281,7 @@
         from towerquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  (isQualify = 0 OR isQualify = 1)
+        ORDER BY towerqualityCheckTime DESC
     </select>
 
 
@@ -287,6 +292,7 @@
         from towerquality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  isQualify = -1
+        ORDER BY towerqualityCheckTime DESC
 
     </select>
 
@@ -297,6 +303,7 @@
         from towerquality
         where
         isQualify=0 OR isQualify = 1
+        ORDER BY towerqualityCheckTime DESC
     </select>
 
     <!-- 分组查询-->
@@ -311,6 +318,19 @@
                 GROUP BY SUBSTR(towerqualityCheckTime,1,10),isQualify
 
 
+    </select>
+
+
+
+    <select id="selectByDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from towerquality
+        WHERE  towerqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify !=2
+        ORDER BY towerqualityCheckTime DESC
     </select>
 
 </mapper>

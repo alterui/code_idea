@@ -1,5 +1,6 @@
 package com.lr.bridge.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.BearingQuality;
 import com.lr.bridge.service.BearingQualityService;
@@ -13,11 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
+import javax.json.JsonObject;
 import javax.servlet.http.HttpServletRequest;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 @Controller
@@ -185,10 +185,11 @@ public class BearingQualityController {
     @RequestMapping("/show")
     public String show(HttpServletRequest request,
                         Model model,
-                        @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "5") Integer pageSize){
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
+
         model.addAttribute("pageInfo", bearingQualityInfo);
         return "page/bearCrudPage/bearCrudPage";
 
@@ -202,8 +203,8 @@ public class BearingQualityController {
     @RequestMapping(value = "/delete/{id}")
     public String deleteBear(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                              @PathVariable("id") Integer id) {
 
         bearingQualityService.deleteById(id);
@@ -213,6 +214,45 @@ public class BearingQualityController {
         model.addAttribute("pageInfo", bearingQualityInfo);
         return "page/bearCrudPage/bearCrudPage";
     }
+
+
+
+
+    /**
+     * 批量删除
+     *
+     */
+    @RequestMapping(value = "/deleteMore")
+    @ResponseBody
+    public List<String> deleteBearMore(HttpServletRequest request,
+                                              Model model,
+                                              @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                              @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+
+        String[] split = ids.trim().split(",");
+
+        List<String> result = new ArrayList<>();
+
+        try {
+            for (String id : split) {
+                id= id.trim();
+
+                bearingQualityService.deleteById(Integer.parseInt(id));
+
+            }
+        } catch (NumberFormatException e) {
+            result.add("删除失败");
+            e.printStackTrace();
+        }
+
+
+
+        return result;
+    }
+
+
 
 
     /**
@@ -238,7 +278,7 @@ public class BearingQualityController {
     public String updateBear(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         //取值
         String id = request.getParameter("id");
@@ -285,7 +325,7 @@ public class BearingQualityController {
     public String addBear(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         //取值
         String struId = request.getParameter("struId");
@@ -326,7 +366,7 @@ public class BearingQualityController {
     public String searchName(HttpServletRequest request,
                           Model model,
                           @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                          @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                          @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
         PageInfo<BearingQuality> bearingQualityList = bearingQualityService.selectByLikeName(name, pageIndex, pageSize);
@@ -532,6 +572,33 @@ public class BearingQualityController {
                              Model model) {
 
         return "page/bearCrudPage/bearAddPage";
+    }
+
+
+
+
+    @RequestMapping(value = "/getSearch")
+    public String getSearch(HttpServletRequest request,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        PageInfo<BearingQuality> bearingQualityPageInfo = bearingQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
+
+
+        model.addAttribute("pageInfo", bearingQualityPageInfo);
+        return "page/bearCrudPage/bearCrudPage";
+
     }
 
 

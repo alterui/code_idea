@@ -110,7 +110,7 @@
             </blockquote>
 
 
-            <div class="layui-tab" >
+
 
                 <form action="/page/beam/notQualitySearch" method="post">
 

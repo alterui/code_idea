@@ -39,4 +39,7 @@ public interface TowerQualityMapper {
 
     List<EntityCountDateList> getIsQualityCountByDate(@Param("start") String start, @Param("end") String end);
 
+    List<TowerQuality> selectByDate(@Param("start") String start,@Param("end") String end);
+
+
 }

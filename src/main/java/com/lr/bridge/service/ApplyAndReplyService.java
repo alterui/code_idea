@@ -14,4 +14,13 @@ public interface ApplyAndReplyService {
     ApplyAndReply selectByPrimaryKey(Integer id);
 
     int insert(ApplyAndReply record);
+
+    int deleteByPrimaryKey(Integer id);
+
+    int updateByPrimaryKey(ApplyAndReply record);
+
+
+
+    PageInfo<ApplyAndReply> selectByDate(String start, String end,Integer pageIndex, Integer pageSize);
+
 }

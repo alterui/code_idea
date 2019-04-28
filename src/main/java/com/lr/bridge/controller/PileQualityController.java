@@ -186,8 +186,8 @@ public class PileQualityController {
     @RequestMapping("/show")
     public String show(HttpServletRequest request,
                         Model model,
-                        @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "5") Integer pageSize){
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         model.addAttribute("pageUrlPrefix", "/page/pile/show?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.showPile(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
@@ -203,8 +203,8 @@ public class PileQualityController {
     @RequestMapping(value = "/delete/{id}")
     public String deletePile(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                              @PathVariable("id") Integer id) {
 
         pileQualityService.deleteById(id);
@@ -238,8 +238,8 @@ public class PileQualityController {
     @RequestMapping(value = "/update")
     public String updatePile(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         PileQuality pileQuality = new PileQuality();
 
@@ -282,8 +282,8 @@ public class PileQualityController {
     @RequestMapping(value = "/add")
     public String addPile(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
 
         PileQuality pileQuality = new PileQuality();
@@ -321,8 +321,8 @@ public class PileQualityController {
     @RequestMapping(value = "/search")
     public String searchName(HttpServletRequest request,
                           Model model,
-                          @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                          @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                          @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                          @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
         PageInfo<PileQuality> pileQualityList = pileQualityService.selectByLikeName(name, pageIndex, pageSize);
@@ -529,6 +529,72 @@ public class PileQualityController {
 
         return "page/pileCrudPage/pileAddPage";
     }
+
+    /**
+     * 批量删除
+     *
+     */
+    @RequestMapping(value = "/deleteMore")
+    @ResponseBody
+    public List<String> deletePileMore(HttpServletRequest request,
+                                       Model model,
+                                       @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                       @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+
+        String[] split = ids.trim().split(",");
+
+        List<String> result = new ArrayList<>();
+
+        try {
+            for (String id : split) {
+                id= id.trim();
+
+                pileQualityService.deleteById(Integer.parseInt(id));
+
+            }
+        } catch (NumberFormatException e) {
+            result.add("删除失败");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+    /**
+     * 根据日期查找
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getSearch")
+    public String getSearch(HttpServletRequest request,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        PageInfo<PileQuality> pileQualityPageInfo = pileQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/pile/show?pageIndex");
+
+
+        model.addAttribute("pageInfo", pileQualityPageInfo);
+        return "page/pileCrudPage/pileCrudPage";
+
+    }
+
 
 
 }

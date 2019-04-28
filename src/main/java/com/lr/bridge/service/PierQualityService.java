@@ -53,5 +53,7 @@ public interface PierQualityService {
 
     List<EntityCountDateList> getIsQualityCountByDate(String start, String end);
 
+    PageInfo<PierQuality> selectByDate(String start, String end,Integer pageIndex, Integer pageSize);
+
 
 }

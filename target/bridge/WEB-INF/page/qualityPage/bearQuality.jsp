@@ -110,7 +110,7 @@
             </blockquote>
 
 
-            <div class="layui-tab" >
+          
 
                 <form action="/page/bear/notQualitySearch" method="post">
 

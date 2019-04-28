@@ -185,8 +185,8 @@ public class PierQualityController {
     @RequestMapping("/show")
     public String show(HttpServletRequest request,
                         Model model,
-                        @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "5") Integer pageSize){
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showPier(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
@@ -202,8 +202,8 @@ public class PierQualityController {
     @RequestMapping(value = "/delete/{id}")
     public String deletePier(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                              @PathVariable("id") Integer id) {
 
         pierQualityService.deleteById(id);
@@ -237,8 +237,8 @@ public class PierQualityController {
     @RequestMapping(value = "/update")
     public String updatePier(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         PierQuality pierQuality = new PierQuality();
 
@@ -278,8 +278,8 @@ public class PierQualityController {
     @RequestMapping(value = "/add")
     public String addPier(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
 
         PierQuality pierQuality = new PierQuality();
@@ -314,8 +314,8 @@ public class PierQualityController {
     @RequestMapping(value = "/search")
     public String searchName(HttpServletRequest request,
                           Model model,
-                          @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                          @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                          @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                          @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
         PageInfo<PierQuality> pierQualityList = pierQualityService.selectByLikeName(name, pageIndex, pageSize);
@@ -521,6 +521,74 @@ public class PierQualityController {
 
         return "page/pierCrudPage/pierAddPage";
     }
+
+
+    /**
+     * 批量删除
+     *
+     */
+    @RequestMapping(value = "/deleteMore")
+    @ResponseBody
+    public List<String> deletePierMore(HttpServletRequest request,
+                                       Model model,
+                                       @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                       @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+
+        String[] split = ids.trim().split(",");
+
+        List<String> result = new ArrayList<>();
+
+        try {
+            for (String id : split) {
+                id= id.trim();
+
+                pierQualityService.deleteById(Integer.parseInt(id));
+
+            }
+        } catch (NumberFormatException e) {
+            result.add("删除失败");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+    /**
+     * 根据日期查找
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getSearch")
+    public String getSearch(HttpServletRequest request,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        PageInfo<PierQuality> pierQualityPageInfo = pierQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
+
+
+        model.addAttribute("pageInfo", pierQualityPageInfo);
+        return "page/pierCrudPage/pierCrudPage";
+
+    }
+
+
 
 
 }

@@ -37,4 +37,22 @@ public class ApplyAndReplyServiceImpl implements ApplyAndReplyService {
         return applyAndReplyMapper.selectByPrimaryKey(id);
     }
 
+    @Override
+    public int deleteByPrimaryKey(Integer id) {
+        return applyAndReplyMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByPrimaryKey(ApplyAndReply record) {
+        return applyAndReplyMapper.updateByPrimaryKey(record);
+    }
+
+
+    @Override
+    public PageInfo<ApplyAndReply> selectByDate(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<ApplyAndReply> ApplyAndReplyList = applyAndReplyMapper.selectByDate(start, end);
+        return new PageInfo<ApplyAndReply>(ApplyAndReplyList);
+
+    }
 }

@@ -205,4 +205,15 @@
         *
         from applyandreply
     </select>
+
+
+    <select id="selectByDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply
+        WHERE  applicationTime
+        BETWEEN #{start}
+        AND #{end}
+        ORDER BY applicationTime DESC
+    </select>
 </mapper>

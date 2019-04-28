@@ -42,6 +42,7 @@
     <include refid="Base_Column_List" />
     from pilequality
     where id = #{id,jdbcType=INTEGER}
+    ORDER BY pilequalityCheckTime DESC
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from pilequality
@@ -233,6 +234,7 @@
     *
     FROM pilequality where
     isQualify= #{isQualify,jdbcType=INTEGER}
+    ORDER BY pilequalityCheckTime DESC
     </select>
 
 
@@ -249,6 +251,7 @@
         *
         from pilequality where
         id > 1
+        ORDER BY pilequalityCheckTime DESC
     </select>
 
 
@@ -257,6 +260,7 @@
         *
         from pilequality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
+        ORDER BY pilequalityCheckTime DESC
     </select>
 
     <select id="selectByLikeNameAndQuality" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -265,6 +269,7 @@
         from pilequality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  (isQualify = 0 OR isQualify = 1)
+        ORDER BY pilequalityCheckTime DESC
     </select>
 
 
@@ -275,6 +280,7 @@
         from pilequality where
         struId LIKE CONCAT(CONCAT('%',#{name},'%'))
         AND  isQualify = -1
+        ORDER BY pilequalityCheckTime DESC
 
     </select>
 
@@ -285,6 +291,7 @@
         from pilequality
         where
         isQualify=0 OR isQualify = 1
+        ORDER BY pilequalityCheckTime DESC
     </select>
 
     <!-- 分组查询-->
@@ -300,5 +307,20 @@
 
 
     </select>
+
+
+    <select id="selectByDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from pilequality
+        WHERE  pilequalityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify !=2
+        ORDER BY pilequalityCheckTime DESC
+    </select>
+
+
+
 
 </mapper>

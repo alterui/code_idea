@@ -1,6 +1,7 @@
 package com.lr.bridge.dao;
 
 import com.lr.bridge.pojo.ApplyAndReply;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,4 +20,7 @@ public interface ApplyAndReplyMapper {
     int updateByPrimaryKey(ApplyAndReply record);
 
     List<ApplyAndReply> selectAll();
+
+    List<ApplyAndReply> selectByDate(@Param("start") String start, @Param("end") String end);
+
 }

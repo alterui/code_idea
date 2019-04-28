@@ -19,13 +19,13 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/layui/css/layui.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/layui/layui.js">
 
-    <script>
+   <%-- <script>
         //JavaScript代码区域
         layui.use('element', function(){
             var element = layui.element;
 
         });
-    </script>
+    </script>--%>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
