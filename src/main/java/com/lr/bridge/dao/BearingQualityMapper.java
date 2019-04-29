@@ -38,6 +38,11 @@ public interface BearingQualityMapper {
 
     List<EntityCountDateList> getIsQualityCountByDate(@Param("start") String start,@Param("end") String end);
 
-    List<BearingQuality> selectByDate(@Param("start") String start,@Param("end") String end);
+    List<BearingQuality> selectByDate(@Param("start") String start, @Param("end") String end);
+
+    List<BearingQuality> selectQualityByDate(@Param("isQualify") int isQualify, @Param("start") String start, @Param("end") String end);
+
+    List<BearingQuality> selectHasQualityByDate(@Param("start") String start, @Param("end") String end);
+
 
 }

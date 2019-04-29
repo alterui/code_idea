@@ -37,8 +37,8 @@ public class PierQualityController {
     @RequestMapping("")
     public String index(HttpServletRequest request,
                           Model model,
-                           @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                           @RequestParam(required = false, defaultValue = "6") Integer pageSize){
+                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                           @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
         model.addAttribute("pageUrlPrefix", "/page/pier?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showQuality(pageIndex, pageSize);
@@ -58,8 +58,8 @@ public class PierQualityController {
     @RequestMapping("/hasQuality")
     public String hasQuality(HttpServletRequest request,
                         Model model,
-                        @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "6") Integer pageSize){
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         model.addAttribute("pageUrlPrefix", "/page/pier/hasQuality?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
@@ -79,8 +79,8 @@ public class PierQualityController {
     @RequestMapping("/qualified/{id}")
     public String qualified(HttpServletRequest request,
                            Model model,
-                            @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "6") Integer pageSize,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                             @PathVariable("id") Integer id){
 
        //0代表不合格，1代表合格
@@ -105,8 +105,8 @@ public class PierQualityController {
     @RequestMapping("/notQualified/{id}")
     public String notQualified(HttpServletRequest request,
                             Model model,
-                            @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "6") Integer pageSize,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                             @PathVariable("id") Integer id){
 
         //0代表不合格，1代表合格
@@ -132,8 +132,8 @@ public class PierQualityController {
     @RequestMapping("/editQualified/{id}")
     public String exitQualified(HttpServletRequest request,
                             Model model,
-                            @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "6") Integer pageSize,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                             @PathVariable("id") Integer id){
 
         //0代表不合格，1代表合格
@@ -159,8 +159,8 @@ public class PierQualityController {
     @RequestMapping("/editNotQualified/{id}")
     public String notExitQualified(HttpServletRequest request,
                                 Model model,
-                                @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                                @RequestParam(required = false, defaultValue = "6") Integer pageSize,
+                                @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                                 @PathVariable("id") Integer id){
 
         //0代表不合格，1代表合格
@@ -334,8 +334,8 @@ public class PierQualityController {
     @RequestMapping(value = "/qualitySearch")
     public String qualitySearchName(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "6") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         //取值
         String name = request.getParameter("qualitySearch");
@@ -353,8 +353,8 @@ public class PierQualityController {
     @RequestMapping(value = "/notQualitySearch")
     public String notQualitySearchName(HttpServletRequest request,
                                     Model model,
-                                    @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                                    @RequestParam(required = false, defaultValue = "6") Integer pageSize) {
+                                    @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                    @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         //取值
         String name = request.getParameter("notQualitySearch");
@@ -587,6 +587,169 @@ public class PierQualityController {
         return "page/pierCrudPage/pierCrudPage";
 
     }
+
+    /**
+     * 待验收页面的按日期搜索
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping("/getQualitySearch")
+    public String getQualitySearch(HttpServletRequest request,
+                                   Model model,
+                                   @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                   @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/pier?pageIndex");
+        //-1表示没有确认的。0代表不合格，1代表合格
+        PageInfo<PierQuality> pierQualityInfo = pierQualityService.selectQualityByDate(-1,startTime,endTime,pageIndex, pageSize);
+        model.addAttribute("pageInfo", pierQualityInfo);
+        return "page/qualityPage/pierQuality";
+
+    }
+
+
+
+    /**
+     * 已经验收页面的按日期搜索
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping("/getHasQualitySearch")
+    public String getHasQualitySearch(HttpServletRequest request,
+                                      Model model,
+                                      @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                      @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/pier/hasQuality?pageIndex");
+        //-1表示没有确认的。0代表不合格，1代表合格
+        PageInfo<PierQuality> pierQualityInfo = pierQualityService.selectHasQualityByDate(startTime,endTime,pageIndex, pageSize);
+        model.addAttribute("pageInfo", pierQualityInfo);
+        return "page/qualityPage/hasPierQuality";
+
+    }
+
+
+
+
+    /**
+     * 批量不合格
+     *
+     */
+    @RequestMapping(value = "/notQualityMore")
+    @ResponseBody
+    public List<String> notQualityPierMore(HttpServletRequest request,
+                                           Model model,
+                                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                           @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+        String[] split = ids.trim().split(",");
+        List<String> result = new ArrayList<>();
+        try {
+            for (String id : split) {
+                id= id.trim();
+                pierQualityService.updateByIsQualify(0, Integer.parseInt(id));
+            }
+        } catch (NumberFormatException e) {
+            result.add("批量操作失败");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+
+
+    /**
+     * 批量合格
+     *
+     */
+    @RequestMapping(value = "/qualityMore")
+    @ResponseBody
+    public List<String> qualityPierMore(HttpServletRequest request,
+                                        Model model,
+                                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                        @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+        String[] split = ids.trim().split(",");
+        List<String> result = new ArrayList<>();
+        try {
+            for (String id : split) {
+                id= id.trim();
+                pierQualityService.updateByIsQualify(1, Integer.parseInt(id));
+            }
+        } catch (NumberFormatException e) {
+            result.add("批量操作失败");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+
+    /**
+     * 更改
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @param id
+     * @return
+     */
+    @RequestMapping("/updateQualified/{id}")
+    public String updateQualified(HttpServletRequest request,
+                                  Model model,
+                                  @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                  @RequestParam(required = false, defaultValue = "10") Integer pageSize,
+                                  @PathVariable("id") Integer id){
+
+        //查数据库isQualify的值
+
+        PierQuality pierQuality = pierQualityService.selectByPrimaryKey(id);
+
+        if (pierQuality.getIsQualify() == 1) {
+            //1代表合格，更改为不合格
+            pierQualityService.updateByIsQualify(0, id);
+
+        } else if (pierQuality.getIsQualify() == 0){
+            // //0代表不合格，1代表合格
+            pierQualityService.updateByIsQualify(1, id);
+
+        }
+
+        model.addAttribute("pageUrlPrefix", "/page/pier/hasQuality?pageIndex");
+        PageInfo<PierQuality> pierQualityInfo = pierQualityService.selectByHasQuality(pageIndex, pageSize);
+        model.addAttribute("pageInfo", pierQualityInfo);
+        return "page/qualityPage/hasPierQuality";
+
+    }
+
+
 
 
 

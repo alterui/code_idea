@@ -46,8 +46,8 @@ public class UserController {
 
     @RequestMapping("/login")
     public String login(HttpServletRequest request, Model model, HttpSession session,
-                        @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "5") Integer pageSize) {
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");

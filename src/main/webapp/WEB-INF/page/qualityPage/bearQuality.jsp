@@ -25,53 +25,194 @@
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
+
+    <script src="${ctx}/static/js/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
+
     <script type="text/javascript">
-        //JavaScript代码区域
-        layui.use('element', function(){
-            var element = layui.element;
+
+
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+
+            //墨绿主题
+            laydate.render({
+                elem: '#start'
+                ,theme: 'molv'
+            });
+
+            //墨绿主题
+            laydate.render({
+                elem: '#end'
+                ,theme: 'molv'
+            });
+
 
         });
 
-        //合格的确认
-        function confirmQuality() {
-            var msg = "您确定合格吗？";
-            if (confirm(msg) == true) {
-
-                return true;
-            } else {
-                return false;
-            }
-        }
-
         //合格
         function qualityData(id) {
-            if (confirmQuality() == true) {
 
+            layer.confirm('您确定合格吗？',function (index) {
                 window.location.href = "${pageContext.request.contextPath}/page/bear/qualified/" + id;
-            }
-        }
+            });
 
-        //不合格的确认
-        function confirmNotQuality() {
-            var msg = "您确定不合格吗？";
-            if (confirm(msg) == true) {
-
-                return true;
-            } else {
-                return false;
-            }
         }
 
         //不合格
         function notQualityData(id) {
-            if (confirmNotQuality() == true) {
 
+            layer.confirm('您确定不合格吗？',function (index) {
                 window.location.href = "${pageContext.request.contextPath}/page/bear/notQualified/" + id;
-            }
+            });
+
         }
+
+
+
+        layui.use('table', function(){
+            var table = layui.table;
+
+            //转换静态表格
+            table.init('demo', {
+
+            });
+        });
+
+
+        layui.use('table', function () {
+            var table = layui.table;
+            var $ = layui.$, active = {
+                reload: function () {
+                    var demoReload = $('#demoReload');
+
+                    //执行重载
+                    table.reload('tableDate', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        , where: {
+                            id: demoReload.val()
+                        }
+                    });
+                }
+            };
+
+
+            var $ = layui.$, active1 = {
+                qualityMore:function () {
+                    var checkStatus = table.checkStatus('tableDate')
+                        ,data = checkStatus.data
+                        ,delList=[];
+                    data.forEach(function(n){
+                        delList.push(n.id);
+                    });
+
+                    if(delList!=''){
+                        layer.confirm('确认'+data.length+'条数据为合格吗？', function(index){
+                            $.ajax({
+                                url: '/page/bear/qualityMore',
+                                type:'post',
+                                dataType:'json',
+                                data:"id="+delList,
+                                success:function (res) {
+
+                                    if(res.length==0){
+                                        window.location.href = "${pageContext.request.contextPath}/page/bear/";
+                                    }else{
+                                        layer.msg('批量操作数据失败');
+                                    }
+                                },
+                                'error':function () {
+                                    layer.msg('系统错误');
+                                }
+                            })
+                        })
+                    }else{
+                        layer.msg("请选择行");
+                    };
+                }
+            };
+
+
+            //批量不合格
+
+            var $ = layui.$, active = {
+                notQualityMore:function () {
+                    var checkStatus = table.checkStatus('tableDate')
+                        ,data = checkStatus.data
+                        ,delList=[];
+                    data.forEach(function(n){
+                        delList.push(n.id);
+                    });
+
+                    if(delList!=''){
+                        layer.confirm('确认'+data.length+'条数据为不合格吗？', function(index){
+                            $.ajax({
+                                url: '/page/bear/notQualityMore',
+                                type:'post',
+                                dataType:'json',
+                                data:"id="+delList,
+                                success:function (res) {
+
+                                    if(res.length==0){
+                                        window.location.href = "${pageContext.request.contextPath}/page/bear/";
+                                    }else{
+                                        layer.msg('批量操作数据失败');
+                                    }
+                                },
+                                'error':function () {
+                                    layer.msg('系统错误');
+                                }
+                            })
+                        })
+                    }else{
+                        layer.msg("请选择行");
+                    };
+                }
+            };
+
+
+
+            $('.demoTable .layui-btn').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+
+
+            $('.demoTable .layui-btn').on('click', function () {
+                var type = $(this).data('type');
+                active1[type] ? active1[type].call(this) : '';
+            });
+        });
+
+
+
+
+        function getBearSearch(){
+
+            var start = $("#start").val();
+            var end = $("#end").val();
+
+            if (start=="" || end=="") {
+                alert("起止时间不能为空！");
+                return false;
+            }
+            //结束时间不能比开始时间小。
+            var startTime = new Date(start).getTime();
+            var endTime = new Date(end).getTime();
+            if (startTime>endTime){
+                alert("开始时间不能大于结束时间！");
+                return false;
+            }
+
+            window.location.href = "${pageContext.request.contextPath}/page/bear/getQualitySearch?start=" + start + " &end=" + end + "";
+
+        }
+
+
 
     </script>
 
@@ -88,7 +229,7 @@
         /*覆盖 layui*/
         .layui-input {
             display: inline-block;
-            width: 33.333% !important;
+            width: 15% !important;
         }
 
     </style>
@@ -110,7 +251,9 @@
             </blockquote>
 
 
-          
+
+            <!-- 搜索框 -->
+            <div class="layui-tab" >
 
                 <form action="/page/bear/notQualitySearch" method="post">
 
@@ -120,51 +263,74 @@
 
                 </form>
 
-
-            <div class="layui-tab">
-
-
-                <div class="layui-tab layui-tab-card">
+            </div>
 
 
-                    <form   method="post"  action="/page/bear/qualified">
-                        <input type="hidden" name="currentUrl" id="currentUrl" value="">
-                        <table class="layui-table">
-                            <colgroup>
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="250">
-                            </colgroup>
-                            <thead>
-                            <tr>
-                                <th>结构编号</th>
-                                <th>上座板中心纵向错动量</th>
-                                <th>下座板中心横向错动量</th>
-                                <th>同端支座中心横向距离</th>
-                                <th>同一梁端亮支座相对高差</th>
-                                <th>每一支座的边缘高差</th>
-                                <th>上下座板十字线扭转</th>
-                                <th>活动支座的纵向错动量</th>
-                                <th>验收时间</th>
+
+            <div class="demoTable">
+
+                <button class="layui-btn layui-btn-mini" data-type="qualityMore">批量合格</button>
+                <button class="layui-btn layui-btn-danger" data-type="notQualityMore">批量不合格</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
+                结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
+                <button  onclick="return getBearSearch()"  class="layui-btn layui-btn-mini" type="submit">查询</button>
 
 
-                                <th>操作</th>
+            </div>
 
-                            </tr>
-                            </thead>
-                            <tbody>
 
-                            <c:forEach items="${pageInfo.list}" var="bear">
+            <script type="text/html" id="barDemo">
+
+
+
+                <a onclick="qualityData({{d.id}})"
+                   class="layui-btn layui-btn-sm">合格
+
+                </a>
+                <a
+                        onclick="notQualityData({{d.id}})"
+                        class="layui-btn layui-btn-danger layui-btn-sm">不合格
+                </a>
+
+            </script>
+
+            <table class="layui-table" lay-data="{id:'tableDate'}" lay-filter="demo">
+                 <thead>
+                    <tr>
+
+                        <th lay-data="{type:'checkbox'}"></th>
+                        <th lay-data="{hide:true,field:'id'}"></th>
+
+                        <th lay-data="{field:'struId',align:'center',width:120,sort:true}">结构编号</th>
+                        <th lay-data="{field:'upCentVert',align:'center',width:180,sort:true}">上座板中心纵向错动量</th>
+                        <th lay-data="{field:'downCentTran',align:'center',width:180,sort:true}">下座板中心横向错动量</th>
+                        <th lay-data="{field:'sameCentVert',align:'center',width:180, sort:true}">同端支座中心横向距离</th>
+                        <th lay-data="{field:'sameRela',align:'center',width:200,sort:true}">同一梁端亮支座相对高差</th>
+                        <th lay-data="{field:'edgeHeig',align:'center',width:180, sort:true}">每一支座的边缘高差</th>
+                        <th lay-data="{field:'crossLineTors',align:'center',width:180,sort:true}">上下座板十字线扭转</th>
+                        <th lay-data="{field:'actiVert',align:'center',width:180, sort:true}">活动支座的纵向错动量</th>
+                        <th lay-data="{field:'bearingqualityCheckTime',align:'center',width:180,sort:true}">验收时间</th>
+                        <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
+
+
+                    </tr>
+                 </thead>
+                <tbody>
+
+                       <c:forEach items="${pageInfo.list}" var="bear">
                                 <tr>
+
                                     <td>
-                                            <input type="hidden" name="id" value="${bear.id}">
+
+                                    </td>
+
+                                    <td>
+                                            ${bear.id}
+                                    </td>
+
+                                    <td>
                                             ${bear.struId}
                                     </td>
                                     <td>
@@ -198,37 +364,10 @@
                                         <fmt:formatDate value="${bear.bearingqualityCheckTime}"
                                                         pattern="yyyy-MM-dd HH:mm:ss"/>
                                     </td>
-                                    <td>
-                                       <%-- 合格<input  type="radio" name="bear_${bear.id}" value="1"  checked="checked"
-
-                                                >&nbsp;&nbsp;
-                                        不合格<input type="radio" name="bear_${bear.id}" value="0" >--%>
-
-
-                                           <a onclick="qualityData(${bear.id})"
-                                              class="layui-btn layui-btn-mini">合格
-
-                                           </a>
-                                           <a
-                                                   onclick="notQualityData(${bear.id})"
-                                                   class="layui-btn layui-btn-danger layui-btn-mini">不合格
-                                           </a>
-
-
-                                    </td>
 
                                 </tr>
                             </c:forEach>
-                           <%-- <tr>
 
-                                <td colspan="10">
-                                    <div style="width: 216px; margin: 0; text-align:right; float:right"; >
-
-                                        <button class="layui-btn layui-btn-fluid" type="submit" >提交</button>
-                                    </div>
-
-                                </td>
-                            </tr>--%>
                             </tbody>
                         </table>
 
@@ -330,3 +469,4 @@
             </div>
     </div>
 </div>
+</body>

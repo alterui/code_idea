@@ -135,4 +135,20 @@ public class BearingQualityServiceImpl implements BearingQualityService {
     }
 
 
+    @Override
+    public PageInfo<BearingQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> bearingQualityList = bearingQualityMapper.selectQualityByDate(isQualify, start, end);
+        return new PageInfo<BearingQuality>(bearingQualityList);
+    }
+
+
+    @Override
+    public PageInfo<BearingQuality> selectHasQualityByDate( String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> bearingQualityList = bearingQualityMapper.selectHasQualityByDate(start, end);
+        return new PageInfo<BearingQuality>(bearingQualityList);
+    }
+
+
 }

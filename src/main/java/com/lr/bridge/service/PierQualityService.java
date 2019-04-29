@@ -55,5 +55,9 @@ public interface PierQualityService {
 
     PageInfo<PierQuality> selectByDate(String start, String end,Integer pageIndex, Integer pageSize);
 
+    PageInfo<PierQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize);
+
+    PageInfo<PierQuality> selectHasQualityByDate(String start, String end, Integer pageIndex, Integer pageSize);
+
 
 }

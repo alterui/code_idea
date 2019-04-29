@@ -41,4 +41,9 @@ public interface BeamQualityMapper {
 
     List<BeamQuality> selectByDate(@Param("start") String start,@Param("end") String end);
 
+    List<BeamQuality> selectQualityByDate(@Param("isQualify") int isQualify, @Param("start") String start, @Param("end") String end);
+
+    List<BeamQuality> selectHasQualityByDate(@Param("start") String start, @Param("end") String end);
+
+
 }

@@ -53,7 +53,12 @@ public interface TowerQualityService {
 
     List<EntityCountDateList> getIsQualityCountByDate(String start, String end);
 
-    PageInfo<TowerQuality> selectByDate(String start, String end,Integer pageIndex, Integer pageSize);
+    PageInfo<TowerQuality> selectByDate(String start, String end, Integer pageIndex, Integer pageSize);
+
+    PageInfo<TowerQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize);
+
+    PageInfo<TowerQuality> selectHasQualityByDate(String start, String end, Integer pageIndex, Integer pageSize);
+
 
 
 

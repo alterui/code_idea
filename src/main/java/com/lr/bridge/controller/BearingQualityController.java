@@ -37,8 +37,8 @@ public class BearingQualityController {
     @RequestMapping("")
     public String index(HttpServletRequest request,
                           Model model,
-                           @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                           @RequestParam(required = false, defaultValue = "6") Integer pageSize){
+                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                           @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
         model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showQuality(pageIndex, pageSize);
@@ -58,8 +58,8 @@ public class BearingQualityController {
     @RequestMapping("/hasQuality")
     public String hasQuality(HttpServletRequest request,
                         Model model,
-                        @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "6") Integer pageSize){
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
         model.addAttribute("pageUrlPrefix", "/page/bear/hasQuality?pageIndex");
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", bearingQualityInfo);
@@ -79,8 +79,8 @@ public class BearingQualityController {
     @RequestMapping("/qualified/{id}")
     public String qualified(HttpServletRequest request,
                            Model model,
-                            @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "6") Integer pageSize,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                             @PathVariable("id") Integer id){
 
        //0代表不合格，1代表合格
@@ -105,8 +105,8 @@ public class BearingQualityController {
     @RequestMapping("/notQualified/{id}")
     public String notQualified(HttpServletRequest request,
                             Model model,
-                            @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "6") Integer pageSize,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                             @PathVariable("id") Integer id){
 
         //0代表不合格，1代表合格
@@ -132,8 +132,8 @@ public class BearingQualityController {
     @RequestMapping("/editQualified/{id}")
     public String exitQualified(HttpServletRequest request,
                             Model model,
-                            @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "6") Integer pageSize,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                             @PathVariable("id") Integer id){
 
         //0代表不合格，1代表合格
@@ -159,8 +159,8 @@ public class BearingQualityController {
     @RequestMapping("/editNotQualified/{id}")
     public String notExitQualified(HttpServletRequest request,
                                 Model model,
-                                @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                                @RequestParam(required = false, defaultValue = "6") Integer pageSize,
+                                @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                @RequestParam(required = false, defaultValue = "10") Integer pageSize,
                                 @PathVariable("id") Integer id){
 
         //0代表不合格，1代表合格
@@ -277,7 +277,7 @@ public class BearingQualityController {
     @RequestMapping(value = "/update")
     public String updateBear(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                              @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         //取值
@@ -324,7 +324,7 @@ public class BearingQualityController {
     @RequestMapping(value = "/add")
     public String addBear(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                              @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         //取值
@@ -365,7 +365,7 @@ public class BearingQualityController {
     @RequestMapping(value = "/search")
     public String searchName(HttpServletRequest request,
                           Model model,
-                          @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
+                          @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                           @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
@@ -385,8 +385,8 @@ public class BearingQualityController {
     @RequestMapping(value = "/qualitySearch")
     public String qualitySearchName(HttpServletRequest request,
                              Model model,
-                             @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "6") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         //取值
         String name = request.getParameter("qualitySearch");
@@ -404,8 +404,8 @@ public class BearingQualityController {
     @RequestMapping(value = "/notQualitySearch")
     public String notQualitySearchName(HttpServletRequest request,
                                     Model model,
-                                    @RequestParam(required = false, defaultValue = "1") Integer pageIndex,
-                                    @RequestParam(required = false, defaultValue = "6") Integer pageSize) {
+                                    @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                    @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         //取值
         String name = request.getParameter("notQualitySearch");
@@ -600,6 +600,171 @@ public class BearingQualityController {
         return "page/bearCrudPage/bearCrudPage";
 
     }
+
+
+
+    /**
+     * 待验收页面的按日期搜索
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping("/getQualitySearch")
+    public String getQualitySearch(HttpServletRequest request,
+                                   Model model,
+                                   @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                   @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
+        //-1表示没有确认的。0代表不合格，1代表合格
+        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectQualityByDate(-1,startTime,endTime,pageIndex, pageSize);
+        model.addAttribute("pageInfo", bearingQualityInfo);
+        return "page/qualityPage/bearQuality";
+
+    }
+
+
+
+    /**
+     * 已经验收页面的按日期搜索
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping("/getHasQualitySearch")
+    public String getHasQualitySearch(HttpServletRequest request,
+                                      Model model,
+                                      @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                      @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/bear/hasQuality?pageIndex");
+        //-1表示没有确认的。0代表不合格，1代表合格
+        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectHasQualityByDate(startTime,endTime,pageIndex, pageSize);
+        model.addAttribute("pageInfo", bearingQualityInfo);
+        return "page/qualityPage/hasBearQuality";
+
+    }
+
+
+
+
+    /**
+     * 批量不合格
+     *
+     */
+    @RequestMapping(value = "/notQualityMore")
+    @ResponseBody
+    public List<String> notQualityBearMore(HttpServletRequest request,
+                                           Model model,
+                                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                           @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+        String[] split = ids.trim().split(",");
+        List<String> result = new ArrayList<>();
+        try {
+            for (String id : split) {
+                id= id.trim();
+                bearingQualityService.updateByIsQualify(0, Integer.parseInt(id));
+            }
+        } catch (NumberFormatException e) {
+            result.add("批量操作失败");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+
+
+    /**
+     * 批量合格
+     *
+     */
+    @RequestMapping(value = "/qualityMore")
+    @ResponseBody
+    public List<String> qualityBearMore(HttpServletRequest request,
+                                        Model model,
+                                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                        @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+        String ids = request.getParameter("id");
+        String[] split = ids.trim().split(",");
+        List<String> result = new ArrayList<>();
+        try {
+            for (String id : split) {
+                id= id.trim();
+                bearingQualityService.updateByIsQualify(1, Integer.parseInt(id));
+            }
+        } catch (NumberFormatException e) {
+            result.add("批量操作失败");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+
+    /**
+     * 更改
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @param id
+     * @return
+     */
+    @RequestMapping("/updateQualified/{id}")
+    public String updateQualified(HttpServletRequest request,
+                                  Model model,
+                                  @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                  @RequestParam(required = false, defaultValue = "10") Integer pageSize,
+                                  @PathVariable("id") Integer id){
+
+        //查数据库isQualify的值
+
+        BearingQuality bearingQuality = bearingQualityService.selectByPrimaryKey(id);
+
+        if (bearingQuality.getIsQualify() == 1) {
+            //1代表合格，更改为不合格
+            bearingQualityService.updateByIsQualify(0, id);
+
+        } else if (bearingQuality.getIsQualify() == 0){
+            // //0代表不合格，1代表合格
+            bearingQualityService.updateByIsQualify(1, id);
+
+        }
+
+        model.addAttribute("pageUrlPrefix", "/page/bear/hasQuality?pageIndex");
+        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectByHasQuality(pageIndex, pageSize);
+        model.addAttribute("pageInfo", bearingQualityInfo);
+        return "page/qualityPage/hasBearQuality";
+
+    }
+
+
 
 
 }

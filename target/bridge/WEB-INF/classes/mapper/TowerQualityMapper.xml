@@ -333,4 +333,31 @@
         ORDER BY towerqualityCheckTime DESC
     </select>
 
+
+
+
+    <select id="selectQualityByDate"   resultMap="BaseResultMap">
+        select
+        *
+        from towerquality
+        WHERE  towerqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify = #{isQualify,jdbcType=INTEGER}
+        ORDER BY towerqualityCheckTime DESC
+    </select>
+
+
+    <select id="selectHasQualityByDate"   resultMap="BaseResultMap">
+        select
+        *
+        from towerquality
+        WHERE  towerqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND (isQualify = 0 OR isQualify = 1)
+        ORDER BY towerqualityCheckTime DESC
+    </select>
+
+
 </mapper>

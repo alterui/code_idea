@@ -129,5 +129,21 @@ public class TowerQualityServiceImpl implements TowerQualityService {
         return new PageInfo<TowerQuality>(bearingQualityList);
     }
 
+    @Override
+    public PageInfo<TowerQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<TowerQuality> bearingQualityList = towerQualityMapper.selectQualityByDate(isQualify, start, end);
+        return new PageInfo<TowerQuality>(bearingQualityList);
+    }
+
+
+    @Override
+    public PageInfo<TowerQuality> selectHasQualityByDate( String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<TowerQuality> bearingQualityList = towerQualityMapper.selectHasQualityByDate(start, end);
+        return new PageInfo<TowerQuality>(bearingQualityList);
+    }
+
+
 
 }

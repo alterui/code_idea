@@ -25,54 +25,192 @@
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css"  media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
+
+    <script src="${ctx}/static/js/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
+
     <script type="text/javascript">
-        //JavaScript代码区域
-        layui.use('element', function(){
-            var element = layui.element;
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+
+            //墨绿主题
+            laydate.render({
+                elem: '#start'
+                ,theme: 'molv'
+            });
+
+            //墨绿主题
+            laydate.render({
+                elem: '#end'
+                ,theme: 'molv'
+            });
+
 
         });
 
-        //合格的确认
-        function confirmQuality() {
-            var msg = "您确定合格吗？";
-            if (confirm(msg) == true) {
-
-                return true;
-            } else {
-                return false;
-            }
-        }
 
         //合格
         function qualityData(id) {
-            if (confirmQuality() == true) {
 
+            layer.confirm('您确定合格吗？',function (index) {
                 window.location.href = "${pageContext.request.contextPath}/page/tower/qualified/" + id;
-            }
-        }
+            });
 
-        //不合格的确认
-        function confirmNotQuality() {
-            var msg = "您确定不合格吗？";
-            if (confirm(msg) == true) {
-
-                return true;
-            } else {
-                return false;
-            }
         }
 
         //不合格
         function notQualityData(id) {
-            if (confirmNotQuality() == true) {
 
+            layer.confirm('您确定不合格吗？',function (index) {
                 window.location.href = "${pageContext.request.contextPath}/page/tower/notQualified/" + id;
-            }
+            });
+
         }
 
+
+
+        layui.use('table', function(){
+            var table = layui.table;
+
+            //转换静态表格
+            table.init('demo', {
+
+            });
+        });
+
+
+        layui.use('table', function () {
+            var table = layui.table;
+            var $ = layui.$, active = {
+                reload: function () {
+                    var demoReload = $('#demoReload');
+
+                    //执行重载
+                    table.reload('tableDate', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        , where: {
+                            id: demoReload.val()
+                        }
+                    });
+                }
+            };
+
+
+            var $ = layui.$, active1 = {
+                qualityMore:function () {
+                    var checkStatus = table.checkStatus('tableDate')
+                        ,data = checkStatus.data
+                        ,delList=[];
+                    data.forEach(function(n){
+                        delList.push(n.id);
+                    });
+
+                    if(delList!=''){
+                        layer.confirm('确认'+data.length+'条数据为合格吗？', function(index){
+                            $.ajax({
+                                url: '/page/tower/qualityMore',
+                                type:'post',
+                                dataType:'json',
+                                data:"id="+delList,
+                                success:function (res) {
+
+                                    if(res.length==0){
+                                        window.location.href = "${pageContext.request.contextPath}/page/tower/";
+                                    }else{
+                                        layer.msg('批量操作数据失败');
+                                    }
+                                },
+                                'error':function () {
+                                    layer.msg('系统错误');
+                                }
+                            })
+                        })
+                    }else{
+                        layer.msg("请选择行");
+                    };
+                }
+            };
+
+
+            //批量不合格
+
+            var $ = layui.$, active = {
+                notQualityMore:function () {
+                    var checkStatus = table.checkStatus('tableDate')
+                        ,data = checkStatus.data
+                        ,delList=[];
+                    data.forEach(function(n){
+                        delList.push(n.id);
+                    });
+
+                    if(delList!=''){
+                        layer.confirm('确认'+data.length+'条数据为不合格吗？', function(index){
+                            $.ajax({
+                                url: '/page/tower/notQualityMore',
+                                type:'post',
+                                dataType:'json',
+                                data:"id="+delList,
+                                success:function (res) {
+
+                                    if(res.length==0){
+                                        window.location.href = "${pageContext.request.contextPath}/page/tower/";
+                                    }else{
+                                        layer.msg('批量操作数据失败');
+                                    }
+                                },
+                                'error':function () {
+                                    layer.msg('系统错误');
+                                }
+                            })
+                        })
+                    }else{
+                        layer.msg("请选择行");
+                    };
+                }
+            };
+
+
+
+            $('.demoTable .layui-btn').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+
+
+
+            $('.demoTable .layui-btn').on('click', function () {
+                var type = $(this).data('type');
+                active1[type] ? active1[type].call(this) : '';
+            });
+        });
+
+
+
+
+        function getTowerSearch(){
+
+            var start = $("#start").val();
+            var end = $("#end").val();
+
+            if (start=="" || end=="") {
+                alert("起止时间不能为空！");
+                return false;
+            }
+            //结束时间不能比开始时间小。
+            var startTime = new Date(start).getTime();
+            var endTime = new Date(end).getTime();
+            if (startTime>endTime){
+                alert("开始时间不能大于结束时间！");
+                return false;
+            }
+
+            window.location.href = "${pageContext.request.contextPath}/page/tower/getQualitySearch?start=" + start + " &end=" + end + "";
+
+        }
     </script>
 
 
@@ -88,277 +226,273 @@
         /*覆盖 layui*/
         .layui-input {
             display: inline-block;
-            width: 33.333% !important;
+            width: 15% !important;
         }
 
     </style>
 
-            <blockquote class="layui-elem-quote">
+    <blockquote class="layui-elem-quote">
 
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;锁塔质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a href="/page/tower/"><font color="#228b22">待确认验收</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a href="/page/tower/hasQuality"><font color="#228b22">已确认验收</font></a>
-
-
-                <div style="float: right">
-                    其他质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a  class="layui-this" href="/page/beam/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pier/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pile/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                </div>
-            </blockquote>
+        当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;锁塔质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+        <a href="/page/tower/"><font color="#228b22">待确认验收</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+        <a href="/page/tower/hasQuality"><font color="#228b22">已确认验收</font></a>
 
 
-            <div class="layui-tab" >
-
-                <form action="/page/tower/notQualitySearch" method="post">
-
-                    <button class="layui-btn"   style=" float: right">搜索</button>
-                    <input type="text" name="notQualitySearch"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
-
-                </form>
-
-
-            <div class="layui-tab">
+        <div style="float: right">
+            其他质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+            <a  class="layui-this" href="/page/beam/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+            <a class="layui-this" href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+            <a class="layui-this" href="/page/pier/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+            <a class="layui-this" href="/page/pile/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+        </div>
+    </blockquote>
 
 
-                <div class="layui-tab layui-tab-card">
+    <div class="layui-tab" >
+
+        <form action="/page/tower/notQualitySearch" method="post">
+
+            <button class="layui-btn"   style=" float: right">搜索</button>
+            <input type="text" name="notQualitySearch"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
+
+        </form>
+    </div>
 
 
-                    <form   method="post"  action="/page/tower/qualified">
-                        <input type="hidden" name="currentUrl" id="currentUrl" value="">
-                        <table class="layui-table">
-                            <colgroup>
-                                <col width="130">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="100">
-                                <col width="120">
-                                <col width="250">
-                            </colgroup>
-                            <thead>
-                            <tr>
-                                <th>结构编号</th>
-                                <th>地面处轴线偏差</th>
-                                <th>断面尺寸偏差</th>
-                                <th>垂直度偏差</th>
-                                <th>塔柱壁厚偏差</th>
-                                <th>锚固点高程偏差</th>
-                                <th>索管轴线偏差</th>
-                                <th>横梁断面尺寸偏差</th>
-                                <th>横梁顶面高程偏差</th>
-                                <th>横梁轴线偏差</th>
-                                <th>横梁壁厚偏差</th>
-                                <th>预埋件位置偏差</th>
-                                <th>接缝错台</th>
-                                <th>验收时间</th>
-                                <th>操作</th>
-                            </thead>
-                            <tbody>
+            <div class="demoTable">
 
-                            <c:forEach items="${pageInfo.list}" var="tower">
-                                <tr>
-                                    <td>
-                                        <input type="hidden" name="id" value="${tower.id}">
-                                            ${tower.struId}
-                                    </td>
+                <button class="layui-btn layui-btn-mini" data-type="qualityMore">批量合格</button>
+                <button class="layui-btn layui-btn-danger" data-type="notQualityMore">批量不合格</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                                    <td>
-                                            ${tower.axisDevi}
-                                    </td>
-                                    <td>
-                                            ${tower.crossDimeDevi}
-                                    </td>
+                开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
+                结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
+                <button  onclick="return getTowerSearch()"  class="layui-btn layui-btn-mini" type="submit">查询</button>
 
-                                    <td>
-                                            ${tower.vert}
-                                    </td>
 
-                                    <td>
-                                            ${tower.coluWallThic}
-                                    </td>
+            </div>
 
-                                    <td>
-                                            ${tower.anchnDevi}
-                                    </td>
 
-                                    <td>
-                                            ${tower.cableAxisDevi}
-                                    </td>
+            <script type="text/html" id="barDemo">
 
-                                    <td>
-                                            ${tower.crossbeamDimeDevi}
-                                    </td>
 
-                                    <td>
-                                            ${tower.crossbeamTopDevi}
-                                    </td>
 
-                                    <td>
-                                            ${tower.crossbeamAxisDevi}
-                                    </td>
+                <a onclick="qualityData({{d.id}})"
+                   class="layui-btn layui-btn-sm">合格
 
-                                    <td>
-                                            ${tower.crossbeamThicDevi}
-                                    </td>
+                </a>
+                <a
+                        onclick="notQualityData({{d.id}})"
+                        class="layui-btn layui-btn-danger layui-btn-sm">不合格
+                </a>
 
-                                    <td>
-                                            ${tower.embePartsDevi}
-                                    </td>
-
-                                    <td>
-                                            ${tower.jointDisl}
-                                    </td>
+            </script>
 
 
 
 
+                <table class="layui-table"  lay-data="{id:'tableDate'}" lay-filter="demo">
+                    <thead>
+                    <tr>
+                        <th lay-data="{type:'checkbox'}"></th>
+                        <th lay-data="{hide:true,field:'id'}"></th>
 
-                                    <td>
-                                        <fmt:formatDate value="${tower.towerqualityCheckTime}"
-                                                        pattern="yyyy-MM-dd HH:mm:ss"/>
-                                    </td>
+                        <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
+                        <th lay-data="{field:'axisDevi', align:'center',width:150, sort: true}">地面处轴线偏差</th>
+                        <th lay-data="{field:'crossDimeDevi', align:'center',width:130, sort: true}">断面尺寸偏差</th>
+                        <th lay-data="{field:'vert', align:'center',width:130, sort: true}">垂直度偏差</th>
+                        <th lay-data="{field:'coluWallThic', align:'center',width:130, sort: true}">塔柱壁厚偏差</th>
+                        <th lay-data="{field:'anchnDevi', align:'center',width:150, sort: true}">锚固点高程偏差</th>
+                        <th lay-data="{field:'cableAxisDevi', align:'center',width:130, sort: true}">索管轴线偏差</th>
+                        <th lay-data="{field:'crossbeamDimeDevi', align:'center',width:160, sort: true}">横梁断面尺寸偏差</th>
+                        <th lay-data="{field:'crossbeamTopDevi', align:'center',width:160, sort: true}">横梁顶面高程偏差</th>
+                        <th lay-data="{field:'crossbeamAxisDevi', align:'center',width:130, sort: true}">横梁轴线偏差</th>
+                        <th lay-data="{field:'crossbeamThicDevi', align:'center',width:130, sort: true}">横梁壁厚偏差</th>
+                        <th lay-data="{field:'embePartsDevi', align:'center',width:160, sort: true}">预埋件位置偏差</th>
+                        <th lay-data="{field:'jointDisl', align:'center',width:120, sort: true}">接缝错台</th>
+                        <th lay-data="{field:'towerqualityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
+                        <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
-                                    <td>
-                                       <%-- 合格<input  type="radio" name="tower_${tower.id}" value="1"  checked="checked"
+                    </thead>
+                    <tbody>
 
-                                                >&nbsp;&nbsp;
-                                        不合格<input type="radio" name="tower_${tower.id}" value="0" >--%>
+                    <c:forEach items="${pageInfo.list}" var="tower">
+                        <tr>
+                            <td>
 
+                            </td>
 
-                                           <a onclick="qualityData(${tower.id})"
-                                              class="layui-btn layui-btn-mini">合格
-
-                                           </a>
-                                           <a
-                                                   onclick="notQualityData(${tower.id})"
-                                                   class="layui-btn layui-btn-danger layui-btn-mini">不合格
-                                           </a>
+                            <td>
+                                    ${tower.id}
+                            </td>
 
 
-                                    </td>
+                            <td>
+                                    ${tower.struId}
+                            </td>
 
-                                </tr>
+                            <td>
+                                    ${tower.axisDevi}
+                            </td>
+                            <td>
+                                    ${tower.crossDimeDevi}
+                            </td>
+
+                            <td>
+                                    ${tower.vert}
+                            </td>
+
+                            <td>
+                                    ${tower.coluWallThic}
+                            </td>
+
+                            <td>
+                                    ${tower.anchnDevi}
+                            </td>
+
+                            <td>
+                                    ${tower.cableAxisDevi}
+                            </td>
+
+                            <td>
+                                    ${tower.crossbeamDimeDevi}
+                            </td>
+
+                            <td>
+                                    ${tower.crossbeamTopDevi}
+                            </td>
+
+                            <td>
+                                    ${tower.crossbeamAxisDevi}
+                            </td>
+
+                            <td>
+                                    ${tower.crossbeamThicDevi}
+                            </td>
+
+                            <td>
+                                    ${tower.embePartsDevi}
+                            </td>
+
+                            <td>
+                                    ${tower.jointDisl}
+                            </td>
+
+
+
+
+
+                            <td>
+                                <fmt:formatDate value="${tower.towerqualityCheckTime}"
+                                                pattern="yyyy-MM-dd HH:mm:ss"/>
+                            </td>
+
+
+
+
+                        </tr>
+                    </c:forEach>
+
+                    </tbody>
+                </table>
+
+
+            </form>
+
+
+
+            <div class=".layui-location-block">
+                <c:if test="${pageInfo.pages > 1}">
+                    <%--分页 start--%>
+                    <nav class="navigation pagination" role="navigation">
+                        <div class="nav-links">
+                            <c:choose>
+                                <c:when test="${pageInfo.pages <= 3 }">
+                                    <c:set var="begin" value="1"/>
+                                    <c:set var="end" value="${pageInfo.pages }"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <c:set var="begin" value="${pageInfo.pageNum-1 }"/>
+                                    <c:set var="end" value="${pageInfo.pageNum + 2}"/>
+                                    <c:if test="${begin < 2 }">
+                                        <c:set var="begin" value="1"/>
+                                        <c:set var="end" value="3"/>
+                                    </c:if>
+                                    <c:if test="${end > pageInfo.pages }">
+                                        <c:set var="begin" value="${pageInfo.pages-2 }"/>
+                                        <c:set var="end" value="${pageInfo.pages }"/>
+                                    </c:if>
+                                </c:otherwise>
+                            </c:choose>
+                                <%--上一页 --%>
+                            <c:choose>
+                                <c:when test="${pageInfo.pageNum eq 1 }">
+                                    <%--当前页为第一页，隐藏上一页按钮--%>
+                                </c:when>
+                                <c:otherwise>
+                                    <a class="page-numbers"
+                                       href="${pageUrlPrefix}=${pageInfo.pageNum-1}">
+                                        <i class="layui-icon">&lt;</i>
+                                    </a>
+                                </c:otherwise>
+                            </c:choose>
+                                <%--显示第一页的页码--%>
+                            <c:if test="${begin >= 2 }">
+                                <a class="page-numbers" href="${pageUrlPrefix}=1">1</a>
+                            </c:if>
+                                <%--显示点点点--%>
+                            <c:if test="${begin  > 2 }">
+                                <span class="page-numbers dots">…</span>
+                            </c:if>
+                                <%--打印 页码--%>
+                            <c:forEach begin="${begin }" end="${end }" var="i">
+                                <c:choose>
+                                    <c:when test="${i eq pageInfo.pageNum }">
+                                        <a class="page-numbers current">${i}</a>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <a class="page-numbers" href="${pageUrlPrefix}=${i}">${i}</a>
+                                    </c:otherwise>
+                                </c:choose>
                             </c:forEach>
-                           <%-- <tr>
+                                <%-- 显示点点点 --%>
+                            <c:if test="${end < pageInfo.pages-1 }">
+                                <span class="page-numbers dots">…</span>
+                            </c:if>
+                                <%-- 显示最后一页的数字 --%>
+                            <c:if test="${end < pageInfo.pages }">
+                                <a href="${pageUrlPrefix}=${pageInfo.pages}">
+                                        ${pageInfo.pages}
+                                </a>
+                            </c:if>
+                                <%--下一页 --%>
+                            <c:choose>
+                                <c:when test="${pageInfo.pageNum eq pageInfo.pages }">
+                                    <%--到了尾页隐藏，下一页按钮--%>
+                                </c:when>
+                                <c:otherwise>
+                                    <a class="page-numbers"
+                                       href="${pageUrlPrefix}=${pageInfo.pageNum+1}">
+                                        <i class="layui-icon">&gt;</i>
+                                    </a>
+                                </c:otherwise>
+                            </c:choose>
 
-                                <td colspan="10">
-                                    <div style="width: 216px; margin: 0; text-align:right; float:right"; >
-
-                                        <button class="layui-btn layui-btn-fluid" type="submit" >提交</button>
-                                    </div>
-
-                                </td>
-                            </tr>--%>
-                            </tbody>
-                        </table>
-
-
-                    </form>
-
-
-
-                    <div class=".layui-location-block">
-                        <c:if test="${pageInfo.pages > 1}">
-                            <%--分页 start--%>
-                            <nav class="navigation pagination" role="navigation">
-                                <div class="nav-links">
-                                    <c:choose>
-                                        <c:when test="${pageInfo.pages <= 3 }">
-                                            <c:set var="begin" value="1"/>
-                                            <c:set var="end" value="${pageInfo.pages }"/>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <c:set var="begin" value="${pageInfo.pageNum-1 }"/>
-                                            <c:set var="end" value="${pageInfo.pageNum + 2}"/>
-                                            <c:if test="${begin < 2 }">
-                                                <c:set var="begin" value="1"/>
-                                                <c:set var="end" value="3"/>
-                                            </c:if>
-                                            <c:if test="${end > pageInfo.pages }">
-                                                <c:set var="begin" value="${pageInfo.pages-2 }"/>
-                                                <c:set var="end" value="${pageInfo.pages }"/>
-                                            </c:if>
-                                        </c:otherwise>
-                                    </c:choose>
-                                        <%--上一页 --%>
-                                    <c:choose>
-                                        <c:when test="${pageInfo.pageNum eq 1 }">
-                                            <%--当前页为第一页，隐藏上一页按钮--%>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <a class="page-numbers"
-                                               href="${pageUrlPrefix}=${pageInfo.pageNum-1}">
-                                                <i class="layui-icon">&lt;</i>
-                                            </a>
-                                        </c:otherwise>
-                                    </c:choose>
-                                        <%--显示第一页的页码--%>
-                                    <c:if test="${begin >= 2 }">
-                                        <a class="page-numbers" href="${pageUrlPrefix}=1">1</a>
-                                    </c:if>
-                                        <%--显示点点点--%>
-                                    <c:if test="${begin  > 2 }">
-                                        <span class="page-numbers dots">…</span>
-                                    </c:if>
-                                        <%--打印 页码--%>
-                                    <c:forEach begin="${begin }" end="${end }" var="i">
-                                        <c:choose>
-                                            <c:when test="${i eq pageInfo.pageNum }">
-                                                <a class="page-numbers current">${i}</a>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <a class="page-numbers" href="${pageUrlPrefix}=${i}">${i}</a>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </c:forEach>
-                                        <%-- 显示点点点 --%>
-                                    <c:if test="${end < pageInfo.pages-1 }">
-                                        <span class="page-numbers dots">…</span>
-                                    </c:if>
-                                        <%-- 显示最后一页的数字 --%>
-                                    <c:if test="${end < pageInfo.pages }">
-                                        <a href="${pageUrlPrefix}=${pageInfo.pages}">
-                                                ${pageInfo.pages}
-                                        </a>
-                                    </c:if>
-                                        <%--下一页 --%>
-                                    <c:choose>
-                                        <c:when test="${pageInfo.pageNum eq pageInfo.pages }">
-                                            <%--到了尾页隐藏，下一页按钮--%>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <a class="page-numbers"
-                                               href="${pageUrlPrefix}=${pageInfo.pageNum+1}">
-                                                <i class="layui-icon">&gt;</i>
-                                            </a>
-                                        </c:otherwise>
-                                    </c:choose>
-
-                                </div>
-                            </nav>
-                            <%--分页 end--%>
-                        </c:if>
-
-
-                    </div>
-                </div>
+                        </div>
+                    </nav>
+                    <%--分页 end--%>
+                </c:if>
 
 
             </div>
+        </div>
 
 
-            </div>
+    </div>
+
+
     </div>
 </div>
+</div>
+</div></body>

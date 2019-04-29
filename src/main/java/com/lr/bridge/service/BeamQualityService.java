@@ -53,7 +53,14 @@ public interface BeamQualityService {
     List<EntityCountDateList> getIsQualityCountByDate(String start, String end);
 
 
-    PageInfo<BeamQuality> selectByDate(String start, String end,Integer pageIndex, Integer pageSize);
+    PageInfo<BeamQuality> selectByDate(String start, String end, Integer pageIndex, Integer pageSize);
+
+    PageInfo<BeamQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize);
+
+    PageInfo<BeamQuality> selectHasQualityByDate(String start, String end, Integer pageIndex, Integer pageSize);
+
+
+
 
 
 }

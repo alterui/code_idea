@@ -21,64 +21,103 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <c:set var="ctx" value="${pageContext.request.contextPath}" />
-    <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css"  media="all">
+    <c:set var="ctx" value="${pageContext.request.contextPath}"/>
+    <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
+
+    <script src="${ctx}/static/js/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
+
+
     <script type="text/javascript">
-        //JavaScript代码区域
-        layui.use('element', function(){
-            var element = layui.element;
+        layui.use('laydate', function () {
+            var laydate = layui.laydate;
+
+            //墨绿主题
+            laydate.render({
+                elem: '#start'
+                , theme: 'molv'
+            });
+
+            //墨绿主题
+            laydate.render({
+                elem: '#end'
+                , theme: 'molv'
+            });
+
 
         });
 
 
-
-
-        //更改为合格的确认
-        function confirmQuality() {
-            var msg = "您确定更改为合格吗？";
-            if (confirm(msg) == true) {
-
-                return true;
-            } else {
-                return false;
-            }
-        }
-
         //更改为合格
         function qualityData(id) {
-            if (confirmQuality() == true) {
 
-                window.location.href = "${pageContext.request.contextPath}/page/bear/editQualified/" + id;
-            }
+            layer.confirm('您确定要修改吗？', function (index) {
+                window.location.href = "${pageContext.request.contextPath}/page/bear/updateQualified/" + id;
+
+            });
+
+
         }
 
 
+        layui.use('table', function () {
+            var table = layui.table;
 
-        //不合格的确认
-        function confirmNotQuality() {
-            var msg = "您确定更改为不合格吗？";
-            if (confirm(msg) == true) {
+            //转换静态表格
+            table.init('demo', {});
+        });
 
-                return true;
-            } else {
+
+        layui.use('table', function () {
+            var table = layui.table;
+            var $ = layui.$, active = {
+                reload: function () {
+                    var demoReload = $('#demoReload');
+
+                    //执行重载
+                    table.reload('tableDate', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        , where: {
+                            id: demoReload.val()
+                        }
+                    });
+                }
+            };
+
+
+            $('.demoTable .layui-btn').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+        });
+
+
+        function getBearSearch() {
+
+            var start = $("#start").val();
+            var end = $("#end").val();
+
+            if (start == "" || end == "") {
+                alert("起止时间不能为空！");
                 return false;
             }
-        }
-
-        //不合格
-        function notQualityData(id) {
-            if (confirmNotQuality() == true) {
-
-                window.location.href = "${pageContext.request.contextPath}/page/bear/editNotQualified/" + id;
+            //结束时间不能比开始时间小。
+            var startTime = new Date(start).getTime();
+            var endTime = new Date(end).getTime();
+            if (startTime > endTime) {
+                alert("开始时间不能大于结束时间！");
+                return false;
             }
+
+            window.location.href = "${pageContext.request.contextPath}/page/bear/getHasQualitySearch?start=" + start + " &end=" + end + "";
+
         }
-
-
 
 
     </script>
@@ -92,24 +131,15 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
 
-    <style>
-        /*覆盖 layui*/
-        .layui-input {
-            display: inline-block;
-            width: 33.333% !important;
-        }
-
-        .table-align{
-          vertical-align: middle;
-            text-align: center;
-
-        }
+            <style>
+                /*覆盖 layui*/
+                .layui-input {
+                    display: inline-block;
+                    width: 15% !important;
+                }
 
 
-
-
-
-    </style>
+            </style>
 
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;支座质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
@@ -119,252 +149,235 @@
 
                 <div style="float: right">
                     其他质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a  class="layui-this" href="/page/beam/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/beam/">梁质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pier/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pile/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/tower/">锁塔质量验收</a>
                 </div>
             </blockquote>
 
-
-            <div class="layui-tab" >
+            <!-- 搜索框 -->
+            <div class="layui-tab">
 
                 <form action="/page/bear/qualitySearch" method="post">
 
 
-                    <button class="layui-btn"   style=" float: right">搜索</button>
-                    <input type="text" name="qualitySearch"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
+                    <button class="layui-btn" style=" float: right">搜索</button>
+                    <input type="text" name="qualitySearch" style="margin-right: 6px; float: right " required
+                           placeholder="请输入搜索内容" class="layui-input">
 
                 </form>
+            </div>
 
 
-            <div class="layui-tab">
+
+            <!-- 按日期搜索-->
+            <div class="demoTable">
+
+                &nbsp;&nbsp;&nbsp;&nbsp;开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
+                结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
+                <button  onclick="return getBearSearch()"  class="layui-btn layui-btn-mini" type="submit">查询</button>
+            </div>
 
 
-                <div class="layui-tab layui-tab-card">
+            <script type="text/html" id="barDemo">
+
+                <a onclick="qualityData({{d.id}})"
+                   class="layui-btn layui-btn-sm">更改
+
+                </a>
+
+            </script>
 
 
-                    <form   method="post"  action="/page/bear/qualified">
-                        <input type="hidden" name="currentUrl" id="currentUrl" value="">
+             <table class="layui-table" lay-data="{id:'tableDate'}" lay-filter="demo">
+                   <thead>
+                        <tr>
 
-                        <table class="layui-table">
-                            <colgroup>
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                                <col width="200">
-                            </colgroup>
-                            <thead>
-                            <tr >
-                                <th>结构编号</th>
-                                <th>上座板中心纵向错动量</th>
-                                <th>下座板中心横向错动量</th>
-                                <th>同端支座中心横向距离</th>
-                                <th>同一梁端亮支座相对高差</th>
-                                <th>每一支座的边缘高差</th>
-                                <th>上下座板十字线扭转</th>
-                                <th>活动支座的纵向错动量</th>
-                                <th>验收时间</th>
-                                <th>是否合格</th>
-                                <th>操作</th>
+                            <th lay-data="{hide:true,field:'id'}"></th>
+                            <th lay-data="{hide:true,field:'qualify'}"></th>
 
-                            </tr>
-                            </thead>
-                            <tbody>
+                            <th lay-data="{field:'struId',align:'center',width:120,sort:true}">结构编号</th>
+                            <th lay-data="{field:'upCentVert',align:'center',width:180,sort:true}">上座板中心纵向错动量</th>
+                            <th lay-data="{field:'downCentTran',align:'center',width:180,sort:true}">下座板中心横向错动量</th>
+                            <th lay-data="{field:'sameCentVert',align:'center',width:180, sort:true}">同端支座中心横向距离</th>
+                            <th lay-data="{field:'sameRela',align:'center',width:200,sort:true}">同一梁端亮支座相对高差</th>
+                            <th lay-data="{field:'edgeHeig',align:'center',width:180, sort:true}">每一支座的边缘高差</th>
+                            <th lay-data="{field:'crossLineTors',align:'center',width:180,sort:true}">上下座板十字线扭转</th>
+                            <th lay-data="{field:'actiVert',align:'center',width:180, sort:true}">活动支座的纵向错动量</th>
+                            <th lay-data="{field:'bearingqualityCheckTime',align:'center',width:180,sort:true}">验收时间</th>
+                            <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否合格</th>
+                            <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
 
-                            <c:forEach items="${pageInfo.list}" var="bear">
-                                <tr>
-                                    <td>
-                                            <input type="hidden" name="id" value="${bear.id}">
-                                            ${bear.struId}
-                                    </td>
-                                    <td>
-                                            ${bear.upCentVert}
-                                    </td>
-                                    <td>
-                                            ${bear.downCentTran}
-                                    </td>
+                        </tr>
+                       </thead>
+                        <tbody>
 
-                                    <td>
-                                            ${bear.sameCentVert}
-                                    </td>
+                                <c:forEach items="${pageInfo.list}" var="bear">
+                                    <tr>
 
-                                    <td>
-                                            ${bear.sameRela}
-                                    </td>
+                                        <td>
+                                                ${bear.id}
+                                        </td>
 
-                                    <td>
-                                            ${bear.edgeHeig}
-                                    </td>
+                                        <td>
+                                                ${bear.isQualify}
+                                        </td>
 
-                                    <td>
-                                            ${bear.crossLineTors}
-                                    </td>
 
-                                    <td>
-                                            ${ bear.actiVert}
-                                    </td>
+                                        <td>
+                                                ${bear.struId}
+                                        </td>
+                                        <td>
+                                                ${bear.upCentVert}
+                                        </td>
+                                        <td>
+                                                ${bear.downCentTran}
+                                        </td>
 
-                                    <td>
-                                        <fmt:formatDate value="${bear.bearingqualityCheckTime}"
-                                                        pattern="yyyy-MM-dd HH:mm:ss"/>
-                                    </td>
+                                        <td>
+                                                ${bear.sameCentVert}
+                                        </td>
 
-                                    <td>
-                                        <!-- 0代表不合格，1代表合格-->
+                                        <td>
+                                                ${bear.sameRela}
+                                        </td>
+
+                                        <td>
+                                                ${bear.edgeHeig}
+                                        </td>
+
+                                        <td>
+                                                ${bear.crossLineTors}
+                                        </td>
+
+                                        <td>
+                                                ${ bear.actiVert}
+                                        </td>
+
+                                        <td>
+                                            <fmt:formatDate value="${bear.bearingqualityCheckTime}"
+                                                            pattern="yyyy-MM-dd HH:mm:ss"/>
+                                        </td>
+
+                                        <td>
+                                            <!-- 0代表不合格，1代表合格-->
+                                            <c:choose>
+                                                <c:when test="${bear.isQualify==0}">
+                                                    <b><font color="red">不合格</font></b>
+                                                </c:when>
+
+                                                <c:otherwise>
+                                                    <b><font color="green">合格</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+                                        </td>
+
+
+                                    </tr>
+                                </c:forEach>
+
+                                </tbody>
+                            </table>
+
+
+                        </form>
+
+
+                        <div class=".layui-location-block">
+                            <c:if test="${pageInfo.pages > 1}">
+                                <%--分页 start--%>
+                                <nav class="navigation pagination" role="navigation">
+                                    <div class="nav-links">
                                         <c:choose>
-                                            <c:when test="${bear.isQualify==0}">
-                                            <b><font color="red">不合格</font></b>
-                                            </c:when>
-
-                                            <c:otherwise>
-                                                <b><font color="green">合格</font></b>
-                                            </c:otherwise>
-                                        </c:choose>
-
-                                    </td>
-                                    <td>
-
-
-                                        <c:choose>
-                                            <c:when test="${bear.isQualify==0}">
-                                                <a onclick="qualityData(${bear.id})"
-                                                   class="layui-btn layui-btn-mini">更改为合格
-
-                                                </a>
-                                            </c:when>
-                                            <c:otherwise>
-                                                <a
-                                                   onclick="notQualityData(${bear.id})"
-                                                    class="layui-btn layui-btn-danger layui-btn-mini">更改为不合格
-                                                </a>
-                                            </c:otherwise>
-                                        </c:choose>
-
-
-
-
-
-
-                                    </td>
-
-                                </tr>
-                            </c:forEach>
-                           <%-- <tr>
-
-                                <td colspan="10">
-                                    <div style="width: 216px; margin: 0; text-align:right; float:right"; >
-
-                                        <button class="layui-btn layui-btn-fluid" type="submit" >提交</button>
-                                    </div>
-
-                                </td>
-                            </tr>--%>
-                            </tbody>
-                        </table>
-
-
-                    </form>
-
-
-
-                    <div class=".layui-location-block">
-                        <c:if test="${pageInfo.pages > 1}">
-                            <%--分页 start--%>
-                            <nav class="navigation pagination" role="navigation">
-                                <div class="nav-links">
-                                    <c:choose>
-                                        <c:when test="${pageInfo.pages <= 3 }">
-                                            <c:set var="begin" value="1"/>
-                                            <c:set var="end" value="${pageInfo.pages }"/>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <c:set var="begin" value="${pageInfo.pageNum-1 }"/>
-                                            <c:set var="end" value="${pageInfo.pageNum + 2}"/>
-                                            <c:if test="${begin < 2 }">
+                                            <c:when test="${pageInfo.pages <= 3 }">
                                                 <c:set var="begin" value="1"/>
-                                                <c:set var="end" value="3"/>
-                                            </c:if>
-                                            <c:if test="${end > pageInfo.pages }">
-                                                <c:set var="begin" value="${pageInfo.pages-2 }"/>
                                                 <c:set var="end" value="${pageInfo.pages }"/>
-                                            </c:if>
-                                        </c:otherwise>
-                                    </c:choose>
-                                        <%--上一页 --%>
-                                    <c:choose>
-                                        <c:when test="${pageInfo.pageNum eq 1 }">
-                                            <%--当前页为第一页，隐藏上一页按钮--%>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <a class="page-numbers"
-                                               href="${pageUrlPrefix}=${pageInfo.pageNum-1}">
-                                                <i class="layui-icon">&lt;</i>
-                                            </a>
-                                        </c:otherwise>
-                                    </c:choose>
-                                        <%--显示第一页的页码--%>
-                                    <c:if test="${begin >= 2 }">
-                                        <a class="page-numbers" href="${pageUrlPrefix}=1">1</a>
-                                    </c:if>
-                                        <%--显示点点点--%>
-                                    <c:if test="${begin  > 2 }">
-                                        <span class="page-numbers dots">…</span>
-                                    </c:if>
-                                        <%--打印 页码--%>
-                                    <c:forEach begin="${begin }" end="${end }" var="i">
-                                        <c:choose>
-                                            <c:when test="${i eq pageInfo.pageNum }">
-                                                <a class="page-numbers current">${i}</a>
                                             </c:when>
                                             <c:otherwise>
-                                                <a class="page-numbers" href="${pageUrlPrefix}=${i}">${i}</a>
+                                                <c:set var="begin" value="${pageInfo.pageNum-1 }"/>
+                                                <c:set var="end" value="${pageInfo.pageNum + 2}"/>
+                                                <c:if test="${begin < 2 }">
+                                                    <c:set var="begin" value="1"/>
+                                                    <c:set var="end" value="3"/>
+                                                </c:if>
+                                                <c:if test="${end > pageInfo.pages }">
+                                                    <c:set var="begin" value="${pageInfo.pages-2 }"/>
+                                                    <c:set var="end" value="${pageInfo.pages }"/>
+                                                </c:if>
                                             </c:otherwise>
                                         </c:choose>
-                                    </c:forEach>
-                                        <%-- 显示点点点 --%>
-                                    <c:if test="${end < pageInfo.pages-1 }">
-                                        <span class="page-numbers dots">…</span>
-                                    </c:if>
-                                        <%-- 显示最后一页的数字 --%>
-                                    <c:if test="${end < pageInfo.pages }">
-                                        <a href="${pageUrlPrefix}=${pageInfo.pages}">
-                                                ${pageInfo.pages}
-                                        </a>
-                                    </c:if>
-                                        <%--下一页 --%>
-                                    <c:choose>
-                                        <c:when test="${pageInfo.pageNum eq pageInfo.pages }">
-                                            <%--到了尾页隐藏，下一页按钮--%>
-                                        </c:when>
-                                        <c:otherwise>
-                                            <a class="page-numbers"
-                                               href="${pageUrlPrefix}=${pageInfo.pageNum+1}">
-                                                <i class="layui-icon">&gt;</i>
+                                            <%--上一页 --%>
+                                        <c:choose>
+                                            <c:when test="${pageInfo.pageNum eq 1 }">
+                                                <%--当前页为第一页，隐藏上一页按钮--%>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a class="page-numbers"
+                                                   href="${pageUrlPrefix}=${pageInfo.pageNum-1}">
+                                                    <i class="layui-icon">&lt;</i>
+                                                </a>
+                                            </c:otherwise>
+                                        </c:choose>
+                                            <%--显示第一页的页码--%>
+                                        <c:if test="${begin >= 2 }">
+                                            <a class="page-numbers" href="${pageUrlPrefix}=1">1</a>
+                                        </c:if>
+                                            <%--显示点点点--%>
+                                        <c:if test="${begin  > 2 }">
+                                            <span class="page-numbers dots">…</span>
+                                        </c:if>
+                                            <%--打印 页码--%>
+                                        <c:forEach begin="${begin }" end="${end }" var="i">
+                                            <c:choose>
+                                                <c:when test="${i eq pageInfo.pageNum }">
+                                                    <a class="page-numbers current">${i}</a>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <a class="page-numbers" href="${pageUrlPrefix}=${i}">${i}</a>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </c:forEach>
+                                            <%-- 显示点点点 --%>
+                                        <c:if test="${end < pageInfo.pages-1 }">
+                                            <span class="page-numbers dots">…</span>
+                                        </c:if>
+                                            <%-- 显示最后一页的数字 --%>
+                                        <c:if test="${end < pageInfo.pages }">
+                                            <a href="${pageUrlPrefix}=${pageInfo.pages}">
+                                                    ${pageInfo.pages}
                                             </a>
-                                        </c:otherwise>
-                                    </c:choose>
+                                        </c:if>
+                                            <%--下一页 --%>
+                                        <c:choose>
+                                            <c:when test="${pageInfo.pageNum eq pageInfo.pages }">
+                                                <%--到了尾页隐藏，下一页按钮--%>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <a class="page-numbers"
+                                                   href="${pageUrlPrefix}=${pageInfo.pageNum+1}">
+                                                    <i class="layui-icon">&gt;</i>
+                                                </a>
+                                            </c:otherwise>
+                                        </c:choose>
 
-                                </div>
-                            </nav>
-                            <%--分页 end--%>
-                        </c:if>
+                                    </div>
+                                </nav>
+                                <%--分页 end--%>
+                            </c:if>
 
 
+                        </div>
                     </div>
+
+
                 </div>
 
 
             </div>
-
-
-            </div>
+        </div>
     </div>
 </div>
+</body>
+</html>

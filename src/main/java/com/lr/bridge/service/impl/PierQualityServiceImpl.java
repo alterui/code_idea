@@ -130,4 +130,23 @@ public class PierQualityServiceImpl implements PierQualityService {
     }
 
 
+
+    @Override
+    public PageInfo<PierQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<PierQuality> bearingQualityList = pierQualityMapper.selectQualityByDate(isQualify, start, end);
+        return new PageInfo<PierQuality>(bearingQualityList);
+    }
+
+
+    @Override
+    public PageInfo<PierQuality> selectHasQualityByDate( String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<PierQuality> bearingQualityList = pierQualityMapper.selectHasQualityByDate(start, end);
+        return new PageInfo<PierQuality>(bearingQualityList);
+    }
+
+
+
+
 }

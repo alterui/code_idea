@@ -1,5 +1,6 @@
 package com.lr.bridge.service.impl;
 
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.dao.BeamQualityMapper;
@@ -129,6 +130,20 @@ public class BeamQualityServiceImpl implements BeamQualityService {
     }
 
 
+    @Override
+    public PageInfo<BeamQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BeamQuality> bearingQualityList = beamQualityMapper.selectQualityByDate(isQualify, start, end);
+        return new PageInfo<BeamQuality>(bearingQualityList);
+    }
+
+
+    @Override
+    public PageInfo<BeamQuality> selectHasQualityByDate( String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BeamQuality> bearingQualityList = beamQualityMapper.selectHasQualityByDate(start, end);
+        return new PageInfo<BeamQuality>(bearingQualityList);
+    }
 
 
 

@@ -39,7 +39,12 @@ public interface PileQualityMapper {
 
     List<EntityCountDateList> getIsQualityCountByDate(@Param("start") String start, @Param("end") String end);
 
-    List<PileQuality> selectByDate(@Param("start") String start,@Param("end") String end);
+    List<PileQuality> selectByDate(@Param("start") String start, @Param("end") String end);
+
+    List<PileQuality> selectQualityByDate(@Param("isQualify") int isQualify, @Param("start") String start, @Param("end") String end);
+
+    List<PileQuality> selectHasQualityByDate(@Param("start") String start, @Param("end") String end);
+
 
 
 }

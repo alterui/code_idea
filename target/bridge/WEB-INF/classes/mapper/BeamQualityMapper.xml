@@ -333,4 +333,29 @@
         ORDER BY beamqualityCheckTime DESC
     </select>
 
+
+
+    <select id="selectQualityByDate"   resultMap="BaseResultMap">
+        select
+        *
+        from beamquality
+        WHERE  beamqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify = #{isQualify,jdbcType=INTEGER}
+        ORDER BY beamqualityCheckTime DESC
+    </select>
+
+
+    <select id="selectHasQualityByDate"   resultMap="BaseResultMap">
+        select
+        *
+        from beamquality
+        WHERE  beamqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND (isQualify = 0 OR isQualify = 1)
+        ORDER BY beamqualityCheckTime DESC
+    </select>
+
 </mapper>

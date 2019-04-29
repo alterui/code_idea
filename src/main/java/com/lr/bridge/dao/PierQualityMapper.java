@@ -39,7 +39,12 @@ public interface PierQualityMapper {
 
     List<EntityCountDateList> getIsQualityCountByDate(@Param("start") String start, @Param("end") String end);
 
-    List<PierQuality> selectByDate(@Param("start") String start,@Param("end") String end);
+    List<PierQuality> selectByDate(@Param("start") String start, @Param("end") String end);
+
+    List<PierQuality> selectQualityByDate(@Param("isQualify") int isQualify, @Param("start") String start, @Param("end") String end);
+
+    List<PierQuality> selectHasQualityByDate(@Param("start") String start, @Param("end") String end);
+
 
 
 }

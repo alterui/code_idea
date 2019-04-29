@@ -25,56 +25,103 @@
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${ctx}/static/js/jquery-2.1.1.js">
+
+    <script src="${ctx}/static/js/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
+
     <script type="text/javascript">
-        //JavaScript代码区域
-        layui.use('element', function () {
-            var element = layui.element;
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+
+            //墨绿主题
+            laydate.render({
+                elem: '#start'
+                ,theme: 'molv'
+            });
+
+            //墨绿主题
+            laydate.render({
+                elem: '#end'
+                ,theme: 'molv'
+            });
+
 
         });
 
 
-        //更改为合格的确认
-        function confirmQuality() {
-            var msg = "您确定更改为合格吗？";
-            if (confirm(msg) == true) {
-
-                return true;
-            } else {
-                return false;
-            }
-        }
 
         //更改为合格
         function qualityData(id) {
-            if (confirmQuality() == true) {
 
-                window.location.href = "${pageContext.request.contextPath}/page/tower/editQualified/" + id;
-            }
+            layer.confirm('您确定要修改吗？', function (index) {
+                window.location.href = "${pageContext.request.contextPath}/page/tower/updateQualified/" + id;
+
+            });
+
+
         }
 
 
-        //不合格的确认
-        function confirmNotQuality() {
-            var msg = "您确定更改为不合格吗？";
-            if (confirm(msg) == true) {
 
-                return true;
-            } else {
+        layui.use('table', function(){
+            var table = layui.table;
+
+            //转换静态表格
+            table.init('demo', {
+
+            });
+        });
+
+
+        layui.use('table', function () {
+            var table = layui.table;
+            var $ = layui.$, active = {
+                reload: function () {
+                    var demoReload = $('#demoReload');
+
+                    //执行重载
+                    table.reload('tableDate', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        , where: {
+                            id: demoReload.val()
+                        }
+                    });
+                }
+            };
+
+
+            $('.demoTable .layui-btn').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+        });
+
+
+
+        function getTowerSearch(){
+
+            var start = $("#start").val();
+            var end = $("#end").val();
+
+            if (start=="" || end=="") {
+                alert("起止时间不能为空！");
                 return false;
             }
-        }
-
-        //不合格
-        function notQualityData(id) {
-            if (confirmNotQuality() == true) {
-
-                window.location.href = "${pageContext.request.contextPath}/page/tower/editNotQualified/" + id;
+            //结束时间不能比开始时间小。
+            var startTime = new Date(start).getTime();
+            var endTime = new Date(end).getTime();
+            if (startTime>endTime){
+                alert("开始时间不能大于结束时间！");
+                return false;
             }
-        }
 
+            window.location.href = "${pageContext.request.contextPath}/page/tower/getHasQualitySearch?start=" + start + " &end=" + end + "";
+
+        }
 
     </script>
 
@@ -91,14 +138,9 @@
                 /*覆盖 layui*/
                 .layui-input {
                     display: inline-block;
-                    width: 33.333% !important;
+                    width: 15% !important;
                 }
 
-                .table-align {
-                    vertical-align: middle;
-                    text-align: center;
-
-                }
 
 
             </style>
@@ -119,6 +161,7 @@
             </blockquote>
 
 
+            <!-- 搜索框 -->
             <div class="layui-tab">
 
                 <form action="/page/tower/qualitySearch" method="post">
@@ -128,59 +171,68 @@
                            placeholder="请输入搜索内容" class="layui-input">
 
                 </form>
+            </div>
+
+            <!-- 按日期搜索-->
+            <div class="demoTable">
+
+                &nbsp;&nbsp;&nbsp;&nbsp;开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
+                结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
+                <button  onclick="return getTowerSearch()"  class="layui-btn layui-btn-mini" type="submit">查询</button>
+            </div>
 
 
-                <div class="layui-tab">
+            <script type="text/html" id="barDemo">
+
+                <a onclick="qualityData({{d.id}})"
+                   class="layui-btn layui-btn-sm">更改
+
+                </a>
 
 
-                    <div class="layui-tab layui-tab-card">
+            </script>
 
 
-                        <form method="post" action="/page/tower/qualified">
-                            <input type="hidden" name="currentUrl" id="currentUrl" value="">
 
-                            <table class="layui-table">
-                                <colgroup>
-                                    <col width="150">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="130">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="130">
-                                    <col width="100">
-                                    <col width="100">
-                                    <col width="150">
-                                    <col width="200">
-                                </colgroup>
-                                <thead>
-                                <tr>
-                                    <th>结构编号</th>
-                                    <th>地面处轴线偏差</th>
-                                    <th>断面尺寸偏差</th>
-                                    <th>垂直度偏差</th>
-                                    <th>塔柱壁厚偏差</th>
-                                    <th>锚固点高程偏差</th>
-                                    <th>索管轴线偏差</th>
-                                    <th>横梁断面尺寸偏差</th>
-                                    <th>横梁顶面高程偏差</th>
-                                    <th>横梁轴线偏差</th>
-                                    <th>横梁壁厚偏差</th>
-                                    <th>预埋件位置偏差</th>
-                                    <th>接缝错台</th>
+            <table class="layui-table" lay-data="{id:'tableDate'}" lay-filter="demo">
+                <thead>
+                <tr>
+                    <th lay-data="{hide:true,field:'id'}"></th>
+                    <th lay-data="{hide:true,field:'qualify'}"></th>
 
-                                    <th>是否合格</th>
+                    <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
+                    <th lay-data="{field:'axisDevi', align:'center',width:150, sort: true}">地面处轴线偏差</th>
+                    <th lay-data="{field:'crossDimeDevi', align:'center',width:130, sort: true}">断面尺寸偏差</th>
+                    <th lay-data="{field:'vert', align:'center',width:130, sort: true}">垂直度偏差</th>
+                    <th lay-data="{field:'coluWallThic', align:'center',width:130, sort: true}">塔柱壁厚偏差</th>
+                    <th lay-data="{field:'anchnDevi', align:'center',width:150, sort: true}">锚固点高程偏差</th>
+                    <th lay-data="{field:'cableAxisDevi', align:'center',width:130, sort: true}">索管轴线偏差</th>
+                    <th lay-data="{field:'crossbeamDimeDevi', align:'center',width:160, sort: true}">横梁断面尺寸偏差</th>
+                    <th lay-data="{field:'crossbeamTopDevi', align:'center',width:160, sort: true}">横梁顶面高程偏差</th>
+                    <th lay-data="{field:'crossbeamAxisDevi', align:'center',width:130, sort: true}">横梁轴线偏差</th>
+                    <th lay-data="{field:'crossbeamThicDevi', align:'center',width:130, sort: true}">横梁壁厚偏差</th>
+                    <th lay-data="{field:'embePartsDevi', align:'center',width:160, sort: true}">预埋件位置偏差</th>
+                    <th lay-data="{field:'jointDisl', align:'center',width:120, sort: true}">接缝错台</th>
+                    <th lay-data="{field:'towerqualityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
+                    <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否合格</th>
+                    <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
 
-                                    <th>操作</th>
-                                </thead>
-                                <tbody>
+                </thead>
+                <tbody>
 
-                                <c:forEach items="${pageInfo.list}" var="tower">
+                <c:forEach items="${pageInfo.list}" var="tower">
                                     <tr>
+
+                                        <td>
+                                                ${tower.id}
+                                        </td>
+
+                                        <td>
+                                                ${tower.isQualify}
+                                        </td>
+
+
+
                                         <td>
                                             <input type="hidden" name="id" value="${tower.id}">
                                                 ${tower.struId}
@@ -235,6 +287,13 @@
                                         </td>
 
 
+                                        <td>
+                                            <fmt:formatDate value="${tower.towerqualityCheckTime}"
+                                                            pattern="yyyy-MM-dd HH:mm:ss"/>
+                                        </td>
+
+
+
 
                                         <td>
                                             <!-- 0代表不合格，1代表合格-->
@@ -249,39 +308,10 @@
                                             </c:choose>
 
                                         </td>
-                                        <td>
-
-
-                                            <c:choose>
-                                                <c:when test="${tower.isQualify==0}">
-                                                    <a onclick="qualityData(${tower.id})"
-                                                       class="layui-btn layui-btn-mini">更改为合格
-
-                                                    </a>
-                                                </c:when>
-                                                <c:otherwise>
-                                                    <a
-                                                            onclick="notQualityData(${tower.id})"
-                                                            class="layui-btn layui-btn-danger layui-btn-mini">更改为不合格
-                                                    </a>
-                                                </c:otherwise>
-                                            </c:choose>
-
-
-                                        </td>
 
                                     </tr>
                                 </c:forEach>
-                                <%-- <tr>
 
-                                     <td colspan="10">
-                                         <div style="width: 216px; margin: 0; text-align:right; float:right"; >
-
-                                             <button class="layui-btn layui-btn-fluid" type="submit" >提交</button>
-                                         </div>
-
-                                     </td>
-                                 </tr>--%>
                                 </tbody>
                             </table>
 

@@ -283,4 +283,29 @@
         AND isQualify !=2
         ORDER BY pierqualityCheckTime DESC
     </select>
+
+
+
+    <select id="selectQualityByDate"   resultMap="BaseResultMap">
+        select
+        *
+        from pierquality
+        WHERE  pierqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify = #{isQualify,jdbcType=INTEGER}
+        ORDER BY pierqualityCheckTime DESC
+    </select>
+
+
+    <select id="selectHasQualityByDate"   resultMap="BaseResultMap">
+        select
+        *
+        from pierquality
+        WHERE  pierqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND (isQualify = 0 OR isQualify = 1)
+        ORDER BY pierqualityCheckTime DESC
+    </select>
 </mapper>

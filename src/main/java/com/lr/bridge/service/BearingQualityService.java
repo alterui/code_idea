@@ -56,7 +56,13 @@ public interface BearingQualityService {
 
     List<EntityCountDateList> getIsQualityCountByDate(String start,String end);
 
-    PageInfo<BearingQuality> selectByDate(String start, String end,Integer pageIndex, Integer pageSize);
+    PageInfo<BearingQuality> selectByDate(String start, String end, Integer pageIndex, Integer pageSize);
+
+    PageInfo<BearingQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize);
+
+    PageInfo<BearingQuality> selectHasQualityByDate(String start, String end, Integer pageIndex, Integer pageSize);
+
+
 
 
 }
