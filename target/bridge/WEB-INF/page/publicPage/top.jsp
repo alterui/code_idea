@@ -39,7 +39,7 @@
                 <dl class="layui-nav-child">
                     <dd><a href="/page/beam/beamStandard">质量验收标准</a></dd>
                     <c:if test="${permission==1}">
-                    <dd><a href="/page/beam">质量验收</a></dd>
+                    <dd><a href="/page/beam">质量审核</a></dd>
                     </c:if>
                     <dd><a href="/page/beam/showChart">质量可视化管理</a></dd>
                 </dl>

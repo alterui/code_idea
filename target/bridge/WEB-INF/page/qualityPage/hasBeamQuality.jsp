@@ -1,5 +1,5 @@
 <%--
-  Created by IntelliJ IDEA.质量验收已经确认
+  Created by IntelliJ IDEA.质量审核已经确认
   User: ALTERUI
   Date: 2019/4/07
   Time: 13:28
@@ -146,17 +146,17 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;梁质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a href="/page/beam/"><font color="#228b22">待确认验收</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a href="/page/beam/hasQuality"><font color="#228b22">已确认验收</font></a>
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;梁质量审核&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                <a href="/page/beam/"><font color="#228b22">待确认审核</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                <a href="/page/beam/hasQuality"><font color="#228b22">已确认审核</font></a>
 
 
                 <div style="float: right">
-                    其他质量验收&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a href="/page/bear/">支座质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a href="/page/pier/">墩台质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pile/">桩质量验收</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/tower/">锁塔质量验收</a>
+                    其他质量审核&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a href="/page/bear">支座质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a href="/page/pier">墩台质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/pile">桩质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                    <a class="layui-this" href="/page/tower">索塔质量审核</a>
                 </div>
             </blockquote>
 
