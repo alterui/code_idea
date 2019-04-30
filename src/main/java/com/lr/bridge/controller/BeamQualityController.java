@@ -6,6 +6,7 @@ import com.lr.bridge.service.BeamQualityService;
 import com.lr.bridge.vo.EntityCountDate;
 import com.lr.bridge.vo.EntityCountDateList;
 import com.lr.bridge.vo.EntityPassRateDate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;

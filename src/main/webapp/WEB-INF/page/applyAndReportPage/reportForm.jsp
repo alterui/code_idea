@@ -68,7 +68,7 @@
 
             <div class="demoTable">
 
-                <a href="/page/apply/addPage" class="layui-btn layui-btn-mini">增加数据</a>
+                <a href="/page/apply/addPage" class="layui-btn layui-btn-mini">填写表单</a>
                 <button class="layui-btn layui-btn-danger" data-type="delCheckData">删除选中</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 

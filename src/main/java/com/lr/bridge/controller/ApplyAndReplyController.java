@@ -151,11 +151,11 @@ public class ApplyAndReplyController {
 
     @RequestMapping(value = "/addPage")
     public String addPage(HttpServletRequest request,
-                              HttpServletResponse resp,
-                              Model model) {
+                          HttpServletResponse resp,
+                          Model model) {
 
 
-        return "page/applyAndReportPage/addApplyPage";
+        return "page/applyAndReportPage/writeForm";
 
 
     }
@@ -177,6 +177,8 @@ public class ApplyAndReplyController {
         applyAndReply.setFormName(request.getParameter("formName"));
         applyAndReply.setDirector(request.getParameter("director"));
         applyAndReply.setProjectName(request.getParameter("projectName"));
+        applyAndReply.setDirectorView(request.getParameter("directorView"));
+
         applyAndReply.setContractorName((String) session.getAttribute("userName"));
         applyAndReply.setApplicationTime(new Date());
 
@@ -197,7 +199,7 @@ public class ApplyAndReplyController {
      * @param id
      */
     @RequestMapping(value = "/delete/{id}")
-    public String deleteapply(HttpServletRequest request,
+    public String deleteApply(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                              @RequestParam(required = false, defaultValue = "10") Integer pageSize,
@@ -258,7 +260,7 @@ public class ApplyAndReplyController {
 
         ApplyAndReply applyAndReply = applyAndReplyService.selectByPrimaryKey(id);
         model.addAttribute("apply", applyAndReply);
-        return "page/applyAndReportPage/editApplyPage";
+        return "page/applyAndReportPage/editForm";
     }
 
 
@@ -276,6 +278,8 @@ public class ApplyAndReplyController {
 
         ApplyAndReply applyAndReply = new ApplyAndReply();
 
+
+        applyAndReply.setId(Integer.parseInt(request.getParameter("id")));
         applyAndReply.setContractorUnit(request.getParameter("contractorUnit"));
         applyAndReply.setBidNum(request.getParameter("bidNum"));
         applyAndReply.setSupervision(request.getParameter("supervision"));
@@ -283,6 +287,8 @@ public class ApplyAndReplyController {
         applyAndReply.setFormName(request.getParameter("formName"));
         applyAndReply.setDirector(request.getParameter("director"));
         applyAndReply.setProjectName(request.getParameter("projectName"));
+        applyAndReply.setDirectorView(request.getParameter("directorView"));
+
         applyAndReply.setContractorName((String) session.getAttribute("userName"));
         applyAndReply.setApplicationTime(new Date());
 
@@ -330,5 +336,23 @@ public class ApplyAndReplyController {
 
 
 
+    @RequestMapping(value = "/check")
+    public String checkPage(HttpServletRequest request,
+                          HttpServletResponse resp,
+                          Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+
+        //得到所有的申请表
+        model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showAllApplyAndReply(pageIndex,pageSize);
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+
+        return "page/applyAndReportPage/auditForm";
+
 
     }
+
+
+}

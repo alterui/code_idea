@@ -25,10 +25,13 @@
     <link rel="stylesheet" href="${ctx}/static/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="${ctx}/static/js/public/jquery-2.1.1.js">
-    <link rel="stylesheet" href="${ctx}/static/js/back.bak.js">
+
+
+    <script src="${ctx}/static/js/public/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
+
 
 
     <script type="text/javascript">
@@ -56,51 +59,71 @@
                 /*覆盖 layui*/
                 .layui-input {
                     display: inline-block;
-                    width: 15% !important;
+                    width: 100% !important;
+                }
+
+                .layui-input1 {
+                    display: inline-block;
+                    width: 30% !important;
                 }
             </style>
 
-            <%--<blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/beam/show"><font color="#228b22">梁质量数据</font></a>
-            </blockquote>--%>
+            <blockquote class="layui-elem-quote">
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a><font color="#228b22">表单修改</font></a>
+            </blockquote>
 
             <div class="layui-tab">
+                <form action="/page/apply/update" method="post" >
 
-
-             <div class="layui-tab layui-tab-card">
+                <div class="layui-tab layui-tab-card">
 
                 <span id="print">
                     <div align="center" >
-                     <table  class="layui-table" style="width: 600px;" >
+                     <table  class="layui-table" style="width: 700px;" >
                          <tr>
                              <th colspan="4">
-                                 <center><b><font size="6">${apply.formName}</font></b></center>
+                                 <center>
+                                     请选择表名：
+                                     <div class="layui-input-inline">
+                                        <select name="formName" required  value="${apply.formName}">
+
+                                                <option value="环境保证体系报审表" selected="">环境保证体系报审表</option>
+                                                <option value="环境风险应急预案报审表">环境风险应急预案报审表</option>
+                                                <option value="环保施工技术方案报审表">环保施工技术方案报审表</option>
+                                                <option value="环保条件验收申请表">环保条件验收申请表</option>
+                                        </select>
+                                    </div>
+
+
+                                 </center>
                              </th>
 
                          </tr>
 
                          <tr style="text-align: center">
                              <th style="text-align: center">
+                                 <input type="hidden" value="${apply.id}" name="id">
 
                                  <b>承包单位</b>
                              </th>
                              <td>
-
-                                 ${apply.contractorUnit}
+                                 <input name="contractorUnit" value="${apply.contractorUnit}" type="textarea"  required class="layui-input">
 
                              </td>
 
                              <th style="text-align: center">
+
                                  <b>标段号</b>
                              </th>
 
                              <td>
-                                 ${apply.bidNum}
+                                 <input value="${apply.bidNum}" name="bidNum" type="textarea" required class="layui-input">
 
 
                              </td>
 
                          </tr>
+
 
 
                          <tr style="text-align: center">
@@ -110,7 +133,7 @@
                              </th>
                              <td>
 
-                                 ${apply.supervision}
+                                 <input value="${apply.supervision}"  name="supervision" type="textarea" required  class="layui-input">
 
                              </td>
 
@@ -119,65 +142,35 @@
                              </th>
 
                              <td>
-                                 ${apply.serialNum}
+                                <input value="${apply.serialNum}" name="serialNum" type="textarea" required  class="layui-input">
 
 
                              </td>
 
                          </tr>
-
-                         <tr style="height: 200px;width: 580px;" >
-                             <td colspan="4" style="word-break:break-all">
-                                 致&nbsp;&nbsp;${apply.director}&nbsp;&nbsp;：<br>
-                                 &nbsp;&nbsp;现报上&nbsp;&nbsp;${apply.projectName}&nbsp;&nbsp;环境应急预案，详细说明如下，请予审查和批准。
-                                 <br>
-                                 <br>
-
-                                    <p style="width: 580px">
-                                        ${apply.directorView}
-
-                                    </p>
-
-
-
-
-
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <div align="right">
-                                     承包人：${apply.contractorName}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间：&nbsp;&nbsp; <fmt:formatDate value="${apply.applicationTime}" pattern="yyyy-MM-dd "/>
-
-                                 </div>
-
-                             </td>
-
-                         </tr>
-
 
                          <tr style="height: 200px">
                              <td colspan="4">
-                                 总监意见：<br>
+                                 致
+                                  <input value="${apply.director}" name="director" type="textarea" required placeholder="此处填写总监办名称"  class="layui-input1">
+
+                                 ：<br>
+                                 现报上
+                                 <input  value="${apply.director}" name="projectName" type="textarea" required placeholder="此处填写工程名称" class="layui-input1">
+                                 环境应急预案，详细说明如下，请予审查和批准。
                                  <br>
+
+                                 <textarea  name="directorView" required lay-verify="required" placeholder="请输入详细说明" class="layui-textarea">${apply.directorView}</textarea>
+
                                  <br>
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <div align="right">
-                                        签字：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                 </div>
+
 
                              </td>
 
                          </tr>
 
 
-                         </tr>
+
                          <br>
 
 
@@ -192,17 +185,12 @@
 
                  <div align="center">
 
-                     <a href="javascript:printme()"  class="layui-btn layui-btn-mini">打印</a>
+                     <button class="layui-btn layui-btn-mini" type="submit">保存</button>
                      <a href="/page/apply/show"  class="layui-btn layui-btn-danger layui-btn-mini">关闭</a>
 
-                     <script language="javascript">
-                         function printme() {
-                             document.body.innerHTML=document.getElementById('print').innerHTML;
-                             window.print();
-                         }
-                     </script>
                  </div>
              </div>
+                </form>
             </div>
           </div>
         </div>

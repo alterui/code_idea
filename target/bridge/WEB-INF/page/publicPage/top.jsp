@@ -49,7 +49,6 @@
             <li class="layui-nav-item">
                 <a href="javascript:;">环保管理</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="">检查报告管理</a></dd>
                     <dd><a href="">检查报告审核</a></dd>
                 </dl>
             </li>

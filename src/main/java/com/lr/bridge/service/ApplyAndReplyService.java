@@ -20,7 +20,6 @@ public interface ApplyAndReplyService {
     int updateByPrimaryKey(ApplyAndReply record);
 
 
-
     PageInfo<ApplyAndReply> selectByDate(String start, String end,Integer pageIndex, Integer pageSize);
 
 }
