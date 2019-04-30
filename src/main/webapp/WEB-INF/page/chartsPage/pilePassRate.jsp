@@ -26,10 +26,10 @@
     <link href="${ctx}/static/css/lhgcalendar.css" type="text/css" rel="stylesheet"/>
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
 
-    <script src="${ctx}/static/js/jquery-2.1.1.js"></script>
-    <script src="${ctx}/static/js/echarts.min.js"></script>
+    <script src="${ctx}/static/js/public/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/public/echarts.min.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
-    <script src="${ctx}/static/js/lhgcalendar.min.js" type="text/javascript"></script>
+    <script src="${ctx}/static/js/public/lhgcalendar.min.js" type="text/javascript"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
     <script src="${ctx}/static/js/back.bak.js"></script>
 

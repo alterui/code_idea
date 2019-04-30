@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="${ctx}/static/css/back.css">
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
 
-    <script src="${ctx}/static/js/jquery-2.1.1.js"></script>
+    <script src="${ctx}/static/js/public/jquery-2.1.1.js"></script>
     <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
