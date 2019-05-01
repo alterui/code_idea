@@ -77,7 +77,7 @@ public class ApplyAndReplyServiceImpl implements ApplyAndReplyService {
 
 
     @Override
-    public int updateByViewAndDate(String centerView, Date centerReplyTime, Integer id) {
-        return applyAndReplyMapper.updateByViewAndDate(centerView, centerReplyTime, id);
+    public int updateByViewAndDate(String centerName,String centerView, Date centerReplyTime, Integer id) {
+        return applyAndReplyMapper.updateByViewAndDate(centerName,centerView, centerReplyTime, id);
     }
 }

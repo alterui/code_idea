@@ -173,7 +173,7 @@
                 <a href="/page/apply/updateAudit/{{d.id}}"
                    class="layui-btn layui-btn-warm layui-btn-sm">修改</a>
 
-                <a href="/page/apply/previewForm/{{d.id}}"
+                <a href="/page/apply/hasPreviewForm/{{d.id}}"
                    class="layui-btn layui-btn-sm">预览
                 </a>
 
@@ -198,7 +198,10 @@
                     <th lay-data="{field:'director', align:'center',width:120, sort: true}">总监办名称</th>
                     <th lay-data="{field:'projectName', align:'center',width:120, sort: true}">工程名称</th>
                     <th lay-data="{field:'contractorName', align:'center',width:120, sort: true}">承包人</th>
+                    <th lay-data="{field:'directorView', align:'center',width:120, sort: true}">申请原因</th>
                     <th lay-data="{field:'applicationTime', align:'center',width:180, sort: true}">申请时间</th>
+                    <th lay-data="{field:'centerView', align:'center',width:180, sort: true}">总监意见</th>
+                    <th lay-data="{field:'centerReplyTime', align:'center',width:180, sort: true}">审核时间</th>
                     <th lay-data="{fixed: 'right',width:240, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
@@ -246,8 +249,24 @@
                                 ${env.contractorName}
                         </td>
 
+
+                        <td>
+                                ${env.directorView}
+                        </td>
+
                         <td>
                             <fmt:formatDate value="${env.applicationTime}"
+                                            pattern="yyyy-MM-dd HH:mm:ss"/>
+                        </td>
+
+
+
+                        <td>
+                                ${env.centerView}
+                        </td>
+
+                        <td>
+                            <fmt:formatDate value="${env.centerReplyTime}"
                                             pattern="yyyy-MM-dd HH:mm:ss"/>
                         </td>
 

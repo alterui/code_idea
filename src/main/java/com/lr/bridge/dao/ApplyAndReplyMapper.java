@@ -28,6 +28,6 @@ public interface ApplyAndReplyMapper {
 
     List<ApplyAndReply> selectHasAudit();
 
-    int updateByViewAndDate(@Param("centerView") String centerView, @Param("centerReplyTime") Date centerReplyTime,@Param("id") Integer id);
+    int updateByViewAndDate(@Param("centerName") String centerName,@Param("centerView") String centerView, @Param("centerReplyTime") Date centerReplyTime,@Param("id") Integer id);
 
 }

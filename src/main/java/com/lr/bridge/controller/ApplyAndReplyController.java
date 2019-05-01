@@ -135,7 +135,14 @@ public class ApplyAndReplyController {
     }
 
 
-
+    /**
+     * 未审核预览
+     * @param request
+     * @param resp
+     * @param model
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/previewForm/{id}")
     public String previewForm(HttpServletRequest request,
                         HttpServletResponse resp,
@@ -356,7 +363,7 @@ public class ApplyAndReplyController {
         //得到所有的没有回复的回执单
         model.addAttribute("pageUrlPrefix", "/page/apply/showCheck?pageIndex");
         PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showNotAudit(pageIndex, pageSize);
-        System.out.println(applyAndReplyPageInfo.getSize());
+
         model.addAttribute("pageInfo", applyAndReplyPageInfo);
 
         return "page/applyAndReportPage/auditForm";
@@ -453,6 +460,7 @@ public class ApplyAndReplyController {
     @RequestMapping(value = "/replyFrom")
     public String replyFrom(HttpServletRequest request,
                             HttpServletResponse resp,
+                            HttpSession session,
                             Model model,
                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
@@ -460,14 +468,15 @@ public class ApplyAndReplyController {
 
         String id = request.getParameter("id");
         String centerView = request.getParameter("centerView");
+        String centerName = (String)session.getAttribute("userName");
 
 
-        applyAndReplyService.updateByViewAndDate(centerView,new Date(), Integer.parseInt(id));
+        applyAndReplyService.updateByViewAndDate(centerName,centerView,new Date(), Integer.parseInt(id));
 
         //得到所有的没有回复的回执单
         model.addAttribute("pageUrlPrefix", "/page/apply/showCheck?pageIndex");
         PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showNotAudit(pageIndex, pageSize);
-        System.out.println(applyAndReplyPageInfo.getSize());
+
         model.addAttribute("pageInfo", applyAndReplyPageInfo);
 
         return "page/applyAndReportPage/auditForm";
@@ -492,6 +501,7 @@ public class ApplyAndReplyController {
     @RequestMapping(value = "/hasReplyFrom")
     public String hasReplyFrom(HttpServletRequest request,
                             HttpServletResponse resp,
+                            HttpSession session,
                             Model model,
                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
@@ -499,9 +509,10 @@ public class ApplyAndReplyController {
 
         String id = request.getParameter("id");
         String centerView = request.getParameter("centerView");
+        String centerName = (String)session.getAttribute("userName");
 
 
-        applyAndReplyService.updateByViewAndDate(centerView,new Date(), Integer.parseInt(id));
+        applyAndReplyService.updateByViewAndDate(centerName,centerView,new Date(), Integer.parseInt(id));
 
         //得到所有已经回复的回执单
         model.addAttribute("pageUrlPrefix", "/page/apply/showHasCheck?pageIndex");
@@ -510,6 +521,28 @@ public class ApplyAndReplyController {
         model.addAttribute("pageInfo", applyAndReplyPageInfo);
 
         return "page/applyAndReportPage/hasAuditForm";
+
+    }
+
+
+    /**
+     * 已经审核预览
+     * @param request
+     * @param resp
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/hasPreviewForm/{id}")
+    public String hasPreviewForm(HttpServletRequest request,
+                              HttpServletResponse resp,
+                              Model model,
+                              @PathVariable("id") Integer id) {
+
+        ApplyAndReply applyAndReply = applyAndReplyService.selectByPrimaryKey(id);
+        model.addAttribute("apply", applyAndReply);
+        return "page/applyAndReportPage/centerPreviewForm";
+
 
     }
 

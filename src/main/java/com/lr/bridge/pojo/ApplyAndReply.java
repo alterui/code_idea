@@ -25,13 +25,18 @@ public class ApplyAndReply {
 
     private String directorView;
 
-    private Date directorReplyTime;
+    private String centerName;
 
     private String centerView;
 
     private Date centerReplyTime;
 
-    public ApplyAndReply(Integer id, String contractorUnit, String bidNum, String supervision, String serialNum, String formName, String director, String projectName, String contractorName, Date applicationTime, String directorView, Date directorReplyTime, String centerView, Date centerReplyTime) {
+
+    public ApplyAndReply() {
+        super();
+    }
+
+    public ApplyAndReply(Integer id, String contractorUnit, String bidNum, String supervision, String serialNum, String formName, String director, String projectName, String contractorName, Date applicationTime, String directorView, String centerName, String centerView, Date centerReplyTime) {
         this.id = id;
         this.contractorUnit = contractorUnit;
         this.bidNum = bidNum;
@@ -43,14 +48,11 @@ public class ApplyAndReply {
         this.contractorName = contractorName;
         this.applicationTime = applicationTime;
         this.directorView = directorView;
-        this.directorReplyTime = directorReplyTime;
+        this.centerName = centerName;
         this.centerView = centerView;
         this.centerReplyTime = centerReplyTime;
     }
 
-    public ApplyAndReply() {
-        super();
-    }
 
     public Integer getId() {
         return id;
@@ -65,7 +67,7 @@ public class ApplyAndReply {
     }
 
     public void setContractorUnit(String contractorUnit) {
-        this.contractorUnit = contractorUnit == null ? null : contractorUnit.trim();
+        this.contractorUnit = contractorUnit;
     }
 
     public String getBidNum() {
@@ -73,7 +75,7 @@ public class ApplyAndReply {
     }
 
     public void setBidNum(String bidNum) {
-        this.bidNum = bidNum == null ? null : bidNum.trim();
+        this.bidNum = bidNum;
     }
 
     public String getSupervision() {
@@ -81,7 +83,7 @@ public class ApplyAndReply {
     }
 
     public void setSupervision(String supervision) {
-        this.supervision = supervision == null ? null : supervision.trim();
+        this.supervision = supervision;
     }
 
     public String getSerialNum() {
@@ -89,7 +91,7 @@ public class ApplyAndReply {
     }
 
     public void setSerialNum(String serialNum) {
-        this.serialNum = serialNum == null ? null : serialNum.trim();
+        this.serialNum = serialNum;
     }
 
     public String getFormName() {
@@ -97,7 +99,7 @@ public class ApplyAndReply {
     }
 
     public void setFormName(String formName) {
-        this.formName = formName == null ? null : formName.trim();
+        this.formName = formName;
     }
 
     public String getDirector() {
@@ -105,7 +107,7 @@ public class ApplyAndReply {
     }
 
     public void setDirector(String director) {
-        this.director = director == null ? null : director.trim();
+        this.director = director;
     }
 
     public String getProjectName() {
@@ -113,7 +115,7 @@ public class ApplyAndReply {
     }
 
     public void setProjectName(String projectName) {
-        this.projectName = projectName == null ? null : projectName.trim();
+        this.projectName = projectName;
     }
 
     public String getContractorName() {
@@ -121,7 +123,7 @@ public class ApplyAndReply {
     }
 
     public void setContractorName(String contractorName) {
-        this.contractorName = contractorName == null ? null : contractorName.trim();
+        this.contractorName = contractorName;
     }
 
     public Date getApplicationTime() {
@@ -137,15 +139,15 @@ public class ApplyAndReply {
     }
 
     public void setDirectorView(String directorView) {
-        this.directorView = directorView == null ? null : directorView.trim();
+        this.directorView = directorView;
     }
 
-    public Date getDirectorReplyTime() {
-        return directorReplyTime;
+    public String getCenterName() {
+        return centerName;
     }
 
-    public void setDirectorReplyTime(Date directorReplyTime) {
-        this.directorReplyTime = directorReplyTime;
+    public void setCenterName(String centerName) {
+        this.centerName = centerName;
     }
 
     public String getCenterView() {
@@ -153,7 +155,7 @@ public class ApplyAndReply {
     }
 
     public void setCenterView(String centerView) {
-        this.centerView = centerView == null ? null : centerView.trim();
+        this.centerView = centerView;
     }
 
     public Date getCenterReplyTime() {

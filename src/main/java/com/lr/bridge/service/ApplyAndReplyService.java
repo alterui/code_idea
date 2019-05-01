@@ -28,7 +28,7 @@ public interface ApplyAndReplyService {
 
     PageInfo<ApplyAndReply> showHasAudit(Integer pageIndex,Integer pageSize);
 
-    int updateByViewAndDate(String centerView, Date centerReplyTime, Integer id);
+    int updateByViewAndDate(String centerName,String centerView, Date centerReplyTime, Integer id);
 
 
 }

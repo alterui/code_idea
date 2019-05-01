@@ -171,15 +171,9 @@
             <script type="text/html" id="barDemo">
 
                 <a href="/page/apply/audit/{{d.id}}"
-                   class="layui-btn layui-btn-warm layui-btn-sm">审核</a>
+                   class="layui-btn layui-btn-sm">审核</a>
 
-                <a href="/page/apply/previewForm/{{d.id}}"
-                   class="layui-btn layui-btn-sm">预览
-                </a>
 
-                <a href="/page/apply/downloadDoc/{{d.id}}"
-                   class="layui-btn layui-btn-normal layui-btn-sm">下载
-                </a>
 
             </script>
 
@@ -198,8 +192,9 @@
                     <th lay-data="{field:'director', align:'center',width:120, sort: true}">总监办名称</th>
                     <th lay-data="{field:'projectName', align:'center',width:120, sort: true}">工程名称</th>
                     <th lay-data="{field:'contractorName', align:'center',width:120, sort: true}">承包人</th>
+                    <th lay-data="{field:'directorView', align:'center',width:120, sort: true}">申请原因</th>
                     <th lay-data="{field:'applicationTime', align:'center',width:180, sort: true}">申请时间</th>
-                    <th lay-data="{fixed: 'right',width:240, align:'center', toolbar: '#barDemo'}">操作</th>
+                    <th lay-data="{fixed: 'right',width:100, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
                 </tr>
@@ -244,6 +239,10 @@
 
                         <td>
                                 ${env.contractorName}
+                        </td>
+
+                        <td>
+                                ${env.directorView}
                         </td>
 
                         <td>

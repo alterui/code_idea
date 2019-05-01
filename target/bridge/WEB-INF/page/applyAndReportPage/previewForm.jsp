@@ -134,7 +134,7 @@
                                  <br>
 
                                     <p style="width: 580px">
-                                        ${apply.directorView}
+                                     &nbsp;&nbsp;&nbsp;&nbsp;   ${apply.directorView}
 
                                     </p>
 

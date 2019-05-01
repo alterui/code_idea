@@ -160,7 +160,7 @@
                                  环境应急预案，详细说明如下，请予审查和批准。
                                  <br>
 
-                                 <textarea  name="directorView" required lay-verify="required" placeholder="请输入详细说明" class="layui-textarea">${apply.directorView}</textarea>
+                                 &nbsp;&nbsp;&nbsp;&nbsp;<textarea  name="directorView" required lay-verify="required" placeholder="请输入详细说明" class="layui-textarea">${apply.directorView}</textarea>
 
                                  <br>
 

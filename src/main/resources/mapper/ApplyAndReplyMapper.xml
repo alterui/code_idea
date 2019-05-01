@@ -14,14 +14,14 @@
       <arg column="contractorName" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="applicationTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
       <arg column="directorView" javaType="java.lang.String" jdbcType="VARCHAR" />
-      <arg column="directorReplyTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="centerName" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="centerView" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="centerReplyTime" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     id, contractorUnit, bidNum, supervision, serialNum, formName, director, projectName, 
-    contractorName, applicationTime, directorView, directorReplyTime, centerView, centerReplyTime
+    contractorName, applicationTime, directorView, centerName, centerView, centerReplyTime
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -38,12 +38,12 @@
     insert into applyandreply (id, contractorUnit, bidNum, 
       supervision, serialNum, formName, 
       director, projectName, contractorName, 
-      applicationTime, directorView, directorReplyTime, 
+      applicationTime, directorView, centerName,
       centerView, centerReplyTime)
     values (#{id,jdbcType=INTEGER}, #{contractorUnit,jdbcType=VARCHAR}, #{bidNum,jdbcType=VARCHAR}, 
       #{supervision,jdbcType=VARCHAR}, #{serialNum,jdbcType=VARCHAR}, #{formName,jdbcType=VARCHAR}, 
       #{director,jdbcType=VARCHAR}, #{projectName,jdbcType=VARCHAR}, #{contractorName,jdbcType=VARCHAR}, 
-      #{applicationTime,jdbcType=TIMESTAMP}, #{directorView,jdbcType=VARCHAR}, #{directorReplyTime,jdbcType=TIMESTAMP}, 
+      #{applicationTime,jdbcType=TIMESTAMP}, #{directorView,jdbcType=VARCHAR}, #{centerName,jdbcType=VARCHAR},
       #{centerView,jdbcType=VARCHAR}, #{centerReplyTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.lr.bridge.pojo.ApplyAndReply">
@@ -82,8 +82,8 @@
       <if test="directorView != null">
         directorView,
       </if>
-      <if test="directorReplyTime != null">
-        directorReplyTime,
+      <if test="centerName != null">
+          centerName,
       </if>
       <if test="centerView != null">
         centerView,
@@ -126,8 +126,8 @@
       <if test="directorView != null">
         #{directorView,jdbcType=VARCHAR},
       </if>
-      <if test="directorReplyTime != null">
-        #{directorReplyTime,jdbcType=TIMESTAMP},
+      <if test="centerName != null">
+        #{centerName,jdbcType=VARCHAR},
       </if>
       <if test="centerView != null">
         #{centerView,jdbcType=VARCHAR},
@@ -170,8 +170,8 @@
       <if test="directorView != null">
         directorView = #{directorView,jdbcType=VARCHAR},
       </if>
-      <if test="directorReplyTime != null">
-        directorReplyTime = #{directorReplyTime,jdbcType=TIMESTAMP},
+      <if test="centerName != null">
+          centerName = #{centerName,jdbcType=VARCHAR},
       </if>
       <if test="centerView != null">
         centerView = #{centerView,jdbcType=VARCHAR},
@@ -194,7 +194,7 @@
       contractorName = #{contractorName,jdbcType=VARCHAR},
       applicationTime = #{applicationTime,jdbcType=TIMESTAMP},
       directorView = #{directorView,jdbcType=VARCHAR},
-      directorReplyTime = #{directorReplyTime,jdbcType=TIMESTAMP},
+      centerName = #{centerName,jdbcType=VARCHAR},
       centerView = #{centerView,jdbcType=VARCHAR},
       centerReplyTime = #{centerReplyTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
@@ -240,7 +240,7 @@
         *
         from applyandreply
         where centerView is not null
-        ORDER BY applicationTime DESC
+        ORDER BY centerReplyTime DESC
 
 
     </select>
@@ -249,6 +249,7 @@
     <update id="updateByViewAndDate" >
         update applyandreply
         set
+          centerName = #{centerName,jdbcType=VARCHAR},
           centerView = #{centerView,jdbcType=VARCHAR},
           centerReplyTime = #{centerReplyTime,jdbcType=TIMESTAMP}
         where id = #{id,jdbcType=INTEGER}
