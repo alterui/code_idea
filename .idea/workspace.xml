@@ -13,34 +13,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2830dbe2-521c-4d84-b23c-6d5e66b062bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editForm.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/writeForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/centerPreviewForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/hasAuditForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/replyForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/updateReplyForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/ApplyAndReplyMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/ApplyAndReplyMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/ApplyAndReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/ApplyAndReplyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/ApplyAndReplyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ApplyAndReplyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/addApplyPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editApplyPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/previewForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/previewForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/loginAndRegPage/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/loginAndRegPage/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/ApplyAndReplyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/ApplyAndReplyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BeamQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BeamQualityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/ApplyAndReplyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/ApplyAndReplyMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/ApplyAndReplyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/ApplyAndReplyService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/ApplyAndReplyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/ApplyAndReplyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/applyAndReportPage/previewForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/applyAndReportPage/previewForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/applyAndReportPage/reportForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/applyAndReportPage/reportForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/publicPage/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/publicPage/left.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/applyAndReportPage/addApplyPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/applyAndReportPage/editApplyPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/loginAndRegPage/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/loginAndRegPage/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/publicPage/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/publicPage/top.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/towerQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/towerQuality.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/ApplyAndReplyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/ApplyAndReplyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/ApplyAndReplyMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/ApplyAndReplyMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/ApplyAndReplyService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/ApplyAndReplyService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mapper/ApplyAndReplyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/ApplyAndReplyMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,19 +78,14 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/loginAndRegPage/login.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1782">
-              <caret line="66" column="101" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="105" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            <state relative-caret-position="837">
+              <caret line="172" column="40" selection-start-line="172" selection-start-column="40" selection-end-line="172" selection-end-column="40" />
+              <folding>
+                <element signature="e#4096#4102#0#HTML" expanded="true" />
+                <element signature="e#4102#4108#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,24 +93,69 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1755">
-              <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+            <state relative-caret-position="351">
+              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/previewForm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4779" />
+            <state relative-caret-position="373">
+              <caret line="189" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="189" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/centerPreviewForm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4374" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/replyForm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="59" column="54" selection-start-line="58" selection-start-column="11" selection-end-line="59" selection-end-column="54" />
+            <state relative-caret-position="4779">
+              <caret line="198" column="51" selection-start-line="198" selection-start-column="51" selection-end-line="198" selection-end-column="51" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#tr#1;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#th#0;n#tr#1;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/updateReplyForm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="75" column="48" lean-forward="true" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editForm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="756">
+              <caret line="56" column="86" selection-start-line="54" selection-start-column="78" selection-end-line="56" selection-end-column="86" />
+              <folding>
+                <element signature="e#1958#1964#0#HTML" expanded="true" />
+                <element signature="e#1964#1970#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -122,20 +163,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-178">
-              <caret line="338" column="37" lean-forward="true" selection-start-line="338" selection-start-column="37" selection-end-line="338" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="58" column="28" lean-forward="true" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
+            <state relative-caret-position="-388">
+              <caret line="491" column="28" selection-start-line="491" selection-start-column="28" selection-end-line="491" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,28 +173,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/ApplyAndReplyMapper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/hasAuditForm.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ApplyAndReplyMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="213" column="4" selection-start-line="213" selection-start-column="4" selection-end-line="213" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/ApplyAndReplyService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="-1906">
+              <caret line="172" column="48" selection-start-line="172" selection-start-column="48" selection-end-line="172" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -185,9 +196,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>start</find>
-      <find>show</find>
-      <find>SysQuestion</find>
       <find>1</find>
       <find>bram</find>
       <find>bearing</find>
@@ -215,6 +223,9 @@
       <find>${pageContext.request.contextPath}</find>
       <find>$</find>
       <find>style=&quot;width: 150px</find>
+      <find>audit</find>
+      <find>edit</find>
+      <find>replyFrom</find>
     </findStrings>
     <replaceStrings>
       <replace>80</replace>
@@ -255,12 +266,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/TowerQualityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/TowerQualityController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/reportForm.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/applyAndReportPage/reportForm.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportJS/reportForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editApplyPage.jsp" />
@@ -295,17 +300,23 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasBeamQuality.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/ApplyAndReplyMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/left.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/writeForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/previewForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/loginAndRegPage/login.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/ApplyAndReplyService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/ApplyAndReplyMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/ApplyAndReplyMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/ApplyAndReplyService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/replyForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/hasAuditForm.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/updateReplyForm.jsp" />
       </list>
     </option>
   </component>
@@ -372,8 +383,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -628,6 +637,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -645,24 +656,24 @@
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\applyAndReportPage" />
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\userPage" />
-      <recent name="D:\code\bridge\src\main\java\com\lr\bridge\ftl" />
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\chartsPage" />
-      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\qualityPage" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.lr.bridge.controller" />
-      <recent name="com.lr.bridge.service.impl" />
-      <recent name="com.lr.bridge.service" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\code\bridge\src\main\webapp\static\js\public" />
       <recent name="D:\code\bridge\src\main\webapp\static\js\applyAndReportPage" />
       <recent name="D:\code\bridge\src\main\java\com\lr\bridge\ftl" />
       <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\publicPage" />
       <recent name="D:\code\bridge\src\main\webapp\static" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lr.bridge.controller" />
+      <recent name="com.lr.bridge.service.impl" />
+      <recent name="com.lr.bridge.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\applyAndReportPage" />
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\userPage" />
+      <recent name="D:\code\bridge\src\main\java\com\lr\bridge\ftl" />
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\chartsPage" />
+      <recent name="D:\code\bridge\src\main\webapp\WEB-INF\page\qualityPage" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -870,12 +881,13 @@
       <workItem from="1556415081042" duration="29436000" />
       <workItem from="1556505304724" duration="28189000" />
       <workItem from="1556586196949" duration="2897000" />
-      <workItem from="1556589196768" duration="16456000" />
+      <workItem from="1556589196768" duration="17121000" />
+      <workItem from="1556687585439" duration="8211000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="453837000" />
+    <option name="totallyTimeSpent" value="462713000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -887,10 +899,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8589386" visible="true" weight="0.21581769" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8589386" visible="true" weight="0.20241287" />
       <window_info id="Structure" order="1" sideWeight="0.14106146" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -918,7 +929,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.18230563" />
+      <window_info active="true" anchor="right" id="Maven" order="3" visible="true" weight="0.18230563" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="right" id="JSF" order="6" />
@@ -938,60 +949,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileAddPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-486" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="33" column="59" selection-start-line="33" selection-start-column="59" selection-end-line="33" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/beamShow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/bearShow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="77" column="56" selection-start-line="77" selection-start-column="56" selection-end-line="77" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/pierShow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="73" column="56" selection-start-line="73" selection-start-column="56" selection-end-line="73" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/pileShow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/towerShow.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -1097,13 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
@@ -1165,33 +1115,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/addApplyPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="177" column="49" lean-forward="true" selection-start-line="176" selection-start-column="39" selection-end-line="177" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2099#2105#0#HTML" expanded="true" />
-            <element signature="e#2105#2111#0#HTML" expanded="true" />
-            <element signature="e#2119#2125#0#HTML" expanded="true" />
-            <element signature="e#2125#2131#0#HTML" expanded="true" />
-            <element signature="e#2188#2194#0#HTML" expanded="true" />
-            <element signature="e#2194#2200#0#HTML" expanded="true" />
-            <element signature="e#2208#2214#0#HTML" expanded="true" />
-            <element signature="e#2214#2220#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#2;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#3;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#5;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#6;n#tr#0;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#8309#8313#1#HTML" expanded="true" />
-            <element signature="e#10956#10960#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/addApplyPage.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/left.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1199,54 +1123,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editApplyPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2646">
-          <caret line="153" column="68" lean-forward="true" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/writeForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="162" lean-forward="true" selection-start-line="162" selection-end-line="162" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="46" column="42" lean-forward="true" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
-          <folding>
-            <element signature="e#1301#1302#0" expanded="true" />
-            <element signature="e#1370#1371#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/previewForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="152" column="39" selection-start-line="152" selection-start-column="39" selection-end-line="152" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#tr#3;n#table#0;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#3;n#table#0;n#div#0;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3105">
-          <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#1;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#tr#3;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editApplyPage.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2176" />
@@ -1271,64 +1148,198 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1755">
-          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        <state relative-caret-position="162">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4779" />
+        <state relative-caret-position="27">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/IndexController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        <state relative-caret-position="184">
+          <caret line="51" column="50" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/ApplyAndReplyService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/applyAndReportJS/reportForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="-2500">
+          <caret line="9" column="10" lean-forward="true" selection-end-line="115" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/writeForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="163" column="37" selection-start-line="159" selection-start-column="32" selection-end-line="163" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2134#2140#0#HTML" expanded="true" />
+            <element signature="e#2140#2146#0#HTML" expanded="true" />
+            <element signature="e#2154#2160#0#HTML" expanded="true" />
+            <element signature="e#2160#2166#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#1;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#1;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#1;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#2;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#2;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#2;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#4648#4654#0#HTML" expanded="true" />
+            <element signature="e#4654#4660#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#tr#3;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="56" column="86" selection-start-line="54" selection-start-column="78" selection-end-line="56" selection-end-column="86" />
+          <folding>
+            <element signature="e#1958#1964#0#HTML" expanded="true" />
+            <element signature="e#1964#1970#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/pojo/ApplyAndReply.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#1611#1612#0" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ApplyAndReplyMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="213" column="4" selection-start-line="213" selection-start-column="4" selection-end-line="213" selection-end-column="4" />
+        <state relative-caret-position="341">
+          <caret line="254" column="11" lean-forward="true" selection-start-line="254" selection-start-column="11" selection-end-line="254" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/ApplyAndReplyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="80" column="88" selection-start-line="80" selection-start-column="88" selection-end-line="80" selection-end-column="88" />
+          <folding>
+            <element signature="e#1035#1036#0" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+            <element signature="e#1301#1302#0" expanded="true" />
+            <element signature="e#1370#1371#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/ApplyAndReplyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/ApplyAndReplyMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+        <state relative-caret-position="349">
+          <caret line="31" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/replyForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4779">
+          <caret line="198" column="51" selection-start-line="198" selection-start-column="51" selection-end-line="198" selection-end-column="51" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#tr#1;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#0;n#tr#1;n#table#0;n#div#0;n#span#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="166" lean-forward="true" selection-start-line="166" selection-end-line="166" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="837">
+          <caret line="172" column="40" selection-start-line="172" selection-start-column="40" selection-end-line="172" selection-end-column="40" />
+          <folding>
+            <element signature="e#4096#4102#0#HTML" expanded="true" />
+            <element signature="e#4102#4108#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/hasAuditForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1906">
+          <caret line="172" column="48" selection-start-line="172" selection-start-column="48" selection-end-line="172" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/updateReplyForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="75" column="48" lean-forward="true" selection-start-line="75" selection-start-column="48" selection-end-line="75" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-178">
-          <caret line="338" column="37" lean-forward="true" selection-start-line="338" selection-start-column="37" selection-end-line="338" selection-end-column="37" />
+        <state relative-caret-position="-388">
+          <caret line="491" column="28" selection-start-line="491" selection-start-column="28" selection-end-line="491" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="58" column="28" lean-forward="true" selection-start-line="58" selection-start-column="28" selection-end-line="58" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="351">
+          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/previewForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="189" lean-forward="true" selection-start-line="72" selection-start-column="20" selection-end-line="189" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/centerPreviewForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4374" />
       </provider>
     </entry>
   </component>

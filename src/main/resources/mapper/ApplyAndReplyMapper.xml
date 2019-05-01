@@ -220,4 +220,37 @@
         AND #{end}
         ORDER BY applicationTime DESC
     </select>
+
+
+
+    <select id="selectNotAudit"  resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply
+        where centerView is null
+        ORDER BY applicationTime DESC
+
+
+    </select>
+
+
+
+    <select id="selectHasAudit"  resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply
+        where centerView is not null
+        ORDER BY applicationTime DESC
+
+
+    </select>
+
+
+    <update id="updateByViewAndDate" >
+        update applyandreply
+        set
+          centerView = #{centerView,jdbcType=VARCHAR},
+          centerReplyTime = #{centerReplyTime,jdbcType=TIMESTAMP}
+        where id = #{id,jdbcType=INTEGER}
+  </update>
 </mapper>

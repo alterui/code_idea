@@ -8,6 +8,7 @@ import com.lr.bridge.service.ApplyAndReplyService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -54,5 +55,29 @@ public class ApplyAndReplyServiceImpl implements ApplyAndReplyService {
         List<ApplyAndReply> ApplyAndReplyList = applyAndReplyMapper.selectByDate(start, end);
         return new PageInfo<ApplyAndReply>(ApplyAndReplyList);
 
+    }
+
+
+    @Override
+    public PageInfo<ApplyAndReply> showNotAudit(Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<ApplyAndReply> articleList = applyAndReplyMapper.selectNotAudit();
+
+        return new PageInfo<>(articleList);
+    }
+
+
+    @Override
+    public PageInfo<ApplyAndReply> showHasAudit(Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<ApplyAndReply> articleList = applyAndReplyMapper.selectHasAudit();
+
+        return new PageInfo<>(articleList);
+    }
+
+
+    @Override
+    public int updateByViewAndDate(String centerView, Date centerReplyTime, Integer id) {
+        return applyAndReplyMapper.updateByViewAndDate(centerView, centerReplyTime, id);
     }
 }

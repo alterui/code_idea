@@ -5,6 +5,7 @@ import com.lr.bridge.pojo.ApplyAndReply;
 import com.lr.bridge.service.ApplyAndReplyService;
 import com.lr.bridge.util.MD5Util;
 import com.lr.bridge.util.WordGenerator;
+import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -335,8 +336,16 @@ public class ApplyAndReplyController {
     }
 
 
-
-    @RequestMapping(value = "/check")
+    /**
+     * 显示待审核的回执单
+     * @param request
+     * @param resp
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/showCheck")
     public String checkPage(HttpServletRequest request,
                           HttpServletResponse resp,
                           Model model,
@@ -344,15 +353,171 @@ public class ApplyAndReplyController {
                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
 
-        //得到所有的申请表
-        model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
-        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showAllApplyAndReply(pageIndex,pageSize);
+        //得到所有的没有回复的回执单
+        model.addAttribute("pageUrlPrefix", "/page/apply/showCheck?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showNotAudit(pageIndex, pageSize);
+        System.out.println(applyAndReplyPageInfo.getSize());
         model.addAttribute("pageInfo", applyAndReplyPageInfo);
 
         return "page/applyAndReportPage/auditForm";
 
 
+
     }
+
+
+    /**
+     * 显示已经审核的回执单
+     * @param request
+     * @param resp
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/showHasCheck")
+    public String hasCheckPage(HttpServletRequest request,
+                            HttpServletResponse resp,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+
+        //得到所有已经回复的回执单
+        model.addAttribute("pageUrlPrefix", "/page/apply/showHasCheck?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showHasAudit(pageIndex, pageSize);
+
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+
+        return "page/applyAndReportPage/hasAuditForm";
+
+
+
+    }
+
+
+
+
+
+    /**
+     * 跳转到审核页面
+     * @param request
+     * @param resp
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/audit/{id}")
+    public String auditPage(HttpServletRequest request,
+                            HttpServletResponse resp,
+                            Model model,
+                            @PathVariable("id") Integer id) {
+
+
+
+        ApplyAndReply applyAndReply = applyAndReplyService.selectByPrimaryKey(id);
+        model.addAttribute("apply", applyAndReply);
+        return "page/applyAndReportPage/replyForm";
+
+    }
+
+
+    /**
+     * 跳转到修改审核页面
+     * @param request
+     * @param resp
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/updateAudit/{id}")
+    public String updateAuditPage(HttpServletRequest request,
+                            HttpServletResponse resp,
+                            Model model,
+                            @PathVariable("id") Integer id) {
+
+        ApplyAndReply applyAndReply = applyAndReplyService.selectByPrimaryKey(id);
+        model.addAttribute("apply", applyAndReply);
+        return "page/applyAndReportPage/updateReplyForm";
+
+    }
+
+
+    /**
+     * 审核之后跳转页面
+     * @param request
+     * @param resp
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/replyFrom")
+    public String replyFrom(HttpServletRequest request,
+                            HttpServletResponse resp,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+
+        String id = request.getParameter("id");
+        String centerView = request.getParameter("centerView");
+
+
+        applyAndReplyService.updateByViewAndDate(centerView,new Date(), Integer.parseInt(id));
+
+        //得到所有的没有回复的回执单
+        model.addAttribute("pageUrlPrefix", "/page/apply/showCheck?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showNotAudit(pageIndex, pageSize);
+        System.out.println(applyAndReplyPageInfo.getSize());
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+
+        return "page/applyAndReportPage/auditForm";
+
+    }
+
+
+
+
+
+
+
+    /**
+     * 修改审核意见之后跳转页面
+     * @param request
+     * @param resp
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/hasReplyFrom")
+    public String hasReplyFrom(HttpServletRequest request,
+                            HttpServletResponse resp,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+
+        String id = request.getParameter("id");
+        String centerView = request.getParameter("centerView");
+
+
+        applyAndReplyService.updateByViewAndDate(centerView,new Date(), Integer.parseInt(id));
+
+        //得到所有已经回复的回执单
+        model.addAttribute("pageUrlPrefix", "/page/apply/showHasCheck?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showHasAudit(pageIndex, pageSize);
+
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+
+        return "page/applyAndReportPage/hasAuditForm";
+
+    }
+
+
+
+
+
+
 
 
 }
