@@ -4,6 +4,7 @@ import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.ApplyAndReply;
 
 import java.util.Date;
+import java.util.List;
 
 
 /**
@@ -23,12 +24,23 @@ public interface ApplyAndReplyService {
 
 
     PageInfo<ApplyAndReply> selectByDate(String start, String end, Integer pageIndex, Integer pageSize);
+    PageInfo<ApplyAndReply> selectByAuditDate(String start, String end, Integer pageIndex, Integer pageSize);
+    PageInfo<ApplyAndReply> selectByHasAuditDate(String start, String end, Integer pageIndex, Integer pageSize);
 
     PageInfo<ApplyAndReply> showNotAudit(Integer pageIndex, Integer pageSize);
 
     PageInfo<ApplyAndReply> showHasAudit(Integer pageIndex,Integer pageSize);
 
-    int updateByViewAndDate(String centerName,String centerView, Date centerReplyTime, Integer id);
+    int updateByViewAndDate(String centerName, String centerView, Date centerReplyTime, Integer id);
+
+    PageInfo<ApplyAndReply> selectByAllFormName(String name,Integer pageIndex,
+                                              Integer pageSize);
+
+    PageInfo<ApplyAndReply> selectByAuditFormName(String name,Integer pageIndex,
+                                                Integer pageSize);
+
+    PageInfo<ApplyAndReply> selectByHasAuditFormName(String name,Integer pageIndex,
+                                                Integer pageSize);
 
 
 }

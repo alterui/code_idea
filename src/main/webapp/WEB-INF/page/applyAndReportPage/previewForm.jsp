@@ -157,22 +157,23 @@
                          </tr>
 
 
-                         <tr style="height: 200px">
-                             <td colspan="4">
+                         <tr style="height: 200px;width: 580px;">
+                             <td colspan="4" style="word-break:break-all">
                                  总监意见：<br>
                                  <br>
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <br>
-                                 <br>
+                                  <p style="width: 580px">
+                                      &nbsp;&nbsp;&nbsp;&nbsp;${apply.centerView}
+
+                                  </p>
                                  <br>
                                  <br>
                                  <div align="right">
-                                        签字：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        签字：${apply.centerName}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;时间：&nbsp;&nbsp; <fmt:formatDate value="${apply.centerReplyTime}" pattern="yyyy-MM-dd "/>
+
                                  </div>
 
                              </td>
+
 
                          </tr>
 

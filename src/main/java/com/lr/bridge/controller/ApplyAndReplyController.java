@@ -548,6 +548,143 @@ public class ApplyAndReplyController {
 
 
 
+    /**
+     * 所有数据的页面
+     * 关键字搜索
+     */
+    @RequestMapping(value = "/searchAll")
+    public String searchName(HttpServletRequest request,
+                             Model model,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        //取值
+        String name = request.getParameter("search");
+        PageInfo<ApplyAndReply> bearingQualityList = applyAndReplyService.selectByAllFormName(name, pageIndex, pageSize);
+        //show
+        model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
+        //PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
+        model.addAttribute("pageInfo", bearingQualityList);
+        return "page/applyAndReportPage/reportForm";
+    }
+
+
+    /**
+     * 待审核页面
+     * 关键字搜索
+     */
+    @RequestMapping(value = "/searchAudit")
+    public String searchAuditName(HttpServletRequest request,
+                             Model model,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        //取值
+        String name = request.getParameter("search");
+        PageInfo<ApplyAndReply> bearingQualityList = applyAndReplyService.selectByAuditFormName(name, pageIndex, pageSize);
+        //show
+        model.addAttribute("pageUrlPrefix", "/page/apply/showCheck?pageIndex");
+        //PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
+        model.addAttribute("pageInfo", bearingQualityList);
+        return "page/applyAndReportPage/auditForm";
+    }
+
+
+    /**
+     * 已经审核页面
+     * 关键字搜索
+     */
+    @RequestMapping(value = "/searchHasAudit")
+    public String searchHasAuditName(HttpServletRequest request,
+                             Model model,
+                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        //取值
+        String name = request.getParameter("search");
+        PageInfo<ApplyAndReply> bearingQualityList = applyAndReplyService.selectByHasAuditFormName(name, pageIndex, pageSize);
+        //show
+        model.addAttribute("pageUrlPrefix", "/page/apply/showHasCheck?pageIndex");
+        //PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
+        model.addAttribute("pageInfo", bearingQualityList);
+        return "page/applyAndReportPage/hasAuditForm";
+    }
+
+
+
+
+
+
+
+
+
+    /**
+     * 待审核页面
+     * 根据日期查找
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getAuditSearch")
+    public String getAuditSearch(HttpServletRequest request,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/apply/showCheck?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.selectByAuditDate(startTime, endTime, pageIndex, pageSize);
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+        return "page/applyAndReportPage/auditForm";
+
+    }
+
+
+
+    /**
+     * 已经审核页面
+     * 根据日期查找
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getHasAuditSearch")
+    public String getHasAuditSearch(HttpServletRequest request,
+                                 Model model,
+                                 @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                 @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        model.addAttribute("pageUrlPrefix", "/page/apply/showHasCheck?pageIndex");
+        PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.selectByHasAuditDate(startTime, endTime, pageIndex, pageSize);
+        model.addAttribute("pageInfo", applyAndReplyPageInfo);
+        return "page/applyAndReportPage/hasAuditForm";
+
+    }
+
+
+
+
+
+
+
 
 
 

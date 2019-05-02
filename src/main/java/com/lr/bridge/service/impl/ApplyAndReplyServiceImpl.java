@@ -59,6 +59,20 @@ public class ApplyAndReplyServiceImpl implements ApplyAndReplyService {
 
 
     @Override
+    public PageInfo<ApplyAndReply> selectByAuditDate(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<ApplyAndReply> ApplyAndReplyList = applyAndReplyMapper.selectByAuditDate(start, end);
+        return new PageInfo<ApplyAndReply>(ApplyAndReplyList);
+    }
+
+    @Override
+    public PageInfo<ApplyAndReply> selectByHasAuditDate(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<ApplyAndReply> ApplyAndReplyList = applyAndReplyMapper.selectByHasAuditDate(start, end);
+        return new PageInfo<ApplyAndReply>(ApplyAndReplyList);
+    }
+
+    @Override
     public PageInfo<ApplyAndReply> showNotAudit(Integer pageIndex, Integer pageSize) {
         PageHelper.startPage(pageIndex, pageSize);
         List<ApplyAndReply> articleList = applyAndReplyMapper.selectNotAudit();
@@ -79,5 +93,28 @@ public class ApplyAndReplyServiceImpl implements ApplyAndReplyService {
     @Override
     public int updateByViewAndDate(String centerName,String centerView, Date centerReplyTime, Integer id) {
         return applyAndReplyMapper.updateByViewAndDate(centerName,centerView, centerReplyTime, id);
+    }
+
+
+    @Override
+    public PageInfo<ApplyAndReply> selectByAllFormName(String name, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<ApplyAndReply> bearingQualityList = applyAndReplyMapper.selectByAllFormName(name);
+        return new PageInfo<ApplyAndReply>(bearingQualityList);
+    }
+
+
+    @Override
+    public PageInfo<ApplyAndReply> selectByAuditFormName(String name, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<ApplyAndReply> bearingQualityList = applyAndReplyMapper.selectByAuditFormName(name);
+        return new PageInfo<ApplyAndReply>(bearingQualityList);
+    }
+
+    @Override
+    public PageInfo<ApplyAndReply> selectByHasAuditFormName(String name, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<ApplyAndReply> bearingQualityList = applyAndReplyMapper.selectByHasAuditFormName(name);
+        return new PageInfo<ApplyAndReply>(bearingQualityList);
     }
 }

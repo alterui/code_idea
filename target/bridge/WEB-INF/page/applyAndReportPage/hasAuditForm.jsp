@@ -116,7 +116,7 @@
                 return false;
             }
 
-            window.location.href = "/page/apply/getSearch?start=" + start + " &end=" + end + "";
+            window.location.href = "/page/apply/getHasAuditSearch?start=" + start + " &end=" + end + "";
 
         }
 
@@ -147,7 +147,7 @@
 
             <!-- 搜索框 -->
             <div class="layui-tab">
-                <form action="/page/bear/search" method="post">
+                <form action="/page/apply/searchHasAudit" method="post">
                     <button class="layui-btn" style=" float: right">搜索</button>
                     <input type="text" name="search" style="margin-right: 6px; float: right " required
                            placeholder="请输入搜索内容" class="layui-input">
@@ -161,7 +161,7 @@
             <div class="demoTable">
 
 
-                开始时间&nbsp;&nbsp;<input type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;开始时间&nbsp;&nbsp;<input type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 结束时间&nbsp;&nbsp;<input type="text" id="end" name="end" value="${showEnd}" class="layui-input">
                 <button onclick="return getApplySearch()" class="layui-btn layui-btn-mini" type="submit">查询</button>
 

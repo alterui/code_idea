@@ -211,6 +211,7 @@
     </select>
 
 
+    <!-- 所有的日期审核-->
     <select id="selectByDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         *
@@ -219,6 +220,32 @@
         BETWEEN #{start}
         AND #{end}
         ORDER BY applicationTime DESC
+    </select>
+
+
+    <!-- 待审核的日期搜索 -->
+    <select id="selectByAuditDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply
+        WHERE  applicationTime
+        BETWEEN #{start}
+        AND #{end}
+        AND centerView is null
+        ORDER BY applicationTime DESC
+    </select>
+
+
+    <!-- 已经审核的日期搜索，按照审核日期搜索的-->
+    <select id="selectByHasAuditDate"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply
+        WHERE  centerReplyTime
+        BETWEEN #{start}
+        AND #{end}
+        AND centerView is not null
+        ORDER BY centerReplyTime DESC
     </select>
 
 
@@ -254,4 +281,41 @@
           centerReplyTime = #{centerReplyTime,jdbcType=TIMESTAMP}
         where id = #{id,jdbcType=INTEGER}
   </update>
+
+
+
+    <!-- 所有的，包括未审核和已经审核的 -->
+    <select id="selectByAllFormName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply where
+        formName LIKE CONCAT(CONCAT('%',#{name},'%'))
+        ORDER BY applicationTime DESC
+    </select>
+
+
+    <!-- 未审核 -->
+    <select id="selectByAuditFormName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply where
+        formName LIKE CONCAT(CONCAT('%',#{name},'%'))
+        AND centerView is null
+        ORDER BY applicationTime DESC
+    </select>
+
+
+    <!-- 已经审核的 -->
+    <select id="selectByHasAuditFormName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from applyandreply where
+        formName LIKE CONCAT(CONCAT('%',#{name},'%'))
+        AND centerView is not null
+        ORDER BY centerReplyTime DESC
+    </select>
+
+
+
+
 </mapper>

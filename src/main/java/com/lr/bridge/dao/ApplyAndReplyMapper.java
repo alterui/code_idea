@@ -24,10 +24,18 @@ public interface ApplyAndReplyMapper {
 
     List<ApplyAndReply> selectByDate(@Param("start") String start, @Param("end") String end);
 
+    List<ApplyAndReply> selectByAuditDate(@Param("start") String start, @Param("end") String end);
+
+    List<ApplyAndReply> selectByHasAuditDate(@Param("start") String start, @Param("end") String end);
+
     List<ApplyAndReply> selectNotAudit();
 
     List<ApplyAndReply> selectHasAudit();
 
-    int updateByViewAndDate(@Param("centerName") String centerName,@Param("centerView") String centerView, @Param("centerReplyTime") Date centerReplyTime,@Param("id") Integer id);
+    int updateByViewAndDate(@Param("centerName") String centerName, @Param("centerView") String centerView, @Param("centerReplyTime") Date centerReplyTime, @Param("id") Integer id);
+
+    List<ApplyAndReply> selectByAllFormName(String name);
+    List<ApplyAndReply> selectByAuditFormName(String name);
+    List<ApplyAndReply> selectByHasAuditFormName(String name);
 
 }

@@ -56,7 +56,7 @@
 
             <!-- 搜索框 -->
             <div class="layui-tab" >
-                <form action="/page/bear/search" method="post">
+                <form action="/page/apply/searchAll" method="post">
                     <button class="layui-btn"   style=" float: right">搜索</button>
                     <input type="text" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
                 </form>
@@ -115,6 +115,7 @@
                          <th lay-data="{field:'projectName', align:'center',width:120, sort: true}">工程名称</th>
                          <th lay-data="{field:'contractorName', align:'center',width:120, sort: true}">承包人</th>
                          <th lay-data="{field:'applicationTime', align:'center',width:180, sort: true}">申请时间</th>
+                         <th lay-data="{field:'applicationStatus', align:'center',width:120, sort: true}">申请状态</th>
                          <th lay-data="{fixed: 'right',width:240, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
@@ -167,6 +168,20 @@
                                     <td>
                                         <fmt:formatDate value="${env.applicationTime}"
                                                         pattern="yyyy-MM-dd HH:mm:ss"/>
+                                    </td>
+
+
+                                    <td>
+
+                                        <c:choose>
+                                            <c:when test="${env.centerView==null}">
+                                                <b>待审核</b>
+                                            </c:when>
+
+                                            <c:otherwise>
+                                                <b>已审核</b>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </td>
 
                                 </tr>
