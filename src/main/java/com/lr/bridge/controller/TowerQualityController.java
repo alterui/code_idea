@@ -326,6 +326,7 @@ public class TowerQualityController {
                           @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
+        model.addAttribute("search", name);
         PageInfo<TowerQuality> towerQualityList = towerQualityService.selectByLikeName(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
@@ -347,6 +348,7 @@ public class TowerQualityController {
 
         //取值
         String name = request.getParameter("qualitySearch");
+        model.addAttribute("search", name);
         PageInfo<TowerQuality> towerQualityList = towerQualityService.selectByLikeNameAndQuality(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
@@ -366,6 +368,7 @@ public class TowerQualityController {
 
         //取值
         String name = request.getParameter("notQualitySearch");
+        model.addAttribute("search", name);
         PageInfo<TowerQuality> towerQualityList = towerQualityService.selectByLikeNameAndNotQuality(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");

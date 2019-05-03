@@ -357,6 +357,7 @@ public class BeamQualityController {
                           @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
+        model.addAttribute("search", name);
         PageInfo<BeamQuality> beamQualityList = beamQualityService.selectByLikeName(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
@@ -378,6 +379,7 @@ public class BeamQualityController {
 
         //取值
         String name = request.getParameter("qualitySearch");
+        model.addAttribute("search", name);
         PageInfo<BeamQuality> beamQualityList = beamQualityService.selectByLikeNameAndQuality(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
@@ -397,6 +399,7 @@ public class BeamQualityController {
 
         //取值
         String name = request.getParameter("notQualitySearch");
+        model.addAttribute("search", name);
         PageInfo<BeamQuality> beamQualityList = beamQualityService.selectByLikeNameAndNotQuality(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");

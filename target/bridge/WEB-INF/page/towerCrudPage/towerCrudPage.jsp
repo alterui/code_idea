@@ -61,7 +61,7 @@
              <div class="layui-tab" >
                 <form action="/page/tower/search" method="post">
                     <button class="layui-btn"   style=" float: right">搜索</button>
-                    <input type="text" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
+                    <input type="text" value="${search}"  name="search"  style="margin-right: 6px; float: right " required placeholder="请输入结构编号搜索" class="layui-input">
                 </form>
              </div>
 
@@ -111,6 +111,8 @@
                         <th lay-data="{field:'embePartsDevi', align:'center',width:160, sort: true}">预埋件位置偏差</th>
                         <th lay-data="{field:'jointDisl', align:'center',width:120, sort: true}">接缝错台</th>
                         <th lay-data="{field:'towerqualityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
+                        <th lay-data="{field:'auditStatus',align:'center',width:120,sort: true}">审核状态</th>
+
                         <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
@@ -189,6 +191,28 @@
                                     <fmt:formatDate value="${tower.towerqualityCheckTime}"
                                                     pattern="yyyy-MM-dd HH:mm:ss"/>
                                 </td>
+
+
+                                <td>
+                                    <!-- -1代表等待审核，0代表审核不通过(不合格)，1代表审核通过(合格),-->
+                                    <c:choose>
+
+                                        <c:when test="${tower.isQualify==-1}">
+                                            <b>等待审核</b>
+                                        </c:when>
+
+                                        <c:when test="${tower.isQualify==0}">
+                                            <b><font color="red">不合格</font></b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="green">合格</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+                                </td>
+
 
 
                             </tr>

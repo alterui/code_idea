@@ -318,6 +318,7 @@ public class PierQualityController {
                           @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
+        model.addAttribute("search", name);
         PageInfo<PierQuality> pierQualityList = pierQualityService.selectByLikeName(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
@@ -339,6 +340,7 @@ public class PierQualityController {
 
         //取值
         String name = request.getParameter("qualitySearch");
+        model.addAttribute("search", name);
         PageInfo<PierQuality> pierQualityList = pierQualityService.selectByLikeNameAndQuality(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
@@ -358,6 +360,7 @@ public class PierQualityController {
 
         //取值
         String name = request.getParameter("notQualitySearch");
+        model.addAttribute("search", name);
         PageInfo<PierQuality> pierQualityList = pierQualityService.selectByLikeNameAndNotQuality(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");

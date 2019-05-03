@@ -559,6 +559,7 @@ public class ApplyAndReplyController {
                              @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
+        model.addAttribute("search", name);
         PageInfo<ApplyAndReply> bearingQualityList = applyAndReplyService.selectByAllFormName(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/apply/show?pageIndex");
@@ -579,6 +580,7 @@ public class ApplyAndReplyController {
                              @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
+        model.addAttribute("search", name);
         PageInfo<ApplyAndReply> bearingQualityList = applyAndReplyService.selectByAuditFormName(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/apply/showCheck?pageIndex");
@@ -599,6 +601,7 @@ public class ApplyAndReplyController {
                              @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
+        model.addAttribute("search", name);
         PageInfo<ApplyAndReply> bearingQualityList = applyAndReplyService.selectByHasAuditFormName(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/apply/showHasCheck?pageIndex");

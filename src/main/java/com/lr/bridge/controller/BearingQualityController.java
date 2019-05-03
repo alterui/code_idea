@@ -369,6 +369,7 @@ public class BearingQualityController {
                           @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
+        model.addAttribute("search", name);
         PageInfo<BearingQuality> bearingQualityList = bearingQualityService.selectByLikeName(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
@@ -390,6 +391,7 @@ public class BearingQualityController {
 
         //取值
         String name = request.getParameter("qualitySearch");
+        model.addAttribute("search", name);
         PageInfo<BearingQuality> bearingQualityList = bearingQualityService.selectByLikeNameAndQuality(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
@@ -409,6 +411,7 @@ public class BearingQualityController {
 
         //取值
         String name = request.getParameter("notQualitySearch");
+        model.addAttribute("search", name);
         PageInfo<BearingQuality> bearingQualityList = bearingQualityService.selectByLikeNameAndNotQuality(name, pageIndex, pageSize);
         //show
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");

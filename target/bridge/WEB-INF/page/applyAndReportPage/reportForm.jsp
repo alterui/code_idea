@@ -58,7 +58,7 @@
             <div class="layui-tab" >
                 <form action="/page/apply/searchAll" method="post">
                     <button class="layui-btn"   style=" float: right">搜索</button>
-                    <input type="text" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入搜索内容" class="layui-input">
+                    <input type="text" name="search" value="${search}" style="margin-right: 6px; float: right " required placeholder="请输入表名搜索" class="layui-input">
                 </form>
 
             </div>
