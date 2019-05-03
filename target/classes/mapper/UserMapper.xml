@@ -104,9 +104,18 @@
 
     <select id="showUserOrAdmin" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         select
-        <include refid="Base_Column_List" />
+        *
         from user
-        where permission = #{permission,jdbcType=INTEGER}
+
+    </select>
+
+
+    <select id="selectByLikeName" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from user where
+        fullName LIKE CONCAT(CONCAT('%',#{name},'%'))
+
     </select>
 
 

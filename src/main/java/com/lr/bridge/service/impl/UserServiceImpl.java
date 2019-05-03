@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Map<String,String> register(String userName,String fullName,String password,String repassword) {
+    public Map<String,String> register(String userName,String fullName,String password,int permission) {
         Map<String, String> map = new HashMap<>();
 
         if (StringUtils.isBlank(userName)) {
@@ -43,10 +43,7 @@ public class UserServiceImpl implements UserService{
         }
 
 
-        if (StringUtils.isBlank(repassword)) {
-            map.put("msg", "确认密码不能不空");
-            return map;
-        }
+
 
 
         if (StringUtils.isBlank(fullName)) {
@@ -61,10 +58,7 @@ public class UserServiceImpl implements UserService{
             return map;
         }
 
-        if (!password.contentEquals(repassword)) {
-            map.put("msg", "两次密码输入不一致");
-            return map;
-        }
+
 
         User user = new User();
         user.setUserName(userName);
@@ -73,7 +67,7 @@ public class UserServiceImpl implements UserService{
         user.setFullName(fullName);
 
         //0为普通用户，1为管理员用户
-        user.setPermission(0);
+        user.setPermission(permission);
 
         userMapper.insert(user);
 
@@ -82,13 +76,16 @@ public class UserServiceImpl implements UserService{
 
     }
 
+
+
+
     @Override
     public PageInfo<User> showUser(Integer pageIndex, Integer pageSize) {
-        PageHelper.startPage(pageIndex, pageSize);
+
 
         PageHelper.startPage(pageIndex, pageSize);
         //0表示普通用户，1表示管理员用户
-        List<User> userList = userMapper.showUserOrAdmin(0);
+        List<User> userList = userMapper.showUserOrAdmin();
         return new PageInfo<>(userList);
 
 
@@ -123,4 +120,34 @@ public class UserServiceImpl implements UserService{
 
         return map;
     }
+
+
+    @Override
+    public int deleteByPrimaryKey(Integer id) {
+        return userMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public PageInfo<User> selectByLikeName(String name, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<User> beamQualityList = userMapper.selectByLikeName(name);
+        return new PageInfo<>(beamQualityList);
+    }
+
+    @Override
+    public User selectByPrimaryKey(Integer id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
+
+    @Override
+    public User selectByUserName(String userName) {
+        return userMapper.selectByUserName(userName);
+    }
+
+    @Override
+    public int updateByPrimaryKey(User record) {
+        return userMapper.updateByPrimaryKey(record);
+    }
+
 }

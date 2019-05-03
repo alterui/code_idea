@@ -23,5 +23,7 @@ public interface UserMapper {
     User selectByUserName(String userName);
 
 
-    List<User> showUserOrAdmin(Integer permission);
+    List<User> showUserOrAdmin();
+
+    List<User> selectByLikeName(String name);
 }

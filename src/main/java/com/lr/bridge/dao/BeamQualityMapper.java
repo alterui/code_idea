@@ -34,6 +34,8 @@ public interface BeamQualityMapper {
 
     List<BeamQuality> selectByLikeName(String name);
 
+
+
     List<BeamQuality> selectByLikeNameAndQuality(String name);
     List<BeamQuality> selectByLikeNameAndNotQuality(String name);
 

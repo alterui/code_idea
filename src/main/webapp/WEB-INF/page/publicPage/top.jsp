@@ -56,11 +56,8 @@
 
             <c:if test="${permission==1}">
                 <li class="layui-nav-item">
-                    <a href="javascript:;">用户管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="">普通用户管理</a></dd>
-                        <dd><a href="">管理员用户管理</a></dd>
-                    </dl>
+                    <a href="/showUser">用户管理</a>
+
                 </li>
             </c:if>
         </ul>
