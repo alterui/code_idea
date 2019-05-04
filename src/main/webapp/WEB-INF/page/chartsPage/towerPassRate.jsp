@@ -87,14 +87,14 @@
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a >锁塔验收合格折线图</a>
 
-
+<%--
                 <div style="float: right">
                     位置跳转&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a  class="layui-this" href="/page/tower/showChart">梁验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/showChart">支座验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pier/showChart">墩台验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pile/showChart">桩验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                </div>
+                </div>--%>
 
             </blockquote>
 

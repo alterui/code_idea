@@ -150,4 +150,9 @@ public class UserServiceImpl implements UserService{
         return userMapper.updateByPrimaryKey(record);
     }
 
+    @Override
+    public int insert(User record) {
+        return userMapper.insert(record);
+    }
+
 }

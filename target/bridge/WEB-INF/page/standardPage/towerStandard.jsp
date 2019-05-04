@@ -66,14 +66,14 @@
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a ><font color="#228b22">锁塔质量验收标准设置</font></a>
 
-
+<%--
                 <div style="float: right">
                     其他质量验收标准设置&nbsp;&nbsp;<b></b>&nbsp;&nbsp;
                     <a  class="layui-this" href="/page/tower/beamStandard">梁质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/bear/bearStandard">支座质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pier/pierStandard">墩台质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pile/pileStandard">桩质量验收标准</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                </div>
+                </div>--%>
             </blockquote>
 
             <div class="layui-tab">

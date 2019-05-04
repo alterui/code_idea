@@ -44,29 +44,85 @@
 
 
             </div>
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">质量安全</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="${ctx}/page/beam/show">梁质量验收数据</a></dd>
-                        <dd><a href="${ctx}/page/bear/show">支座质量验收数据</a></dd>
-                        <dd><a href="${ctx}/page/pier/show">墩台质量验收数据</a></dd>
-                        <dd><a href="${ctx}/page/pile/show">桩质量验收数据</a></dd>
-                        <dd><a href="${ctx}/page/tower/show">索塔质量验收数据</a></dd>
-                    </dl>
-                </li>
+
+            <c:if test="${permission==0}">
+                <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">质量安全</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="${ctx}/page/beam/show">梁质量验收数据</a></dd>
+                            <dd><a href="${ctx}/page/bear/show">支座质量验收数据</a></dd>
+                            <dd><a href="${ctx}/page/pier/show">墩台质量验收数据</a></dd>
+                            <dd><a href="${ctx}/page/pile/show">桩质量验收数据</a></dd>
+                            <dd><a href="${ctx}/page/tower/show">索塔质量验收数据</a></dd>
+                        </dl>
+                    </li>
 
 
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a href="javascript:;">环保安全</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="${ctx}/page/apply/show">环保检查报告</a></dd>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">环保安全</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="${ctx}/page/apply/show">环保检查报告</a></dd>
 
-                    </dl>
-                </li>
+                        </dl>
+                    </li>
+
+
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">质量验收标准</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="/page/beam/beamStandard">梁质量验收标准</a></dd>
+                            <dd><a href="/page/bear/bearStandard">支座质量验收标准</a></dd>
+                            <dd><a href="/page/pier/pierStandard">墩台质量验收标准</a></dd>
+                            <dd><a href="/page/pile/pileStandard">桩质量验收标准</a></dd>
+                            <dd><a href="/page/tower/towerStandard">索塔质量验收标准</a></dd>
+
+                        </dl>
+                    </li>
+                </ul>
+            </c:if>
+
+
+            <c:if test="${permission==1}">
+                <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a class="" href="javascript:;">质量安全管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="/page/beam">梁质量数据审核</a></dd>
+                            <dd><a href="/page/bear">支座质量数据审核</a></dd>
+                            <dd><a href="/page/pier">墩台质量数据审核</a></dd>
+                            <dd><a href="/page/pile">桩质量数据审核</a></dd>
+                            <dd><a href="/page/tower">索塔质量数据审核</a></dd>
+                        </dl>
+                    </li>
+
+
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">环保安全管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="/page/apply/showCheck">环保检查报告审核</a></dd>
+
+                        </dl>
+                    </li>
+
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="/page/beam/beamStandard">质量验收标准</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="/page/beam/beamStandard">梁质量验收标准</a></dd>
+                            <dd><a href="/page/bear/bearStandard">支座质量验收标准</a></dd>
+                            <dd><a href="/page/pier/pierStandard">墩台质量验收标准</a></dd>
+                            <dd><a href="/page/pile/pileStandard">桩质量验收标准</a></dd>
+                            <dd><a href="/page/tower/towerStandard">索塔质量验收标准</a></dd>
+
+                        </dl>
+                    </li>
 
 
 
-            </ul>
+
+                </ul>
+            </c:if>
+
+
         </div>
     </div>

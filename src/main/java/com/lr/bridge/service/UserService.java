@@ -27,6 +27,8 @@ public interface UserService {
 
     int updateByPrimaryKey(User record);
 
+    int insert(User record);
+
 
 
 }

@@ -56,14 +56,14 @@
                 <a href="/page/pile/"><font color="#228b22">待确认审核</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/pile/hasQuality"><font color="#228b22">已确认审核</font></a>
 
-
+<%--
                 <div style="float: right">
                     其他质量审核&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/beam">梁质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a  href="/page/bear">支座质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a  href="/page/pier">墩台质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/tower">索塔质量审核</a>
-                </div>
+                </div>--%>
             </blockquote>
 
             <!-- 搜索框 -->

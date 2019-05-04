@@ -47,6 +47,40 @@
 
 
 
+        function addUser() {
+            var $ = layui.jquery;
+
+            $.ajax({
+                type: "POST",   //提交的方法
+                url:"/reg", //提交的地址
+                data:$('#userForm').serialize(),// 序列化表单值
+                dataType: "json",
+                async: false,
+
+                success: function(data) {  //成功
+
+
+                    if (data.code==0) {//不存在
+                        window.location.href = "/showUser";
+                    }
+                    if(data.code==1) {
+                        alert("用户名已经存在，请重新输入");
+                    }
+
+                },
+                error : function(errorMsg) {
+                    //请求失败时执行该函数
+                    alert("请求失败");
+
+                }
+            });
+
+        }
+
+
+
+
+
     </script>
 
 
@@ -71,17 +105,14 @@
 
 
 
-            <form class="layui-form"  action="/reg" id="userForm"
-                  method="post">
-
-
+            <form class="layui-form"  id="userForm">
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户名 <span style="color: #FF5722; ">*</span></label>
                     <div class="layui-input-inline">
                         <input type="text" name="userName" id="userName" required
                                lay-verify="userName"
-                               autocomplete="off" class="layui-input" onblur="checkUserNames()">
+                               autocomplete="off" class="layui-input" >
                     </div>
 
                     <div class="layui-form-mid layui-word-aux" >
@@ -134,7 +165,7 @@
 
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="demo1" id="submit-btn">保存</button>
+                        <button class="layui-btn" type="button" onclick="addUser()" id="submit-btn">保存</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>

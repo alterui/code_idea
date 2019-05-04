@@ -3,21 +3,15 @@ package com.lr.bridge.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.BeamQuality;
-import com.lr.bridge.pojo.BearingQuality;
 import com.lr.bridge.pojo.User;
 import com.lr.bridge.service.BeamQualityService;
-import com.lr.bridge.service.BearingQualityService;
 import com.lr.bridge.service.impl.UserServiceImpl;
 import com.lr.bridge.util.MD5Util;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.*;
 
 @Controller
@@ -38,16 +32,23 @@ public class UserController {
      * @return
      */
     @RequestMapping("/reg")
-    public String register(HttpServletRequest request,
-                          Model model,
-                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                           @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+    @ResponseBody
+    public Map register(HttpServletRequest request,
+                                        Model model,
+                                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                        @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
 
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String fullName = request.getParameter("fullName");
+        System.out.println(1);
+
+
         //0为承包人，1为总监
         Integer permission = null;
+
+        Map<String, Object> map = new HashMap<>();
 
         if ("总监".equals(request.getParameter("role"))) {
 
@@ -57,18 +58,32 @@ public class UserController {
 
         }
 
-        Map<String, String> map = userService.register(userName, fullName,password,permission);
-        if (map.get("msg") == null) {
-            PageInfo<User> userPageInfo = userService.showUser(pageIndex, pageSize);
-            model.addAttribute("pageUrlPrefix", "/showUser?pageIndex");
-            model.addAttribute("pageInfo", userPageInfo);
-            return "page/userPage/showUser";
+
+
+        User oldUser = userService.selectByUserName(userName);
+        //用户名已存在
+        if (oldUser != null) {
+            map.put("code",1);
+            map.put("msg", "用户名已存在！");
 
         } else {
-            model.addAttribute("msg", map.get("msg"));
-            return "page/userPage/addUser";
+
+            User user = new User();
+
+            user.setUserName(userName);
+            user.setPassword(MD5Util.getMD5(password));
+            user.setFullName(fullName);
+            user.setPermission(permission);
+
+            userService.insert(user);
+            map.put("code",0);
+            map.put("msg","");
+
+
         }
 
+
+        return map;
     }
 
     /**

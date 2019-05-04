@@ -46,7 +46,7 @@
         });
 
 
-        function getAjax() {
+        function editUser() {
             var $ = layui.jquery;
 
             $.ajax({
@@ -164,7 +164,7 @@
 
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn"  type="button" onclick="getAjax()" id="submit-btn">保存</button>
+                        <button class="layui-btn"  type="button" onclick="editUser()" id="submit-btn">保存</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
 
                     </div>

@@ -58,13 +58,13 @@
                 <a href="/page/bear/hasQuality"><font color="#228b22">已确认审核</font></a>
 
 
-                <div style="float: right">
+               <%-- <div style="float: right">
                     其他质量审核&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a  class="layui-this" href="/page/beam">梁质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pier">墩台质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/pile">桩质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                     <a class="layui-this" href="/page/tower">索塔质量审核</a>
-                </div>
+                </div>--%>
             </blockquote>
 
 
