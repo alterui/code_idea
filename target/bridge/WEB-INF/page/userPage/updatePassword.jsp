@@ -47,12 +47,12 @@
 
 
 
-        function addUser() {
+        function updatePassword() {
             var $ = layui.jquery;
 
             $.ajax({
                 type: "POST",   //提交的方法
-                url:"/reg", //提交的地址
+                url:"/updatePassword", //提交的地址
                 data:$('#userForm').serialize(),// 序列化表单值
                 dataType: "json",
                 async: false,
@@ -61,11 +61,11 @@
 
 
                     if (data.code==0) {//不存在
-                        alert("保存成功");
-                        window.location.href = "/showUser";
+                        alert("修改成功");
+                        //window.location.href = "/showUser";
                     }
                     if(data.code==1) {
-                        alert("用户名已经存在，请重新输入");
+                        alert("原密码输入错误");
                     }
 
                 },
@@ -98,7 +98,7 @@
 
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a >添加用户</a>
+                <a >修改密码</a>
 
             </blockquote>
             <br>
@@ -109,13 +109,12 @@
             <form class="layui-form"  id="userForm">
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">用户名 <span style="color: #FF5722; ">*</span></label>
+                    <label class="layui-form-label">原密码 <span style="color: #FF5722; ">*</span></label>
                     <div class="layui-input-inline">
-                        <input type="text" name="userName" id="userName" required
-                               lay-verify="userName"
+                        <input type="password" name="oldPassword" id="oldPassword" required
+                               lay-verify="oldPassword"
                                autocomplete="off" class="layui-input" >
                     </div>
-
 
                 </div>
 
@@ -125,9 +124,9 @@
 
 
                 <div class="layui-form-item">
-                    <label class="layui-form-label">姓名 <span style="color: #FF5722; ">*</span></label>
+                    <label class="layui-form-label">新密码 <span style="color: #FF5722; ">*</span></label>
                     <div class="layui-input-inline">
-                        <input type="text" name="fullName"  required
+                        <input type="password" name="password"  required
                                placeholder="" autocomplete="off" min="2" max="10"
                                class="layui-input">
                     </div>
@@ -135,36 +134,9 @@
                 </div>
 
 
-
-
-                <div class="layui-form-item">
-                    <label class="layui-form-label">密码 <span style="color: #FF5722; ">*</span></label>
-                    <div class="layui-input-inline">
-                        <input type="password" name="password"  id="userPass" required
-                               lay-verify="userPass"
-                               autocomplete="off" class="layui-input" min="3" max="20">
-                    </div>
-                    <%--<div class="layui-form-mid layui-word-aux"></div>--%>
-                </div>
-
-
-
-                <div class="layui-form-item">
-                    <label class="layui-form-label">角色 <span style="color: #FF5722; ">*</span></label>
-                    <div class="layui-input-block">
-                        <input type="radio" name="role" value="承包人" title="承包人" checked="">
-                        <input type="radio" name="role" value="总监" title="总监">
-                    </div>
-                </div>
-
-
-
-
-
-
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" type="button" onclick="addUser()" id="submit-btn">保存</button>
+                        <button class="layui-btn" type="button" onclick="updatePassword()" id="submit-btn">保存</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>

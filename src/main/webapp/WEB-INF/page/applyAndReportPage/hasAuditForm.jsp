@@ -140,7 +140,7 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<font color="#228b22">回执单审核</font>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;回执单审核&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/apply/showCheck"><font color="#228b22">待确认审核</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/apply/showHasCheck"><font color="#228b22">已确认审核</font></a>
             </blockquote>

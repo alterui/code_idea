@@ -42,7 +42,7 @@ public class UserController {
         String userName = request.getParameter("userName");
         String password = request.getParameter("password");
         String fullName = request.getParameter("fullName");
-        System.out.println(1);
+      /*  System.out.println(1);*/
 
 
         //0为承包人，1为总监
@@ -108,6 +108,7 @@ public class UserController {
             User user = userService.getUser(userName);
             session.setAttribute("userName", user.getFullName());
             session.setAttribute("permission", user.getPermission());
+            session.setAttribute("user", user);
 
             //普通用户
             if (user.getPermission() == 0) {
@@ -163,6 +164,18 @@ public class UserController {
         return "page/userPage/addUser";
     }
 
+
+    /**
+     * 添加用户页面
+     * @param request
+     * @param model
+     * @return
+     */
+    @RequestMapping("/updatePasswordPage")
+    public String updatePasswordPage(HttpServletRequest request, Model model) {
+
+        return "page/userPage/updatePassword";
+    }
 
     /**
      * 用户列表显示
@@ -342,6 +355,55 @@ public class UserController {
 
         return map;
     }
+
+
+
+    /**
+     * 用户注册
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping("/updatePassword")
+    @ResponseBody
+    public Map update(HttpServletRequest request,
+                        Model model,
+                        HttpSession session,
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+
+
+        //System.out.println(12);
+        String oldPassword = request.getParameter("oldPassword");
+        String password = request.getParameter("password");
+        User user = (User)session.getAttribute("user");
+        /*System.out.println(user.getId());*/
+
+
+        Map<String, Object> map = new HashMap<>();
+
+        User oldUser = userService.selectByIdAndPwd(user.getId(), MD5Util.getMD5(oldPassword));
+        //用户名已存在
+        if (oldUser == null) {
+            map.put("code",1);
+            map.put("msg", "原密码输入错误");
+
+        } else {
+
+
+            userService.updateByIdAndPwd(user.getId(), MD5Util.getMD5(password));
+            map.put("code",0);
+            map.put("msg","");
+
+
+        }
+
+
+        return map;
+    }
+
 
 
 

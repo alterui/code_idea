@@ -140,7 +140,7 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<font color="#228b22">回执单审核</font>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;回执单审核&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/apply/showCheck"><font color="#228b22">待确认审核</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/apply/showHasCheck"><font color="#228b22">已确认审核</font></a>
             </blockquote>
@@ -192,7 +192,7 @@
                     <th lay-data="{field:'director', align:'center',width:120, sort: true}">总监办名称</th>
                     <th lay-data="{field:'projectName', align:'center',width:120, sort: true}">工程名称</th>
                     <th lay-data="{field:'contractorName', align:'center',width:120, sort: true}">承包人</th>
-                    <th lay-data="{field:'directorView', align:'center',width:120, sort: true}">申请原因</th>
+                    <th lay-data="{field:'directorView', align:'center',width:180, sort: true}">申请原因</th>
                     <th lay-data="{field:'applicationTime', align:'center',width:180, sort: true}">申请时间</th>
                     <th lay-data="{fixed: 'right',width:100, align:'center', toolbar: '#barDemo'}">操作</th>
 

@@ -155,4 +155,13 @@ public class UserServiceImpl implements UserService{
         return userMapper.insert(record);
     }
 
+    @Override
+    public User selectByIdAndPwd(int id, String password) {
+        return userMapper.selectByIdAndPwd(id, password);
+    }
+
+    @Override
+    public int updateByIdAndPwd(int id, String password) {
+        return userMapper.updateByIdAndPwd(id, password);
+    }
 }

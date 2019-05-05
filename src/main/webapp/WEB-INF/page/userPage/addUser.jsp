@@ -61,6 +61,7 @@
 
 
                     if (data.code==0) {//不存在
+                        alert("保存成功");
                         window.location.href = "/showUser";
                     }
                     if(data.code==1) {
@@ -115,9 +116,7 @@
                                autocomplete="off" class="layui-input" >
                     </div>
 
-                    <div class="layui-form-mid layui-word-aux" >
-                       ${msg}
-                    </div>
+
                 </div>
 
 

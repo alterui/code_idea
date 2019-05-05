@@ -509,8 +509,7 @@ public class ApplyAndReplyController {
 
         String id = request.getParameter("id");
         String centerView = request.getParameter("centerView");
-        String centerName = (String)session.getAttribute("userName");
-
+        String centerName = (String) session.getAttribute("userName");
 
         applyAndReplyService.updateByViewAndDate(centerName,centerView,new Date(), Integer.parseInt(id));
 

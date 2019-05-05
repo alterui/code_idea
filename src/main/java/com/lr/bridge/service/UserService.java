@@ -29,6 +29,10 @@ public interface UserService {
 
     int insert(User record);
 
+    User selectByIdAndPwd(int id,  String password);
+
+    int updateByIdAndPwd(int id, String password);
+
 
 
 }
