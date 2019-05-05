@@ -304,12 +304,12 @@ public class UserController {
     @ResponseBody
     public Map updateUser(HttpServletRequest request,
                            Model model,
+                           HttpSession session,
                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         String idString = request.getParameter("id");
         String userName = request.getParameter("userName");
-        String password = request.getParameter("password");
         String fullName = request.getParameter("fullName");
       /*  System.out.println(userName);
         System.out.println(1);*/
@@ -336,16 +336,9 @@ public class UserController {
             map.put("msg", "用户名已存在！");
 
         } else {//
+            User oldUserFullName = userService.selectByPrimaryKey(id);
+            userService.updateByUserNameAndName(id, userName, fullName, permission);
 
-            User user = new User();
-
-            user.setId(id);
-            user.setUserName(userName);
-            user.setPassword(MD5Util.getMD5(password));
-            user.setFullName(fullName);
-            user.setPermission(permission);
-
-            userService.updateByPrimaryKey(user);
             map.put("code",0);
             map.put("msg","");
 

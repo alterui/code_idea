@@ -21,6 +21,8 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
+    int updateByUserNameAndName(@Param("id")int id ,@Param("userName")String userName,@Param("fullName")String fullName,@Param("permission")int permission);
+
     User selectByUserName(String userName);
 
     User selectByIdAndPwd(@Param("id") int id, @Param("password") String password);

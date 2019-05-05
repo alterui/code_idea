@@ -136,15 +136,15 @@
 
 
 
-                <div class="layui-form-item">
+               <%-- <div class="layui-form-item">
                     <label class="layui-form-label">密码 <span style="color: #FF5722; ">*</span></label>
                     <div class="layui-input-inline">
                         <input value="${user.password}" type="password" name="password"  id="userPass" required
                                lay-verify="userPass"
                                autocomplete="off" class="layui-input" min="3" max="20">
                     </div>
-                    <%--<div class="layui-form-mid layui-word-aux"></div>--%>
-                </div>
+                    &lt;%&ndash;<div class="layui-form-mid layui-word-aux"></div>&ndash;%&gt;
+                </div>--%>
 
 
 

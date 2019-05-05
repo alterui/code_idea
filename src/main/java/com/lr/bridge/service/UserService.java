@@ -27,6 +27,8 @@ public interface UserService {
 
     int updateByPrimaryKey(User record);
 
+    int updateByUserNameAndName(int id ,String userName,String fullName,int permission);
+
     int insert(User record);
 
     User selectByIdAndPwd(int id,  String password);

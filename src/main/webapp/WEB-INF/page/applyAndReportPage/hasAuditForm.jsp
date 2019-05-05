@@ -200,7 +200,7 @@
                     <th lay-data="{field:'director', align:'center',width:120, sort: true}">总监办名称</th>
                     <th lay-data="{field:'projectName', align:'center',width:120, sort: true}">工程名称</th>
                     <th lay-data="{field:'contractorName', align:'center',width:120, sort: true}">承包人</th>
-                    <th lay-data="{field:'directorView', align:'center',width:120, sort: true}">申请原因</th>
+                    <th lay-data="{field:'directorView', align:'center',width:180, sort: true}">申请原因</th>
                     <th lay-data="{field:'applicationTime', align:'center',width:180, sort: true}">申请时间</th>
                     <th lay-data="{field:'centerView', align:'center',width:180, sort: true}">总监意见</th>
                     <th lay-data="{field:'centerReplyTime', align:'center',width:180, sort: true}">审核时间</th>

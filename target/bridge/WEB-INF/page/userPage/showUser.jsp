@@ -160,7 +160,7 @@
             <!-- 搜索框 -->
             <div class="layui-tab">
                 <form action="/searchUser" method="post">
-                    <button class="layui-btn" style=" float: right">搜索</button>
+                    <button class="layui-btn" style=" float: right"><i class="layui-icon">&#xe615;</i>搜索</button>
                     <input type="text" value="${search}" name="search" style="margin-right: 6px; float: right " required
                            placeholder="请输入用户姓名搜索" class="layui-input">
                 </form>
@@ -171,18 +171,19 @@
             <!-- 功能按钮 -->
             <div class="demoTable">
 
-                <a href="/register" class="layui-btn layui-btn-mini">增加用户</a>
-                <button class="layui-btn layui-btn-danger" data-type="delCheckData">删除选中</button>
+                <a href="/register" class="layui-btn layui-btn-mini">
+                    <i class="layui-icon">&#xe61f;</i>增加用户</a>
+                <button class="layui-btn layui-btn-danger" data-type="delCheckData"><i class="layui-icon">&#xe640;</i>删除选中</button>
 
             </div>
 
             <script type="text/html" id="barDemo">
 
                 <a href="/editUser/{{d.id}}"
-                   class="layui-btn layui-btn-sm">编辑</a>
+                   class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe642;</i>编辑</a>
                 <a
                         onclick="deleteData({{d.id}})"
-                        class="layui-btn layui-btn-danger layui-btn-sm">删除
+                        class="layui-btn layui-btn-danger layui-btn-sm"><i class="layui-icon">&#xe640;</i>删除
                 </a>
 
             </script>

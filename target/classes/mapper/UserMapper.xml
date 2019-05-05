@@ -94,6 +94,16 @@
   </update>
 
 
+
+    <update id="updateByUserNameAndName" parameterType="com.lr.bridge.pojo.User">
+    update user
+    set userName = #{userName,jdbcType=VARCHAR},
+      fullName = #{fullName,jdbcType=VARCHAR},
+      permission = #{permission,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
     <select id="selectByUserName" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List" />

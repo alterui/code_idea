@@ -164,4 +164,10 @@ public class UserServiceImpl implements UserService{
     public int updateByIdAndPwd(int id, String password) {
         return userMapper.updateByIdAndPwd(id, password);
     }
+
+
+    @Override
+    public int updateByUserNameAndName(int id, String userName, String fullName, int permission) {
+        return userMapper.updateByUserNameAndName(id, userName, fullName, permission);
+    }
 }
