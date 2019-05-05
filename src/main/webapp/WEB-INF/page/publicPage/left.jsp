@@ -28,7 +28,7 @@
     <div class="layui-side layui-bg-black">
         <div class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <div >
+           <%-- <div >
                 <style>
                     .div-height{ width:100px; height:35px}
 
@@ -43,7 +43,7 @@
                 </style>
 
 
-            </div>
+            </div>--%>
 
             <c:if test="${permission==0}">
                 <ul class="layui-nav layui-nav-tree"  lay-filter="test">
