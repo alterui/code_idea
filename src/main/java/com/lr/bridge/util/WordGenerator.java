@@ -41,7 +41,7 @@ public class WordGenerator {
             String path="";
 
             //使用FileTemplateLoader
-            templateLoader=new FileTemplateLoader(new File("D:\\code\\bridge\\src\\main\\java\\com\\lr\\bridge\\ftl"));
+            templateLoader=new FileTemplateLoader(new File("D:\\code\\bridge\\src\\main\\webapp\\static\\ftl"));
             /*path="resume.ftl";*/
             cfg.setTemplateLoader(templateLoader);
             allTemplates = new HashMap<>();

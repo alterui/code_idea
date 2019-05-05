@@ -77,19 +77,69 @@ public class ApplyAndReplyController {
         map.put("director", applyAndReply.getDirector());
         map.put("projectName", applyAndReply.getProjectName());
         map.put("contractorName", applyAndReply.getContractorName());
+
+        if (applyAndReply.getDirectorView() != null) {
+            map.put("directorView", applyAndReply.getDirectorView());
+        }else {
+            map.put("directorView", " ");
+        }
+
+
+        if (applyAndReply.getCenterView() != null) {
+            map.put("centerView", applyAndReply.getCenterView());
+        }else {
+            map.put("centerView", " ");
+        }
+
+        if (applyAndReply.getCenterName() != null) {
+            map.put("centerName", applyAndReply.getCenterName());
+        } else {
+            map.put("centerName", " ");
+        }
+
+
+
         Date applicationTime = applyAndReply.getApplicationTime();
+        Date centerReplyTime = applyAndReply.getCenterReplyTime();
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String date = simpleDateFormat.format(applicationTime);
+
 
         String[] split = date.split("-");
         String year = split[0];
         String month = split[1];
         String day = split[2];
+
+
+        if (centerReplyTime != null) {
+            String date1 = simpleDateFormat.format(centerReplyTime);
+
+            String[] split1 = date1.split("-");
+            String year1 = split1[0];
+            String month1 = split1[1];
+            String day1 = split[2];
+            map.put("year1", year1);
+            map.put("month1", month1);
+            map.put("day1", day1);
+        } else {
+            map.put("year1", "           ");
+            map.put("month1", "  ");
+            map.put("day1", "  ");
+        }
+
+
+
+
+
+
         /*System.out.println(year + month + day);*/
         map.put("year", year);
         map.put("month", month);
         map.put("day", day);
+
+
+
 
 
         // 提示：在调用工具类生成Word文档之前应当检查所有字段是否完整
