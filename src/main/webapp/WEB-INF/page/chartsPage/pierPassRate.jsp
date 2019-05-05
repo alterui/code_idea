@@ -102,9 +102,9 @@
 
 
             <div align="center">
-                开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start">&nbsp;&nbsp;&nbsp;&nbsp;
-                结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end">&nbsp;&nbsp;&nbsp;&nbsp;
-                <button  onclick="return getChart()"  class="layui-btn layui-btn-xs" type="submit">生成折线图</button>
+                开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
+                结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
+                <button  onclick="return getChart()"  class="layui-btn " type="submit">生成折线图</button>
             </div>
             <br><br><br>
 

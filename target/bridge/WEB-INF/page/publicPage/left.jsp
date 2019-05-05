@@ -106,7 +106,7 @@
                     </li>
 
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a href="/page/beam/beamStandard">质量验收标准</a>
+                        <a class="" href="javascript:;">质量验收标准</a>
                         <dl class="layui-nav-child">
                             <dd><a href="/page/beam/beamStandard">梁质量验收标准</a></dd>
                             <dd><a href="/page/bear/bearStandard">支座质量验收标准</a></dd>
