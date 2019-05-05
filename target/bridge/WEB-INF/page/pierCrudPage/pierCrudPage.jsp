@@ -57,7 +57,7 @@
             <!-- 搜索框 -->
              <div class="layui-tab" >
                 <form action="/page/pier/search" method="post">
-                    <button class="layui-btn"   style=" float: right">搜索</button>
+                    <button class="layui-btn"   style=" float: right"><i class="layui-icon">&#xe615;</i>搜索</button>
                     <input type="text" value="${search}" name="search"  style="margin-right: 6px; float: right " required placeholder="请输入结构编号搜索" class="layui-input">
                 </form>
              </div>
@@ -66,13 +66,13 @@
 
             <div class="demoTable">
 
-                <a href="/page/pier/addData" class="layui-btn layui-btn-mini">增加数据</a>
-                <button class="layui-btn layui-btn-danger" data-type="delCheckData">删除选中</button>
+                <a href="/page/pier/addData" class="layui-btn layui-btn-mini"><i class="layui-icon">&#xe61f;</i>增加数据</a>
+                <button class="layui-btn layui-btn-danger" data-type="delCheckData"><i class="layui-icon">&#xe640;</i>删除选中</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
-                <button  onclick="return getPierSearch()"  class="layui-btn layui-btn-mini" type="submit">查询</button>
+                <button  onclick="return getPierSearch()"  class="layui-btn layui-btn-mini" type="submit"><i class="layui-icon">&#xe615;</i>查询</button>
 
 
             </div>
@@ -81,10 +81,10 @@
             <script type="text/html" id="barDemo">
 
                 <a href="/page/pier/edit/{{d.id}}"
-                   class="layui-btn layui-btn-sm">编辑</a>
+                   class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe642;</i>编辑</a>
                 <a
                         onclick="deleteData({{d.id}})"
-                        class="layui-btn layui-btn-danger layui-btn-sm">删除
+                        class="layui-btn layui-btn-danger layui-btn-sm"><i class="layui-icon">&#xe640;</i>删除
                 </a>
 
             </script>
@@ -111,7 +111,7 @@
                             <th lay-data="{field:'auditStatus',align:'center',width:120,sort: true}">审核状态</th>
 
 
-                            <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
+                            <th lay-data="{fixed: 'right',width:200, align:'center', toolbar: '#barDemo'}">操作</th>
 
                         </tr>
                         </thead>

@@ -46,12 +46,15 @@
 
     </header>
     <form class="layui-form" method="post" action="/login">
+
         <div class="layui-input-inline">
-            <input type="text" name="userName" required lay-verify="required" placeholder="用户名"  placeholder="请输入用户名" autocomplete="off"
+            <input type="text" name="userName" required lay-verify="required" placeholder="请输入用户名"  placeholder="请输入用户名" autocomplete="off"
                    class="layui-input">
         </div>
+
         <div class="layui-input-inline">
-            <input type="password" name="password" required lay-verify="required" placeholder="密码" placeholder="请输入密码" autocomplete="off"
+
+            <input type="password" name="password" required lay-verify="required"  placeholder="请输入密码" autocomplete="off"
                    class="layui-input">
         </div>
         <div class="layui-input-inline login-btn">

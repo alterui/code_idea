@@ -72,7 +72,7 @@
 
         <form action="/page/tower/notQualitySearch" method="post">
 
-            <button class="layui-btn"   style=" float: right">搜索</button>
+            <button class="layui-btn"   style=" float: right"><i class="layui-icon">&#xe615;</i>搜索</button>
             <input type="text" value="${search}"  name="notQualitySearch"  style="margin-right: 6px; float: right " required placeholder="请输入结构编号搜索" class="layui-input">
 
         </form>
@@ -81,13 +81,13 @@
 
             <div class="demoTable">
 
-                <button class="layui-btn layui-btn-mini" data-type="qualityMore">批量合格</button>
-                <button class="layui-btn layui-btn-danger" data-type="notQualityMore">批量不合格</button>
+                <button class="layui-btn layui-btn-mini" data-type="qualityMore"><i class="layui-icon">&#x1005;</i>批量合格</button>
+                <button class="layui-btn layui-btn-danger" data-type="notQualityMore"><i class="layui-icon">&#x1007;</i> 批量不合格</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
-                <button  onclick="return getTowerSearch()"  class="layui-btn layui-btn-mini" type="submit">查询</button>
+                <button  onclick="return getTowerSearch()"  class="layui-btn layui-btn-mini" type="submit"><i class="layui-icon">&#xe615;</i>查询</button>
 
 
             </div>
@@ -98,12 +98,12 @@
 
 
                 <a onclick="qualityData({{d.id}})"
-                   class="layui-btn layui-btn-sm">合格
+                   class="layui-btn layui-btn-sm"><i class="layui-icon">&#x1005;</i>合格
 
                 </a>
                 <a
                         onclick="notQualityData({{d.id}})"
-                        class="layui-btn layui-btn-danger layui-btn-sm">不合格
+                        class="layui-btn layui-btn-danger layui-btn-sm"><i class="layui-icon">&#x1007;</i> 不合格
                 </a>
 
             </script>
@@ -131,7 +131,7 @@
                         <th lay-data="{field:'embePartsDevi', align:'center',width:160, sort: true}">预埋件位置偏差</th>
                         <th lay-data="{field:'jointDisl', align:'center',width:120, sort: true}">接缝错台</th>
                         <th lay-data="{field:'towerqualityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
-                        <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
+                        <th lay-data="{fixed: 'right',width:200, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
                     </thead>

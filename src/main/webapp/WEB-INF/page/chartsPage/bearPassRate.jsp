@@ -104,7 +104,7 @@
             <div align="center">
                 开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
-                <button  onclick="return getChart()"  class="layui-btn " type="submit" >生成折线图</button>
+                <button  onclick="return getChart()"  class="layui-btn " type="submit" > <i class="layui-icon">&#xe62c;</i>生成折线图</button>
             </div>
             <br><br><br>
 

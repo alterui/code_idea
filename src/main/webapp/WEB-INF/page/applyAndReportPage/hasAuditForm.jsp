@@ -148,7 +148,7 @@
             <!-- 搜索框 -->
             <div class="layui-tab">
                 <form action="/page/apply/searchHasAudit" method="post">
-                    <button class="layui-btn" style=" float: right">搜索</button>
+                    <button class="layui-btn" style=" float: right"><i class="layui-icon">&#xe615;</i>搜索</button>
                     <input type="text"  value="${search}" name="search" style="margin-right: 6px; float: right " required
                            placeholder="请输入表名搜索" class="layui-input">
                 </form>
@@ -163,7 +163,7 @@
 
                 &nbsp;&nbsp;&nbsp;&nbsp;开始时间&nbsp;&nbsp;<input type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 结束时间&nbsp;&nbsp;<input type="text" id="end" name="end" value="${showEnd}" class="layui-input">
-                <button onclick="return getApplySearch()" class="layui-btn layui-btn-mini" type="submit">查询</button>
+                <button onclick="return getApplySearch()" class="layui-btn layui-btn-mini" type="submit"><i class="layui-icon">&#xe615;</i>查询</button>
 
 
             </div>
@@ -171,15 +171,17 @@
             <script type="text/html" id="barDemo">
 
                 <a href="/page/apply/updateAudit/{{d.id}}"
-                   class="layui-btn layui-btn-warm layui-btn-sm">修改</a>
+                   class="layui-btn layui-btn-danger layui-btn-sm"><i class="layui-icon">&#xe642;</i>修改</a>
+
 
                 <a href="/page/apply/hasPreviewForm/{{d.id}}"
-                   class="layui-btn layui-btn-sm">预览
+                   class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe705;</i>预览
                 </a>
 
                 <a href="/page/apply/downloadDoc/{{d.id}}"
-                   class="layui-btn layui-btn-normal layui-btn-sm">下载
+                   class="layui-btn layui-btn-normal layui-btn-sm"><i class="layui-icon">&#xe601;</i>下载
                 </a>
+
 
             </script>
 

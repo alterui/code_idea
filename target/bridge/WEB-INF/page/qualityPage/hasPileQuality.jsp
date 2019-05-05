@@ -71,7 +71,7 @@
 
                 <form action="/page/pile/qualitySearch" method="post">
 
-                    <button class="layui-btn" style="float: right">搜索</button>
+                    <button class="layui-btn" style="float: right"><i class="layui-icon">&#xe615;</i>搜索</button>
                     <input type="text" value="${search}"  name="qualitySearch" style="margin-right: 6px; float: right " required
                            placeholder="请输入结构编号搜索" class="layui-input">
 
@@ -84,14 +84,14 @@
 
                 &nbsp;&nbsp;&nbsp;&nbsp;开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
-                <button  onclick="return getPileSearch()"  class="layui-btn layui-btn-mini" type="submit">查询</button>
+                <button  onclick="return getPileSearch()"  class="layui-btn layui-btn-mini" type="submit"><i class="layui-icon">&#xe615;</i>查询</button>
             </div>
 
 
             <script type="text/html" id="barDemo">
 
                 <a onclick="qualityData({{d.id}})"
-                   class="layui-btn layui-btn-sm">更改
+                   class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe642;</i>更改
 
                 </a>
 
@@ -122,7 +122,7 @@
 
                         <th lay-data="{field:'pilequalityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
                         <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否合格</th>
-                        <th lay-data="{fixed: 'right',width:150, align:'center', toolbar: '#barDemo'}">操作</th>
+                        <th lay-data="{fixed: 'right',width:120, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
                     </tr>
