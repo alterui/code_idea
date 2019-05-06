@@ -43,9 +43,6 @@ public class BeamQualityController {
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
-        if (PermissionUtil.getAdminPermission(request)){
-            return "page/errorPage/404";
-        }
 
         model.addAttribute("pageUrlPrefix", "/page/beam?pageIndex");
         PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showQuality(pageIndex, pageSize);
@@ -196,10 +193,6 @@ public class BeamQualityController {
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize){
-
-        if (PermissionUtil.getUserPermission(request)){
-            return "page/errorPage/404";
-        }
 
 
         model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
@@ -486,6 +479,7 @@ public class BeamQualityController {
     }
 
     /**
+     * 折线统计图生成
      * json格式返回到ajax
      * @param request
      * @param model
@@ -561,7 +555,7 @@ public class BeamQualityController {
 
 
     /**
-     * 取值显示在验收标准页面上
+     * 显示生成图表的页面
      */
     @RequestMapping(value = "/showChart")
     public String showCharts(HttpServletRequest request,
@@ -572,7 +566,7 @@ public class BeamQualityController {
 
 
     /**
-     * 取值显示在验收标准页面上
+     * 显示添加数据页面
      */
     @RequestMapping(value = "/addData")
     public String addData(HttpServletRequest request,

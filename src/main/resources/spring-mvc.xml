@@ -56,12 +56,83 @@
                 LoginInterceptor的preHandler方法里面获取不拦截的请求uri地址了(优选) -->
             <mvc:exclude-mapping path="/" />
             <mvc:exclude-mapping path="/login"/>
-           <!-- <mvc:exclude-mapping path="/reg"/>
-            <mvc:exclude-mapping path="/register"/>-->
-
-
             <bean class="com.lr.bridge.interceptor.LoginInterceptor"></bean>
         </mvc:interceptor>
+
+
+        <mvc:interceptor>
+
+            <mvc:mapping path="/*/*/show"/>
+            <mvc:mapping path="/*/*/delete/*"/>
+            <mvc:mapping path="/*/*/deleteMore"/>
+            <mvc:mapping path="/*/*/edit/*"/>
+            <mvc:mapping path="/*/*/update"/>
+            <mvc:mapping path="/*/*/add"/>
+            <mvc:mapping path="/*/*/addData"/>
+            <mvc:mapping path="/*/*/search"/>
+            <mvc:mapping path="/*/*/getSearch"/>
+
+
+            <mvc:mapping path="/page/apply/show"/>
+            <mvc:mapping path="/page/apply/previewForm/*"/>
+            <mvc:mapping path="/page/apply/add"/>
+            <mvc:mapping path="/page/apply/addPage"/>
+            <mvc:mapping path="/page/apply/delete/*"/>
+            <mvc:mapping path="/page/apply/deleteMore"/>
+            <mvc:mapping path="/page/apply/edit/*"/>
+            <mvc:mapping path="/page/apply/update"/>
+            <mvc:mapping path="/page/apply/getSearch"/>
+            <mvc:mapping path="/page/apply/searchAll"/>
+
+            <bean class="com.lr.bridge.interceptor.PermissionUserInterceptor"></bean>
+        </mvc:interceptor>
+
+
+        <mvc:interceptor>
+
+            <mvc:mapping path="/*/*"/>
+            <mvc:mapping path="/*/*/hasQuality"/>
+            <mvc:mapping path="/*/*/qualified/*"/>
+            <mvc:mapping path="/*/*/notQualified/*"/>
+            <mvc:mapping path="/*/*/editQualified/*"/>
+            <mvc:mapping path="/*/*/editNotQualified/*"/>
+            <mvc:mapping path="/*/*/qualitySearch"/>
+            <mvc:mapping path="/*/*/notQualitySearch"/>
+            <mvc:mapping path="/*/*/getQualitySearch"/>
+            <mvc:mapping path="/*/*/notQualityMore"/>
+            <mvc:mapping path="/*/*/qualityMore"/>
+            <mvc:mapping path="/*/*/updateQualified/*"/>
+
+
+            <mvc:mapping path="/page/apply/showCheck"/>
+            <mvc:mapping path="/page/apply/showHasCheck"/>
+            <mvc:mapping path="/page/apply/audit/*"/>
+            <mvc:mapping path="/page/apply/updateAudit/*"/>
+            <mvc:mapping path="/page/apply/replyFrom"/>
+            <mvc:mapping path="/page/apply/hasReplyFrom"/>
+            <mvc:mapping path="/page/apply/hasPreviewForm/*"/>
+            <mvc:mapping path="/page/apply/searchAudit"/>
+            <mvc:mapping path="/page/apply/searchHasAudit"/>
+            <mvc:mapping path="/page/apply/getAuditSearch"/>
+            <mvc:mapping path="/page/apply/getHasAuditSearch"/>
+
+
+            <mvc:mapping path="/reg"/>
+            <mvc:mapping path="/register"/>
+            <mvc:mapping path="/showUser"/>
+            <mvc:mapping path="/searchUser"/>
+            <mvc:mapping path="/deleteUser/*"/>
+            <mvc:mapping path="/deleteUserMore"/>
+            <mvc:mapping path="/editUser/*"/>
+            <mvc:mapping path="/updateUser"/>
+
+            <bean class="com.lr.bridge.interceptor.PermissionAdminInterceptor"></bean>
+        </mvc:interceptor>
+
+
+
+
+
     </mvc:interceptors>
 
 

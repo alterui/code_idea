@@ -166,7 +166,7 @@ public class UserController {
 
 
     /**
-     * 添加用户页面
+     * 修改密码页面
      * @param request
      * @param model
      * @return
@@ -352,7 +352,7 @@ public class UserController {
 
 
     /**
-     * 用户注册
+     * 修改密码
      * @param request
      * @param model
      * @param pageIndex

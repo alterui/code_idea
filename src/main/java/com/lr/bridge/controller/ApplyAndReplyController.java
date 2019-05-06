@@ -5,14 +5,12 @@ import com.lr.bridge.pojo.ApplyAndReply;
 import com.lr.bridge.service.ApplyAndReplyService;
 import com.lr.bridge.util.MD5Util;
 import com.lr.bridge.util.WordGenerator;
-import org.omg.PortableInterceptor.INACTIVE;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletRequest;
@@ -56,7 +54,7 @@ public class ApplyAndReplyController {
 
     }
     /**
-     * 取值显示在页面上
+     * doc下载，公用
      *
      * @param id
      */
@@ -186,7 +184,7 @@ public class ApplyAndReplyController {
 
 
     /**
-     * 未审核预览
+     * 用户的未审核预览
      * @param request
      * @param resp
      * @param model
@@ -207,6 +205,13 @@ public class ApplyAndReplyController {
     }
 
 
+    /**
+     * 添加数据页面
+     * @param request
+     * @param resp
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/addPage")
     public String addPage(HttpServletRequest request,
                           HttpServletResponse resp,
@@ -218,6 +223,16 @@ public class ApplyAndReplyController {
 
     }
 
+    /**
+     * 添加数据
+     * @param request
+     * @param resp
+     * @param model
+     * @param session
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
     @RequestMapping(value = "/add")
     public String add(HttpServletRequest request,
                       HttpServletResponse resp,
@@ -730,16 +745,5 @@ public class ApplyAndReplyController {
         return "page/applyAndReportPage/hasAuditForm";
 
     }
-
-
-
-
-
-
-
-
-
-
-
 
 }

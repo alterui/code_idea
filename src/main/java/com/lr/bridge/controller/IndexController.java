@@ -22,4 +22,10 @@ public class IndexController {
 
         return "page/loginAndRegPage/login";
     }
+
+    @RequestMapping("/notFound")
+    public String notFoundPage(HttpServletRequest request, Model model) {
+
+        return "page/errorPage/404";
+    }
 }
