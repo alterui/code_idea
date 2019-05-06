@@ -3,18 +3,20 @@ package com.lr.bridge.controller;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.BeamQuality;
 import com.lr.bridge.service.BeamQualityService;
+import com.lr.bridge.util.PermissionUtil;
 import com.lr.bridge.vo.EntityCountDate;
 import com.lr.bridge.vo.EntityCountDateList;
 import com.lr.bridge.vo.EntityPassRateDate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -37,9 +39,13 @@ public class BeamQualityController {
      */
     @RequestMapping("")
     public String index(HttpServletRequest request,
-                          Model model,
-                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                           @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                        Model model,
+                        @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+
+        if (PermissionUtil.getAdminPermission(request)){
+            return "page/errorPage/404";
+        }
 
         model.addAttribute("pageUrlPrefix", "/page/beam?pageIndex");
         PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showQuality(pageIndex, pageSize);
@@ -47,6 +53,8 @@ public class BeamQualityController {
         return "page/qualityPage/beamQuality";
 
     }
+
+
 
     /**
      * 已经质量验收的页面显示
@@ -188,6 +196,12 @@ public class BeamQualityController {
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+
+        if (PermissionUtil.getUserPermission(request)){
+            return "page/errorPage/404";
+        }
+
+
         model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
         PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
         model.addAttribute("pageInfo", beamQualityInfo);

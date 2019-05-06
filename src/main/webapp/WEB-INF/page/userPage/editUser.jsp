@@ -27,60 +27,9 @@
     <link rel="stylesheet" href="${ctx}/static/font-awesome/css/font-awesome.min.css">
 
 
-   <%-- <script src="${ctx}/static/js/public/jquery-2.1.1.js"></script>--%>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
-
-
-    <script type="text/javascript">
-        //JavaScript代码区域
-        layui.use('element', function () {
-            var element = layui.element;
-
-        });
-
-        layui.use('form', function(){
-            var form = layui.form;
-
-
-        });
-
-
-        function editUser() {
-            var $ = layui.jquery;
-
-            $.ajax({
-                type: "POST",   //提交的方法
-                url:"${ctx}/updateUser", //提交的地址
-                data:$('#userForm').serialize(),// 序列化表单值
-                dataType: "json",
-                async: false,
-
-                success: function(data) {  //成功
-
-
-                    if (data.code==0) {//不存在
-                        alert("修改成功");
-                        window.location.href = "/showUser";
-                    }
-                    if(data.code==1) {
-                        alert("用户名已经存在，请重新输入");
-                    }
-
-                },
-                error : function(errorMsg) {
-                //请求失败时执行该函数
-                alert("请求失败");
-
-            }
-            });
-
-        }
-
-
-
-
-    </script>
+    <script src="${ctx}/static/js/showUserJS/editUser.js"></script>
 
 
 </head>
@@ -92,16 +41,12 @@
         <div style="padding: 15px;">
 
 
-
-
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a >修改用户</a>
 
             </blockquote>
             <br>
-
-
 
 
             <form class="layui-form"   id="userForm">
@@ -119,10 +64,6 @@
                 </div>
 
 
-
-
-
-
                 <div class="layui-form-item">
                     <label class="layui-form-label">姓名 <span style="color: #FF5722; ">*</span></label>
                     <div class="layui-input-inline">
@@ -132,20 +73,6 @@
                     </div>
                     <div class="layui-form-mid layui-word-aux"></div>
                 </div>
-
-
-
-
-               <%-- <div class="layui-form-item">
-                    <label class="layui-form-label">密码 <span style="color: #FF5722; ">*</span></label>
-                    <div class="layui-input-inline">
-                        <input value="${user.password}" type="password" name="password"  id="userPass" required
-                               lay-verify="userPass"
-                               autocomplete="off" class="layui-input" min="3" max="20">
-                    </div>
-                    &lt;%&ndash;<div class="layui-form-mid layui-word-aux"></div>&ndash;%&gt;
-                </div>--%>
-
 
 
                 <div class="layui-form-item">
