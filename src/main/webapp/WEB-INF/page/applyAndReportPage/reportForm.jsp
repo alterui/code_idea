@@ -51,7 +51,7 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/apply/show"><font color="#228b22">报审表和申请表</font></a>
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/apply/show"><font color="#228b22">环保检查报告</font></a>
             </blockquote>
 
             <!-- 搜索框 -->
@@ -179,7 +179,7 @@
                                             </c:when>
 
                                             <c:otherwise>
-                                                <b>已审核</b>
+                                                <font color="green"><b>已审核</b></font>
                                             </c:otherwise>
                                         </c:choose>
                                     </td>

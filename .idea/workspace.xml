@@ -13,25 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2830dbe2-521c-4d84-b23c-6d5e66b062bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/interceptor/PermissionAdminInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/interceptor/PermissionUserInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/IndexController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BeamQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BeamQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BearingQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BearingQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/ApplyAndReplyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/ApplyAndReplyController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BeamQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BeamQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BearingQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BearingQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/IndexController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/IndexController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,37 +48,33 @@
     <favorites_list name="bridge" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5341823">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2529">
-                  <caret line="126" column="45" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-698">
-                  <caret line="354" column="11" selection-start-line="354" selection-start-column="11" selection-end-line="354" selection-end-column="11" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="517">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/showUser.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-5288">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1053" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -220,7 +198,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/showUserJS/editUser.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/editUser.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/showUserJS/updatePassword.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/util/PermissionUtil.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/errorPage/404.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/IndexController.java" />
@@ -232,6 +209,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/interceptor/PermissionAdminInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp" />
       </list>
     </option>
   </component>
@@ -911,12 +889,12 @@
       <workItem from="1556854670567" duration="24726000" />
       <workItem from="1556892678498" duration="2317000" />
       <workItem from="1556967981460" duration="2696000" />
-      <workItem from="1557105336570" duration="13225000" />
+      <workItem from="1557105336570" duration="14028000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="541868000" />
+    <option name="totallyTimeSpent" value="542671000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -929,7 +907,48 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6298883" visible="true" weight="0.25" />
+      <window_info id="Structure" order="1" sideWeight="0.14106146" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.37011173" side_tool="true" weight="0.25" />
+      <window_info id="Web" order="7" sideWeight="0.14106146" side_tool="true" weight="0.2419571" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.34217876" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" weight="0.3463687" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37569833" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.12150838" />
+      <window_info anchor="bottom" id="Spring" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" weight="0.32162923" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49865952" weight="0.47486034" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Version Control" order="13" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.3282123" />
+      <window_info anchor="bottom" id="Application Servers" order="15" weight="0.32914925" />
+      <window_info anchor="bottom" id="Problems" order="16" weight="0.32960895" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" weight="0.18230563" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="JSF" order="6" />
+      <window_info anchor="right" id="SciView" order="7" />
+      <window_info anchor="right" id="Database" order="8" weight="0.3297587" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+      <window_info anchor="right" id="CDI" order="11" weight="0.3297587" />
+      <window_info anchor="right" id="Bean Validation" order="12" weight="0.3297587" />
+    </layout>
+    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8589386" weight="0.25" />
       <window_info id="Structure" order="1" sideWeight="0.14106146" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
@@ -968,46 +987,6 @@
       <window_info anchor="right" id="Theme Preview" order="10" />
       <window_info anchor="right" id="CDI" order="11" weight="0.3297587" />
       <window_info anchor="right" id="Bean Validation" order="12" weight="0.3297587" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8589386" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" sideWeight="0.14106146" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" weight="0.3297587" />
-      <window_info id="Web" order="7" sideWeight="0.14106146" side_tool="true" weight="0.2419571" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.34217876" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.3114525" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.37569833" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.12150838" />
-      <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50201344" side_tool="true" weight="0.32162923" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49865952" weight="0.47486034" />
-      <window_info anchor="bottom" id="Database Changes" order="12" />
-      <window_info anchor="bottom" id="Version Control" order="13" />
-      <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.3282123" />
-      <window_info anchor="bottom" id="Application Servers" order="15" weight="0.32914925" />
-      <window_info anchor="bottom" id="Problems" order="16" weight="0.32960895" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.18230563" />
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="JSF" order="6" />
-      <window_info anchor="right" id="SciView" order="7" />
-      <window_info anchor="right" id="Database" order="8" weight="0.3297587" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="right" id="CDI" order="11" weight="0.3297587" />
-      <window_info anchor="right" id="Bean Validation" order="12" weight="0.3297587" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1018,13 +997,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="141" column="67" selection-start-line="141" selection-start-column="67" selection-end-line="141" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="81">
@@ -1226,13 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/showUser.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/showUserJS/addUser.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1265,13 +1230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="31" column="62" selection-start-line="31" selection-start-column="62" selection-end-line="31" selection-end-column="62" />
         </state>
       </provider>
     </entry>
@@ -1394,6 +1352,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3240">
+          <caret line="120" column="31" lean-forward="true" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-698">
@@ -1404,11 +1369,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring-mvc.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2529">
-          <caret line="126" column="45" selection-start-line="126" selection-start-column="45" selection-end-line="126" selection-end-column="45" />
+        <state relative-caret-position="517">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/showUser.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5288">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1053" />
       </provider>
     </entry>
   </component>

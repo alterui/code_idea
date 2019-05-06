@@ -49,9 +49,6 @@
             </blockquote>
             <br>
 
-
-
-
             <form class="layui-form"  id="userForm">
 
                 <div class="layui-form-item">
@@ -63,11 +60,6 @@
                     </div>
 
                 </div>
-
-
-
-
-
 
                 <div class="layui-form-item">
                     <label class="layui-form-label">新密码 <span style="color: #FF5722; ">*</span></label>
@@ -92,10 +84,8 @@
 
 
 
-
-
-
-
-        </div></div></div>
+        </div>
+</div>
+</div>
 </body>
 </html>
