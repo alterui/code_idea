@@ -96,6 +96,7 @@
                     <th lay-data="{type:'checkbox'}"></th>
                     <th lay-data="{hide:true,field:'id'}"></th>
                     <th lay-data="{field:'struId',align:'center',width:120,sort:true}">结构编号</th>
+                    <th lay-data="{field:'auditStatus',align:'center',width:120,sort: true}">审核状态</th>
                     <th lay-data="{field:'upCentVert',align:'center',width:180,sort:true}">上座板中心纵向错动量</th>
                     <th lay-data="{field:'downCentTran',align:'center',width:180,sort:true}">下座板中心横向错动量</th>
                     <th lay-data="{field:'sameCentVert',align:'center',width:180, sort:true}">同端支座中心横向距离</th>
@@ -104,7 +105,7 @@
                     <th lay-data="{field:'crossLineTors',align:'center',width:180,sort:true}">上下座板十字线扭转</th>
                     <th lay-data="{field:'actiVert',align:'center',width:180, sort:true}">活动支座的纵向错动量</th>
                     <th lay-data="{field:'bearingqualityCheckTime',align:'center',width:180,sort:true}">验收时间</th>
-                    <th lay-data="{field:'auditStatus',align:'center',width:120,sort: true}">审核状态</th>
+
                     <th lay-data="{fixed: 'right',width:200, align:'center', toolbar: '#barDemo'}">操作</th>
 
                 </tr>
@@ -124,6 +125,29 @@
 
                                 ${bear.struId}
                         </td>
+
+                        <td>
+                            <!-- -1代表等待审核，0代表审核不通过(不合格)，1代表审核通过(合格),-->
+                            <c:choose>
+
+                                <c:when test="${bear.isQualify==-1}">
+                                    <b>等待审核</b>
+                                </c:when>
+
+                                <c:when test="${bear.isQualify==0}">
+                                    <b><font color="red">不合格</font></b>
+                                </c:when>
+
+                                <c:otherwise>
+                                    <b><font color="green">合格</font></b>
+                                </c:otherwise>
+                            </c:choose>
+
+
+                        </td>
+
+
+
                         <td>
                                 ${bear.upCentVert}
                         </td>
@@ -157,25 +181,6 @@
                         </td>
 
 
-                        <td>
-                            <!-- -1代表等待审核，0代表审核不通过(不合格)，1代表审核通过(合格),-->
-                            <c:choose>
-
-                                <c:when test="${bear.isQualify==-1}">
-                                    <b>等待审核</b>
-                                </c:when>
-
-                                <c:when test="${bear.isQualify==0}">
-                                    <b><font color="red">不合格</font></b>
-                                </c:when>
-
-                                <c:otherwise>
-                                    <b><font color="green">合格</font></b>
-                                </c:otherwise>
-                            </c:choose>
-
-
-                        </td>
 
 
                     </tr>

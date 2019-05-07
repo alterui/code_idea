@@ -97,6 +97,9 @@
                           <th lay-data="{hide:true,field:'id'}"></th>
 
                           <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
+                          <th lay-data="{field:'auditStatus',align:'center',width:120,sort: true}">审核状态</th>
+
+
                           <th lay-data="{field:'pileDevi', align:'center',width:120, sort: true}">桩位偏差</th>
                           <th lay-data="{field:'sediThiDevi', align:'center',width:150, sort: true}">沉渣厚度偏差</th>
                           <th lay-data="{field:'vertDevi', align:'center',width:150, sort: true}">垂直度偏差</th>
@@ -110,7 +113,6 @@
                           <th lay-data="{field:'pileTopDevi', align:'center',width:150, sort: true}">桩顶高程偏差</th>
 
                           <th lay-data="{field:'pilequalityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
-                          <th lay-data="{field:'auditStatus',align:'center',width:120,sort: true}">审核状态</th>
 
                           <th lay-data="{fixed: 'right',width:200, align:'center', toolbar: '#barDemo'}">操作</th>
 
@@ -131,6 +133,27 @@
                                 <td>
                                         ${pile.struId}
                                 </td>
+
+                                <td>
+                                    <!-- -1代表等待审核，0代表审核不通过(不合格)，1代表审核通过(合格),-->
+                                    <c:choose>
+
+                                        <c:when test="${pile.isQualify==-1}">
+                                            <b>等待审核</b>
+                                        </c:when>
+
+                                        <c:when test="${pile.isQualify==0}">
+                                            <b><font color="red">不合格</font></b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="green">合格</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+                                </td>
+
                                 <td>
                                         ${pile.pileDevi}
                                 </td>
@@ -182,25 +205,7 @@
                                 </td>
 
 
-                                <td>
-                                    <!-- -1代表等待审核，0代表审核不通过(不合格)，1代表审核通过(合格),-->
-                                    <c:choose>
 
-                                        <c:when test="${pile.isQualify==-1}">
-                                            <b>等待审核</b>
-                                        </c:when>
-
-                                        <c:when test="${pile.isQualify==0}">
-                                            <b><font color="red">不合格</font></b>
-                                        </c:when>
-
-                                        <c:otherwise>
-                                            <b><font color="green">合格</font></b>
-                                        </c:otherwise>
-                                    </c:choose>
-
-
-                                </td>
 
 
                             </tr>

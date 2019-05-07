@@ -111,8 +111,7 @@
                                 <th>平整度偏差</th>
                                 <th>索管轴位偏</th>
                                 <th>预应力筋轴位偏差</th>
-                                <th>拉索索力</th>
-                                <th>左右幅</th>
+
 
 
                             </tr>
@@ -181,17 +180,7 @@
 
                                 </td>
 
-                                <td>
-                                    <input name="cableTensi" type="textarea" value="${beam.cableTensi}"
-                                           style="width: 60px" required>
 
-                                </td>
-
-                                <td>
-                                    <input name="bridgeSite" type="textarea" value="${beam.bridgeSite}"
-                                           style="width: 60px" required>
-
-                                </td>
 
                             </tr>
 

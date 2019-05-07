@@ -34,6 +34,19 @@
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
 
+
+            <li class="layui-nav-item ">
+                <a class="" href="javascript:;">质量验收标准</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="/page/beam/beamStandard">梁质量验收标准</a></dd>
+                    <dd><a href="/page/bear/bearStandard">支座质量验收标准</a></dd>
+                    <dd><a href="/page/pier/pierStandard">墩台质量验收标准</a></dd>
+                    <dd><a href="/page/pile/pileStandard">桩质量验收标准</a></dd>
+                    <dd><a href="/page/tower/towerStandard">索塔质量验收标准</a></dd>
+
+                </dl>
+            </li>
+
             <%--<li class="layui-nav-item">
                 <a href="/page/beam/beamStandard">质量验收标准</a>
                 <dl class="layui-nav-child">
@@ -47,7 +60,7 @@
             </li>
 --%>
 
-            <li class="layui-nav-item">
+          <%--  <li class="layui-nav-item">
                 <a href="javascript:;">质量可视化管理</a>
                 <dl class="layui-nav-child">
                     <dd><a href="/page/beam/showChart">梁验收合格折线图</a></dd>
@@ -59,7 +72,7 @@
                 </dl>
 
             </li>
-
+--%>
           <%--  <li class="layui-nav-item">
                 <a href="javascript:;">环保管理</a>
                 <dl class="layui-nav-child">

@@ -98,6 +98,9 @@
                         <th lay-data="{hide:true,field:'id'}"></th>
 
                         <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
+
+                        <th lay-data="{field:'auditStatus',align:'center',width:120,sort: true}">审核状态</th>
+
                         <th lay-data="{field:'axisDevi', align:'center',width:150, sort: true}">地面处轴线偏差</th>
                         <th lay-data="{field:'crossDimeDevi', align:'center',width:130, sort: true}">断面尺寸偏差</th>
                         <th lay-data="{field:'vert', align:'center',width:130, sort: true}">垂直度偏差</th>
@@ -111,7 +114,6 @@
                         <th lay-data="{field:'embePartsDevi', align:'center',width:160, sort: true}">预埋件位置偏差</th>
                         <th lay-data="{field:'jointDisl', align:'center',width:120, sort: true}">接缝错台</th>
                         <th lay-data="{field:'towerqualityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
-                        <th lay-data="{field:'auditStatus',align:'center',width:120,sort: true}">审核状态</th>
 
                         <th lay-data="{fixed: 'right',width:200, align:'center', toolbar: '#barDemo'}">操作</th>
 
@@ -136,6 +138,28 @@
                                 <td>
                                         ${tower.struId}
                                 </td>
+
+
+                                <td>
+                                    <!-- -1代表等待审核，0代表审核不通过(不合格)，1代表审核通过(合格),-->
+                                    <c:choose>
+
+                                        <c:when test="${tower.isQualify==-1}">
+                                            <b>等待审核</b>
+                                        </c:when>
+
+                                        <c:when test="${tower.isQualify==0}">
+                                            <b><font color="red">不合格</font></b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="green">合格</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+                                </td>
+
                                 <td>
                                         ${tower.axisDevi}
                                 </td>
@@ -193,25 +217,7 @@
                                 </td>
 
 
-                                <td>
-                                    <!-- -1代表等待审核，0代表审核不通过(不合格)，1代表审核通过(合格),-->
-                                    <c:choose>
 
-                                        <c:when test="${tower.isQualify==-1}">
-                                            <b>等待审核</b>
-                                        </c:when>
-
-                                        <c:when test="${tower.isQualify==0}">
-                                            <b><font color="red">不合格</font></b>
-                                        </c:when>
-
-                                        <c:otherwise>
-                                            <b><font color="green">合格</font></b>
-                                        </c:otherwise>
-                                    </c:choose>
-
-
-                                </td>
 
 
 

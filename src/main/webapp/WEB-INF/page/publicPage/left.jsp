@@ -68,17 +68,23 @@
                     </li>
 
 
+
+
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a class="" href="javascript:;">质量验收标准</a>
+                        <a href="javascript:;">质量可视化管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="/page/beam/beamStandard">梁质量验收标准</a></dd>
-                            <dd><a href="/page/bear/bearStandard">支座质量验收标准</a></dd>
-                            <dd><a href="/page/pier/pierStandard">墩台质量验收标准</a></dd>
-                            <dd><a href="/page/pile/pileStandard">桩质量验收标准</a></dd>
-                            <dd><a href="/page/tower/towerStandard">索塔质量验收标准</a></dd>
+                            <dd><a href="/page/beam/showChart">梁验收合格折线图</a></dd>
+                            <dd><a href="/page/bear/showChart">支座验收合格折线图</a></dd>
+                            <dd><a href="/page/pier/showChart">墩台验收合格折线图</a></dd>
+                            <dd><a href="/page/pile/showChart">桩验收合格折线图</a></dd>
+                            <dd><a href="/page/tower/showChart">索塔验收合格折线图</a></dd>
 
                         </dl>
+
                     </li>
+
+
+
                 </ul>
             </c:if>
 
@@ -105,16 +111,18 @@
                         </dl>
                     </li>
 
+
                     <li class="layui-nav-item layui-nav-itemed">
-                        <a class="" href="javascript:;">质量验收标准</a>
+                        <a href="javascript:;">质量可视化管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="/page/beam/beamStandard">梁质量验收标准</a></dd>
-                            <dd><a href="/page/bear/bearStandard">支座质量验收标准</a></dd>
-                            <dd><a href="/page/pier/pierStandard">墩台质量验收标准</a></dd>
-                            <dd><a href="/page/pile/pileStandard">桩质量验收标准</a></dd>
-                            <dd><a href="/page/tower/towerStandard">索塔质量验收标准</a></dd>
+                            <dd><a href="/page/beam/showChart">梁验收合格折线图</a></dd>
+                            <dd><a href="/page/bear/showChart">支座验收合格折线图</a></dd>
+                            <dd><a href="/page/pier/showChart">墩台验收合格折线图</a></dd>
+                            <dd><a href="/page/pile/showChart">桩验收合格折线图</a></dd>
+                            <dd><a href="/page/tower/showChart">索塔验收合格折线图</a></dd>
 
                         </dl>
+
                     </li>
 
 

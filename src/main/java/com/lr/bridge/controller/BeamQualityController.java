@@ -525,6 +525,8 @@ public class BeamQualityController {
                 //开始算合格率
                 /**
                  * 可能有2，或者4个
+                 *
+                 *
                  */
                 if (temp.size() == 2) {
                     //02，不合格，即合格率为0
