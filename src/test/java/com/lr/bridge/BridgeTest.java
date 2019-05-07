@@ -9,12 +9,12 @@ import java.util.Random;
  */
 public class BridgeTest {
     public static void main(String[] args) {
-        Random random = new Random();
 
-        String res = MD5Util.getMD5(String.valueOf(random.nextInt(100)));
+        String string = "5-10";
+        String[] split = string.split("-");
 
-
-        System.out.println(res);
+        System.out.println(split[0]);
+        System.out.println(split[1]);
 
     }
 }

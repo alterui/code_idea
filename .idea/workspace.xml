@@ -9,24 +9,21 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" line="286" />
     <bookmark url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearEditPage.jsp" line="142" />
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" line="593" />
-    <bookmark url="file://$PROJECT_DIR$/src/test/java/com/lr/bridge/BridgeTest.java" line="13" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2830dbe2-521c-4d84-b23c-6d5e66b062bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/beamStandard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/beamStandard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/lr/bridge/BridgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lr/bridge/BridgeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/publicPage/left.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/publicPage/left.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/publicPage/top.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/publicPage/top.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BeamQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BeamQualityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BeamQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BeamQualityController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/lr/bridge/BridgeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/lr/bridge/BridgeTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,7 +58,26 @@
     <favorites_list name="bridge" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="384">
+              <caret line="212" column="51" selection-start-line="212" selection-start-column="51" selection-end-line="212" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-864">
+              <caret line="232" column="64" selection-start-line="232" selection-start-column="64" selection-end-line="232" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,7 +92,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>style=&quot;width: 150px</find>
       <find>edit</find>
       <find>replyFrom</find>
       <find>directorReplyTime</find>
@@ -106,9 +121,9 @@
       <find>previewForm</find>
       <find>page/beam</find>
       <find>insert</find>
+      <find>${beam.segmHeightDevi}</find>
     </findStrings>
     <replaceStrings>
-      <replace>130</replace>
       <replace>120</replace>
       <replace>150</replace>
       <replace>170</replace>
@@ -138,6 +153,7 @@
       <replace>tower</replace>
       <replace>apply</replace>
       <replace>*/*</replace>
+      <replace>${beam.crossSlopeDevi}</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -146,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/loginAndRegPage/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" />
@@ -184,19 +199,20 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/interceptor/PermissionAdminInterceptor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring-mvc.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/left.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/publicPage/top.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/standardPage/beamStandard.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/lr/bridge/BridgeTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" />
       </list>
     </option>
   </component>
@@ -247,7 +263,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1560" />
@@ -436,16 +452,6 @@
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bridge" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="qualityAuditJS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bridge" type="b2602c69:ProjectViewProjectNode" />
@@ -897,7 +903,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="549922000" />
+    <option name="totallyTimeSpent" value="557859000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -910,8 +916,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6298883" visible="true" weight="0.2533512" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6298883" visible="true" weight="0.1816354" />
       <window_info id="Structure" order="1" sideWeight="0.14106146" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -921,7 +928,7 @@
       <window_info id="Web" order="7" sideWeight="0.14106146" side_tool="true" weight="0.2419571" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.34217876" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.0726257" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.19972067" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.37569833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -959,20 +966,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="124" column="62" selection-start-line="124" selection-start-column="62" selection-end-line="124" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="106" column="123" selection-start-line="106" selection-start-column="123" selection-end-line="106" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
@@ -1209,16 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-698">
-          <caret line="354" column="11" selection-start-line="354" selection-start-column="11" selection-end-line="354" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/userPage/updatePassword.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2376">
@@ -1261,20 +1244,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BeamQualityServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1944">
-          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BeamQualityMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/beamQuality.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1701">
@@ -1309,13 +1278,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="156" selection-start-line="156" selection-end-line="156" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="965">
@@ -1344,10 +1306,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="126" column="45" selection-start-line="126" selection-start-column="16" selection-end-line="126" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BeamQualityMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="32" column="22" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BeamQualityServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="90" column="23" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1770#1771#0" expanded="true" />
+            <element signature="e#1823#1824#0" expanded="true" />
+            <element signature="e#1936#1937#0" expanded="true" />
+            <element signature="e#1999#2000#0" expanded="true" />
+            <element signature="e#2072#2073#0" expanded="true" />
+            <element signature="e#2144#2145#0" expanded="true" />
+            <element signature="e#2380#2381#0" expanded="true" />
+            <element signature="e#2443#2444#0" expanded="true" />
+            <element signature="e#2488#2489#0" expanded="true" />
+            <element signature="e#2545#2546#0" expanded="true" />
+            <element signature="e#2601#2602#0" expanded="true" />
+            <element signature="e#2668#2669#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/lr/bridge/BridgeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/pojo/BeamQuality.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
+          <folding>
+            <element signature="e#2596#2597#0" expanded="true" />
+            <element signature="e#2633#2634#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="348" column="33" selection-start-line="348" selection-start-column="27" selection-end-line="348" selection-end-column="33" />
+        <state relative-caret-position="384">
+          <caret line="212" column="51" selection-start-line="212" selection-start-column="51" selection-end-line="212" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864">
+          <caret line="232" column="64" selection-start-line="232" selection-start-column="64" selection-end-line="232" selection-end-column="64" />
         </state>
       </provider>
     </entry>

@@ -113,18 +113,18 @@ public class UserController {
             //普通用户
             if (user.getPermission() == 0) {
 
-                model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
+               /* model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
                 PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
-                model.addAttribute("pageInfo", beamQualityInfo);
-                return "page/beamCrudPage/beamCrudPage";
+                model.addAttribute("pageInfo", beamQualityInfo);*/
+                return "redirect:/page/beam/show";
 
             }
             //管理员用户
             if (user.getPermission() == 1) {
-                model.addAttribute("pageUrlPrefix", "/page/beam?pageIndex");
+               /* model.addAttribute("pageUrlPrefix", "/page/beam?pageIndex");
                 PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showQuality(pageIndex, pageSize);
-                model.addAttribute("pageInfo", beamQualityInfo);
-                return "page/qualityPage/beamQuality";
+                model.addAttribute("pageInfo", beamQualityInfo);*/
+                return "redirect:/page/beam";
             }
 
             return "/";

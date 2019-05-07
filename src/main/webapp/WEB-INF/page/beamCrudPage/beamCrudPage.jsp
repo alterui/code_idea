@@ -156,42 +156,180 @@
                                 </td>
 
                                 <td>
-                                        ${beam.axialDevi}
-                                </td>
-                                <td>
-                                        ${beam.sectionDevi}
+
+                                    <c:set var="axial" value="${beam.axialDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${axial<axialDeviStandard }">
+                                            <b>${beam.axialDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.axialDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </td>
 
                                 <td>
-                                        ${beam.topElevDevi}
+                                    <c:set var="section" value="${beam.sectionDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${section<sectionDeviStandard }">
+                                            <b>${beam.sectionDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.sectionDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                        ${beam.segmHeightDevi}
+
+                                    <c:set var="topElev" value="${beam.topElevDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${topElev<topElevDeviStandard}">
+                                            <b>${beam.topElevDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.topElevDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                        ${beam.heightDevi}
+
+                                    <c:set var="segmHeight" value="${beam.segmHeightDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${segmHeight<segmHeightDeviStandard}">
+                                            <b>${beam.segmHeightDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.segmHeightDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                        ${beam.crossSlopeDevi}
+
+
+                                    <c:set var="height" value="${beam.heightDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${height>=heightDeviStandardLeft && height<=heightDeviStandardRight}">
+                                            <b>${beam.heightDevi}</b>
+                                        </c:when>
+
+                                       <%-- <c:when test="${}">
+                                            <b>${beam.heightDevi}</b>
+                                        </c:when>--%>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.heightDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                        ${beam.embePartsDevi}
+                                    <c:set var="crossSlope" value="${beam.crossSlopeDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${crossSlope<crossSlopeDeviStandard}">
+                                            <b>${beam.crossSlopeDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.crossSlopeDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                        ${beam.smooDevi}
+
+                                    <c:set var="embePart" value="${beam.embePartsDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${embePart<embePartsDeviStandard}">
+                                            <b>${beam.embePartsDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.embePartsDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                        ${beam.cableTubeAxisDevi}
+
+                                    <c:set var="smoo" value="${beam.smooDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${smoo<smooDeviStandard}">
+                                            <b>${beam.smooDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.smooDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                        ${beam.prestTendDevi}
+
+                                    <c:set var="cableTubeAxis" value="${beam.cableTubeAxisDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${cableTubeAxis<cableTubeAxisDeviStandard}">
+                                            <b>${beam.cableTubeAxisDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.cableTubeAxisDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+                                </td>
+
+                                <td>
+
+
+                                    <c:set var="prestTend" value="${beam.prestTendDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${prestTend<prestTendDeviStandard}">
+                                            <b>${beam.prestTendDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.prestTendDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
