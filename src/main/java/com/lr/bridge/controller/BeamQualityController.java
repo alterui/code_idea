@@ -666,8 +666,16 @@ public class BeamQualityController {
 
         getRedShow(model);
 
-        model.addAttribute("showStart", start);
-        model.addAttribute("showEnd", end);
+        String[] split = start.split("-");
+        String year = split[0];
+        String month = split[1];
+        String day = split[2];
+
+        model.addAttribute("year", year);
+        model.addAttribute("month", month);
+        model.addAttribute("day", day);
+
+
 
         PageInfo<BeamQuality> beamQualityPageInfo = beamQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
         model.addAttribute("pageUrlPrefix", "/page/beam/getSearch?pageIndex");

@@ -52,6 +52,10 @@
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;梁质量数据显示
             </blockquote>
+            <br>
+            <div align="center"><font color="blue"><h1>${year}年${month}月${day}日梁质量数据明细</h1></font></div>
+            <br>
+
 
 
 
@@ -61,7 +65,7 @@
 
                 <thead>
                      <tr>
-                         <th lay-data="{type:'checkbox'}"></th>
+
                          <th lay-data="{hide:true,field:'id'}"></th>
 
                          <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
@@ -88,9 +92,7 @@
 
                         <c:forEach items="${pageInfo.list}" var="beam">
                             <tr>
-                                <td>
 
-                                </td>
 
                                 <td>
                                         ${beam.id}

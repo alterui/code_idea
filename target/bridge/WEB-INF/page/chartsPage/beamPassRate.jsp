@@ -188,12 +188,16 @@
                                 myChart.on('click', function (params) {
 
 
-                                       var start =  names[params.dataIndex];
-                                       var end = names[params.dataIndex];
+                                    var start =  names[params.dataIndex];
+                                    var end = names[params.dataIndex];
+                                    window.open("/page/beam/getSearchChart?start=" + start + " &end=" + end + "", "_black");
+                                    //window.location.href = "/page/beam/getSearchChart?start=" + start + " &end=" + end + "";
 
 
 
-                                        window.location.href = "/page/beam/getSearchChart?start=" + start + " &end=" + end + "";
+
+
+
 
 
 
