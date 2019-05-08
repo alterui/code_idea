@@ -99,9 +99,12 @@
             <mvc:mapping path="/*/*/qualitySearch"/>
             <mvc:mapping path="/*/*/notQualitySearch"/>
             <mvc:mapping path="/*/*/getQualitySearch"/>
+            <mvc:mapping path="/*/*/getHasQualitySearch"/>
             <mvc:mapping path="/*/*/notQualityMore"/>
             <mvc:mapping path="/*/*/qualityMore"/>
             <mvc:mapping path="/*/*/updateQualified/*"/>
+
+
 
 
             <mvc:mapping path="/page/apply/showCheck"/>

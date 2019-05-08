@@ -32,7 +32,7 @@
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
     <script src="${ctx}/static/js/qualityShowJS/beamShow.js"></script>
-
+    
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -50,43 +50,10 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;<a href="/page/beam/show"><font color="#228b22">梁质量数据</font></a>
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;梁质量数据显示
             </blockquote>
 
-            <!-- 搜索框 -->
-             <div class="layui-tab" >
-                <form action="/page/beam/search" method="post">
-                    <button class="layui-btn"   style=" float: right"><i class="layui-icon">&#xe615;</i>搜索</button>
-                    <input type="text" value="${search}"  name="search"  style="margin-right: 6px; float: right " required placeholder="请输入结构编号搜索" class="layui-input">
-                </form>
 
-             </div>
-
-            <!-- 功能按钮 -->
-
-            <div class="demoTable">
-
-                <a href="/page/beam/addData" class="layui-btn layui-btn-mini"><i class="layui-icon">&#xe61f;</i>增加数据</a>
-                <button class="layui-btn layui-btn-danger" data-type="delCheckData"><i class="layui-icon">&#xe640;</i>删除选中</button>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
-                结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
-                <button  onclick="return getBeamSearch()"  class="layui-btn layui-btn-mini" type="submit"><i class="layui-icon">&#xe615;</i>查询</button>
-
-
-            </div>
-
-            <script type="text/html" id="barDemo">
-
-                <a href="/page/beam/edit/{{d.id}}"
-                   class="layui-btn layui-btn-sm"><i class="layui-icon">&#xe642;</i>编辑</a>
-                <a
-                        onclick="deleteData({{d.id}})"
-                        class="layui-btn layui-btn-danger layui-btn-sm"><i class="layui-icon">&#xe640;</i>删除
-                </a>
-
-            </script>
 
 
 
@@ -114,7 +81,6 @@
 
                          <th lay-data="{field:'beamqualityCheckTime',align:'center',width:180,sort: true}">验收时间</th>
 
-                         <th lay-data="{fixed: 'right',width:200, align:'center', toolbar: '#barDemo'}">操作</th>
 
                      </tr>
                      </thead>

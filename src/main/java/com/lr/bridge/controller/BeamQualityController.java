@@ -3,7 +3,6 @@ package com.lr.bridge.controller;
 import com.github.pagehelper.PageInfo;
 import com.lr.bridge.pojo.BeamQuality;
 import com.lr.bridge.service.BeamQualityService;
-import com.lr.bridge.util.PermissionUtil;
 import com.lr.bridge.vo.EntityCountDate;
 import com.lr.bridge.vo.EntityCountDateList;
 import com.lr.bridge.vo.EntityPassRateDate;
@@ -13,10 +12,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -198,6 +196,17 @@ public class BeamQualityController {
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
+        getRedShow(model);
+
+
+        model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
+        PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
+        model.addAttribute("pageInfo", beamQualityInfo);
+        return "page/beamCrudPage/beamCrudPage";
+
+    }
+
+    private void getRedShow(Model model) {
         BeamQuality beamQuality = beamQualityService.selectByPrimaryKey(1);
         model.addAttribute("axialDeviStandard", Integer.parseInt(beamQuality.getAxialDevi()));
         model.addAttribute("sectionDeviStandard", Integer.parseInt(beamQuality.getSectionDevi()));
@@ -209,20 +218,13 @@ public class BeamQualityController {
         model.addAttribute("heightDeviStandardLeft", Integer.parseInt(split[0]));
         model.addAttribute("heightDeviStandardRight", Integer.parseInt(split[1]));
 
-        System.out.println(Integer.parseInt(split[0]));
-        System.out.println(Integer.parseInt(split[1]));
+       /* System.out.println(Integer.parseInt(split[0]));
+        System.out.println(Integer.parseInt(split[1]));*/
         model.addAttribute("crossSlopeDeviStandard", Double.parseDouble(beamQuality.getCrossSlopeDevi()));
         model.addAttribute("embePartsDeviStandard", Integer.parseInt(beamQuality.getEmbePartsDevi()));
         model.addAttribute("smooDeviStandard", Integer.parseInt(beamQuality.getSmooDevi()));
         model.addAttribute("cableTubeAxisDeviStandard", Integer.parseInt(beamQuality.getCableTubeAxisDevi()));
         model.addAttribute("prestTendDeviStandard", Integer.parseInt(beamQuality.getPrestTendDevi()));
-
-
-        model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
-        PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
-        model.addAttribute("pageInfo", beamQualityInfo);
-        return "page/beamCrudPage/beamCrudPage";
-
     }
 
     /**
@@ -386,16 +388,23 @@ public class BeamQualityController {
     public String searchName(HttpServletRequest request,
                           Model model,
                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                          @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                          @RequestParam(required = false, defaultValue = "120") Integer pageSize) {
         //取值
         String name = request.getParameter("search");
         model.addAttribute("search", name);
-        PageInfo<BeamQuality> beamQualityList = beamQualityService.selectByLikeName(name, pageIndex, pageSize);
+
+        getRedShow(model);
+
         //show
-        model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
-        //PageInfo<beamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
+
+        PageInfo<BeamQuality> beamQualityList = beamQualityService.selectByLikeName(name,pageIndex,pageSize);
+
         model.addAttribute("pageInfo", beamQualityList);
         return "page/beamCrudPage/beamCrudPage";
+
+
+
+
     }
 
 
@@ -407,14 +416,14 @@ public class BeamQualityController {
     public String qualitySearchName(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
         //取值
         String name = request.getParameter("qualitySearch");
         model.addAttribute("search", name);
         PageInfo<BeamQuality> beamQualityList = beamQualityService.selectByLikeNameAndQuality(name, pageIndex, pageSize);
         //show
-        model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
+        model.addAttribute("pageUrlPrefix", "/page/beam/qualitySearch?pageIndex");
         model.addAttribute("pageInfo", beamQualityList);
         return "page/qualityPage/hasBeamQuality";
     }
@@ -427,14 +436,14 @@ public class BeamQualityController {
     public String notQualitySearchName(HttpServletRequest request,
                                     Model model,
                                     @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                    @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                                    @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
         //取值
         String name = request.getParameter("notQualitySearch");
         model.addAttribute("search", name);
         PageInfo<BeamQuality> beamQualityList = beamQualityService.selectByLikeNameAndNotQuality(name, pageIndex, pageSize);
         //show
-        model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
+        model.addAttribute("pageUrlPrefix", "/page/beam/notQualitySearch?pageIndex");
         model.addAttribute("pageInfo", beamQualityList);
         return "page/qualityPage/beamQuality";
     }
@@ -617,23 +626,53 @@ public class BeamQualityController {
     public String getSearch(HttpServletRequest request,
                             Model model,
                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                            @RequestParam(required = false, defaultValue = "120") Integer pageSize) {
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
 
-        PageInfo<BeamQuality> beamQualityPageInfo = beamQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
-
+        getRedShow(model);
 
         model.addAttribute("showStart", start);
         model.addAttribute("showEnd", end);
 
-        model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
-
-
+        PageInfo<BeamQuality> beamQualityPageInfo = beamQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        model.addAttribute("pageUrlPrefix", "/page/beam/getSearch?pageIndex");
         model.addAttribute("pageInfo", beamQualityPageInfo);
         return "page/beamCrudPage/beamCrudPage";
+
+    }
+
+
+
+    /**
+     * 根据日期查找
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getSearchChart")
+    public String getSearchChart(HttpServletRequest request,
+                            Model model,
+                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                            @RequestParam(required = false, defaultValue = "120") Integer pageSize) {
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        getRedShow(model);
+
+        model.addAttribute("showStart", start);
+        model.addAttribute("showEnd", end);
+
+        PageInfo<BeamQuality> beamQualityPageInfo = beamQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        model.addAttribute("pageUrlPrefix", "/page/beam/getSearch?pageIndex");
+        model.addAttribute("pageInfo", beamQualityPageInfo);
+        return "page/chartsPage/beamChartPage";
 
     }
 

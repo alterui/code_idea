@@ -54,12 +54,7 @@ public class BeamQualityServiceImpl implements BeamQualityService {
      * @param pageSize
      * @return
      */
-    @Override
-    public PageInfo<BeamQuality> showBeam(Integer pageIndex, Integer pageSize) {
-        PageHelper.startPage(pageIndex, pageSize);
-        List<BeamQuality> beamQualityList = beamQualityMapper.selectById();
-        return new PageInfo<BeamQuality>(beamQualityList);
-    }
+
 
 
     @Override
@@ -99,6 +94,15 @@ public class BeamQualityServiceImpl implements BeamQualityService {
     public int updateByPrimaryKey(BeamQuality record){
         return beamQualityMapper.updateByPrimaryKey(record);
     }
+
+
+    @Override
+    public PageInfo<BeamQuality> showBeam(Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BeamQuality> beamQualityList = beamQualityMapper.selectById();
+        return new PageInfo<BeamQuality>(beamQualityList);
+    }
+
 
     public PageInfo<BeamQuality> selectByLikeName(String name, Integer pageIndex, Integer pageSize) {
         PageHelper.startPage(pageIndex, pageSize);
@@ -146,5 +150,9 @@ public class BeamQualityServiceImpl implements BeamQualityService {
     }
 
 
+    @Override
+    public List<BeamQuality> selectByLikeName(String name) {
+        return beamQualityMapper.selectByLikeName(name);
+    }
 
 }

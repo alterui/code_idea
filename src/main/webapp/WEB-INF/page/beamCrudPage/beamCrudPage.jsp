@@ -33,8 +33,6 @@
     <script src="${ctx}/static/layui/layui.js"></script>
     <script src="${ctx}/static/js/qualityShowJS/beamShow.js"></script>
 
-
-
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -333,16 +331,16 @@
                                 </td>
 
                                 <td>
-                                        ${beam.cableTensi}
+                                    <b>${beam.cableTensi}</b>
                                 </td>
 
                                 <td>
-                                        ${beam.bridgeSite}
+                                    <b>${beam.bridgeSite}</b>
                                 </td>
 
                                 <td>
-                                    <fmt:formatDate value="${beam.beamqualityCheckTime}"
-                                                    pattern="yyyy-MM-dd HH:mm:ss"/>
+                                    <b><fmt:formatDate value="${beam.beamqualityCheckTime}"
+                                                    pattern="yyyy-MM-dd HH:mm:ss"/></b>
                                 </td>
 
 

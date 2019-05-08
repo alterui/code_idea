@@ -43,6 +43,8 @@ public interface BeamQualityService {
     PageInfo<BeamQuality> selectByLikeName(String name, Integer pageIndex,
                                               Integer pageSize);
 
+    List<BeamQuality> selectByLikeName(String name);
+
     PageInfo<BeamQuality> selectByLikeNameAndQuality(String name, Integer pageIndex,
                                                         Integer pageSize);
 

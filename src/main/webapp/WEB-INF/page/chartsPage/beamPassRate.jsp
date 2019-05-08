@@ -86,19 +86,7 @@
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a >梁验收合格折线图</a>
-
-
-               <%-- <div style="float: right">
-                    位置跳转&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/bear/showChart">支座验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pier/showChart">墩台验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pile/showChart">桩验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/tower/showChart">锁塔验收合格折线图</a>
-                </div>--%>
-
             </blockquote>
-
-
 
 
             <div align="center">
@@ -116,7 +104,9 @@
 
             <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
             <div align="center">
-            <div  id="main" style="width: 900px;height:450px;"></div>
+            <div  id="main" style="width: 900px;height:450px;">
+
+            </div>
             <script type="text/javascript">
 
 
@@ -128,7 +118,11 @@
                         title : {
                             text : '梁质量验收合格率折线图'
                         },
-                        tooltip : {},
+
+                        tooltip : {
+
+                        },
+
                         legend : {
                             data : [ '合格率' ]
                         },
@@ -183,11 +177,29 @@
                                     xAxis: {
                                         data: names
                                     },
+
                                     series: [{
                                         // 根据名字对应到相应的系列
                                         name: '合格率',
                                         data: nums
                                     }]
+                                });
+
+                                myChart.on('click', function (params) {
+
+
+                                       var start =  names[params.dataIndex];
+                                       var end = names[params.dataIndex];
+
+
+
+                                        window.location.href = "/page/beam/getSearchChart?start=" + start + " &end=" + end + "";
+
+
+
+
+
+
                                 });
 
                             }
