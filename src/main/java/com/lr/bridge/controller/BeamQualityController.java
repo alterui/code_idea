@@ -16,9 +16,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 @Controller
@@ -524,24 +522,37 @@ public class BeamQualityController {
 
     @RequestMapping(value = "/getChart")
     @ResponseBody
-    public List<EntityPassRateDate> getChart(HttpServletRequest request,
+    public Map getChart(HttpServletRequest request,
                                              Model model) {
 
 
 
-        List<EntityPassRateDate> results = new ArrayList<EntityPassRateDate>();
+        Map results = new HashMap();
         String start = request.getParameter("start");
         start = start + "  00:00:00";
         String end = request.getParameter("end");
         end = end + "  23:59:59";
         try {
-            List<EntityCountDateList> lists = beamQualityService.getIsQualityCountByDate(start,end);
+            List<EntityCountDateList> lists = beamQualityService.getIsQualityCountByDate(start, end);
+            int notPassCount = beamQualityService.selectCountByDate(start, end, 0);
+            int passCount = beamQualityService.selectCountByDate(start, end, 1);
+            List<EntityPassRateDate> listDate = new ArrayList<>();
             //用于存放返回到ajax的值
+
+            /**
+             *  list为分组查询后的数据，EntityCountDateList的成员是
+             *   private String checkTime; //每日的时间
+             *   private List<EntityCountDate> entityCounts;
+             *
+             *          EntityCountDate
+             *                ↓
+             *      private int isQualify; //是否合格
+             *      private int count;   //合格或者不合格的数量
+             */
 
             for (EntityCountDateList list : lists) {
 
-                List temp = new ArrayList();
-               /* System.out.println(list.getCheckTime());*/
+                List temp = new ArrayList();//用于存放是否合格及是否合格的数量
 
                 for (EntityCountDate date : list.getEntityCounts()) {
                     //0代表不合格，1代表合格
@@ -581,7 +592,19 @@ public class BeamQualityController {
 
                 passRateDate.setCheckTime(list.getCheckTime());
 
-                results.add(passRateDate);
+                listDate.add(passRateDate);
+
+
+            }
+
+            if (listDate.size() != 0) {
+
+                results.put("passRateDate", listDate);
+                results.put("notPassCount", notPassCount);
+                results.put("passCount", passCount);
+                results.put("code", 1);
+            } else {
+                results.put("code", 0);
             }
         } catch (Exception e) {
             e.printStackTrace();

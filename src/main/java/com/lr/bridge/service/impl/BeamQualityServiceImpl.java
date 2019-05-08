@@ -48,12 +48,7 @@ public class BeamQualityServiceImpl implements BeamQualityService {
 
     }
 
-    /**
-     * 支座分页显示
-     * @param pageIndex
-     * @param pageSize
-     * @return
-     */
+
 
 
 
@@ -155,4 +150,9 @@ public class BeamQualityServiceImpl implements BeamQualityService {
         return beamQualityMapper.selectByLikeName(name);
     }
 
+
+    @Override
+    public int selectCountByDate(String start, String end, int isQualify) {
+        return beamQualityMapper.selectCountByDate(start, end, isQualify);
+    }
 }
