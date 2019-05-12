@@ -28,7 +28,6 @@
 
 
     <script src="${ctx}/static/js/public/jquery-2.1.1.js"></script>
-    <script src="${ctx}/static/js/back.bak.js"></script>
     <script src="${ctx}/static/layui/layui.all.js"></script>
     <script src="${ctx}/static/layui/layui.js"></script>
     <script src="${ctx}/static/js/qualityShowJS/beamShow.js"></script>
@@ -159,7 +158,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${axial<axialDeviStandard }">
+                                        <c:when test="${axial<=axialDeviStandard }">
                                             <b>${beam.axialDevi}</b>
                                         </c:when>
 
@@ -167,6 +166,7 @@
                                             <b><font color="red">${beam.axialDevi}</font></b>
                                         </c:otherwise>
                                     </c:choose>
+
                                 </td>
 
                                 <td>
@@ -174,7 +174,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${section<sectionDeviStandard }">
+                                        <c:when test="${section<=sectionDeviStandard }">
                                             <b>${beam.sectionDevi}</b>
                                         </c:when>
 
@@ -193,7 +193,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${topElev<topElevDeviStandard}">
+                                        <c:when test="${topElev<=topElevDeviStandard}">
                                             <b>${beam.topElevDevi}</b>
                                         </c:when>
 
@@ -210,7 +210,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${segmHeight<segmHeightDeviStandard}">
+                                        <c:when test="${segmHeight<=segmHeightDeviStandard}">
                                             <b>${beam.segmHeightDevi}</b>
                                         </c:when>
 
@@ -232,9 +232,6 @@
                                             <b>${beam.heightDevi}</b>
                                         </c:when>
 
-                                       <%-- <c:when test="${}">
-                                            <b>${beam.heightDevi}</b>
-                                        </c:when>--%>
 
                                         <c:otherwise>
                                             <b><font color="red">${beam.heightDevi}</font></b>
@@ -248,7 +245,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${crossSlope<crossSlopeDeviStandard}">
+                                        <c:when test="${crossSlope<=crossSlopeDeviStandard}">
                                             <b>${beam.crossSlopeDevi}</b>
                                         </c:when>
 
@@ -267,7 +264,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${embePart<embePartsDeviStandard}">
+                                        <c:when test="${embePart<=embePartsDeviStandard}">
                                             <b>${beam.embePartsDevi}</b>
                                         </c:when>
 
@@ -284,7 +281,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${smoo<smooDeviStandard}">
+                                        <c:when test="${smoo<=smooDeviStandard}">
                                             <b>${beam.smooDevi}</b>
                                         </c:when>
 
@@ -301,7 +298,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${cableTubeAxis<cableTubeAxisDeviStandard}">
+                                        <c:when test="${cableTubeAxis<=cableTubeAxisDeviStandard}">
                                             <b>${beam.cableTubeAxisDevi}</b>
                                         </c:when>
 
@@ -319,7 +316,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${prestTend<prestTendDeviStandard}">
+                                        <c:when test="${prestTend<=prestTendDeviStandard}">
                                             <b>${beam.prestTendDevi}</b>
                                         </c:when>
 

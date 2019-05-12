@@ -329,7 +329,7 @@
         WHERE  beamqualityCheckTime
         BETWEEN #{start}
         AND #{end}
-        AND isQualify !=2
+        AND (isQualify = 0 OR isQualify = 1)
         ORDER BY beamqualityCheckTime DESC
     </select>
 

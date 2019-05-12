@@ -59,14 +59,6 @@
                 <a href="/page/beam/"><font color="#228b22">待确认审核</font></a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a href="/page/beam/hasQuality"><font color="#228b22">已确认审核</font></a>
 
-
-              <%--  <div style="float: right">
-                    其他质量审核&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a href="/page/bear">支座质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a href="/page/pier">墩台质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pile">桩质量审核</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/tower">索塔质量审核</a>
-                </div>--%>
             </blockquote>
 
 
@@ -107,6 +99,7 @@
                      <th lay-data="{hide:true,field:'qualify'}"></th>
 
                      <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
+                     <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否通过</th>
                      <th lay-data="{field:'axialDevi', align:'center',width:120, sort: true}">轴位偏差</th>
                      <th lay-data="{field:'sectionDevi', align:'center',width:120,sort: true}">断面偏差</th>
                      <th lay-data="{field:'topElevDevi', align:'center',width:120, sort: true}">顶面高程偏差</th>
@@ -121,7 +114,7 @@
                      <th lay-data="{field:'bridgeSite',align:'center',width:100,sort: true}">左右幅</th>
 
                      <th lay-data="{field:'beamqualityCheckTime',align:'center',width:180,sort: true}">验收时间</th>
-                     <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否合格</th>
+
                      <th lay-data="{fixed: 'right',width:120, align:'center',toolbar: '#barDemo'}">操作</th>
 
                  </tr>
@@ -143,52 +136,207 @@
                                 <td>
                                                 ${beam.struId}
                                 </td>
+
+
                                 <td>
-                                                ${beam.axialDevi}
+                                    <!-- 0代表不合格，1代表合格-->
+                                    <c:choose>
+                                        <c:when test="${beam.isQualify==0}">
+                                            <b><font color="red">未通过</font></b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="green">通过</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
+
+
                                 <td>
-                                                ${beam.sectionDevi}
+
+                                    <c:set var="axial" value="${beam.axialDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${axial<=axialDeviStandard }">
+                                            <b>${beam.axialDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.axialDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                                ${beam.topElevDevi}
+                                    <c:set var="section" value="${beam.sectionDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${section<=sectionDeviStandard }">
+                                            <b>${beam.sectionDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.sectionDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                                ${beam.segmHeightDevi}
+
+                                    <c:set var="topElev" value="${beam.topElevDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${topElev<=topElevDeviStandard}">
+                                            <b>${beam.topElevDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.topElevDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                                ${beam.heightDevi}
+
+                                    <c:set var="segmHeight" value="${beam.segmHeightDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${segmHeight<=segmHeightDeviStandard}">
+                                            <b>${beam.segmHeightDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.segmHeightDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                                ${beam.crossSlopeDevi}
+
+
+                                    <c:set var="height" value="${beam.heightDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${height>=heightDeviStandardLeft && height<=heightDeviStandardRight}">
+                                            <b>${beam.heightDevi}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.heightDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                                ${beam.embePartsDevi}
+                                    <c:set var="crossSlope" value="${beam.crossSlopeDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${crossSlope<=crossSlopeDeviStandard}">
+                                            <b>${beam.crossSlopeDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.crossSlopeDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                                ${beam.smooDevi}
+
+                                    <c:set var="embePart" value="${beam.embePartsDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${embePart<=embePartsDeviStandard}">
+                                            <b>${beam.embePartsDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.embePartsDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                                ${beam.cableTubeAxisDevi}
+
+                                    <c:set var="smoo" value="${beam.smooDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${smoo<=smooDeviStandard}">
+                                            <b>${beam.smooDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.smooDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                                ${beam.prestTendDevi}
+
+                                    <c:set var="cableTubeAxis" value="${beam.cableTubeAxisDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${cableTubeAxis<=cableTubeAxisDeviStandard}">
+                                            <b>${beam.cableTubeAxisDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.cableTubeAxisDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                                ${beam.cableTensi}
+
+
+                                    <c:set var="prestTend" value="${beam.prestTendDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${prestTend<=prestTendDeviStandard}">
+                                            <b>${beam.prestTendDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${beam.prestTendDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                                ${beam.bridgeSite}
+                                    <b>${beam.cableTensi}</b>
                                 </td>
+
+                                <td>
+                                    <b>${beam.bridgeSite}</b>
+                                </td>
+
+
 
                                 <td>
                                             <fmt:formatDate value="${beam.beamqualityCheckTime}"
@@ -196,42 +344,7 @@
                                 </td>
 
 
-                                <td>
-                                            <!-- 0代表不合格，1代表合格-->
-                                            <c:choose>
-                                                <c:when test="${beam.isQualify==0}">
-                                                    <b><font color="red">不合格</font></b>
-                                                </c:when>
 
-                                                <c:otherwise>
-                                                    <b><font color="green">合格</font></b>
-                                                </c:otherwise>
-                                            </c:choose>
-
-                                </td>
-
-
-                         <%--   <td>
-
-                                <c:choose>
-                                    <c:when test="1<3">
-
-                                        <a
-                                                onclick="notQualityData({{d.id}})"
-                                                class="layui-btn layui-btn-danger layui-btn-sm">更改为不合格
-                                        </a>
-                                    </c:when>
-                                    <c:otherwise>
-
-                                        <a onclick="qualityData({{d.id}})"
-                                           class="layui-btn layui-btn-sm">更改为合格
-
-                                        </a>
-                                    </c:otherwise>
-                                </c:choose>
-
-                            </td>
---%>
                             </tr>
                                 </c:forEach>
 

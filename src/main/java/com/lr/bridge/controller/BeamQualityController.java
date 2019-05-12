@@ -40,6 +40,7 @@ public class BeamQualityController {
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
 
+        getRedShow(model);
         model.addAttribute("pageUrlPrefix", "/page/beam?pageIndex");
         PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", beamQualityInfo);
@@ -62,6 +63,7 @@ public class BeamQualityController {
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+        getRedShow(model);
         model.addAttribute("pageUrlPrefix", "/page/beam/hasQuality?pageIndex");
         PageInfo<BeamQuality> beamQualityInfo = beamQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", beamQualityInfo);
@@ -195,8 +197,6 @@ public class BeamQualityController {
                         @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
         getRedShow(model);
-
-
         model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
         PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
         model.addAttribute("pageInfo", beamQualityInfo);
@@ -206,23 +206,23 @@ public class BeamQualityController {
 
     private void getRedShow(Model model) {
         BeamQuality beamQuality = beamQualityService.selectByPrimaryKey(1);
-        model.addAttribute("axialDeviStandard", Integer.parseInt(beamQuality.getAxialDevi()));
-        model.addAttribute("sectionDeviStandard", Integer.parseInt(beamQuality.getSectionDevi()));
-        model.addAttribute("topElevDeviStandard", Integer.parseInt(beamQuality.getTopElevDevi()));
-        model.addAttribute("segmHeightDeviStandard", Integer.parseInt(beamQuality.getSegmHeightDevi()));
+        model.addAttribute("axialDeviStandard", Double.parseDouble(beamQuality.getAxialDevi()));
+        model.addAttribute("sectionDeviStandard", Double.parseDouble(beamQuality.getSectionDevi()));
+        model.addAttribute("topElevDeviStandard", Double.parseDouble(beamQuality.getTopElevDevi()));
+        model.addAttribute("segmHeightDeviStandard", Double.parseDouble(beamQuality.getSegmHeightDevi()));
 
         String heightDevi = beamQuality.getHeightDevi();
         String[] split = heightDevi.split("-");
-        model.addAttribute("heightDeviStandardLeft", Integer.parseInt(split[0]));
-        model.addAttribute("heightDeviStandardRight", Integer.parseInt(split[1]));
+        model.addAttribute("heightDeviStandardLeft", Double.parseDouble(split[0]));
+        model.addAttribute("heightDeviStandardRight", Double.parseDouble(split[1]));
 
-       /* System.out.println(Integer.parseInt(split[0]));
-        System.out.println(Integer.parseInt(split[1]));*/
+       /* System.out.println(Double.parseDouble(split[0]));
+        System.out.println(Double.parseDouble(split[1]));*/
         model.addAttribute("crossSlopeDeviStandard", Double.parseDouble(beamQuality.getCrossSlopeDevi()));
-        model.addAttribute("embePartsDeviStandard", Integer.parseInt(beamQuality.getEmbePartsDevi()));
-        model.addAttribute("smooDeviStandard", Integer.parseInt(beamQuality.getSmooDevi()));
-        model.addAttribute("cableTubeAxisDeviStandard", Integer.parseInt(beamQuality.getCableTubeAxisDevi()));
-        model.addAttribute("prestTendDeviStandard", Integer.parseInt(beamQuality.getPrestTendDevi()));
+        model.addAttribute("embePartsDeviStandard", Double.parseDouble(beamQuality.getEmbePartsDevi()));
+        model.addAttribute("smooDeviStandard", Double.parseDouble(beamQuality.getSmooDevi()));
+        model.addAttribute("cableTubeAxisDeviStandard", Double.parseDouble(beamQuality.getCableTubeAxisDevi()));
+        model.addAttribute("prestTendDeviStandard", Double.parseDouble(beamQuality.getPrestTendDevi()));
     }
 
     /**
@@ -333,11 +333,6 @@ public class BeamQualityController {
 
         beamQualityService.updateByPrimaryKey(beamQuality);
 
-        //show
-       /* model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
-        PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
-        model.addAttribute("pageInfo", beamQualityInfo);
-        return "page/beamCrudPage/beamCrudPage";*/
         return "redirect:/page/beam/show";
     }
 
@@ -377,6 +372,7 @@ public class BeamQualityController {
         model.addAttribute("pageInfo", beamQualityInfo);
         return "page/beamCrudPage/beamCrudPage";*/
         return "redirect:/page/beam/show";
+
     }
 
     /**

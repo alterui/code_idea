@@ -50,10 +50,10 @@
             </style>
 
             <blockquote class="layui-elem-quote">
-                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;梁质量数据显示
+                当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;梁已审核数据显示
             </blockquote>
             <br>
-            <div align="center"><font color="blue"><h1>${year}年${month}月${day}日梁质量数据明细</h1></font></div>
+            <div align="center"><font color="blue"><h1>${year}年${month}月${day}日梁已审核数据明细</h1></font></div>
             <br>
 
 
