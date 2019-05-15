@@ -116,7 +116,11 @@ public class ApplyAndReplyController {
             String[] split1 = date1.split("-");
             String year1 = split1[0];
             String month1 = split1[1];
-            String day1 = split[2];
+            String day1 = split1[2];
+           /* System.out.println(year1);
+            System.out.println(month1);
+            System.out.println(day1);
+*/
             map.put("year1", year1);
             map.put("month1", month1);
             map.put("day1", day1);

@@ -12,154 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2830dbe2-521c-4d84-b23c-6d5e66b062bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearChartPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierChartPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pileChartPage.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerChartPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/ALTERUI.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/ALTERUI.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/PierQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/PierQualityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/PileQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/PileQualityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/TowerQualityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/TowerQualityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BeamQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BeamQualityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/BearingQualityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PierQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PierQualityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PileQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/PileQualityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/TowerQualityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/dao/TowerQualityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BeamQualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BeamQualityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/BearingQualityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/PierQualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/PierQualityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/PileQualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/PileQualityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/TowerQualityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/TowerQualityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BeamQualityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BeamQualityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/BearingQualityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/PierQualityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/PierQualityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/PileQualityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/PileQualityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/TowerQualityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/service/impl/TowerQualityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BeamQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BeamQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/BearingQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PierQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PierQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/PileQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/PileQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TowerQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/bearPassRate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pierPassRate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/pilePassRate.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBearQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPierQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasPileQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasTowerQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasTowerQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pierQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/beamQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/beamQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/bearQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/bearQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasBeamQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasBeamQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasBearQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasBearQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasPierQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasPierQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasPileQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasPileQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasTowerQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/hasTowerQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/pierQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/pierQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/pileQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/pileQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/towerQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/towerQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/beamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/beamShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/bearShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/bearShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/pierShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/pierShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/pileShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/pileShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/towerShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/towerShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/lr/bridge/BridgeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/lr/bridge/BridgeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BeamQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BeamQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BearingQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/BearingQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/PierQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/PierQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/PileQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/PileQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/TowerQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/TowerQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/BeamQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/BeamQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/BearingQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/BearingQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/PierQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/PierQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/PileQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/PileQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/TowerQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/dao/TowerQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/BeamQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/BeamQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/BearingQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/BearingQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/PierQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/PierQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/PileQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/PileQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/TowerQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/TowerQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/BeamQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/BeamQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/PierQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/PierQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/PileQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/PileQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/TowerQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/service/impl/TowerQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/BeamQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/BeamQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/BearingQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/BearingQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/PierQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/PierQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/PileQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/PileQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/TowerQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/mapper/TowerQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/bearPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/bearPassRate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/pierPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/pierPassRate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/pilePassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/pilePassRate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/towerPassRate.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/chartsPage/towerPassRate.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/bearQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/bearQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasBearQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasBearQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasPierQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasPierQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasPileQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasPileQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasTowerQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/hasTowerQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/pierQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/pierQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/pileQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/pileQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/towerQuality.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/qualityPage/towerQuality.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/beamQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/beamQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/bearQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/bearQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasBeamQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasBeamQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasBearQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasBearQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasPierQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasPierQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasPileQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasPileQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasTowerQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/hasTowerQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/pierQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/pierQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/pileQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/pileQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/towerQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityAuditJS/towerQuality.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/beamShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/beamShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/bearShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/bearShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/pierShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/pierShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/pileShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/pileShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/towerShow.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/static/js/qualityShowJS/towerShow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BeamQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BeamQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BearingQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/BearingQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/PierQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/PierQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/PileQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/PileQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/TowerQualityController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/TowerQualityController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/BeamQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/BeamQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/BearingQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/BearingQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/PierQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/PierQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/PileQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/PileQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/TowerQualityMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/dao/TowerQualityMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/BeamQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/BeamQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/BearingQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/BearingQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/PierQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/PierQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/PileQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/PileQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/TowerQualityService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/TowerQualityService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/BeamQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/BeamQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/BearingQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/PierQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/PierQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/PileQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/PileQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/TowerQualityServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/service/impl/TowerQualityServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/BeamQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/BeamQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/BearingQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/BearingQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PierQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PierQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/PileQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/PileQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mapper/TowerQualityMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/TowerQualityMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/lr/bridge/BridgeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/lr/bridge/BridgeTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -234,37 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/towerQuality.jsp">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6789">
-              <caret line="364" lean-forward="true" selection-start-line="364" selection-end-line="364" />
-              <folding>
-                <element signature="e#3311#3317#0#HTML" expanded="true" />
-                <element signature="e#3317#3323#0#HTML" expanded="true" />
-                <element signature="e#3323#3329#0#HTML" expanded="true" />
-                <element signature="e#3329#3335#0#HTML" expanded="true" />
-                <element signature="e#3335#3341#0#HTML" expanded="true" />
-                <element signature="e#3341#3347#0#HTML" expanded="true" />
-                <element signature="e#3347#3353#0#HTML" expanded="true" />
-                <element signature="e#3353#3359#0#HTML" expanded="true" />
-                <element signature="e#3359#3365#0#HTML" expanded="true" />
-                <element signature="e#3365#3371#0#HTML" expanded="true" />
-                <element signature="e#3371#3377#0#HTML" expanded="true" />
-                <element signature="e#3377#3383#0#HTML" expanded="true" />
-                <element signature="e#3383#3389#0#HTML" expanded="true" />
-                <element signature="e#3389#3395#0#HTML" expanded="true" />
-                <element signature="e#3395#3401#0#HTML" expanded="true" />
-                <element signature="e#3401#3407#0#HTML" expanded="true" />
-                <element signature="e#3429#3435#0#HTML" expanded="true" />
-                <element signature="e#3435#3441#0#HTML" expanded="true" />
-                <element signature="e#3526#3532#0#HTML" expanded="true" />
-                <element signature="e#3532#3538#0#HTML" expanded="true" />
-                <element signature="e#3538#3544#0#HTML" expanded="true" />
-                <element signature="e#3544#3550#0#HTML" expanded="true" />
-                <element signature="e#3571#3577#0#HTML" expanded="true" />
-                <element signature="e#3577#3583#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="497">
+              <caret line="113" column="58" lean-forward="true" selection-start-line="113" selection-start-column="58" selection-end-line="113" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -296,7 +125,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/towerShow.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-193">
@@ -306,10 +135,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/towerQuality.js">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+            <state relative-caret-position="1524">
+              <caret line="95" column="18" lean-forward="true" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -399,7 +228,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/pierShow.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/pileShow.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/qualityShowJS/towerShow.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/bearQuality.js" />
@@ -438,7 +266,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasTowerQuality.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerChartPage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/pileQuality.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/qualityAuditJS/pileQuality.js" />
@@ -450,6 +277,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/PileQualityController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/TowerQualityController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" />
       </list>
     </option>
   </component>
@@ -1146,12 +975,12 @@
       <workItem from="1557801072148" duration="7192000" />
       <workItem from="1557816441976" duration="626000" />
       <workItem from="1557818271823" duration="1451000" />
-      <workItem from="1557881196835" duration="12598000" />
+      <workItem from="1557881196835" duration="13865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="627909000" />
+    <option name="totallyTimeSpent" value="629176000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1166,7 +995,7 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.81098545" visible="true" weight="0.23257373" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81098545" visible="true" weight="0.12064343" />
       <window_info id="Structure" order="1" sideWeight="0.14106146" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1176,7 +1005,7 @@
       <window_info id="Web" order="7" sideWeight="0.18901454" side_tool="true" weight="0.2989276" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.34217876" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.16201118" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.31424582" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.57681566" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1303,13 +1132,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="25" column="2" selection-start-line="25" selection-start-column="2" selection-end-line="31" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="47" column="30" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1484,13 +1306,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="265" column="60" selection-start-line="265" selection-start-column="55" selection-end-line="265" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/bearQuality.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2363">
@@ -1608,6 +1423,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-193">
           <caret line="97" column="9" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/chartsPage/towerPassRate.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1524">
+          <caret line="95" column="18" lean-forward="true" selection-start-line="95" selection-start-column="18" selection-end-line="95" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="113" column="58" lean-forward="true" selection-start-line="113" selection-start-column="58" selection-end-line="113" selection-end-column="58" />
         </state>
       </provider>
     </entry>
