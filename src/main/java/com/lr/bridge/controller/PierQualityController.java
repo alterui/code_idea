@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 @Controller
@@ -40,6 +38,7 @@ public class PierQualityController {
                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                            @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
+        getRedShow(model);
         model.addAttribute("pageUrlPrefix", "/page/pier?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
@@ -48,7 +47,7 @@ public class PierQualityController {
     }
 
     /**
-     * 已经质量验收的页面显示
+     * 已经质量验收的页面[显示]
      * @param request
      * @param model
      * @param pageIndex
@@ -59,7 +58,8 @@ public class PierQualityController {
     public String hasQuality(HttpServletRequest request,
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+        getRedShow(model);
         model.addAttribute("pageUrlPrefix", "/page/pier/hasQuality?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
@@ -86,10 +86,11 @@ public class PierQualityController {
        //0代表不合格，1代表合格
         pierQualityService.updateByIsQualify(1, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pier?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/pier?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
-        return "page/qualityPage/pierQuality";
+        return "page/qualityPage/pierQuality";*/
+        return "redirect:/page/pier/";
 
     }
 
@@ -112,11 +113,12 @@ public class PierQualityController {
         //0代表不合格，1代表合格
         pierQualityService.updateByIsQualify(0, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pier?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/pier?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
-        return "page/qualityPage/pierQuality";
+        return "page/qualityPage/pierQuality";*/
 
+        return "redirect:/page/pier/";
     }
 
 
@@ -139,11 +141,12 @@ public class PierQualityController {
         //0代表不合格，1代表合格
         pierQualityService.updateByIsQualify(1, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/Pier/hasQuality?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/Pier/hasQuality?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
-        return "page/qualityPage/hasPierQuality";
+        return "page/qualityPage/hasPierQuality";*/
 
+        return "redirect:/page/pier/hasQuality";
     }
 
 
@@ -166,10 +169,11 @@ public class PierQualityController {
         //0代表不合格，1代表合格
         pierQualityService.updateByIsQualify(0, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pier/hasQuality?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/pier/hasQuality?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
-        return "page/qualityPage/hasPierQuality";
+        return "page/qualityPage/hasPierQuality";*/
+        return "redirect:/page/pier/hasQuality";
 
     }
 
@@ -186,13 +190,69 @@ public class PierQualityController {
     public String show(HttpServletRequest request,
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                       @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+        getRedShow(model);
+
         model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showPier(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
         return "page/pierCrudPage/pierCrudPage";
 
     }
+
+
+    private void getRedShow(Model model) {
+        PierQuality pierQuality = pierQualityService.selectByPrimaryKey(1);
+
+        String length = pierQuality.getLength();
+        String lengthSubstring = length.substring(1);
+        double lengthStandardRight = Double.parseDouble(lengthSubstring);
+        double lengthStandardLeft = Math.negateExact(Integer.parseInt(lengthSubstring));
+        model.addAttribute("lengthStandardLeft", lengthStandardLeft);
+        model.addAttribute("lengthStandardRight", lengthStandardRight);
+
+
+
+        String width = pierQuality.getWidth();
+        String widthSubstring = width.substring(1);
+        double widthStandardRight = Double.parseDouble(widthSubstring);
+        double widthStandardLeft = Math.negateExact(Integer.parseInt(widthSubstring));
+        model.addAttribute("widthStandardLeft", widthStandardLeft);
+        model.addAttribute("widthStandardRight", widthStandardRight);
+
+
+        String topElev = pierQuality.getTopElev();
+        String topElevSubstring = topElev.substring(1);
+        double topElevStandardRight = Double.parseDouble(topElevSubstring);
+        double topElevStandardLeft = Math.negateExact(Integer.parseInt(topElevSubstring));
+        model.addAttribute("topElevStandardLeft", topElevStandardLeft);
+        model.addAttribute("topElevStandardRight", topElevStandardRight);
+
+
+        String axisOffs = pierQuality.getAxisOffs();
+        String axisOffsSubstring = axisOffs.substring(1);
+        double axisOffsStandardRight = Double.parseDouble(axisOffsSubstring);
+        double axisOffsStandardLeft = Math.negateExact(Integer.parseInt(axisOffsSubstring));
+        model.addAttribute("axisOffsStandardLeft", axisOffsStandardLeft);
+        model.addAttribute("axisOffsStandardRight", axisOffsStandardRight);
+
+
+        String vert = pierQuality.getVert();
+        String vertSubstring = vert.substring(1);
+        double vertStandardRight = Double.parseDouble(vertSubstring);
+        double vertStandardLeft = Math.negateExact(Integer.parseInt(vertSubstring));
+        model.addAttribute("vertStandardLeft", vertStandardLeft);
+        model.addAttribute("vertStandardRight", vertStandardRight);
+
+
+
+        model.addAttribute("surfVertStandard", Double.parseDouble(pierQuality.getSurfVert()));
+        model.addAttribute("planenessStandard", Double.parseDouble(pierQuality.getPlaneness()));
+        model.addAttribute("inteFaultTableStandard", Double.parseDouble(pierQuality.getInteFaultTable()));
+
+    }
+
+
 
     /**
      * 删除
@@ -208,10 +268,11 @@ public class PierQualityController {
 
         pierQualityService.deleteById(id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showPier(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
-        return "page/pierCrudPage/pierCrudPage";
+        return "page/pierCrudPage/pierCrudPage";*/
+        return "redirect:/page/pier/show";
     }
 
 
@@ -266,10 +327,11 @@ public class PierQualityController {
         pierQualityService.updateByPrimaryKey(pierQuality);
 
         //show
-        model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
+        /*model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showPier(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
-        return "page/pierCrudPage/pierCrudPage";
+        return "page/pierCrudPage/pierCrudPage";*/
+        return "redirect:/page/pier/show";
     }
 
     /**
@@ -302,10 +364,11 @@ public class PierQualityController {
         pierQuality.setIsQualify(-1);
         pierQualityService.insert(pierQuality);
         //show
-        model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/pier/show?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.showPier(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
-        return "page/pierCrudPage/pierCrudPage";
+        return "page/pierCrudPage/pierCrudPage";*/
+        return "redirect:/page/pier/show";
     }
 
     /**
@@ -315,7 +378,8 @@ public class PierQualityController {
     public String searchName(HttpServletRequest request,
                           Model model,
                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                          @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
+        getRedShow(model);
         //取值
         String name = request.getParameter("search");
         model.addAttribute("search", name);
@@ -336,8 +400,9 @@ public class PierQualityController {
     public String qualitySearchName(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
+        getRedShow(model);
         //取值
         String name = request.getParameter("qualitySearch");
         model.addAttribute("search", name);
@@ -356,8 +421,9 @@ public class PierQualityController {
     public String notQualitySearchName(HttpServletRequest request,
                                     Model model,
                                     @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                    @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                                    @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
+        getRedShow(model);
         //取值
         String name = request.getParameter("notQualitySearch");
         model.addAttribute("search", name);
@@ -435,27 +501,39 @@ public class PierQualityController {
      * @param model
      * @return
      */
-
     @RequestMapping(value = "/getChart")
     @ResponseBody
-    public List<EntityPassRateDate> getChart(HttpServletRequest request,
-                                             Model model) {
+    public Map getChart(HttpServletRequest request,
+                        Model model) {
 
 
 
-        List<EntityPassRateDate> results = new ArrayList<EntityPassRateDate>();
+        Map results = new HashMap();
         String start = request.getParameter("start");
         start = start + "  00:00:00";
         String end = request.getParameter("end");
         end = end + "  23:59:59";
         try {
-            List<EntityCountDateList> lists = pierQualityService.getIsQualityCountByDate(start,end);
+            List<EntityCountDateList> lists = pierQualityService.getIsQualityCountByDate(start, end);
+            int notPassCount = pierQualityService.selectCountByDate(start, end, 0);
+            int passCount = pierQualityService.selectCountByDate(start, end, 1);
+            List<EntityPassRateDate> listDate = new ArrayList<>();
             //用于存放返回到ajax的值
+
+            /**
+             *  list为分组查询后的数据，EntityCountDateList的成员是
+             *   private String checkTime; //每日的时间
+             *   private List<EntityCountDate> entityCounts;
+             *
+             *          EntityCountDate
+             *                ↓
+             *      private int isQualify; //是否合格
+             *      private int count;   //合格或者不合格的数量
+             */
 
             for (EntityCountDateList list : lists) {
 
-                List temp = new ArrayList();
-               /* System.out.println(list.getCheckTime());*/
+                List temp = new ArrayList();//用于存放是否合格及是否合格的数量
 
                 for (EntityCountDate date : list.getEntityCounts()) {
                     //0代表不合格，1代表合格
@@ -475,6 +553,8 @@ public class PierQualityController {
                 //开始算合格率
                 /**
                  * 可能有2，或者4个
+                 *
+                 *
                  */
                 if (temp.size() == 2) {
                     //02，不合格，即合格率为0
@@ -493,7 +573,19 @@ public class PierQualityController {
 
                 passRateDate.setCheckTime(list.getCheckTime());
 
-                results.add(passRateDate);
+                listDate.add(passRateDate);
+
+
+            }
+
+            if (listDate.size() != 0) {
+
+                results.put("passRateDate", listDate);
+                results.put("notPassCount", notPassCount);
+                results.put("passCount", passCount);
+                results.put("code", 1);
+            } else {
+                results.put("code", 0);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -501,6 +593,9 @@ public class PierQualityController {
 
         return results;
     }
+
+
+
 
 
 
@@ -571,13 +666,15 @@ public class PierQualityController {
     public String getSearch(HttpServletRequest request,
                             Model model,
                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                            @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
+
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
 
-        PageInfo<PierQuality> pierQualityPageInfo = pierQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        PageInfo<PierQuality> pierQualityPageInfo = pierQualityService.selectByDateAll(startTime, endTime, pageIndex, pageSize);
 
 
         model.addAttribute("showStart", start);
@@ -591,6 +688,47 @@ public class PierQualityController {
 
     }
 
+
+    /**
+     * 折线统计图上面的查看所有值
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getSearchChart")
+    public String getSearchChart(HttpServletRequest request,
+                                 Model model,
+                                 @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                 @RequestParam(required = false, defaultValue = "120") Integer pageSize) {
+        getRedShow(model);
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        getRedShow(model);
+
+        String[] split = start.split("-");
+        String year = split[0];
+        String month = split[1];
+        String day = split[2];
+
+        model.addAttribute("year", year);
+        model.addAttribute("month", month);
+        model.addAttribute("day", day);
+
+
+
+        PageInfo<PierQuality> pierQualityPageInfo = pierQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        model.addAttribute("pageUrlPrefix", "/page/pier/getSearch?pageIndex");
+        model.addAttribute("pageInfo", pierQualityPageInfo);
+        return "page/chartsPage/pierChartPage";
+
+    }
+
+
     /**
      * 待验收页面的按日期搜索
      * @param request
@@ -603,8 +741,9 @@ public class PierQualityController {
     public String getQualitySearch(HttpServletRequest request,
                                    Model model,
                                    @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                   @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                                   @RequestParam(required = false, defaultValue = "100") Integer pageSize){
 
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
@@ -635,8 +774,9 @@ public class PierQualityController {
     public String getHasQualitySearch(HttpServletRequest request,
                                       Model model,
                                       @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                      @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                                      @RequestParam(required = false, defaultValue = "100") Integer pageSize){
 
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
@@ -745,10 +885,11 @@ public class PierQualityController {
 
         }
 
-        model.addAttribute("pageUrlPrefix", "/page/pier/hasQuality?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/pier/hasQuality?pageIndex");
         PageInfo<PierQuality> pierQualityInfo = pierQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pierQualityInfo);
-        return "page/qualityPage/hasPierQuality";
+        return "page/qualityPage/hasPierQuality";*/
+        return "redirect:/page/pier/hasQuality";
 
     }
 

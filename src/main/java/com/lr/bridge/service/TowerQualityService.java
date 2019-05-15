@@ -59,6 +59,10 @@ public interface TowerQualityService {
 
     PageInfo<TowerQuality> selectHasQualityByDate(String start, String end, Integer pageIndex, Integer pageSize);
 
+    int selectCountByDate(String start, String end, int isQualify);
+
+    PageInfo<TowerQuality> selectByDateAll(String start, String end, Integer pageIndex, Integer pageSize);
+
 
 
 

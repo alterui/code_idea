@@ -104,24 +104,26 @@
 
             <table class="layui-table" lay-data="{id:'tableDate'}" lay-filter="demo">
                 <thead>
-                    <tr>
+                <tr>
 
-                        <th lay-data="{hide:true,field:'id'}"></th>
-                        <th lay-data="{hide:true,field:'qualify'}"></th>
+                    <th lay-data="{hide:true,field:'id'}"></th>
+                    <th lay-data="{hide:true,field:'qualify'}"></th>
 
-                        <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
-                        <th lay-data="{field:'length', align:'center',width:120, sort: true}">墩台长</th>
-                        <th lay-data="{field:'width', align:'center',width:120, sort: true}">墩台宽</th>
-                        <th lay-data="{field:'topElev', align:'center',width:120, sort: true}">顶面高程</th>
-                        <th lay-data="{field:'axisOffs', align:'center',width:120, sort: true}">轴线偏差</th>
-                        <th lay-data="{field:'vert', align:'center',width:120, sort: true}">垂直度</th>
-                        <th lay-data="{field:'surfVert', align:'center',width:120, sort: true}">墙面垂直</th>
-                        <th lay-data="{field:'planeness', align:'center',width:120, sort: true}">墙面平整度</th>
-                        <th lay-data="{field:'inteFaultTable', align:'center',width:120, sort: true}">节段间错台</th>
-                        <th lay-data="{field:'pierqualityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
-                        <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否合格</th>
-                        <th lay-data="{fixed: 'right',width:120, align:'center', toolbar: '#barDemo'}">操作</th>
-                    </thead>
+                    <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
+                    <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否通过</th>
+                    <th lay-data="{field:'length', align:'center',width:120, sort: true}">墩台长</th>
+                    <th lay-data="{field:'width', align:'center',width:120, sort: true}">墩台宽</th>
+                    <th lay-data="{field:'topElev', align:'center',width:120, sort: true}">顶面高程</th>
+                    <th lay-data="{field:'axisOffs', align:'center',width:120, sort: true}">轴线偏差</th>
+                    <th lay-data="{field:'vert', align:'center',width:120, sort: true}">垂直度</th>
+                    <th lay-data="{field:'surfVert', align:'center',width:120, sort: true}">墙面垂直</th>
+                    <th lay-data="{field:'planeness', align:'center',width:120, sort: true}">墙面平整度</th>
+                    <th lay-data="{field:'inteFaultTable', align:'center',width:120, sort: true}">节段间错台</th>
+                    <th lay-data="{field:'pierqualityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
+
+                    <th lay-data="{fixed: 'right',width:120, align:'center', toolbar: '#barDemo'}">操作</th>
+                </tr>
+                </thead>
                    <tbody>
 
                                 <c:forEach items="${pageInfo.list}" var="pier">
@@ -138,38 +140,175 @@
                                         <td>
                                                 ${pier.struId}
                                         </td>
-                                        <td>
-                                                ${pier.length}
-                                        </td>
-                                        <td>
-                                                ${pier.width}
-                                        </td>
+
 
                                         <td>
-                                                ${pier.topElev}
-                                        </td>
+                                            <!-- 0代表不合格，1代表合格-->
+                                            <c:choose>
+                                                <c:when test="${pier.isQualify==0}">
+                                                    <b><font color="red">不通过</font></b>
+                                                </c:when>
 
-                                        <td>
-                                                ${pier.axisOffs}
-                                        </td>
+                                                <c:otherwise>
+                                                    <b><font color="green">通过</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
 
-                                        <td>
-                                                ${pier.vert}
-                                        </td>
-
-                                        <td>
-                                                ${pier.surfVert}
-                                        </td>
-
-                                        <td>
-                                                ${pier.planeness}
-                                        </td>
-
-                                        <td>
-                                                ${pier.inteFaultTable}
                                         </td>
 
 
+                                        <td>
+
+                                            <!-- copy-->
+
+                                            <c:set var="length" value="${pier.length}"></c:set>
+
+                                            <c:choose>
+
+                                                <c:when test="${length>=lengthStandardLeft && length<=lengthStandardRight}">
+                                                    <b>${pier.length}</b>
+                                                </c:when>
+
+
+                                                <c:otherwise>
+                                                    <b><font color="red">${pier.length}</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+
+                                        </td>
+                                        <td>
+
+                                            <c:set var="width" value="${pier.width}"></c:set>
+
+                                            <c:choose>
+
+                                                <c:when test="${width>=widthStandardLeft && width<=widthStandardRight}">
+                                                    <b>${pier.width}</b>
+                                                </c:when>
+
+
+                                                <c:otherwise>
+                                                    <b><font color="red">${pier.width}</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+
+
+                                        </td>
+
+                                        <td>
+
+                                            <c:set var="topElev" value="${pier.topElev}"></c:set>
+
+                                            <c:choose>
+
+                                                <c:when test="${topElev>=topElevStandardLeft && topElev<=topElevStandardRight}">
+                                                    <b>${pier.topElev}</b>
+                                                </c:when>
+
+
+                                                <c:otherwise>
+                                                    <b><font color="red">${pier.topElev}</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+
+
+                                        </td>
+
+                                        <td>
+
+                                            <c:set var="axisOffs" value="${pier.axisOffs}"></c:set>
+
+                                            <c:choose>
+
+                                                <c:when test="${axisOffs>=axisOffsStandardLeft && axisOffs<=axisOffsStandardRight}">
+                                                    <b>${pier.axisOffs}</b>
+                                                </c:when>
+
+
+                                                <c:otherwise>
+                                                    <b><font color="red">${pier.axisOffs}</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+
+                                        </td>
+
+                                        <td>
+
+                                            <c:set var="vert" value="${pier.vert}"></c:set>
+
+                                            <c:choose>
+
+                                                <c:when test="${vert>=vertStandardLeft && vert<=vertStandardRight}">
+                                                    <b>${pier.vert}</b>
+                                                </c:when>
+
+
+                                                <c:otherwise>
+                                                    <b><font color="red">${pier.vert}</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+                                        </td>
+
+                                        <td>
+
+
+                                            <c:set var="surfVert" value="${pier.surfVert}"></c:set>
+
+                                            <c:choose>
+
+                                                <c:when test="${ 0.0<=surfVert && surfVert<=surfVertStandard }">
+                                                    <b>${pier.surfVert}</b>
+                                                </c:when>
+
+                                                <c:otherwise>
+                                                    <b><font color="red">${pier.surfVert}</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+
+                                        </td>
+
+                                        <td>
+
+
+                                            <c:set var="planeness" value="${pier.planeness}"></c:set>
+
+                                            <c:choose>
+
+                                                <c:when test="${ 0.0<=planeness && planeness<=planenessStandard }">
+                                                    <b>${pier.planeness}</b>
+                                                </c:when>
+
+                                                <c:otherwise>
+                                                    <b><font color="red">${pier.planeness}</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+
+                                        </td>
+
+                                        <td>
+
+                                            <c:set var="inteFaultTable" value="${pier.inteFaultTable}"></c:set>
+
+                                            <c:choose>
+
+                                                <c:when test="${ 0.0<=inteFaultTable && inteFaultTable<=inteFaultTableStandard }">
+                                                    <b>${pier.inteFaultTable}</b>
+                                                </c:when>
+
+                                                <c:otherwise>
+                                                    <b><font color="red">${pier.inteFaultTable}</font></b>
+                                                </c:otherwise>
+                                            </c:choose>
+
+
+                                        </td>
 
 
                                         <td>
@@ -177,19 +316,6 @@
                                                             pattern="yyyy-MM-dd HH:mm:ss"/>
                                         </td>
 
-                                        <td>
-                                            <!-- 0代表不合格，1代表合格-->
-                                            <c:choose>
-                                                <c:when test="${pier.isQualify==0}">
-                                                    <b><font color="red">不合格</font></b>
-                                                </c:when>
-
-                                                <c:otherwise>
-                                                    <b><font color="green">合格</font></b>
-                                                </c:otherwise>
-                                            </c:choose>
-
-                                        </td>
 
 
                                     </tr>

@@ -141,11 +141,11 @@
                                         </c:when>
 
                                         <c:when test="${beam.isQualify==0}">
-                                            <b><font color="red">不合格</font></b>
+                                            <b><font color="red">不通过</font></b>
                                         </c:when>
 
                                         <c:otherwise>
-                                            <b><font color="green">合格</font></b>
+                                            <b><font color="green">通过</font></b>
                                         </c:otherwise>
                                     </c:choose>
 
@@ -158,7 +158,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${axial<=axialDeviStandard }">
+                                        <c:when test="${ 0.0<=axial && axial<=axialDeviStandard }">
                                             <b>${beam.axialDevi}</b>
                                         </c:when>
 
@@ -174,7 +174,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${section<=sectionDeviStandard }">
+                                        <c:when test="${0.0 <=section && section<=sectionDeviStandard }">
                                             <b>${beam.sectionDevi}</b>
                                         </c:when>
 
@@ -193,7 +193,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${topElev<=topElevDeviStandard}">
+                                        <c:when test="${0.0<=topElev&&topElev<=topElevDeviStandard}">
                                             <b>${beam.topElevDevi}</b>
                                         </c:when>
 
@@ -210,7 +210,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${segmHeight<=segmHeightDeviStandard}">
+                                        <c:when test="${0.0<=segmHeight && segmHeight<=segmHeightDeviStandard}">
                                             <b>${beam.segmHeightDevi}</b>
                                         </c:when>
 
@@ -245,7 +245,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${crossSlope<=crossSlopeDeviStandard}">
+                                        <c:when test="${0.0<=crossSlope && crossSlope<=crossSlopeDeviStandard}">
                                             <b>${beam.crossSlopeDevi}</b>
                                         </c:when>
 
@@ -264,7 +264,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${embePart<=embePartsDeviStandard}">
+                                        <c:when test="${0.0<=embePart && embePart<=embePartsDeviStandard}">
                                             <b>${beam.embePartsDevi}</b>
                                         </c:when>
 
@@ -281,7 +281,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${smoo<=smooDeviStandard}">
+                                        <c:when test="${0.0<=smoo && smoo<=smooDeviStandard}">
                                             <b>${beam.smooDevi}</b>
                                         </c:when>
 
@@ -298,7 +298,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${cableTubeAxis<=cableTubeAxisDeviStandard}">
+                                        <c:when test="${0.0<= cableTubeAxis && cableTubeAxis<=cableTubeAxisDeviStandard}">
                                             <b>${beam.cableTubeAxisDevi}</b>
                                         </c:when>
 
@@ -316,7 +316,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${prestTend<=prestTendDeviStandard}">
+                                        <c:when test="${0.0 <= prestTend && prestTend<=prestTendDeviStandard}">
                                             <b>${beam.prestTendDevi}</b>
                                         </c:when>
 

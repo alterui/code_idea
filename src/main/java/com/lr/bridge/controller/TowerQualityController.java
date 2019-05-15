@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 @Controller
@@ -41,6 +39,8 @@ public class TowerQualityController {
                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                            @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
+
+        getRedShow(model);
         model.addAttribute("pageUrlPrefix", "/page/tower?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
@@ -60,7 +60,9 @@ public class TowerQualityController {
     public String hasQuality(HttpServletRequest request,
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+
+        getRedShow(model);
         model.addAttribute("pageUrlPrefix", "/page/tower/hasQuality?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
@@ -87,10 +89,11 @@ public class TowerQualityController {
        //0代表不合格，1代表合格
         towerQualityService.updateByIsQualify(1, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/tower?pageIndex");
+        /*model.addAttribute("pageUrlPrefix", "/page/tower?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
-        return "page/qualityPage/towerQuality";
+        return "page/qualityPage/towerQuality";*/
+        return "redirect:/page/tower/";
 
     }
 
@@ -113,10 +116,11 @@ public class TowerQualityController {
         //0代表不合格，1代表合格
         towerQualityService.updateByIsQualify(0, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/tower?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/tower?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
-        return "page/qualityPage/towerQuality";
+        return "page/qualityPage/towerQuality";*/
+        return "redirect:/page/tower/";
 
     }
 
@@ -140,10 +144,11 @@ public class TowerQualityController {
         //0代表不合格，1代表合格
         towerQualityService.updateByIsQualify(1, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/tower/hasQuality?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/tower/hasQuality?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
-        return "page/qualityPage/hasTowerQuality";
+        return "page/qualityPage/hasTowerQuality";*/
+        return "redirect:/page/tower/hasQuality";
 
     }
 
@@ -167,10 +172,11 @@ public class TowerQualityController {
         //0代表不合格，1代表合格
         towerQualityService.updateByIsQualify(0, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/tower/hasQuality?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/tower/hasQuality?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
-        return "page/qualityPage/hasTowerQuality";
+        return "page/qualityPage/hasTowerQuality";*/
+        return "redirect:/page/tower/hasQuality";
 
     }
 
@@ -187,11 +193,83 @@ public class TowerQualityController {
     public String show(HttpServletRequest request,
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                       @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+
+        getRedShow(model);
         model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.showTower(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
         return "page/towerCrudPage/towerCrudPage";
+
+    }
+
+
+
+    private void getRedShow(Model model) {
+        TowerQuality towerQuality = towerQualityService.selectByPrimaryKey(1);
+
+
+
+        model.addAttribute("axisDeviStandard", Double.parseDouble(towerQuality.getAxisDevi()));
+
+
+        String crossDimeDevi = towerQuality.getCrossDimeDevi();
+        String crossDimeDeviSubstring = crossDimeDevi.substring(1);
+        double crossDimeDeviStandardRight = Double.parseDouble(crossDimeDeviSubstring);
+        double crossDimeDeviStandardLeft = Math.negateExact(Integer.parseInt(crossDimeDeviSubstring));
+        model.addAttribute("crossDimeDeviStandardLeft", crossDimeDeviStandardLeft);
+        model.addAttribute("crossDimeDeviStandardRight", crossDimeDeviStandardRight);
+
+
+        model.addAttribute("vertStandard", Double.parseDouble(towerQuality.getVert()));
+
+
+        String coluWallThic = towerQuality.getColuWallThic();
+        String coluWallThicSubstring = coluWallThic.substring(1);
+        double coluWallThicStandardRight = Double.parseDouble(coluWallThicSubstring);
+        double coluWallThicStandardLeft = Math.negateExact(Integer.parseInt(coluWallThicSubstring));
+        model.addAttribute("coluWallThicStandardLeft", coluWallThicStandardLeft);
+        model.addAttribute("coluWallThicStandardRight", coluWallThicStandardRight);
+
+
+        String anchnDevi = towerQuality.getAnchnDevi();
+        String anchnDeviSubstring = anchnDevi.substring(1);
+        double anchnDeviStandardRight = Double.parseDouble(anchnDeviSubstring);
+        double anchnDeviStandardLeft = Math.negateExact(Integer.parseInt(anchnDeviSubstring));
+        model.addAttribute("anchnDeviStandardLeft", anchnDeviStandardLeft);
+        model.addAttribute("anchnDeviStandardRight", anchnDeviStandardRight);
+
+
+        model.addAttribute("cableAxisDeviStandard", Double.parseDouble(towerQuality.getCableAxisDevi()));
+
+        String crossbeamDimeDevi = towerQuality.getCrossbeamDimeDevi();
+        String crossbeamDimeDeviSubstring = crossbeamDimeDevi.substring(1);
+        double crossbeamDimeDeviStandardRight = Double.parseDouble(crossbeamDimeDeviSubstring);
+        double crossbeamDimeDeviStandardLeft = Math.negateExact(Integer.parseInt(crossbeamDimeDeviSubstring));
+        model.addAttribute("crossbeamDimeDeviStandardLeft", crossbeamDimeDeviStandardLeft);
+        model.addAttribute("crossbeamDimeDeviStandardRight", crossbeamDimeDeviStandardRight);
+
+
+        String crossbeamTopDevi = towerQuality.getCrossbeamTopDevi();
+        String crossbeamTopDeviSubstring = crossbeamTopDevi.substring(1);
+        double crossbeamTopDeviStandardRight = Double.parseDouble(crossbeamTopDeviSubstring);
+        double crossbeamTopDeviStandardLeft = Math.negateExact(Integer.parseInt(crossbeamTopDeviSubstring));
+        model.addAttribute("crossbeamTopDeviStandardLeft", crossbeamTopDeviStandardLeft);
+        model.addAttribute("crossbeamTopDeviStandardRight", crossbeamTopDeviStandardRight);
+
+        model.addAttribute("crossbeamAxisDeviStandard", Double.parseDouble(towerQuality.getCrossbeamAxisDevi()));
+
+
+        String crossbeamThicDevi = towerQuality.getCrossbeamThicDevi();
+        String crossbeamThicDeviSubstring = crossbeamThicDevi.substring(1);
+        double crossbeamThicDeviStandardRight = Double.parseDouble(crossbeamThicDeviSubstring);
+        double crossbeamThicDeviStandardLeft = Math.negateExact(Integer.parseInt(crossbeamThicDeviSubstring));
+        model.addAttribute("crossbeamThicDeviStandardLeft", crossbeamThicDeviStandardLeft);
+        model.addAttribute("crossbeamThicDeviStandardRight", crossbeamThicDeviStandardRight);
+
+        model.addAttribute("embePartsDeviStandard", Double.parseDouble(towerQuality.getEmbePartsDevi()));
+
+        model.addAttribute("jointDislStandard", Double.parseDouble(towerQuality.getJointDisl()));
 
     }
 
@@ -208,11 +286,14 @@ public class TowerQualityController {
                              @PathVariable("id") Integer id) {
 
         towerQualityService.deleteById(id);
-
+/*
         model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.showTower(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
-        return "page/towerCrudPage/towerCrudPage";
+        return "page/towerCrudPage/towerCrudPage";*/
+
+        return "redirect:/page/tower/show";
+
     }
 
 
@@ -270,10 +351,11 @@ public class TowerQualityController {
         towerQualityService.updateByPrimaryKey(towerQuality);
 
         //show
-        model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.showTower(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
-        return "page/towerCrudPage/towerCrudPage";
+        return "page/towerCrudPage/towerCrudPage";*/
+        return "redirect:/page/tower/show";
     }
 
     /**
@@ -310,10 +392,12 @@ public class TowerQualityController {
         towerQuality.setIsQualify(-1);
         towerQualityService.insert(towerQuality);
         //show
-        model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
+        /*model.addAttribute("pageUrlPrefix", "/page/tower/show?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.showTower(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
-        return "page/towerCrudPage/towerCrudPage";
+        return "page/towerCrudPage/towerCrudPage";*/
+
+        return "redirect:/page/tower/show";
     }
 
     /**
@@ -323,7 +407,8 @@ public class TowerQualityController {
     public String searchName(HttpServletRequest request,
                           Model model,
                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                          @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
+        getRedShow(model);
         //取值
         String name = request.getParameter("search");
         model.addAttribute("search", name);
@@ -338,14 +423,56 @@ public class TowerQualityController {
 
 
     /**
+     * 折线统计图上面的查看所有值
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getSearchChart")
+    public String getSearchChart(HttpServletRequest request,
+                                 Model model,
+                                 @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                 @RequestParam(required = false, defaultValue = "120") Integer pageSize) {
+        getRedShow(model);
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        getRedShow(model);
+
+        String[] split = start.split("-");
+        String year = split[0];
+        String month = split[1];
+        String day = split[2];
+
+        model.addAttribute("year", year);
+        model.addAttribute("month", month);
+        model.addAttribute("day", day);
+
+
+
+        PageInfo<TowerQuality> towerQualityPageInfo = towerQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        model.addAttribute("pageUrlPrefix", "/page/tower/getSearch?pageIndex");
+        model.addAttribute("pageInfo", towerQualityPageInfo);
+        return "page/chartsPage/towerChartPage";
+
+    }
+
+
+
+    /**
      * 已经验收页面搜索
      */
     @RequestMapping(value = "/qualitySearch")
     public String qualitySearchName(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
+        getRedShow(model);
         //取值
         String name = request.getParameter("qualitySearch");
         model.addAttribute("search", name);
@@ -364,8 +491,9 @@ public class TowerQualityController {
     public String notQualitySearchName(HttpServletRequest request,
                                     Model model,
                                     @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                    @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                                    @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
+        getRedShow(model);
         //取值
         String name = request.getParameter("notQualitySearch");
         model.addAttribute("search", name);
@@ -441,6 +569,7 @@ public class TowerQualityController {
     }
 
     /**
+     * 折线统计图生成
      * json格式返回到ajax
      * @param request
      * @param model
@@ -449,24 +578,37 @@ public class TowerQualityController {
 
     @RequestMapping(value = "/getChart")
     @ResponseBody
-    public List<EntityPassRateDate> getChart(HttpServletRequest request,
-                                             Model model) {
+    public Map getChart(HttpServletRequest request,
+                        Model model) {
 
 
 
-        List<EntityPassRateDate> results = new ArrayList<EntityPassRateDate>();
+        Map results = new HashMap();
         String start = request.getParameter("start");
         start = start + "  00:00:00";
         String end = request.getParameter("end");
         end = end + "  23:59:59";
         try {
-            List<EntityCountDateList> lists = towerQualityService.getIsQualityCountByDate(start,end);
+            List<EntityCountDateList> lists = towerQualityService.getIsQualityCountByDate(start, end);
+            int notPassCount = towerQualityService.selectCountByDate(start, end, 0);
+            int passCount = towerQualityService.selectCountByDate(start, end, 1);
+            List<EntityPassRateDate> listDate = new ArrayList<>();
             //用于存放返回到ajax的值
+
+            /**
+             *  list为分组查询后的数据，EntityCountDateList的成员是
+             *   private String checkTime; //每日的时间
+             *   private List<EntityCountDate> entityCounts;
+             *
+             *          EntityCountDate
+             *                ↓
+             *      private int isQualify; //是否合格
+             *      private int count;   //合格或者不合格的数量
+             */
 
             for (EntityCountDateList list : lists) {
 
-                List temp = new ArrayList();
-               /* System.out.println(list.getCheckTime());*/
+                List temp = new ArrayList();//用于存放是否合格及是否合格的数量
 
                 for (EntityCountDate date : list.getEntityCounts()) {
                     //0代表不合格，1代表合格
@@ -486,6 +628,8 @@ public class TowerQualityController {
                 //开始算合格率
                 /**
                  * 可能有2，或者4个
+                 *
+                 *
                  */
                 if (temp.size() == 2) {
                     //02，不合格，即合格率为0
@@ -504,7 +648,19 @@ public class TowerQualityController {
 
                 passRateDate.setCheckTime(list.getCheckTime());
 
-                results.add(passRateDate);
+                listDate.add(passRateDate);
+
+
+            }
+
+            if (listDate.size() != 0) {
+
+                results.put("passRateDate", listDate);
+                results.put("notPassCount", notPassCount);
+                results.put("passCount", passCount);
+                results.put("code", 1);
+            } else {
+                results.put("code", 0);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -512,6 +668,7 @@ public class TowerQualityController {
 
         return results;
     }
+
 
 
 
@@ -582,13 +739,14 @@ public class TowerQualityController {
     public String getSearch(HttpServletRequest request,
                             Model model,
                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                            @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
 
-        PageInfo<TowerQuality> towerQualityPageInfo = towerQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        PageInfo<TowerQuality> towerQualityPageInfo = towerQualityService.selectByDateAll(startTime, endTime, pageIndex, pageSize);
 
 
         model.addAttribute("showStart", start);
@@ -615,8 +773,9 @@ public class TowerQualityController {
     public String getQualitySearch(HttpServletRequest request,
                                    Model model,
                                    @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                   @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                                   @RequestParam(required = false, defaultValue = "100") Integer pageSize){
 
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
@@ -647,8 +806,9 @@ public class TowerQualityController {
     public String getHasQualitySearch(HttpServletRequest request,
                                       Model model,
                                       @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                      @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                                      @RequestParam(required = false, defaultValue = "100") Integer pageSize){
 
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
@@ -757,10 +917,11 @@ public class TowerQualityController {
 
         }
 
-        model.addAttribute("pageUrlPrefix", "/page/tower/hasQuality?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/tower/hasQuality?pageIndex");
         PageInfo<TowerQuality> towerQualityInfo = towerQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", towerQualityInfo);
-        return "page/qualityPage/hasTowerQuality";
+        return "page/qualityPage/hasTowerQuality";*/
+        return "redirect:/page/tower/hasQuality";
 
     }
 

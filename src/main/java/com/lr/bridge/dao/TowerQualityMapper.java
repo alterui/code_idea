@@ -46,5 +46,11 @@ public interface TowerQualityMapper {
     List<TowerQuality> selectHasQualityByDate(@Param("start") String start, @Param("end") String end);
 
 
+    int selectCountByDate(@Param("start") String start, @Param("end") String end, @Param("isQualify") int isQualify);
+
+    List<TowerQuality> selectByDateAll(@Param("start") String start,@Param("end") String end);
+
+
+
 
 }

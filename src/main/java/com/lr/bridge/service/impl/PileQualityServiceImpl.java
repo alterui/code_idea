@@ -146,4 +146,20 @@ public class PileQualityServiceImpl implements PileQualityService {
     }
 
 
+    @Override
+    public int selectCountByDate(String start, String end, int isQualify) {
+        return pileQualityMapper.selectCountByDate(start, end, isQualify);
+    }
+
+    @Override
+    public PageInfo<PileQuality> selectByDateAll(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<PileQuality> bearingQualityList = pileQualityMapper.selectByDateAll(start, end);
+        return new PageInfo<PileQuality>(bearingQualityList);
+    }
+
+
+
+
+
 }

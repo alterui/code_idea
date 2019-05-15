@@ -46,5 +46,9 @@ public interface PierQualityMapper {
     List<PierQuality> selectHasQualityByDate(@Param("start") String start, @Param("end") String end);
 
 
+    int selectCountByDate(@Param("start") String start, @Param("end") String end, @Param("isQualify") int isQualify);
+
+    List<PierQuality> selectByDateAll(@Param("start") String start,@Param("end") String end);
+
 
 }

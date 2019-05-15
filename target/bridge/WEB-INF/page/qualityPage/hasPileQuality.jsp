@@ -108,6 +108,8 @@
                         <th lay-data="{hide:true,field:'qualify'}"></th>
 
                         <th lay-data="{field:'struId', align:'center',width:120, sort: true}">结构编号</th>
+                        <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否通过</th>
+
                         <th lay-data="{field:'pileDevi', align:'center',width:120, sort: true}">桩位偏差</th>
                         <th lay-data="{field:'sediThiDevi', align:'center',width:150, sort: true}">沉渣厚度偏差</th>
                         <th lay-data="{field:'vertDevi', align:'center',width:150, sort: true}">垂直度偏差</th>
@@ -121,7 +123,6 @@
                         <th lay-data="{field:'pileTopDevi', align:'center',width:150, sort: true}">桩顶高程偏差</th>
 
                         <th lay-data="{field:'pilequalityCheckTime', align:'center',width:180, sort: true}">验收时间</th>
-                        <th lay-data="{field:'isQuality',align:'center',width:120,sort: true}">是否合格</th>
                         <th lay-data="{fixed: 'right',width:120, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
@@ -144,48 +145,243 @@
                             <td>
                                     ${pile.struId}
                             </td>
+
+
                             <td>
-                                    ${pile.pileDevi}
+                                <!-- 0代表不合格，1代表合格-->
+                                <c:choose>
+                                    <c:when test="${pile.isQualify==0}">
+                                        <b><font color="red">不通过</font></b>
+                                    </c:when>
+
+                                    <c:otherwise>
+                                        <b><font color="green">通过</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+                            </td>
+
+
+                            <td>
+
+
+                                <c:set var="pileDevi" value="${pile.pileDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${ 0.0<=pileDevi && pileDevi<=pileDeviStandard }">
+                                        <b>${pile.pileDevi}</b>
+                                    </c:when>
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.pileDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+
+
                             </td>
                             <td>
-                                    ${pile.sediThiDevi}
+
+                                <c:set var="sediThiDevi" value="${pile.sediThiDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${ 0.0<=sediThiDevi && sediThiDevi<=sediThiDeviStandard }">
+                                        <b>${pile.sediThiDevi}</b>
+                                    </c:when>
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.sediThiDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+
                             </td>
 
                             <td>
-                                    ${pile.vertDevi}
+
+                                <c:set var="vertDevi" value="${pile.vertDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${vertDevi>=vertDeviStandardLeft && vertDevi<=vertDeviStandardRight}">
+                                        <b>${pile.vertDevi}</b>
+                                    </c:when>
+
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.vertDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+
                             </td>
 
                             <td>
-                                    ${pile.holeDepthDevi}
+
+                                <c:set var="holeDepthDevi" value="${pile.holeDepthDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${ 0.0<=holeDepthDevi && holeDepthDevi<=holeDepthDeviStandard }">
+                                        <b>${pile.holeDepthDevi}</b>
+                                    </c:when>
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.holeDepthDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+
                             </td>
 
                             <td>
-                                    ${pile.aperDevi}
+
+
+                                <c:set var="aperDevi" value="${pile.aperDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${aperDevi>=aperDeviStandardLeft && aperDevi<=aperDeviStandardRight}">
+                                        <b>${pile.aperDevi}</b>
+                                    </c:when>
+
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.aperDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+
                             </td>
 
                             <td>
-                                    ${pile.mudPropDevi}
+
+                                <c:set var="mudPropDevi" value="${pile.mudPropDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${ 0.0<=mudPropDevi && mudPropDevi<=mudPropDeviStandard }">
+                                        <b>${pile.mudPropDevi}</b>
+                                    </c:when>
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.mudPropDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+
                             </td>
 
                             <td>
-                                    ${pile.mudSurfDevi}
+
+
+                                <c:set var="mudSurfDevi" value="${pile.mudSurfDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${mudSurfDevi>=mudSurfDeviStandardLeft && mudSurfDevi<=mudSurfDeviStandardRight}">
+                                        <b>${pile.mudSurfDevi}</b>
+                                    </c:when>
+
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.mudSurfDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+
                             </td>
 
                             <td>
-                                    ${pile.rebarDevi}
+
+
+                                <c:set var="rebarDevi" value="${pile.rebarDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${ 0.0<=rebarDevi && rebarDevi<=rebarDeviStandard }">
+                                        <b>${pile.rebarDevi}</b>
+                                    </c:when>
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.rebarDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
+
                             </td>
 
                             <td>
-                                    ${pile.conctre}
+
+                                <c:set var="conctre" value="${pile.conctre}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${conctre>=conctreStandardLeft && conctre<=conctreStandardRight}">
+                                        <b>${pile.conctre}</b>
+                                    </c:when>
+
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.conctre}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
                             </td>
 
                             <td>
-                                    ${pile.fillingFactor}
+
+
+
+                                <c:set var="fillingFactor" value="${pile.fillingFactor}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${ 0.0<=fillingFactor && fillingFactor<=fillingFactorStandard }">
+                                        <b>${pile.fillingFactor}</b>
+                                    </c:when>
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.fillingFactor}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
                             </td>
 
+
+
                             <td>
-                                    ${pile.pileTopDevi}
+
+
+                                <c:set var="pileTopDevi" value="${pile.pileTopDevi}"></c:set>
+
+                                <c:choose>
+
+                                    <c:when test="${pileTopDevi>=pileTopDeviStandardLeft && pileTopDevi<=pileTopDeviStandardRight}">
+                                        <b>${pile.pileTopDevi}</b>
+                                    </c:when>
+
+
+                                    <c:otherwise>
+                                        <b><font color="red">${pile.pileTopDevi}</font></b>
+                                    </c:otherwise>
+                                </c:choose>
+
+
                             </td>
+
 
 
                             <td>
@@ -194,19 +390,6 @@
                             </td>
 
 
-                            <td>
-                                <!-- 0代表不合格，1代表合格-->
-                                <c:choose>
-                                    <c:when test="${pile.isQualify==0}">
-                                        <b><font color="red">不合格</font></b>
-                                    </c:when>
-
-                                    <c:otherwise>
-                                        <b><font color="green">合格</font></b>
-                                    </c:otherwise>
-                                </c:choose>
-
-                            </td>
 
                         </tr>
                     </c:forEach>

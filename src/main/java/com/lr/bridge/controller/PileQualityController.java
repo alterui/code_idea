@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 
 @Controller
@@ -41,6 +39,7 @@ public class PileQualityController {
                            @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                            @RequestParam(required = false, defaultValue = "10") Integer pageSize){
 
+        getRedShow(model);
         model.addAttribute("pageUrlPrefix", "/page/pile?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
@@ -60,7 +59,9 @@ public class PileQualityController {
     public String hasQuality(HttpServletRequest request,
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                             @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+        getRedShow(model);
+
         model.addAttribute("pageUrlPrefix", "/page/pile/hasQuality?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
@@ -87,10 +88,11 @@ public class PileQualityController {
        //0代表不合格，1代表合格
         pileQualityService.updateByIsQualify(1, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pile?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/pile?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
-        return "page/qualityPage/pileQuality";
+        return "page/qualityPage/pileQuality";*/
+        return "redirect:/page/pile/";
 
     }
 
@@ -113,10 +115,11 @@ public class PileQualityController {
         //0代表不合格，1代表合格
         pileQualityService.updateByIsQualify(0, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pile?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/pile?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.showQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
-        return "page/qualityPage/pileQuality";
+        return "page/qualityPage/pileQuality";*/
+        return "redirect:/page/pile/";
 
     }
 
@@ -140,10 +143,11 @@ public class PileQualityController {
         //0代表不合格，1代表合格
         pileQualityService.updateByIsQualify(1, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pile/hasQuality?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/pile/hasQuality?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
-        return "page/qualityPage/hasPileQuality";
+        return "page/qualityPage/hasPileQuality";*/
+        return "redirect:/page/pile/hasQuality";
 
     }
 
@@ -167,11 +171,12 @@ public class PileQualityController {
         //0代表不合格，1代表合格
         pileQualityService.updateByIsQualify(0, id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pile/hasQuality?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/pile/hasQuality?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
-        return "page/qualityPage/hasPileQuality";
+        return "page/qualityPage/hasPileQuality";*/
 
+        return "redirect:/page/pile/hasQuality";
     }
 
 
@@ -187,13 +192,85 @@ public class PileQualityController {
     public String show(HttpServletRequest request,
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                       @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+        getRedShow(model);
+
         model.addAttribute("pageUrlPrefix", "/page/pile/show?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.showPile(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
         return "page/pileCrudPage/pileCrudPage";
 
     }
+
+
+
+    private void getRedShow(Model model) {
+        PileQuality pileQuality = pileQualityService.selectByPrimaryKey(1);
+
+
+
+        model.addAttribute("pileDeviStandard", Double.parseDouble(pileQuality.getPileDevi()));
+        model.addAttribute("sediThiDeviStandard", Double.parseDouble(pileQuality.getSediThiDevi()));
+
+
+        String vertDevi = pileQuality.getVertDevi();
+        String vertDeviSubstring = vertDevi.substring(1);
+        double vertDeviStandardRight = Double.parseDouble(vertDeviSubstring);
+        double vertDeviStandardLeft = Math.negateExact(Integer.parseInt(vertDeviSubstring));
+        model.addAttribute("vertDeviStandardLeft", vertDeviStandardLeft);
+        model.addAttribute("vertDeviStandardRight", vertDeviStandardRight);
+
+        model.addAttribute("holeDepthDeviStandard", Double.parseDouble(pileQuality.getHoleDepthDevi()));
+
+
+
+        String aperDevi = pileQuality.getAperDevi();
+        String aperDeviSubstring = aperDevi.substring(1);
+        double aperDeviStandardRight = Double.parseDouble(aperDeviSubstring);
+        double aperDeviStandardLeft = Math.negateExact(Integer.parseInt(aperDeviSubstring));
+        model.addAttribute("aperDeviStandardLeft", aperDeviStandardLeft);
+        model.addAttribute("aperDeviStandardRight", aperDeviStandardRight);
+
+
+        model.addAttribute("mudPropDeviStandard", Double.parseDouble(pileQuality.getMudPropDevi()));
+
+
+
+        String mudSurfDevi = pileQuality.getMudSurfDevi();
+        String mudSurfDeviSubstring = mudSurfDevi.substring(1);
+        double mudSurfDeviStandardRight = Double.parseDouble(mudSurfDeviSubstring);
+        double mudSurfDeviStandardLeft = Math.negateExact(Integer.parseInt(mudSurfDeviSubstring));
+        model.addAttribute("mudSurfDeviStandardLeft", mudSurfDeviStandardLeft);
+        model.addAttribute("mudSurfDeviStandardRight", mudSurfDeviStandardRight);
+
+
+
+        model.addAttribute("rebarDeviStandard", Double.parseDouble(pileQuality.getRebarDevi()));
+
+
+        String conctre = pileQuality.getConctre();
+        String conctreSubstring = conctre.substring(1);
+        double conctreStandardRight = Double.parseDouble(conctreSubstring);
+        double conctreStandardLeft = Math.negateExact(Integer.parseInt(conctreSubstring));
+        model.addAttribute("conctreStandardLeft", conctreStandardLeft);
+        model.addAttribute("conctreStandardRight", conctreStandardRight);
+
+
+
+        model.addAttribute("fillingFactorStandard", Double.parseDouble(pileQuality.getFillingFactor()));
+
+
+        String pileTopDevi = pileQuality.getPileTopDevi();
+        String pileTopDeviSubstring = pileTopDevi.substring(1);
+        double pileTopDeviStandardRight = Double.parseDouble(pileTopDeviSubstring);
+        double pileTopDeviStandardLeft = Math.negateExact(Integer.parseInt(pileTopDeviSubstring));
+        model.addAttribute("pileTopDeviStandardLeft", pileTopDeviStandardLeft);
+        model.addAttribute("pileTopDeviStandardRight", pileTopDeviStandardRight);
+
+
+
+    }
+
 
     /**
      * 删除
@@ -209,10 +286,11 @@ public class PileQualityController {
 
         pileQualityService.deleteById(id);
 
-        model.addAttribute("pageUrlPrefix", "/page/pile/show?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/pile/show?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.showPile(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
-        return "page/pileCrudPage/pileCrudPage";
+        return "page/pileCrudPage/pileCrudPage";*/
+        return "redirect:/page/pile/show";
     }
 
 
@@ -269,11 +347,12 @@ public class PileQualityController {
 
         pileQualityService.updateByPrimaryKey(pileQuality);
 
-        //show
+       /* //show
         model.addAttribute("pageUrlPrefix", "/page/pile/show?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.showPile(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
-        return "page/pileCrudPage/pileCrudPage";
+        return "page/pileCrudPage/pileCrudPage";*/
+        return "redirect:/page/pile/show";
     }
 
     /**
@@ -309,10 +388,11 @@ public class PileQualityController {
         pileQuality.setIsQualify(-1);
         pileQualityService.insert(pileQuality);
         //show
-        model.addAttribute("pageUrlPrefix", "/page/pile/show?pageIndex");
+       /* model.addAttribute("pageUrlPrefix", "/page/pile/show?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.showPile(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
-        return "page/pileCrudPage/pileCrudPage";
+        return "page/pileCrudPage/pileCrudPage";*/
+        return "redirect:/page/pile/show";
     }
 
     /**
@@ -322,7 +402,8 @@ public class PileQualityController {
     public String searchName(HttpServletRequest request,
                           Model model,
                           @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                          @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
+        getRedShow(model);
         //取值
         String name = request.getParameter("search");
         model.addAttribute("search", name);
@@ -343,8 +424,9 @@ public class PileQualityController {
     public String qualitySearchName(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                             @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
+        getRedShow(model);
         //取值
         String name = request.getParameter("qualitySearch");
         model.addAttribute("search", name);
@@ -363,8 +445,9 @@ public class PileQualityController {
     public String notQualitySearchName(HttpServletRequest request,
                                     Model model,
                                     @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                    @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                                    @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
+        getRedShow(model);
         //取值
         String name = request.getParameter("notQualitySearch");
         model.addAttribute("search", name);
@@ -446,24 +529,37 @@ public class PileQualityController {
 
     @RequestMapping(value = "/getChart")
     @ResponseBody
-    public List<EntityPassRateDate> getChart(HttpServletRequest request,
-                                             Model model) {
+    public Map getChart(HttpServletRequest request,
+                        Model model) {
 
 
 
-        List<EntityPassRateDate> results = new ArrayList<EntityPassRateDate>();
+        Map results = new HashMap();
         String start = request.getParameter("start");
         start = start + "  00:00:00";
         String end = request.getParameter("end");
         end = end + "  23:59:59";
         try {
-            List<EntityCountDateList> lists = pileQualityService.getIsQualityCountByDate(start,end);
+            List<EntityCountDateList> lists = pileQualityService.getIsQualityCountByDate(start, end);
+            int notPassCount = pileQualityService.selectCountByDate(start, end, 0);
+            int passCount = pileQualityService.selectCountByDate(start, end, 1);
+            List<EntityPassRateDate> listDate = new ArrayList<>();
             //用于存放返回到ajax的值
+
+            /**
+             *  list为分组查询后的数据，EntityCountDateList的成员是
+             *   private String checkTime; //每日的时间
+             *   private List<EntityCountDate> entityCounts;
+             *
+             *          EntityCountDate
+             *                ↓
+             *      private int isQualify; //是否合格
+             *      private int count;   //合格或者不合格的数量
+             */
 
             for (EntityCountDateList list : lists) {
 
-                List temp = new ArrayList();
-               /* System.out.println(list.getCheckTime());*/
+                List temp = new ArrayList();//用于存放是否合格及是否合格的数量
 
                 for (EntityCountDate date : list.getEntityCounts()) {
                     //0代表不合格，1代表合格
@@ -483,6 +579,8 @@ public class PileQualityController {
                 //开始算合格率
                 /**
                  * 可能有2，或者4个
+                 *
+                 *
                  */
                 if (temp.size() == 2) {
                     //02，不合格，即合格率为0
@@ -501,7 +599,19 @@ public class PileQualityController {
 
                 passRateDate.setCheckTime(list.getCheckTime());
 
-                results.add(passRateDate);
+                listDate.add(passRateDate);
+
+
+            }
+
+            if (listDate.size() != 0) {
+
+                results.put("passRateDate", listDate);
+                results.put("notPassCount", notPassCount);
+                results.put("passCount", passCount);
+                results.put("code", 1);
+            } else {
+                results.put("code", 0);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -578,13 +688,14 @@ public class PileQualityController {
     public String getSearch(HttpServletRequest request,
                             Model model,
                             @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                            @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
+                            @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
 
-        PageInfo<PileQuality> pileQualityPageInfo = pileQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        PageInfo<PileQuality> pileQualityPageInfo = pileQualityService.selectByDateAll(startTime, endTime, pageIndex, pageSize);
 
 
         model.addAttribute("showStart", start);
@@ -612,8 +723,9 @@ public class PileQualityController {
     public String getQualitySearch(HttpServletRequest request,
                                    Model model,
                                    @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                   @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                                   @RequestParam(required = false, defaultValue = "100") Integer pageSize){
 
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
@@ -644,8 +756,9 @@ public class PileQualityController {
     public String getHasQualitySearch(HttpServletRequest request,
                                       Model model,
                                       @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                      @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                                      @RequestParam(required = false, defaultValue = "100") Integer pageSize){
 
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
@@ -661,6 +774,49 @@ public class PileQualityController {
         return "page/qualityPage/hasPileQuality";
 
     }
+
+
+
+
+    /**
+     * 折线统计图上面的查看所有值
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping(value = "/getSearchChart")
+    public String getSearchChart(HttpServletRequest request,
+                                 Model model,
+                                 @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
+                                 @RequestParam(required = false, defaultValue = "120") Integer pageSize) {
+        getRedShow(model);
+        String start = request.getParameter("start");
+        String startTime = start + "  00:00:00";
+        String end = request.getParameter("end");
+        String endTime = end + "  23:59:59";
+
+        getRedShow(model);
+
+        String[] split = start.split("-");
+        String year = split[0];
+        String month = split[1];
+        String day = split[2];
+
+        model.addAttribute("year", year);
+        model.addAttribute("month", month);
+        model.addAttribute("day", day);
+
+
+
+        PageInfo<PileQuality> pileQualityPageInfo = pileQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        model.addAttribute("pageUrlPrefix", "/page/pile/getSearch?pageIndex");
+        model.addAttribute("pageInfo", pileQualityPageInfo);
+        return "page/chartsPage/pileChartPage";
+
+    }
+
 
 
 
@@ -754,10 +910,11 @@ public class PileQualityController {
 
         }
 
-        model.addAttribute("pageUrlPrefix", "/page/pile/hasQuality?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/pile/hasQuality?pageIndex");
         PageInfo<PileQuality> pileQualityInfo = pileQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", pileQualityInfo);
-        return "page/qualityPage/hasPileQuality";
+        return "page/qualityPage/hasPileQuality";*/
+        return "redirect:/page/pile/hasQuality";
 
     }
 

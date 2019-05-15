@@ -150,5 +150,15 @@ public class BearingQualityServiceImpl implements BearingQualityService {
         return new PageInfo<BearingQuality>(bearingQualityList);
     }
 
+    @Override
+    public int selectCountByDate(String start, String end, int isQualify) {
+        return bearingQualityMapper.selectCountByDate(start, end, isQualify);
+    }
 
+    @Override
+    public PageInfo<BearingQuality> selectByDateAll(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BearingQuality> bearingQualityList = bearingQualityMapper.selectByDateAll(start, end);
+        return new PageInfo<BearingQuality>(bearingQualityList);
+    }
 }

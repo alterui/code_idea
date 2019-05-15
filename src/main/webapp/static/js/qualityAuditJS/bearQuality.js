@@ -20,7 +20,7 @@ layui.use('laydate', function(){
 //合格
 function qualityData(id) {
 
-    layer.confirm('您确定合格吗？',function (index) {
+    layer.confirm('您确定选择通过吗？',function (index) {
         window.location.href = "/page/bear/qualified/" + id;
     });
 
@@ -29,7 +29,7 @@ function qualityData(id) {
 //不合格
 function notQualityData(id) {
 
-    layer.confirm('您确定不合格吗？',function (index) {
+    layer.confirm('您确定选择不通过吗？',function (index) {
         window.location.href = "/page/bear/notQualified/" + id;
     });
 
@@ -42,7 +42,8 @@ layui.use('table', function(){
 
     //转换静态表格
     table.init('demo', {
-
+        limit: 150,
+        page: false
     });
 });
 
@@ -76,7 +77,7 @@ layui.use('table', function () {
             });
 
             if(delList!=''){
-                layer.confirm('确认'+data.length+'条数据为合格吗？', function(index){
+                layer.confirm('确认'+data.length+'条数据为通过吗？', function(index){
                     $.ajax({
                         url: '/page/bear/qualityMore',
                         type:'post',
@@ -114,7 +115,7 @@ layui.use('table', function () {
             });
 
             if(delList!=''){
-                layer.confirm('确认'+data.length+'条数据为不合格吗？', function(index){
+                layer.confirm('确认'+data.length+'条数据为不通过吗？', function(index){
                     $.ajax({
                         url: '/page/bear/notQualityMore',
                         type:'post',

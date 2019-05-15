@@ -33,7 +33,10 @@ layui.use('table', function () {
     var table = layui.table;
 
     //转换静态表格
-    table.init('demo', {});
+    table.init('demo', {
+        limit: 150,
+        page: false
+    });
 });
 
 

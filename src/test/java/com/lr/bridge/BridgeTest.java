@@ -10,11 +10,9 @@ import java.util.Random;
 public class BridgeTest {
     public static void main(String[] args) {
 
-        String string = "5-10";
-        String[] split = string.split("-");
-
-        System.out.println(split[0]);
-        System.out.println(split[1]);
+        if (1 < 4 && 4 < 5) {
+            System.out.println(1);
+        }
 
     }
 }

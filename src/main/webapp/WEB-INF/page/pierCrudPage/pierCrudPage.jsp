@@ -141,11 +141,11 @@
                                         </c:when>
 
                                         <c:when test="${pier.isQualify==0}">
-                                            <b><font color="red">不合格</font></b>
+                                            <b><font color="red">不通过</font></b>
                                         </c:when>
 
                                         <c:otherwise>
-                                            <b><font color="green">合格</font></b>
+                                            <b><font color="green">通过</font></b>
                                         </c:otherwise>
                                     </c:choose>
 
@@ -153,34 +153,156 @@
                                 </td>
 
                                 <td>
-                                        ${pier.length}
+
+                                    <!-- copy-->
+
+                                    <c:set var="length" value="${pier.length}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${length>=lengthStandardLeft && length<=lengthStandardRight}">
+                                            <b>${pier.length}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${pier.length}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
                                 <td>
-                                        ${pier.width}
+
+                                    <c:set var="width" value="${pier.width}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${width>=widthStandardLeft && width<=widthStandardRight}">
+                                            <b>${pier.width}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${pier.width}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                        ${pier.topElev}
+
+                                    <c:set var="topElev" value="${pier.topElev}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${topElev>=topElevStandardLeft && topElev<=topElevStandardRight}">
+                                            <b>${pier.topElev}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${pier.topElev}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                        ${pier.axisOffs}
+
+                                    <c:set var="axisOffs" value="${pier.axisOffs}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${axisOffs>=axisOffsStandardLeft && axisOffs<=axisOffsStandardRight}">
+                                            <b>${pier.axisOffs}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${pier.axisOffs}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
                                 <td>
-                                        ${pier.vert}
+
+                                    <c:set var="vert" value="${pier.vert}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${vert>=vertStandardLeft && vert<=vertStandardRight}">
+                                            <b>${pier.vert}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${pier.vert}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                        ${pier.surfVert}
+
+
+                                    <c:set var="surfVert" value="${pier.surfVert}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=surfVert && surfVert<=surfVertStandard }">
+                                            <b>${pier.surfVert}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${pier.surfVert}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
                                 <td>
-                                        ${pier.planeness}
+
+
+                                    <c:set var="planeness" value="${pier.planeness}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=planeness && planeness<=planenessStandard }">
+                                            <b>${pier.planeness}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${pier.planeness}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
                                 <td>
-                                        ${pier.inteFaultTable}
+
+                                    <c:set var="inteFaultTable" value="${pier.inteFaultTable}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=inteFaultTable && inteFaultTable<=inteFaultTableStandard }">
+                                            <b>${pier.inteFaultTable}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${pier.inteFaultTable}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
 

@@ -146,4 +146,19 @@ public class TowerQualityServiceImpl implements TowerQualityService {
 
 
 
+    @Override
+    public int selectCountByDate(String start, String end, int isQualify) {
+        return towerQualityMapper.selectCountByDate(start, end, isQualify);
+    }
+
+    @Override
+    public PageInfo<TowerQuality> selectByDateAll(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<TowerQuality> bearingQualityList = towerQualityMapper.selectByDateAll(start, end);
+        return new PageInfo<TowerQuality>(bearingQualityList);
+    }
+
+
+
+
 }

@@ -161,50 +161,242 @@
                                 </td>
 
                                 <td>
-                                        ${tower.axisDevi}
+
+                                    <c:set var="axisDevi" value="${tower.axisDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=axisDevi && axisDevi<=axisDeviStandard }">
+                                            <b>${tower.axisDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.axisDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
+
                                 </td>
                                 <td>
-                                        ${tower.crossDimeDevi}
+
+
+                                    <c:set var="crossDimeDevi" value="${tower.crossDimeDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${crossDimeDevi>=crossDimeDeviStandardLeft && crossDimeDevi<=crossDimeDeviStandardRight}">
+                                            <b>${tower.crossDimeDevi}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.crossDimeDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                        ${tower.vert}
+
+
+                                    <c:set var="vert" value="${tower.vert}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=vert && vert<=vertStandard }">
+                                            <b>${tower.vert}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.vert}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
                                 <td>
-                                        ${tower.coluWallThic}
+
+                                    <c:set var="coluWallThic" value="${tower.coluWallThic}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${coluWallThic>=coluWallThicStandardLeft && coluWallThic<=coluWallThicStandardRight}">
+                                            <b>${tower.coluWallThic}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.coluWallThic}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                        ${tower.anchnDevi}
+
+
+                                    <c:set var="anchnDevi" value="${tower.anchnDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${anchnDevi>=anchnDeviStandardLeft && anchnDevi<=anchnDeviStandardRight}">
+                                            <b>${tower.anchnDevi}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.anchnDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
                                 </td>
 
                                 <td>
-                                        ${tower.cableAxisDevi}
+
+
+                                    <c:set var="cableAxisDevi" value="${tower.cableAxisDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=cableAxisDevi && cableAxisDevi<=cableAxisDeviStandard }">
+                                            <b>${tower.cableAxisDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.cableAxisDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                        ${tower.crossbeamDimeDevi}
+
+
+
+                                    <c:set var="crossbeamDimeDevi" value="${tower.crossbeamDimeDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${crossbeamDimeDevi>=crossbeamDimeDeviStandardLeft && crossbeamDimeDevi<=crossbeamDimeDeviStandardRight}">
+                                            <b>${tower.crossbeamDimeDevi}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.crossbeamDimeDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
                                 <td>
-                                        ${tower.crossbeamTopDevi}
+
+
+                                    <c:set var="crossbeamTopDevi" value="${tower.crossbeamTopDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${crossbeamTopDevi>=crossbeamTopDeviStandardLeft && crossbeamTopDevi<=crossbeamTopDeviStandardRight}">
+                                            <b>${tower.crossbeamTopDevi}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.crossbeamTopDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
                                 <td>
-                                        ${tower.crossbeamAxisDevi}
+
+
+                                    <c:set var="crossbeamAxisDevi" value="${tower.crossbeamAxisDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=crossbeamAxisDevi && crossbeamAxisDevi<=crossbeamAxisDeviStandard }">
+                                            <b>${tower.crossbeamAxisDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.crossbeamAxisDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
                                 <td>
-                                        ${tower.crossbeamThicDevi}
+
+
+
+
+                                    <c:set var="crossbeamThicDevi" value="${tower.crossbeamThicDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${crossbeamThicDevi>=crossbeamThicDeviStandardLeft && crossbeamThicDevi<=crossbeamThicDeviStandardRight}">
+                                            <b>${tower.crossbeamThicDevi}</b>
+                                        </c:when>
+
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.crossbeamThicDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
                                 <td>
-                                        ${tower.embePartsDevi}
+
+
+                                    <c:set var="embePartsDevi" value="${tower.embePartsDevi}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=embePartsDevi && embePartsDevi<=embePartsDeviStandard }">
+                                            <b>${tower.embePartsDevi}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.embePartsDevi}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
                                 </td>
 
                                 <td>
-                                        ${tower.jointDisl}
+
+
+
+                                    <c:set var="jointDisl" value="${tower.jointDisl}"></c:set>
+
+                                    <c:choose>
+
+                                        <c:when test="${ 0.0<=jointDisl && jointDisl<=jointDislStandard }">
+                                            <b>${tower.jointDisl}</b>
+                                        </c:when>
+
+                                        <c:otherwise>
+                                            <b><font color="red">${tower.jointDisl}</font></b>
+                                        </c:otherwise>
+                                    </c:choose>
+
+
+
                                 </td>
 
 

@@ -28,7 +28,7 @@ layui.use('table', function(){
 
     //转换静态表格
     table.init('demo', {
-        limit: 1000,
+        limit: 150,
         page: false
 
     });

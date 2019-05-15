@@ -410,7 +410,8 @@ public class BeamQualityController {
     public String qualitySearchName(HttpServletRequest request,
                              Model model,
                              @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                             @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
+                                    @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
+        getRedShow(model);
 
         //取值
         String name = request.getParameter("qualitySearch");
@@ -432,6 +433,7 @@ public class BeamQualityController {
                                     @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
                                     @RequestParam(required = false, defaultValue = "100") Integer pageSize) {
 
+        getRedShow(model);
         //取值
         String name = request.getParameter("notQualitySearch");
         model.addAttribute("search", name);
@@ -656,7 +658,7 @@ public class BeamQualityController {
         model.addAttribute("showStart", start);
         model.addAttribute("showEnd", end);
 
-        PageInfo<BeamQuality> beamQualityPageInfo = beamQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
+        PageInfo<BeamQuality> beamQualityPageInfo = beamQualityService.selectByDateAll(startTime, endTime, pageIndex, pageSize);
         model.addAttribute("pageUrlPrefix", "/page/beam/getSearch?pageIndex");
         model.addAttribute("pageInfo", beamQualityPageInfo);
         return "page/beamCrudPage/beamCrudPage";
@@ -666,7 +668,7 @@ public class BeamQualityController {
 
 
     /**
-     * 根据日期查找
+     * 折线统计图上面的查看所有值
      * @param request
      * @param model
      * @param pageIndex
@@ -716,8 +718,9 @@ public class BeamQualityController {
     public String getQualitySearch(HttpServletRequest request,
                         Model model,
                         @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                        @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                        @RequestParam(required = false, defaultValue = "100") Integer pageSize){
 
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
@@ -748,8 +751,9 @@ public class BeamQualityController {
     public String getHasQualitySearch(HttpServletRequest request,
                                    Model model,
                                    @RequestParam(required = false, defaultValue = "0") Integer pageIndex,
-                                   @RequestParam(required = false, defaultValue = "10") Integer pageSize){
+                                   @RequestParam(required = false, defaultValue = "100") Integer pageSize){
 
+        getRedShow(model);
         String start = request.getParameter("start");
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
@@ -858,10 +862,11 @@ public class BeamQualityController {
 
         }
 
-        model.addAttribute("pageUrlPrefix", "/page/beam/hasQuality?pageIndex");
+      /*  model.addAttribute("pageUrlPrefix", "/page/beam/hasQuality?pageIndex");
         PageInfo<BeamQuality> beamQualityInfo = beamQualityService.selectByHasQuality(pageIndex, pageSize);
         model.addAttribute("pageInfo", beamQualityInfo);
-        return "page/qualityPage/hasBeamQuality";
+        return "page/qualityPage/hasBeamQuality";*/
+        return "redirect:/page/beam/hasQuality";
 
     }
 

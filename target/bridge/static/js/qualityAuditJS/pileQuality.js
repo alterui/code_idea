@@ -17,19 +17,19 @@ layui.use('laydate', function(){
 });
 
 
-//合格
+//通过
 function qualityData(id) {
 
-    layer.confirm('您确定合格吗？',function (index) {
+    layer.confirm('您确定通过吗？',function (index) {
         window.location.href = "/page/pile/qualified/" + id;
     });
 
 }
 
-//不合格
+//不通过
 function notQualityData(id) {
 
-    layer.confirm('您确定不合格吗？',function (index) {
+    layer.confirm('您确定不通过吗？',function (index) {
         window.location.href = "/page/pile/notQualified/" + id;
     });
 
@@ -42,7 +42,8 @@ layui.use('table', function(){
 
     //转换静态表格
     table.init('demo', {
-
+        limit: 150,
+        page: false
     });
 });
 
@@ -76,7 +77,7 @@ layui.use('table', function () {
             });
 
             if(delList!=''){
-                layer.confirm('确认'+data.length+'条数据为合格吗？', function(index){
+                layer.confirm('确认'+data.length+'条数据为通过吗？', function(index){
                     $.ajax({
                         url: '/page/pile/qualityMore',
                         type:'post',
@@ -102,7 +103,7 @@ layui.use('table', function () {
     };
 
 
-    //批量不合格
+    //批量不通过
 
     var $ = layui.$, active = {
         notQualityMore:function () {
@@ -114,7 +115,7 @@ layui.use('table', function () {
             });
 
             if(delList!=''){
-                layer.confirm('确认'+data.length+'条数据为不合格吗？', function(index){
+                layer.confirm('确认'+data.length+'条数据为不通过吗？', function(index){
                     $.ajax({
                         url: '/page/pile/notQualityMore',
                         type:'post',

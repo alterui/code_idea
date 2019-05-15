@@ -135,11 +135,11 @@
                                 </c:when>
 
                                 <c:when test="${bear.isQualify==0}">
-                                    <b><font color="red">不合格</font></b>
+                                    <b><font color="red">不通过</font></b>
                                 </c:when>
 
                                 <c:otherwise>
-                                    <b><font color="green">合格</font></b>
+                                    <b><font color="green">通过</font></b>
                                 </c:otherwise>
                             </c:choose>
 
@@ -149,31 +149,144 @@
 
 
                         <td>
-                                ${bear.upCentVert}
-                        </td>
-                        <td>
-                                ${bear.downCentTran}
+
+                            <!-- copy-->
+
+                            <c:set var="upCentVert" value="${bear.upCentVert}"></c:set>
+
+                            <c:choose>
+
+                                <c:when test="${upCentVert>=upCentVertStandardLeft && upCentVert<=upCentVertStandardRight}">
+                                    <b>${bear.upCentVert}</b>
+                                </c:when>
+
+
+                                <c:otherwise>
+                                    <b><font color="red">${bear.upCentVert}</font></b>
+                                </c:otherwise>
+                            </c:choose>
+
+
                         </td>
 
                         <td>
-                                ${bear.sameCentVert}
+
+                            <c:set var="downCentTran" value="${bear.downCentTran}"></c:set>
+
+                            <c:choose>
+
+                                <c:when test="${downCentTran>=downCentTranStandardLeft && downCentTran<=downCentTranStandardRight}">
+                                    <b>${bear.downCentTran}</b>
+                                </c:when>
+
+
+                                <c:otherwise>
+                                    <b><font color="red">${bear.downCentTran}</font></b>
+                                </c:otherwise>
+                            </c:choose>
+
+
+
                         </td>
 
                         <td>
-                                ${bear.sameRela}
+
+                            <c:set var="sameCentVert" value="${bear.sameCentVert}"></c:set>
+
+                            <c:choose>
+
+                                <c:when test="${sameCentVert>=sameCentVertStandardLeft && sameCentVert<=sameCentVertStandardRight}">
+                                    <b>${bear.sameCentVert}</b>
+                                </c:when>
+
+
+                                <c:otherwise>
+                                    <b><font color="red">${bear.sameCentVert}</font></b>
+                                </c:otherwise>
+                            </c:choose>
+
+
                         </td>
 
                         <td>
-                                ${bear.edgeHeig}
+
+                            <c:set var="sameRela" value="${bear.sameRela}"></c:set>
+
+                            <c:choose>
+
+                                <c:when test="${sameRela>=sameRelaStandardLeft && sameRela<=sameRelaStandardRight}">
+                                    <b>${bear.sameRela}</b>
+                                </c:when>
+
+
+                                <c:otherwise>
+                                    <b><font color="red">${bear.sameRela}</font></b>
+                                </c:otherwise>
+                            </c:choose>
+
                         </td>
 
                         <td>
-                                ${bear.crossLineTors}
+
+
+
+
+                            <c:set var="edgeHeig" value="${bear.edgeHeig}"></c:set>
+
+                            <c:choose>
+
+                                <c:when test="${edgeHeig>=edgeHeigStandardLeft && edgeHeig<=edgeHeigStandardRight}">
+                                    <b>${bear.edgeHeig}</b>
+                                </c:when>
+
+
+                                <c:otherwise>
+                                    <b><font color="red">${bear.edgeHeig}</font></b>
+                                </c:otherwise>
+                            </c:choose>
+
                         </td>
 
                         <td>
-                                ${ bear.actiVert}
+
+                            <c:set var="crossLineTors" value="${bear.crossLineTors}"></c:set>
+
+                            <c:choose>
+
+                                <c:when test="${crossLineTors>=crossLineTorsStandardLeft && crossLineTors<=crossLineTorsStandardRight}">
+                                    <b>${bear.crossLineTors}</b>
+                                </c:when>
+
+
+                                <c:otherwise>
+                                    <b><font color="red">${bear.crossLineTors}</font></b>
+                                </c:otherwise>
+                            </c:choose>
+
+
+
                         </td>
+
+                        <td>
+
+
+                            <c:set var="actiVert" value="${bear.actiVert}"></c:set>
+
+                            <c:choose>
+
+                                <c:when test="${actiVert>=actiVertStandardLeft && actiVert<=actiVertStandardRight}">
+                                    <b>${bear.actiVert}</b>
+                                </c:when>
+
+
+                                <c:otherwise>
+                                    <b><font color="red">${bear.actiVert}</font></b>
+                                </c:otherwise>
+                            </c:choose>
+
+                        </td>
+
+
 
                         <td>
                             <fmt:formatDate value="${bear.bearingqualityCheckTime}"

@@ -60,6 +60,11 @@ public interface PileQualityService {
 
     PageInfo<PileQuality> selectHasQualityByDate(String start, String end, Integer pageIndex, Integer pageSize);
 
+    int selectCountByDate(String start, String end, int isQualify);
+
+    PageInfo<PileQuality> selectByDateAll(String start, String end, Integer pageIndex, Integer pageSize);
+
+
 
 
 }

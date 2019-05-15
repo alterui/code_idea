@@ -128,6 +128,12 @@ public class BeamQualityServiceImpl implements BeamQualityService {
         return new PageInfo<BeamQuality>(bearingQualityList);
     }
 
+    @Override
+    public PageInfo<BeamQuality> selectByDateAll(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<BeamQuality> bearingQualityList = beamQualityMapper.selectByDateAll(start, end);
+        return new PageInfo<BeamQuality>(bearingQualityList);
+    }
 
     @Override
     public PageInfo<BeamQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize) {

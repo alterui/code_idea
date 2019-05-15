@@ -264,7 +264,7 @@
         WHERE  bearingqualityCheckTime
         BETWEEN #{start}
         AND #{end}
-        AND isQualify !=2
+        AND (isQualify = 0 OR isQualify = 1)
         ORDER BY bearingqualityCheckTime DESC
     </select>
 
@@ -293,6 +293,35 @@
         AND (isQualify = 0 OR isQualify = 1)
         ORDER BY bearingqualityCheckTime DESC
     </select>
+
+    <select id="selectCountByDate"    resultType="java.lang.Integer">
+        select
+        count(*)
+        from bearingquality
+        WHERE  bearingqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify = #{isQualify}
+
+    </select>
+
+
+    <select id="selectByDateAll"  parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        *
+        from bearingquality
+        WHERE  bearingqualityCheckTime
+        BETWEEN #{start}
+        AND #{end}
+        AND isQualify !=2
+        ORDER BY bearingqualityCheckTime DESC
+    </select>
+
+
+
+
+
+
 
 
 </mapper>

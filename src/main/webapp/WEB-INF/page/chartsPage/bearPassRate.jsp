@@ -67,7 +67,7 @@
 
 </head>
 <body class="layui-layout-body">
-    <div class="layui-layout layui-layout-admin">
+<div class="layui-layout layui-layout-admin">
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
@@ -86,27 +86,15 @@
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
                 <a >支座验收合格折线图</a>
-
-<%--
-                <div style="float: right">
-                    位置跳转&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a  class="layui-this" href="/page/beam/showChart">梁验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pier/showChart">墩台验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/pile/showChart">桩验收合格折线图</a>&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                    <a class="layui-this" href="/page/tower/showChart">锁塔验收合格折线图</a>
-                </div>--%>
-
             </blockquote>
-
-
 
 
             <div align="center">
                 开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
-                <button  onclick="return getChart()"  class="layui-btn " type="submit" > <i class="layui-icon">&#xe62c;</i>生成折线图</button>
+                <button  onclick="return getChart()"  class="layui-btn " type="submit"> <i class="layui-icon">&#xe62c;</i>生成图表</button>
             </div>
-            <br><br><br>
+            <br><br><br><br><br>
 
 
 
@@ -115,20 +103,34 @@
 
 
             <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-            <div align="center">
-            <div  id="main" style="width: 900px;height:450px;"></div>
+            <div style="width:800px; height:460px; float:left; display:inline"  >
+                <div  id="main" style="width: 800px;height:450px;"></div>
+            </div>
+
+            <div style="width:300px; height:460px; float:right; display:inline" >
+                <div  id="pie" style="width: 300px;height:450px;">
+
+                </div>
+            </div>
+
+
             <script type="text/javascript">
 
 
                 function getAjax() {
 
                     var myChart = echarts.init(document.getElementById('main'));
+                    var myPie = echarts.init(document.getElementById('pie'));
                     // 显示标题，图例和空的坐标轴
                     myChart.setOption({
                         title : {
                             text : '支座质量验收合格率折线图'
                         },
-                        tooltip : {},
+
+                        tooltip : {
+
+                        },
+
                         legend : {
                             data : [ '合格率' ]
                         },
@@ -143,10 +145,53 @@
                         } ]
                     });
 
+                    myPie.setOption({
+                        tooltip: {
+                            trigger: 'item',
+                            formatter: "{a} <br/>{b}: {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: 'vertical',
+                            x: 'left',
+                            data:['合格数量','不合格数量']
+                        },
+                        series: [
+                            {
+                                name:'数量',
+                                type:'pie',
+                                radius: ['0%', '90%'],
+                                avoidLabelOverlap: false,
+                                label: {
+                                    normal: {
+                                        show: false,
+                                        position: 'center'
+                                    },
+                                    emphasis: {
+                                        show: true,
+                                        textStyle: {
+                                            fontSize: '30',
+                                            fontWeight: 'bold'
+                                        }
+                                    }
+                                },
+                                labelLine: {
+                                    normal: {
+                                        show: false
+                                    }
+                                },
+                                data:[]
+                            }
+                        ]
+                    });
+
                     myChart.showLoading(); //数据加载完之前先显示一段简单的loading动画
 
                     var names = []; //X数组（实际用来盛放X轴坐标值）
                     var nums = []; //Y数组（实际用来盛放Y坐标值）
+
+                    var passCount ;
+
+                    var notPassCount ;
 
                     var start = $("#start").val();
                     var end = $("#end").val();
@@ -163,31 +208,73 @@
                             //请求成功时执行该函数内容，result即为服务器返回的json对象
 
 
-                            if(result.length==0){
+                            if(result.code==0){
                                 //没有数据
                                 alert("所选日期没有数据，请查询后再试");
                             }
-                            if (result) {
+                            if (result.code==1) {
+                                //alert(result.passRateDate.length);
 
-                                for (var i = 0; i < result.length; i++) {
+                                for (var i = 0; i < result.passRateDate.length; i++) {
 
-                                    names.push(result[i].checkTime); //挨个取出类别并填入类别数组
+                                    names.push(result.passRateDate[i].checkTime); //挨个取出类别并填入类别数组
                                 }
-                                for (var i = 0; i < result.length; i++) {
-                                    nums.push(result[i].passRate); //挨个取出销量并填入销量数组
+                                for (var i = 0; i < result.passRateDate.length; i++) {
+                                    nums.push(result.passRateDate[i].passRate); //挨个取出销量并填入销量数组
                                 }
+
+                                notPassCount = result.notPassCount;
+                                passCount = result.passCount;
 
 
                                 myChart.hideLoading(); //隐藏加载动画
+                                myPie.hideLoading(); //隐藏加载动画
                                 myChart.setOption({ //加载数据图表
+
+
                                     xAxis: {
                                         data: names
                                     },
+
                                     series: [{
                                         // 根据名字对应到相应的系列
                                         name: '合格率',
                                         data: nums
                                     }]
+                                });
+
+
+                                myPie.setOption({ //加载数据图表
+
+
+                                    series: [{
+                                        // 根据名字对应到相应的系列
+
+                                        data: [
+                                            {value:notPassCount, name:'不合格数量'},
+                                            {value:passCount, name:'合格数量'}
+                                        ]
+                                    }]
+                                });
+
+
+                                myChart.on('click', function (params) {
+
+
+                                    var start =  names[params.dataIndex];
+                                    var end = names[params.dataIndex];
+                                    window.open("/page/bear/getSearchChart?start=" + start + " &end=" + end + "", "_black");
+
+
+
+
+
+
+
+
+
+
+
                                 });
 
                             }
@@ -232,8 +319,8 @@
             </script>
 
 
-            </div>
         </div>
+
     </div>
 </div>
 

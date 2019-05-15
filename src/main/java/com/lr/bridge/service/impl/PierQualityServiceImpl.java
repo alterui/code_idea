@@ -147,6 +147,19 @@ public class PierQualityServiceImpl implements PierQualityService {
     }
 
 
+    @Override
+    public int selectCountByDate(String start, String end, int isQualify) {
+        return pierQualityMapper.selectCountByDate(start, end, isQualify);
+    }
+
+    @Override
+    public PageInfo<PierQuality> selectByDateAll(String start, String end, Integer pageIndex, Integer pageSize) {
+        PageHelper.startPage(pageIndex, pageSize);
+        List<PierQuality> bearingQualityList = pierQualityMapper.selectByDateAll(start, end);
+        return new PageInfo<PierQuality>(bearingQualityList);
+    }
+
+
 
 
 }

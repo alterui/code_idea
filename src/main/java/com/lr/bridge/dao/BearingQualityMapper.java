@@ -44,5 +44,11 @@ public interface BearingQualityMapper {
 
     List<BearingQuality> selectHasQualityByDate(@Param("start") String start, @Param("end") String end);
 
+    int selectCountByDate(@Param("start") String start, @Param("end") String end, @Param("isQualify") int isQualify);
+
+    List<BearingQuality> selectByDateAll(@Param("start") String start,@Param("end") String end);
+
+
+
 
 }

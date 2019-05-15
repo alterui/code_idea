@@ -56,6 +56,7 @@ public interface BeamQualityService {
 
 
     PageInfo<BeamQuality> selectByDate(String start, String end, Integer pageIndex, Integer pageSize);
+    PageInfo<BeamQuality> selectByDateAll(String start, String end, Integer pageIndex, Integer pageSize);
 
     PageInfo<BeamQuality> selectQualityByDate(int isQualify, String start, String end, Integer pageIndex, Integer pageSize);
 
