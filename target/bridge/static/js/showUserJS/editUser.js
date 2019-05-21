@@ -16,7 +16,7 @@ function editUser() {
 
     $.ajax({
         type: "POST",   //提交的方法
-        url:"${ctx}/updateUser", //提交的地址
+        url:"/updateUser", //提交的地址
         data:$('#userForm').serialize(),// 序列化表单值
         dataType: "json",
         async: false,

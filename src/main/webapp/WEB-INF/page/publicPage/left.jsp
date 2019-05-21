@@ -73,11 +73,11 @@
                     <li class="layui-nav-item layui-nav-itemed">
                         <a href="javascript:;">质量可视化管理</a>
                         <dl class="layui-nav-child">
-                            <dd><a href="/page/beam/showChart">梁验收合格折线图</a></dd>
-                            <dd><a href="/page/bear/showChart">支座验收合格折线图</a></dd>
-                            <dd><a href="/page/pier/showChart">墩台验收合格折线图</a></dd>
-                            <dd><a href="/page/pile/showChart">桩验收合格折线图</a></dd>
-                            <dd><a href="/page/tower/showChart">索塔验收合格折线图</a></dd>
+                            <dd><a href="/page/beam/showChart">梁验收合格率图表</a></dd>
+                            <dd><a href="/page/bear/showChart">支座验收合格率图表</a></dd>
+                            <dd><a href="/page/pier/showChart">墩台验收合格率图表</a></dd>
+                            <dd><a href="/page/pile/showChart">桩验收合格率图表</a></dd>
+                            <dd><a href="/page/tower/showChart">索塔验收合格率图表</a></dd>
 
                         </dl>
 

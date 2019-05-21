@@ -85,7 +85,7 @@
 
             <blockquote class="layui-elem-quote">
                 当前位置&nbsp;&nbsp;<b>|</b>&nbsp;&nbsp;
-                <a >支座验收合格折线图</a>
+                <a >支座验收合格率图表</a>
             </blockquote>
 
 

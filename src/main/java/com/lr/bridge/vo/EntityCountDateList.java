@@ -34,4 +34,6 @@ public class EntityCountDateList {
     public void setEntityCounts(List<EntityCountDate> entityCounts) {
         this.entityCounts = entityCounts;
     }
+
+
 }
