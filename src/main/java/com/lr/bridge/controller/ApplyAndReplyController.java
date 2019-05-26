@@ -117,10 +117,6 @@ public class ApplyAndReplyController {
             String year1 = split1[0];
             String month1 = split1[1];
             String day1 = split1[2];
-           /* System.out.println(year1);
-            System.out.println(month1);
-            System.out.println(day1);
-*/
             map.put("year1", year1);
             map.put("month1", month1);
             map.put("day1", day1);
@@ -130,19 +126,9 @@ public class ApplyAndReplyController {
             map.put("day1", "  ");
         }
 
-
-
-
-
-
-        /*System.out.println(year + month + day);*/
         map.put("year", year);
         map.put("month", month);
         map.put("day", day);
-
-
-
-
 
         // 提示：在调用工具类生成Word文档之前应当检查所有字段是否完整
         // 否则Freemarker的模板殷勤在处理时可能会因为找不到值而报错 这里暂时忽略这个步骤了
@@ -303,9 +289,7 @@ public class ApplyAndReplyController {
                                        @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         String ids = request.getParameter("id");
-
         String[] split = ids.trim().split(",");
-
         List<String> result = new ArrayList<>();
 
         try {
@@ -679,13 +663,6 @@ public class ApplyAndReplyController {
     }
 
 
-
-
-
-
-
-
-
     /**
      * 待审核页面
      * 根据日期查找
@@ -704,8 +681,6 @@ public class ApplyAndReplyController {
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
-
-
 
         model.addAttribute("showStart", start);
         model.addAttribute("showEnd", end);
@@ -737,9 +712,6 @@ public class ApplyAndReplyController {
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
-
-
-
         model.addAttribute("showStart", start);
         model.addAttribute("showEnd", end);
 

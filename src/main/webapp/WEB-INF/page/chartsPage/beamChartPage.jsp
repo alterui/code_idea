@@ -121,13 +121,16 @@
 
                                 </td>
 
+
+
+
                                 <td>
 
                                     <c:set var="axial" value="${beam.axialDevi}"></c:set>
 
                                     <c:choose>
 
-                                        <c:when test="${axial<axialDeviStandard }">
+                                        <c:when test="${ 0.0<=axial && axial<=axialDeviStandard }">
                                             <b>${beam.axialDevi}</b>
                                         </c:when>
 
@@ -135,6 +138,7 @@
                                             <b><font color="red">${beam.axialDevi}</font></b>
                                         </c:otherwise>
                                     </c:choose>
+
                                 </td>
 
                                 <td>
@@ -142,7 +146,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${section<sectionDeviStandard }">
+                                        <c:when test="${0.0 <=section && section<=sectionDeviStandard }">
                                             <b>${beam.sectionDevi}</b>
                                         </c:when>
 
@@ -161,7 +165,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${topElev<topElevDeviStandard}">
+                                        <c:when test="${0.0<=topElev&&topElev<=topElevDeviStandard}">
                                             <b>${beam.topElevDevi}</b>
                                         </c:when>
 
@@ -178,7 +182,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${segmHeight<segmHeightDeviStandard}">
+                                        <c:when test="${0.0<=segmHeight && segmHeight<=segmHeightDeviStandard}">
                                             <b>${beam.segmHeightDevi}</b>
                                         </c:when>
 
@@ -200,9 +204,6 @@
                                             <b>${beam.heightDevi}</b>
                                         </c:when>
 
-                                       <%-- <c:when test="${}">
-                                            <b>${beam.heightDevi}</b>
-                                        </c:when>--%>
 
                                         <c:otherwise>
                                             <b><font color="red">${beam.heightDevi}</font></b>
@@ -216,7 +217,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${crossSlope<crossSlopeDeviStandard}">
+                                        <c:when test="${0.0<=crossSlope && crossSlope<=crossSlopeDeviStandard}">
                                             <b>${beam.crossSlopeDevi}</b>
                                         </c:when>
 
@@ -235,7 +236,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${embePart<embePartsDeviStandard}">
+                                        <c:when test="${0.0<=embePart && embePart<=embePartsDeviStandard}">
                                             <b>${beam.embePartsDevi}</b>
                                         </c:when>
 
@@ -252,7 +253,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${smoo<smooDeviStandard}">
+                                        <c:when test="${0.0<=smoo && smoo<=smooDeviStandard}">
                                             <b>${beam.smooDevi}</b>
                                         </c:when>
 
@@ -269,7 +270,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${cableTubeAxis<cableTubeAxisDeviStandard}">
+                                        <c:when test="${0.0<= cableTubeAxis && cableTubeAxis<=cableTubeAxisDeviStandard}">
                                             <b>${beam.cableTubeAxisDevi}</b>
                                         </c:when>
 
@@ -287,7 +288,7 @@
 
                                     <c:choose>
 
-                                        <c:when test="${prestTend<prestTendDeviStandard}">
+                                        <c:when test="${0.0 <= prestTend && prestTend<=prestTendDeviStandard}">
                                             <b>${beam.prestTendDevi}</b>
                                         </c:when>
 
@@ -308,8 +309,11 @@
 
                                 <td>
                                     <b><fmt:formatDate value="${beam.beamqualityCheckTime}"
-                                                    pattern="yyyy-MM-dd HH:mm:ss"/></b>
+                                                       pattern="yyyy-MM-dd HH:mm:ss"/></b>
                                 </td>
+
+
+
 
 
 

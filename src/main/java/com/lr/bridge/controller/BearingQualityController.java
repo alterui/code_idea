@@ -90,10 +90,6 @@ public class BearingQualityController {
        //0代表不合格，1代表合格
         bearingQualityService.updateByIsQualify(1, id);
 
-      /*  model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
-        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showQuality(pageIndex, pageSize);
-        model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/qualityPage/bearQuality";*/
         return "redirect:/page/bear";
 
     }
@@ -116,11 +112,6 @@ public class BearingQualityController {
 
         //0代表不合格，1代表合格
         bearingQualityService.updateByIsQualify(0, id);
-
-       /* model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
-        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showQuality(pageIndex, pageSize);
-        model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/qualityPage/bearQuality";*/
         return "redirect:/page/bear/";
 
     }
@@ -144,11 +135,6 @@ public class BearingQualityController {
 
         //0代表不合格，1代表合格
         bearingQualityService.updateByIsQualify(1, id);
-
-      /*  model.addAttribute("pageUrlPrefix", "/page/bear/hasQuality?pageIndex");
-        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectByHasQuality(pageIndex, pageSize);
-        model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/qualityPage/hasBearQuality";*/
         return "redirect:/page/bear/hasQuality";
 
     }
@@ -172,12 +158,6 @@ public class BearingQualityController {
 
         //0代表不合格，1代表合格
         bearingQualityService.updateByIsQualify(0, id);
-
-       /* model.addAttribute("pageUrlPrefix", "/page/bear/hasQuality?pageIndex");
-        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectByHasQuality(pageIndex, pageSize);
-        model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/qualityPage/hasBearQuality";*/
-
         return "redirect:/page/bear/hasQuality";
 
 
@@ -285,11 +265,6 @@ public class BearingQualityController {
                              @PathVariable("id") Integer id) {
 
         bearingQualityService.deleteById(id);
-
-      /*  model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
-        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
-        model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/bearCrudPage/bearCrudPage";*/
         return "redirect:/page/bear/show";
     }
 
@@ -308,11 +283,8 @@ public class BearingQualityController {
                                               @RequestParam(required = false, defaultValue = "10") Integer pageSize) {
 
         String ids = request.getParameter("id");
-
         String[] split = ids.trim().split(",");
-
         List<String> result = new ArrayList<>();
-
         try {
             for (String id : split) {
                 id= id.trim();
@@ -324,8 +296,6 @@ public class BearingQualityController {
             result.add("删除失败");
             e.printStackTrace();
         }
-
-
 
         return result;
     }
@@ -368,10 +338,7 @@ public class BearingQualityController {
         String edgeHeig = request.getParameter("edgeHeig");
         String crossLineTors = request.getParameter("crossLineTors");
         String actiVert = request.getParameter("actiVert");
-        //String bearingqualityCheckTime = request.getParameter("bearingqualityCheckTime");
-        //String isQualify = request.getParameter("isQualify");
         BearingQuality bearingQuality = new BearingQuality();
-       // BearingQuality bear = bearingQualityService.selectByPrimaryKey(Integer.parseInt(id));
         //保存
         bearingQuality.setId(Integer.parseInt(id));
         bearingQuality.setStruId(struId);
@@ -388,12 +355,6 @@ public class BearingQualityController {
         bearingQuality.setIsQualify(-1);
 
         bearingQualityService.updateByPrimaryKey(bearingQuality);
-
-       /* //show
-        model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
-        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
-        model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/bearCrudPage/bearCrudPage";*/
         return "redirect:/page/bear/show";
     }
 
@@ -432,11 +393,6 @@ public class BearingQualityController {
         bearingQuality.setIsQualify(-1);
         bearingQualityService.insert(bearingQuality);
         //show
-      /*  model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
-        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.showBear(pageIndex, pageSize);
-        model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/bearCrudPage/bearCrudPage";*/
-
         return "redirect:/page/bear/show";
 
     }
@@ -667,9 +623,6 @@ public class BearingQualityController {
     }
 
 
-
-
-
     /**
      * 取值显示在验收标准页面上
      */
@@ -707,14 +660,9 @@ public class BearingQualityController {
         String endTime = end + "  23:59:59";
 
         PageInfo<BearingQuality> bearingQualityPageInfo = bearingQualityService.selectByDateAll(startTime, endTime, pageIndex, pageSize);
-
-
         model.addAttribute("showStart", start);
         model.addAttribute("showEnd", end);
-
         model.addAttribute("pageUrlPrefix", "/page/bear/show?pageIndex");
-
-
         model.addAttribute("pageInfo", bearingQualityPageInfo);
         return "page/bearCrudPage/bearCrudPage";
 
@@ -740,29 +688,20 @@ public class BearingQualityController {
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
-
         getRedShow(model);
-
         String[] split = start.split("-");
         String year = split[0];
         String month = split[1];
         String day = split[2];
-
         model.addAttribute("year", year);
         model.addAttribute("month", month);
         model.addAttribute("day", day);
-
-
-
         PageInfo<BearingQuality> bearQualityPageInfo = bearingQualityService.selectByDate(startTime, endTime, pageIndex, pageSize);
         model.addAttribute("pageUrlPrefix", "/page/bear/getSearch?pageIndex");
         model.addAttribute("pageInfo", bearQualityPageInfo);
         return "page/chartsPage/bearChartPage";
 
     }
-
-
-
 
     /**
      * 待验收页面的按日期搜索
@@ -783,10 +722,8 @@ public class BearingQualityController {
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
-
         model.addAttribute("showStart", start);
         model.addAttribute("showEnd", end);
-
         model.addAttribute("pageUrlPrefix", "/page/bear?pageIndex");
         //-1表示没有确认的。0代表不合格，1代表合格
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectQualityByDate(-1,startTime,endTime,pageIndex, pageSize);
@@ -794,8 +731,6 @@ public class BearingQualityController {
         return "page/qualityPage/bearQuality";
 
     }
-
-
 
     /**
      * 已经验收页面的按日期搜索
@@ -816,10 +751,8 @@ public class BearingQualityController {
         String startTime = start + "  00:00:00";
         String end = request.getParameter("end");
         String endTime = end + "  23:59:59";
-
         model.addAttribute("showStart", start);
         model.addAttribute("showEnd", end);
-
         model.addAttribute("pageUrlPrefix", "/page/bear/hasQuality?pageIndex");
         //-1表示没有确认的。0代表不合格，1代表合格
         PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectHasQualityByDate(startTime,endTime,pageIndex, pageSize);
@@ -827,10 +760,6 @@ public class BearingQualityController {
         return "page/qualityPage/hasBearQuality";
 
     }
-
-
-
-
     /**
      * 批量不合格
      *
@@ -857,10 +786,6 @@ public class BearingQualityController {
 
         return result;
     }
-
-
-
-
     /**
      * 批量合格
      *
@@ -888,8 +813,6 @@ public class BearingQualityController {
         return result;
     }
 
-
-
     /**
      * 更改
      * @param request
@@ -909,7 +832,6 @@ public class BearingQualityController {
         //查数据库isQualify的值
 
         BearingQuality bearingQuality = bearingQualityService.selectByPrimaryKey(id);
-
         if (bearingQuality.getIsQualify() == 1) {
             //1代表合格，更改为不合格
             bearingQualityService.updateByIsQualify(0, id);
@@ -919,16 +841,7 @@ public class BearingQualityController {
             bearingQualityService.updateByIsQualify(1, id);
 
         }
-
-        /*model.addAttribute("pageUrlPrefix", "/page/bear/hasQuality?pageIndex");
-        PageInfo<BearingQuality> bearingQualityInfo = bearingQualityService.selectByHasQuality(pageIndex, pageSize);
-        model.addAttribute("pageInfo", bearingQualityInfo);
-        return "page/qualityPage/hasBearQuality";*/
         return "redirect:/page/bear/hasQuality";
-
     }
-
-
-
 
 }

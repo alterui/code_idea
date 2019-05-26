@@ -4,7 +4,6 @@ package com.lr.bridge.util;
  * Created by ALTERUI on 2019/4/9 21:15
  */
 
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,16 +21,6 @@ public class WordGenerator {
     private static Map<String, Template> allTemplates = null;
 
     static {
-        /*configuration = new Configuration();
-        configuration.setDefaultEncoding("utf-8");
-        configuration.setClassForTemplateLoading(WordGenerator.class, "/com/lr/bridge/ftl");
-        allTemplates = new HashMap<>();	// Java 7 钻石语法
-        try {
-            allTemplates.put("resume", configuration.getTemplate("resume.ftl"));
-        } catch (IOException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }*/
 
 
         try {
