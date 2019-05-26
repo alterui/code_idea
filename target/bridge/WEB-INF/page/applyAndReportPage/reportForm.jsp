@@ -107,6 +107,7 @@
                          <th lay-data="{hide:true,field:'id'}"></th>
 
                          <th lay-data="{field:'contractorUnit', align:'center',width:120, sort: true}">承包单位</th>
+                         <th lay-data="{field:'applicationStatus', align:'center',width:120, sort: true}">申请状态</th>
                          <th lay-data="{field:'bidNum', align:'center',width:120, sort: true}">标段号</th>
                          <th lay-data="{field:'supervision', align:'center',width:120, sort: true}">监理单位</th>
                          <th lay-data="{field:'serialNum', align:'center',width:120, sort: true}">编号</th>
@@ -115,7 +116,6 @@
                          <th lay-data="{field:'projectName', align:'center',width:120, sort: true}">工程名称</th>
                          <th lay-data="{field:'contractorName', align:'center',width:120, sort: true}">承包人</th>
                          <th lay-data="{field:'applicationTime', align:'center',width:180, sort: true}">申请时间</th>
-                         <th lay-data="{field:'applicationStatus', align:'center',width:120, sort: true}">申请状态</th>
                          <th lay-data="{fixed: 'right',width:300, align:'center', toolbar: '#barDemo'}">操作</th>
 
 
@@ -137,6 +137,19 @@
                                     <td>
 
                                             ${env.contractorUnit}
+                                    </td>
+
+                                    <td>
+
+                                        <c:choose>
+                                            <c:when test="${env.centerView==null}">
+                                                <b>待审核</b>
+                                            </c:when>
+
+                                            <c:otherwise>
+                                                <font color="green"><b>已审核</b></font>
+                                            </c:otherwise>
+                                        </c:choose>
                                     </td>
                                     <td>
                                             ${env.bidNum}
@@ -171,18 +184,7 @@
                                     </td>
 
 
-                                    <td>
 
-                                        <c:choose>
-                                            <c:when test="${env.centerView==null}">
-                                                <b>待审核</b>
-                                            </c:when>
-
-                                            <c:otherwise>
-                                                <font color="green"><b>已审核</b></font>
-                                            </c:otherwise>
-                                        </c:choose>
-                                    </td>
 
                                 </tr>
                             </c:forEach>

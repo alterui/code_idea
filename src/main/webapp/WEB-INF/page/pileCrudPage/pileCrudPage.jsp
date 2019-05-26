@@ -68,7 +68,7 @@
 
                 <a href="/page/pile/addData" class="layui-btn layui-btn-mini"><i class="layui-icon">&#xe61f;</i>增加数据</a>
                 <button class="layui-btn layui-btn-danger" data-type="delCheckData"><i class="layui-icon">&#xe640;</i>删除选中</button>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                 开始时间&nbsp;&nbsp;<input  type="text" id="start" name="start" value="${showStart}" class="layui-input">&nbsp;&nbsp;&nbsp;&nbsp;
                 结束时间&nbsp;&nbsp;<input   type="text" id="end" name="end" value="${showEnd}" class="layui-input" >
@@ -135,7 +135,7 @@
                                 </td>
 
                                 <td>
-                                    <!-- -1代表等待审核，0代表审核不通过(不合格)，1代表审核通过(合格),-->
+                                    <!-- -1代表等待审核，0代表审核不通过(不通过)，1代表审核通过(通过),-->
                                     <c:choose>
 
                                         <c:when test="${pile.isQualify==-1}">
@@ -143,11 +143,11 @@
                                         </c:when>
 
                                         <c:when test="${pile.isQualify==0}">
-                                            <b><font color="red">不合格</font></b>
+                                            <b><font color="red">不通过</font></b>
                                         </c:when>
 
                                         <c:otherwise>
-                                            <b><font color="green">合格</font></b>
+                                            <b><font color="green">通过</font></b>
                                         </c:otherwise>
                                     </c:choose>
 
