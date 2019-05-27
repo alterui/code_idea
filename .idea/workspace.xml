@@ -13,27 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2830dbe2-521c-4d84-b23c-6d5e66b062bc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/static/js/applyAndReportJS/auditForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/auditForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/centerPreviewForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/centerPreviewForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/editForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/hasAuditForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/hasAuditForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/previewForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/previewForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/replyForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/replyForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/updateReplyForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/updateReplyForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/writeForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/writeForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bridge.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/applyAndReportPage/reportForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/applyAndReportPage/reportForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/ApplyAndReplyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/bridge/WEB-INF/classes/com/lr/bridge/controller/ApplyAndReplyController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/ApplyAndReplyController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/lr/bridge/controller/ApplyAndReplyController.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -70,55 +54,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/replyForm.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-378">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
+            <state relative-caret-position="1863">
               <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="118" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#1830#1836#0#HTML" expanded="true" />
-                <element signature="e#1836#1842#0#HTML" expanded="true" />
-                <element signature="e#1850#1856#0#HTML" expanded="true" />
-                <element signature="e#1856#1862#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#2744#2750#0#HTML" expanded="true" />
-                <element signature="e#2750#2756#0#HTML" expanded="true" />
-                <element signature="e#2756#2762#0#HTML" expanded="true" />
-                <element signature="e#2762#2768#0#HTML" expanded="true" />
-                <element signature="e#2768#2774#0#HTML" expanded="true" />
-                <element signature="e#2774#2780#0#HTML" expanded="true" />
-                <element signature="e#2780#2786#0#HTML" expanded="true" />
-                <element signature="e#2786#2792#0#HTML" expanded="true" />
-                <element signature="e#2792#2798#0#HTML" expanded="true" />
-                <element signature="e#2798#2804#0#HTML" expanded="true" />
-                <element signature="e#2804#2810#0#HTML" expanded="true" />
-                <element signature="e#2810#2816#0#HTML" expanded="true" />
-                <element signature="e#2816#2822#0#HTML" expanded="true" />
-                <element signature="e#2822#2828#0#HTML" expanded="true" />
-                <element signature="e#2828#2834#0#HTML" expanded="true" />
-                <element signature="e#2834#2840#0#HTML" expanded="true" />
-                <element signature="e#2840#2846#0#HTML" expanded="true" />
-                <element signature="e#2952#2958#0#HTML" expanded="true" />
-                <element signature="e#2958#2964#0#HTML" expanded="true" />
-                <element signature="e#3049#3055#0#HTML" expanded="true" />
-                <element signature="e#3055#3061#0#HTML" expanded="true" />
-                <element signature="e#3061#3067#0#HTML" expanded="true" />
-                <element signature="e#3067#3073#0#HTML" expanded="true" />
-                <element signature="e#3094#3100#0#HTML" expanded="true" />
-                <element signature="e#3100#3106#0#HTML" expanded="true" />
-                <element signature="e#17139#17143#1#HTML" expanded="true" />
-                <element signature="e#19786#19790#1#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -126,27 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="1890">
               <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
-              <folding>
-                <element signature="e#2855#2861#0#HTML" expanded="true" />
-                <element signature="e#2861#2867#0#HTML" expanded="true" />
-                <element signature="e#2867#2873#0#HTML" expanded="true" />
-                <element signature="e#2873#2879#0#HTML" expanded="true" />
-                <element signature="e#2879#2885#0#HTML" expanded="true" />
-                <element signature="e#2885#2891#0#HTML" expanded="true" />
-                <element signature="e#2891#2897#0#HTML" expanded="true" />
-                <element signature="e#2897#2903#0#HTML" expanded="true" />
-                <element signature="e#2903#2909#0#HTML" expanded="true" />
-                <element signature="e#2909#2915#0#HTML" expanded="true" />
-                <element signature="e#2915#2921#0#HTML" expanded="true" />
-                <element signature="e#2921#2927#0#HTML" expanded="true" />
-                <element signature="e#2927#2933#0#HTML" expanded="true" />
-                <element signature="e#2933#2939#0#HTML" expanded="true" />
-                <element signature="e#2939#2945#0#HTML" expanded="true" />
-                <element signature="e#2945#2951#0#HTML" expanded="true" />
-                <element signature="e#2951#2957#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -154,27 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
+            <state relative-caret-position="1890">
               <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
-              <folding>
-                <element signature="e#2886#2892#0#HTML" expanded="true" />
-                <element signature="e#2892#2898#0#HTML" expanded="true" />
-                <element signature="e#2898#2904#0#HTML" expanded="true" />
-                <element signature="e#2904#2910#0#HTML" expanded="true" />
-                <element signature="e#2910#2916#0#HTML" expanded="true" />
-                <element signature="e#2916#2922#0#HTML" expanded="true" />
-                <element signature="e#2922#2928#0#HTML" expanded="true" />
-                <element signature="e#2928#2934#0#HTML" expanded="true" />
-                <element signature="e#2934#2940#0#HTML" expanded="true" />
-                <element signature="e#2940#2946#0#HTML" expanded="true" />
-                <element signature="e#2946#2952#0#HTML" expanded="true" />
-                <element signature="e#2952#2958#0#HTML" expanded="true" />
-                <element signature="e#2958#2964#0#HTML" expanded="true" />
-                <element signature="e#2964#2970#0#HTML" expanded="true" />
-                <element signature="e#2970#2976#0#HTML" expanded="true" />
-                <element signature="e#2976#2982#0#HTML" expanded="true" />
-                <element signature="e#2982#2988#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -182,54 +83,40 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="1890">
               <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
-              <folding>
-                <element signature="e#2885#2891#0#HTML" expanded="true" />
-                <element signature="e#2891#2897#0#HTML" expanded="true" />
-                <element signature="e#2897#2903#0#HTML" expanded="true" />
-                <element signature="e#2903#2909#0#HTML" expanded="true" />
-                <element signature="e#2909#2915#0#HTML" expanded="true" />
-                <element signature="e#2915#2921#0#HTML" expanded="true" />
-                <element signature="e#2921#2927#0#HTML" expanded="true" />
-                <element signature="e#2927#2933#0#HTML" expanded="true" />
-                <element signature="e#2933#2939#0#HTML" expanded="true" />
-                <element signature="e#2939#2945#0#HTML" expanded="true" />
-                <element signature="e#2945#2951#0#HTML" expanded="true" />
-                <element signature="e#2951#2957#0#HTML" expanded="true" />
-                <element signature="e#2957#2963#0#HTML" expanded="true" />
-                <element signature="e#2963#2969#0#HTML" expanded="true" />
-                <element signature="e#2969#2975#0#HTML" expanded="true" />
-                <element signature="e#2975#2981#0#HTML" expanded="true" />
-                <element signature="e#2981#2987#0#HTML" expanded="true" />
-              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1971">
+              <caret line="73" column="118" selection-start-line="73" selection-start-column="118" selection-end-line="73" selection-end-column="118" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="73" column="118" selection-start-line="73" selection-start-column="118" selection-end-line="73" selection-end-column="118" />
+            <state relative-caret-position="160">
+              <caret line="447" column="111" selection-start-line="447" selection-start-column="111" selection-end-line="447" selection-end-column="111" />
               <folding>
-                <element signature="e#2893#2899#0#HTML" expanded="true" />
-                <element signature="e#2899#2905#0#HTML" expanded="true" />
-                <element signature="e#2905#2911#0#HTML" expanded="true" />
-                <element signature="e#2911#2917#0#HTML" expanded="true" />
-                <element signature="e#2917#2923#0#HTML" expanded="true" />
-                <element signature="e#2923#2929#0#HTML" expanded="true" />
-                <element signature="e#2929#2935#0#HTML" expanded="true" />
-                <element signature="e#2935#2941#0#HTML" expanded="true" />
-                <element signature="e#2941#2947#0#HTML" expanded="true" />
-                <element signature="e#2947#2953#0#HTML" expanded="true" />
-                <element signature="e#2953#2959#0#HTML" expanded="true" />
-                <element signature="e#2959#2965#0#HTML" expanded="true" />
-                <element signature="e#2965#2971#0#HTML" expanded="true" />
-                <element signature="e#2971#2977#0#HTML" expanded="true" />
-                <element signature="e#2977#2983#0#HTML" expanded="true" />
-                <element signature="e#2983#2989#0#HTML" expanded="true" />
-                <element signature="e#2989#2995#0#HTML" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5157">
+              <caret line="207" column="31" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -246,29 +133,14 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/errorPage/404.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3807">
-              <folding>
-                <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
+            <state relative-caret-position="2619">
               <caret line="97" column="49" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/writeForm.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -391,7 +263,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/beamQuality.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/qualityPage/hasBeamQuality.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/util/WordGenerator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BearingQualityController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/reportForm.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/applyAndReportJS/auditForm.js" />
@@ -409,6 +280,7 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java" />
       </list>
     </option>
   </component>
@@ -1124,12 +996,13 @@
       <workItem from="1558428525069" duration="752000" />
       <workItem from="1558519787666" duration="2665000" />
       <workItem from="1558618174164" duration="212000" />
-      <workItem from="1558855946778" duration="3853000" />
+      <workItem from="1558855946778" duration="5165000" />
+      <workItem from="1558913761706" duration="839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="649062000" />
+    <option name="totallyTimeSpent" value="651213000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1142,9 +1015,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81098545" visible="true" weight="0.230563" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.81098545" visible="true" weight="0.23391421" />
       <window_info id="Structure" order="1" sideWeight="0.14106146" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1154,7 +1026,7 @@
       <window_info id="Web" order="7" sideWeight="0.18901454" side_tool="true" weight="0.2989276" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.34217876" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.25837988" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49798658" visible="true" weight="0.34217876" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.57681566" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1536,44 +1408,12 @@
         <state relative-caret-position="-1782" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/util/JSONUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/util/PermissionUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-387">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/util/JSONUtil.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/util/PermissionUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/util/WordGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="714" column="8" selection-start-line="714" selection-start-column="8" selection-end-line="714" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1284">
-          <caret line="207" column="31" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1665,6 +1505,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1863">
+          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1971">
+          <caret line="73" column="118" selection-start-line="73" selection-start-column="118" selection-end-line="73" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/BeamQualityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5157">
+          <caret line="207" column="31" selection-start-line="207" selection-start-column="20" selection-end-line="207" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/applyAndReportPage/updateReplyForm.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -1673,164 +1558,21 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/errorPage/404.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3807">
-          <folding>
-            <element signature="n#style#0;n#span#1;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
+        <state relative-caret-position="2619">
           <caret line="97" column="49" selection-start-line="97" selection-start-column="49" selection-end-line="97" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/beamCrudPage/beamCrudPage.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/lr/bridge/controller/ApplyAndReplyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="16" selection-end-line="69" selection-end-column="118" />
+        <state relative-caret-position="160">
+          <caret line="447" column="111" selection-start-line="447" selection-start-column="111" selection-end-line="447" selection-end-column="111" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#1830#1836#0#HTML" expanded="true" />
-            <element signature="e#1836#1842#0#HTML" expanded="true" />
-            <element signature="e#1850#1856#0#HTML" expanded="true" />
-            <element signature="e#1856#1862#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#2744#2750#0#HTML" expanded="true" />
-            <element signature="e#2750#2756#0#HTML" expanded="true" />
-            <element signature="e#2756#2762#0#HTML" expanded="true" />
-            <element signature="e#2762#2768#0#HTML" expanded="true" />
-            <element signature="e#2768#2774#0#HTML" expanded="true" />
-            <element signature="e#2774#2780#0#HTML" expanded="true" />
-            <element signature="e#2780#2786#0#HTML" expanded="true" />
-            <element signature="e#2786#2792#0#HTML" expanded="true" />
-            <element signature="e#2792#2798#0#HTML" expanded="true" />
-            <element signature="e#2798#2804#0#HTML" expanded="true" />
-            <element signature="e#2804#2810#0#HTML" expanded="true" />
-            <element signature="e#2810#2816#0#HTML" expanded="true" />
-            <element signature="e#2816#2822#0#HTML" expanded="true" />
-            <element signature="e#2822#2828#0#HTML" expanded="true" />
-            <element signature="e#2828#2834#0#HTML" expanded="true" />
-            <element signature="e#2834#2840#0#HTML" expanded="true" />
-            <element signature="e#2840#2846#0#HTML" expanded="true" />
-            <element signature="e#2952#2958#0#HTML" expanded="true" />
-            <element signature="e#2958#2964#0#HTML" expanded="true" />
-            <element signature="e#3049#3055#0#HTML" expanded="true" />
-            <element signature="e#3055#3061#0#HTML" expanded="true" />
-            <element signature="e#3061#3067#0#HTML" expanded="true" />
-            <element signature="e#3067#3073#0#HTML" expanded="true" />
-            <element signature="e#3094#3100#0#HTML" expanded="true" />
-            <element signature="e#3100#3106#0#HTML" expanded="true" />
-            <element signature="e#17139#17143#1#HTML" expanded="true" />
-            <element signature="e#19786#19790#1#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/bearCrudPage/bearCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
-          <folding>
-            <element signature="e#2855#2861#0#HTML" expanded="true" />
-            <element signature="e#2861#2867#0#HTML" expanded="true" />
-            <element signature="e#2867#2873#0#HTML" expanded="true" />
-            <element signature="e#2873#2879#0#HTML" expanded="true" />
-            <element signature="e#2879#2885#0#HTML" expanded="true" />
-            <element signature="e#2885#2891#0#HTML" expanded="true" />
-            <element signature="e#2891#2897#0#HTML" expanded="true" />
-            <element signature="e#2897#2903#0#HTML" expanded="true" />
-            <element signature="e#2903#2909#0#HTML" expanded="true" />
-            <element signature="e#2909#2915#0#HTML" expanded="true" />
-            <element signature="e#2915#2921#0#HTML" expanded="true" />
-            <element signature="e#2921#2927#0#HTML" expanded="true" />
-            <element signature="e#2927#2933#0#HTML" expanded="true" />
-            <element signature="e#2933#2939#0#HTML" expanded="true" />
-            <element signature="e#2939#2945#0#HTML" expanded="true" />
-            <element signature="e#2945#2951#0#HTML" expanded="true" />
-            <element signature="e#2951#2957#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pileCrudPage/pileCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
-          <folding>
-            <element signature="e#2886#2892#0#HTML" expanded="true" />
-            <element signature="e#2892#2898#0#HTML" expanded="true" />
-            <element signature="e#2898#2904#0#HTML" expanded="true" />
-            <element signature="e#2904#2910#0#HTML" expanded="true" />
-            <element signature="e#2910#2916#0#HTML" expanded="true" />
-            <element signature="e#2916#2922#0#HTML" expanded="true" />
-            <element signature="e#2922#2928#0#HTML" expanded="true" />
-            <element signature="e#2928#2934#0#HTML" expanded="true" />
-            <element signature="e#2934#2940#0#HTML" expanded="true" />
-            <element signature="e#2940#2946#0#HTML" expanded="true" />
-            <element signature="e#2946#2952#0#HTML" expanded="true" />
-            <element signature="e#2952#2958#0#HTML" expanded="true" />
-            <element signature="e#2958#2964#0#HTML" expanded="true" />
-            <element signature="e#2964#2970#0#HTML" expanded="true" />
-            <element signature="e#2970#2976#0#HTML" expanded="true" />
-            <element signature="e#2976#2982#0#HTML" expanded="true" />
-            <element signature="e#2982#2988#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/pierCrudPage/pierCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="70" column="118" selection-start-line="70" selection-start-column="118" selection-end-line="70" selection-end-column="118" />
-          <folding>
-            <element signature="e#2885#2891#0#HTML" expanded="true" />
-            <element signature="e#2891#2897#0#HTML" expanded="true" />
-            <element signature="e#2897#2903#0#HTML" expanded="true" />
-            <element signature="e#2903#2909#0#HTML" expanded="true" />
-            <element signature="e#2909#2915#0#HTML" expanded="true" />
-            <element signature="e#2915#2921#0#HTML" expanded="true" />
-            <element signature="e#2921#2927#0#HTML" expanded="true" />
-            <element signature="e#2927#2933#0#HTML" expanded="true" />
-            <element signature="e#2933#2939#0#HTML" expanded="true" />
-            <element signature="e#2939#2945#0#HTML" expanded="true" />
-            <element signature="e#2945#2951#0#HTML" expanded="true" />
-            <element signature="e#2951#2957#0#HTML" expanded="true" />
-            <element signature="e#2957#2963#0#HTML" expanded="true" />
-            <element signature="e#2963#2969#0#HTML" expanded="true" />
-            <element signature="e#2969#2975#0#HTML" expanded="true" />
-            <element signature="e#2975#2981#0#HTML" expanded="true" />
-            <element signature="e#2981#2987#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/towerCrudPage/towerCrudPage.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="73" column="118" selection-start-line="73" selection-start-column="118" selection-end-line="73" selection-end-column="118" />
-          <folding>
-            <element signature="e#2893#2899#0#HTML" expanded="true" />
-            <element signature="e#2899#2905#0#HTML" expanded="true" />
-            <element signature="e#2905#2911#0#HTML" expanded="true" />
-            <element signature="e#2911#2917#0#HTML" expanded="true" />
-            <element signature="e#2917#2923#0#HTML" expanded="true" />
-            <element signature="e#2923#2929#0#HTML" expanded="true" />
-            <element signature="e#2929#2935#0#HTML" expanded="true" />
-            <element signature="e#2935#2941#0#HTML" expanded="true" />
-            <element signature="e#2941#2947#0#HTML" expanded="true" />
-            <element signature="e#2947#2953#0#HTML" expanded="true" />
-            <element signature="e#2953#2959#0#HTML" expanded="true" />
-            <element signature="e#2959#2965#0#HTML" expanded="true" />
-            <element signature="e#2965#2971#0#HTML" expanded="true" />
-            <element signature="e#2971#2977#0#HTML" expanded="true" />
-            <element signature="e#2977#2983#0#HTML" expanded="true" />
-            <element signature="e#2983#2989#0#HTML" expanded="true" />
-            <element signature="e#2989#2995#0#HTML" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

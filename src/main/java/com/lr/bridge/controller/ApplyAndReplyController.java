@@ -446,17 +446,10 @@ public class ApplyAndReplyController {
         //得到所有已经回复的回执单
         model.addAttribute("pageUrlPrefix", "/page/apply/showHasCheck?pageIndex");
         PageInfo<ApplyAndReply> applyAndReplyPageInfo = applyAndReplyService.showHasAudit(pageIndex, pageSize);
-
         model.addAttribute("pageInfo", applyAndReplyPageInfo);
-
         return "page/applyAndReportPage/hasAuditForm";
 
-
-
     }
-
-
-
 
 
     /**
@@ -471,8 +464,6 @@ public class ApplyAndReplyController {
                             HttpServletResponse resp,
                             Model model,
                             @PathVariable("id") Integer id) {
-
-
 
         ApplyAndReply applyAndReply = applyAndReplyService.selectByPrimaryKey(id);
         model.addAttribute("apply", applyAndReply);
@@ -535,11 +526,6 @@ public class ApplyAndReplyController {
         return "page/applyAndReportPage/auditForm";
 
     }
-
-
-
-
-
 
 
     /**
