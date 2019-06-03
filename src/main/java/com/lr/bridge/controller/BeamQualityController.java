@@ -204,6 +204,25 @@ public class BeamQualityController {
 
     }
 
+
+
+    /**
+     * 墩显示数据
+     * @param request
+     * @param model
+     * @param pageIndex
+     * @param pageSize
+     * @return
+     */
+    @RequestMapping("/index")
+    public String indexPage(HttpServletRequest request,
+                       Model model){
+
+
+        return "page/beamCrudPage/index";
+
+    }
+
     private void getRedShow(Model model) {
         BeamQuality beamQuality = beamQualityService.selectByPrimaryKey(1);
         model.addAttribute("axialDeviStandard", Double.parseDouble(beamQuality.getAxialDevi()));

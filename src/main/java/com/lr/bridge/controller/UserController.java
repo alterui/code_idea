@@ -116,7 +116,7 @@ public class UserController {
                /* model.addAttribute("pageUrlPrefix", "/page/beam/show?pageIndex");
                 PageInfo<BeamQuality> beamQualityInfo = beamQualityService.showBeam(pageIndex, pageSize);
                 model.addAttribute("pageInfo", beamQualityInfo);*/
-                return "redirect:/page/beam/show";
+                return "redirect:/page/beam/index";
 
             }
             //管理员用户
